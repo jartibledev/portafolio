@@ -1,15 +1,32 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Mono, Geist_Mono, Cascadia_Mono , Fragment_Mono, Cutive_Mono, Inter  } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const dmMono = DM_Mono({
+  subsets: ['latin'],
+  weight:['300', '400', '500'],
+  variable:'--font-dm-mono',
+});
+const GeistMono = Geist_Mono({
+  subsets: ['latin'],
+  weight:['300', '400', '500'],
+  variable:'--font-geist-mono',
+});
+const cascadiaMono = Cascadia_Mono({
+  subsets: ['latin'],
+  weight:['300', '400', '500'],
+  variable:'--font-cascadia-mono',
+});
+const fragmentMono = Fragment_Mono({
+  subsets: ['latin'],
+  weight:['300', '400', '500'],
+  variable:'--font-fragment-mono',
+});
+const cultiveMono = Cutive_Mono ({
+  subsets: ['latin'],
+  weight:['300', '400', '500'],
+  variable:'--font-cutive-mono',
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Create Next App",
@@ -19,7 +36,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${dmMono.variable}${GeistMono.variable}${cascadiaMono.variable}${fragmentMono.variable}${cultiveMono.variable}`}>
         {children}
       </body>
     </html>
