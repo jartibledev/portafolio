@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const borderBox = "1.2 rem solid black ";
+const borderBox = "1.2rem solid black ";
 const borderRadius = " border-radius: 0px";
 
 
@@ -12,12 +12,19 @@ export const App = styled.div`
     flex-direction: column;
 `;
 
-export const ButtonStar = styled.div`
-    margin: 2 rem;
-    button {
-        border: ${borderBox};
-        cursor:pointer;  
-    }    
+export const ButtonStar = styled.button`
+    padding : 20px 120px 20px 120px;
+    background-color: transparent;
+    border: ${borderBox};
+    border-radius: ${borderRadius};
+    cursor:pointer;  
+    filter:blur(9px);
+    backdrop-filter: blur(9px);
+    &:hover {
+            filter: none;
+            backdrop-filter: none;
+        } 
+
 `;
 
 

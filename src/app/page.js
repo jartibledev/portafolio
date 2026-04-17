@@ -8,9 +8,9 @@ export default function Home() {
     <div>
       <main style={{
       display: 'flex',
-      justifyContent: 'center', // Centrado horizontal
-      alignItems: 'center',     // Centrado vertical
-      height: '100vh'           // Altura total de la pantalla
+      justifyContent: 'center', 
+      alignItems: 'center',     
+      height: '100vh'           
     }} >
         <CoverForm>
 

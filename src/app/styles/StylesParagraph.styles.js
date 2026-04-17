@@ -2,8 +2,10 @@ import styled from "styled-components";
  
 const greyColor= " #686868"
 export const Head = styled.h1`
+    padding:0.5rem;
+    margin: 0.5rem;
     font-family: var(--font-dm-mono);
-    font-size: 5 rem ;
+    font-size: 3rem ;
     font-weight: normal;
     color : black;
     letter-sparcing: -5%;
