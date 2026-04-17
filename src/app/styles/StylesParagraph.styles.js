@@ -1,4 +1,4 @@
-import styled from 'styled-componets'
+import styled from "styled-components";
  
 const greyColor= " #686868"
 export const Head = styled.h1`

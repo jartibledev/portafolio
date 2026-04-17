@@ -1,4 +1,4 @@
-import styled from 'styled-componets'
+import styled from "styled-components";
 
 const borderBox = "1.2 rem solid black ";
 const borderRadius = " border-radius: 0px";

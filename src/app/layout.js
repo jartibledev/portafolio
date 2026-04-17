@@ -3,7 +3,7 @@ import "./globals.css";
 
 const dmMono = DM_Mono({
   subsets: ['latin'],
-  weight:['300', '400', '500'],
+  weight:['400'],
   variable:'--font-dm-mono',
 });
 const GeistMono = Geist_Mono({
@@ -18,12 +18,13 @@ const cascadiaMono = Cascadia_Mono({
 });
 const fragmentMono = Fragment_Mono({
   subsets: ['latin'],
-  weight:['300', '400', '500'],
+  weight:[ '400'],
   variable:'--font-fragment-mono',
 });
+
 const cultiveMono = Cutive_Mono ({
   subsets: ['latin'],
-  weight:['300', '400', '500'],
+  weight:['400'],
   variable:'--font-cutive-mono',
 });
 
