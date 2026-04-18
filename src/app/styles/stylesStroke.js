@@ -13,8 +13,7 @@ export const App = styled.div`
 `;
 
 export const BlankSpace = styled.div`
-    padding: 1rem;
-    margin: 1rem;
+    padding: 0rem 3rem 0rem 3rem ;
 `;
 
 export const ButtonStar = styled.button`
@@ -35,10 +34,11 @@ export const ButtonStar = styled.button`
 
 export const ButtonPortafolio = styled.button`
         display: grid;
-        grid-template-columns: auto auto ;
+        grid-template-columns: auto auto auto ;
         background-color: transparent;
         border: ${borderBox};
         border-radius: ${borderRadius};
+        margin: 2rem;
         cursor:pointer;
         filter:blur(9px);
         backdrop-filter: blur(9px); 

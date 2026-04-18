@@ -1,10 +1,7 @@
 import styled from "styled-components";
  
 const greyColor= " #686868"
-export const blankSpace = styled.div`
-    padding:2rem;
-    margin: 2rem;
-`;
+
 
 export const Head = styled.h1`
     padding:0.5rem;
@@ -136,7 +133,7 @@ export const SectionPressed = styled.p`
 `;
 
 export const Portafolio = styled.p`
-    margin: 2rem;
+    margin: 10px;
     font-family: var(--font-inter);
     font-weight: bold ;
     font-size: 2rem ;
@@ -145,7 +142,15 @@ export const Portafolio = styled.p`
      line-height: 110%; 
 
 `;
-
+export const Section = styled.h1`
+    margin: 0px 10px 10px 0px  ;
+    font-family: var(--font-dm-mono);
+    font-size: 3rem ;
+    font-weight: normal;
+    color : black;
+    letter-sparcing: -5%;
+    line-height: 110%; 
+`;
 export const Work = styled.p`
     font-family: var(--font-inter);
     font-weight: bold ;
