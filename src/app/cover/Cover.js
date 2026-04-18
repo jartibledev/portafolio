@@ -1,5 +1,5 @@
 import { ButtonStar, App, ButtonPortafolio, BlankSpace, HeadPortafolio  } from "../styles/stylesStroke"
-import { Head, Section, Portafolio    } from "../styles/StylesParagraph.styles"
+import { Head, Section, Portafolio, Subtitle, SocialNetwork, Dropline, Date, Contact, Footer, FooterText, FooterSubtitle, Projects, LabelSocialMedia,    } from "../styles/StylesParagraph.styles"
 
 function CoverForm (props){
     return(
@@ -35,6 +35,18 @@ function CoverForm (props){
                     dev
                 </Section>
             </HeadPortafolio>
+            <div>
+                <SocialNetwork>SocialNetwork</SocialNetwork>
+                <Subtitle>Subtitle</Subtitle>
+                <Dropline>Dropline</Dropline>
+                <Date>Date</Date>
+                <Contact>Contact</Contact>
+                <Footer>Footer</Footer>
+                <FooterText>FooterText</FooterText>
+                <FooterSubtitle>FooterSubtitle</FooterSubtitle>
+                <Projects>Projects</Projects>
+                <LabelSocialMedia>LabelSocialMedia</LabelSocialMedia>
+            </div>
         </div>
         
     )
