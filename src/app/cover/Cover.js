@@ -10,43 +10,6 @@ function CoverForm (props){
                 </Head>
 
             </ButtonStar>
-            <ButtonPortafolio>
-                <Portafolio>
-                    Portafolio
-                </Portafolio>
-                <BlankSpace></BlankSpace>
-                <BlankSpace></BlankSpace>
-                <BlankSpace></BlankSpace>
-                <BlankSpace></BlankSpace>
-                <Section>
-                    dev
-                </Section>
-                
-            </ButtonPortafolio>
-            <HeadPortafolio>
-                <Portafolio>
-                    Portafolio
-                </Portafolio>
-                <BlankSpace></BlankSpace>
-                <BlankSpace></BlankSpace>
-                <BlankSpace></BlankSpace>
-                <BlankSpace></BlankSpace>
-                <Section>
-                    dev
-                </Section>
-            </HeadPortafolio>
-            <div>
-                <SocialNetwork>SocialNetwork</SocialNetwork>
-                <Subtitle>Subtitle</Subtitle>
-                <Dropline>Dropline</Dropline>
-                <Date>Date</Date>
-                <Contact>Contact</Contact>
-                <Footer>Footer</Footer>
-                <FooterText>FooterText</FooterText>
-                <FooterSubtitle>FooterSubtitle</FooterSubtitle>
-                <Projects>Projects</Projects>
-                <LabelSocialMedia>LabelSocialMedia</LabelSocialMedia>
-            </div>
         </div>
         
     )
