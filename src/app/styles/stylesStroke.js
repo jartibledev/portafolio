@@ -12,6 +12,11 @@ export const App = styled.div`
     flex-direction: column;
 `;
 
+export const BlankSpace = styled.div`
+    padding: 1rem;
+    margin: 1rem;
+`;
+
 export const ButtonStar = styled.button`
     padding : 20px 120px 20px 120px;
     background-color: transparent;
@@ -29,6 +34,9 @@ export const ButtonStar = styled.button`
 
 
 export const ButtonPortafolio = styled.button`
+        display: grid;
+        grid-template-columns: auto auto ;
+        background-color: transparent;
         border: ${borderBox};
         border-radius: ${borderRadius};
         cursor:pointer;
