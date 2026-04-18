@@ -3,10 +3,11 @@ import styled from "styled-components";
 const greyColor= " #686868"
 
 
+
 export const Head = styled.h1`
     padding:0.5rem;
     margin: 0.5rem;
-    font-family: var(--font-dm-mono);
+    font-family: 'Dm Mono' ;
     font-size: 3rem ;
     font-weight: normal;
     color : black;
@@ -15,7 +16,7 @@ export const Head = styled.h1`
 `;
 
 export const Subtitle = styled.h2`
-    font-family: var(--font-dm-mono);
+    font-family: 'Dm Mono';
     font-weight: medium;
     font-size: 0.9 rem ;
     color : ${greyColor} ;
@@ -23,7 +24,7 @@ export const Subtitle = styled.h2`
 `;
 
 export const Dropline = styled.h3`
-    font-family: var(--font-geist-mono);
+    font-family:"Geist Mono", monospace;
     font-weight: bold;
     font-size: 0.9 rem ;
     color : ${greyColor} ;
@@ -31,7 +32,7 @@ export const Dropline = styled.h3`
 `;
 
 export const Contact = styled.p`
-    font-family: var(--font-dm-mono);
+    font-family: 'Dm Mono';
     font-weight: normal;
     font-size: 1 rem ;
     color : black ;
@@ -39,7 +40,7 @@ export const Contact = styled.p`
 
 `;
 export const Button = styled.p`
-    font-family: var(--font-cascadia-mono);
+    font-family: "Cascadia Mono", sans-serif;
     font-weight: 600 ;
     font-size: 1 rem ;
     color : black ;
@@ -47,7 +48,7 @@ export const Button = styled.p`
 
 `;
 export const Footer = styled.p`
-    font-family: var(--font-dm-mono);
+    font-family: 'Dm Mono';
     font-weight: medium ;
     font-size: 2 rem ;
     color : black ;
@@ -57,7 +58,7 @@ export const Footer = styled.p`
 `;
 
 export const FooterText = styled.p`
-    font-family: var(--font-dm-mono);
+    font-family: 'Dm Mono';
     font-weight: medium ;
     font-size: 1 rem ;
     color : ${greyColor} ;
@@ -66,7 +67,7 @@ export const FooterText = styled.p`
 
 `;
 export const FooterSubtitle = styled.p`
-    font-family: var(--font-dm-mono);
+    font-family: 'Dm Mono';
     font-weight: medium ;
     font-size: 1 rem ;
     color : ${greyColor} ;
@@ -75,7 +76,7 @@ export const FooterSubtitle = styled.p`
 
 `;
 export const Projects = styled.p`
-    font-family: var(--font-fragment-mono);
+    font-family: "Fragment Mono", monospace;
     font-weight: regular ;
     font-size: 2 rem ;
     color : black ;
@@ -85,7 +86,7 @@ export const Projects = styled.p`
 `;
 
 export const Date = styled.p`
-    font-family: var(--font-fragment-mono);
+    font-family: "Fragment Mono", monospace;
     font-weight: regular ;
     font-size: 1.8 rem ;
     color : ${greyColor} ;
@@ -95,7 +96,7 @@ export const Date = styled.p`
 `;
 
 export const LabelSocialMedia = styled.p`
-    font-family: var(--font-fragment-mono);
+    font-family: "Fragment Mono", monospace;
     font-weight: regular ;
     font-size: 2 rem ;
     color : black ;
@@ -105,7 +106,7 @@ export const LabelSocialMedia = styled.p`
 `;
 
 export const SocialNetwork = styled.p`
-    font-family: var(--font-fragment-mono);
+    font-family: "Fragment Mono", monospace;
     font-weight: regular ;
     font-size: 1.8 rem ;
     color : black ;
@@ -113,7 +114,7 @@ export const SocialNetwork = styled.p`
 
 `;
 export const PortafolioPress = styled.p`
-    font-family: var(--font-cutive-mono);
+    font-family: "Cutive Mono", monospace;
     font-weight: regular ;
     font-size: 2.5 rem ;
     color : black ;
@@ -123,7 +124,7 @@ export const PortafolioPress = styled.p`
 `;
 
 export const SectionPressed = styled.p`
-    font-family: var(--font-dm-mono);
+    font-family: 'Dm Mono';
     font-weight: lighter ;
     font-size: 3 rem ;
     color : black ;
@@ -134,7 +135,7 @@ export const SectionPressed = styled.p`
 
 export const Portafolio = styled.p`
     margin: 10px;
-    font-family: var(--font-inter);
+    font-family:"Inter", sans-serif;
     font-weight: bold ;
     font-size: 2rem ;
     color : black ;
@@ -144,7 +145,7 @@ export const Portafolio = styled.p`
 `;
 export const Section = styled.h1`
     margin: 0px 10px 10px 0px  ;
-    font-family: var(--font-dm-mono);
+    font-family: 'Dm Mono';
     font-size: 3rem ;
     font-weight: normal;
     color : black;
@@ -152,7 +153,7 @@ export const Section = styled.h1`
     line-height: 110%; 
 `;
 export const Work = styled.p`
-    font-family: var(--font-inter);
+    font-family: "Inter", sans-serif;
     font-weight: bold ;
     font-size: 3 rem ;
     color : black ;
