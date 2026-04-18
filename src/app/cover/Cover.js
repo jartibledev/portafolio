@@ -1,4 +1,4 @@
-import { ButtonStar, App, ButtonPortafolio, BlankSpace  } from "../styles/stylesStroke"
+import { ButtonStar, App, ButtonPortafolio, BlankSpace, HeadPortafolio  } from "../styles/stylesStroke"
 import { Head, Section, Portafolio    } from "../styles/StylesParagraph.styles"
 
 function CoverForm (props){
@@ -17,13 +17,24 @@ function CoverForm (props){
                 <BlankSpace></BlankSpace>
                 <BlankSpace></BlankSpace>
                 <BlankSpace></BlankSpace>
-                
                 <BlankSpace></BlankSpace>
                 <Section>
                     dev
                 </Section>
                 
             </ButtonPortafolio>
+            <HeadPortafolio>
+                <Portafolio>
+                    Portafolio
+                </Portafolio>
+                <BlankSpace></BlankSpace>
+                <BlankSpace></BlankSpace>
+                <BlankSpace></BlankSpace>
+                <BlankSpace></BlankSpace>
+                <Section>
+                    dev
+                </Section>
+            </HeadPortafolio>
         </div>
         
     )

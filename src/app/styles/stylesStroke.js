@@ -18,6 +18,7 @@ export const BlankSpace = styled.div`
 
 export const ButtonStar = styled.button`
     padding : 20px 120px 20px 120px;
+    transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
     background-color: transparent;
     border: ${borderBox};
     border-radius: ${borderRadius};
@@ -35,6 +36,7 @@ export const ButtonStar = styled.button`
 export const ButtonPortafolio = styled.button`
         display: grid;
         grid-template-columns: auto auto auto ;
+        transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
         background-color: transparent;
         border: ${borderBox};
         border-radius: ${borderRadius};
@@ -50,14 +52,17 @@ export const ButtonPortafolio = styled.button`
 `;
 
 export const HeadPortafolio = styled.div`
+        display: grid;
+        grid-template-columns: auto auto auto ;
+         transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
         border: ${borderBox};
         border-radius: ${borderRadius};
         cursor:pointer;
-        filter:blur(9px);
-        backdrop-filter: blur(9px); 
+        filter: none;
+        backdrop-filter: none; 
         &:hover {
-            filter: none;
-            backdrop-filter: none;
+            filter:blur(9px);
+            backdrop-filter: blur(9px);
         } 
         
 `;
