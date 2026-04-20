@@ -1,8 +1,8 @@
-
+import React from "react";
 import { Portafolio, Section } from "../styles/StylesParagraph.styles";
 import { ButtonPortafolio } from "../styles/stylesStroke";
 
-function HomePage (props){
+function HomePageForm (props){
     return(
         <article>
             <ButtonPortafolio>
@@ -36,4 +36,4 @@ function HomePage (props){
     )
 }
 
-export default CoverForm;
+export default HomePageForm;
