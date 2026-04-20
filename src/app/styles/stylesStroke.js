@@ -11,6 +11,24 @@ export const App = styled.div`
     display: flex;
     flex-direction: column;
 `;
+export const Article = styled.article`
+    width: 100%;
+    height: 100%;
+    display: grid;
+    height: 100vh;
+`;
+export const Footer = styled.footer`
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto auto  ;
+`;
+export const Hero = styled.footer`
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto auto  ;
+`;
 
 export const BlankSpace = styled.div`
     padding: 0rem 3rem 0rem 3rem ;
