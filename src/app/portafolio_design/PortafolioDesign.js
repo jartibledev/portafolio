@@ -3,7 +3,7 @@ import { ButtonPortafolio, ArticleStyles, Section, HeroStyles } from "../styles/
 
 import { FooterForm } from "../footer";
 
-function HomePage (props){
+function PortafolioDesignForm (props){
     return(
         <article>
            <HeroStyles>
@@ -17,4 +17,4 @@ function HomePage (props){
     )
 }
 
-export default CoverForm;
+export default PortafolioDesignForm;
