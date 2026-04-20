@@ -1,16 +1,25 @@
-import { ButtonStar, App, ButtonPortafolio, BlankSpace, HeadPortafolio  } from "../styles/stylesStroke"
-import { Head, Section, Portafolio, Subtitle, SocialNetwork, Dropline, Date, Contact, Footer, FooterText, FooterSubtitle, Projects, LabelSocialMedia,    } from "../styles/StylesParagraph.styles"
+import { ButtonStar, App, ButtonPortafolio, BlankSpace, HeadPortafolio, FooterStyles  } from "../styles/stylesStroke"
+import { Head, Section, Portafolio, Subtitle, SocialNetwork, Dropline, Date, Contact, Footer, FooterText, FooterSubtitle, Projects, LabelSocialMedia,F    } from "../styles/StylesParagraph.styles"
+import FooterForm from "../footer";
 
 function CoverForm (props){
     return(
-        <div>
+        <article>
+            
+            <FooterStyles>
+                <ButtonStar>
+                    <Head>
+                       Footer 
+                    </Head>
+                </ButtonStar>
+            </FooterStyles>
             <ButtonStar>
                 <Head>
                     Start
                 </Head>
 
             </ButtonStar>
-        </div>
+        </article>
         
     )
 }

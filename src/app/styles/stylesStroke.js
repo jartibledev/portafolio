@@ -17,7 +17,7 @@ export const Article = styled.article`
     display: grid;
     height: 100vh;
 `;
-export const Footer = styled.footer`
+export const FooterStyles = styled.footer`
     width: 100%;
     height: 100%;
     display: grid;

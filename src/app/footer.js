@@ -1,8 +1,9 @@
-function Footer(){
+import { FooterStyles } from "./styles/stylesStroke"
+
+function FooterForm(){
     return(
-        <footer>
-            <p>Author: Hege Refsnes</p>
-            <p><a href="mailto:hege@example.com">hege@example.com</a></p>
-        </footer>
+        <FooterStyles>
+        </FooterStyles>
     )
 }
+export default FooterForm;
