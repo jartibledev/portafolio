@@ -5,14 +5,6 @@ import FooterForm from "../footer";
 function CoverForm (props){
     return(
         <article>
-            
-            <FooterStyles>
-                <ButtonStar>
-                    <Head>
-                       Footer 
-                    </Head>
-                </ButtonStar>
-            </FooterStyles>
             <ButtonStar>
                 <Head>
                     Start

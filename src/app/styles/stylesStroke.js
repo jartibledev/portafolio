@@ -11,7 +11,7 @@ export const App = styled.div`
     display: flex;
     flex-direction: column;
 `;
-export const Article = styled.article`
+export const ArticleStyles = styled.article`
     width: 100%;
     height: 100%;
     display: grid;
@@ -23,7 +23,7 @@ export const FooterStyles = styled.footer`
     display: grid;
     grid-template-columns: auto auto  ;
 `;
-export const Hero = styled.footer`
+export const HeroStyles = styled.footer`
     width: 100%;
     height: 100%;
     display: grid;
