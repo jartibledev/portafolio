@@ -6,7 +6,7 @@ import Link from "next/link";
 function HomePageForm (props){
     return(
         <article>
-            <Link href="..\portafolio_dev\page.js" passHref>
+            <Link href="..\portafolio_dev" passHref>
                 <ButtonPortafolio>
                     <Portafolio>
                         Portafolio
@@ -17,7 +17,7 @@ function HomePageForm (props){
                 </ButtonPortafolio>
             </Link>
             
-            <Link href="..\portafolio_design\page.js" passHref>
+            <Link href="..\portafolio_design" passHref>
                 <ButtonPortafolio>
                     <Section>
                         design
@@ -30,7 +30,7 @@ function HomePageForm (props){
             
             
           
-            <Link href="..\portafolio_illustration\page.js" passHref>
+            <Link href="..\portafolio_illustration" passHref>
                 <ButtonPortafolio>
                     <Portafolio>
                         Portafolio

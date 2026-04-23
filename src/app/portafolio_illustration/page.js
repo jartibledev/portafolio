@@ -1,18 +1,23 @@
+import React from "react";
 import { Portafolio, Section } from "../styles/StylesParagraph.styles";
-import { ButtonPortafolio, ArticleStyles, Section, HeroStyles } from "../styles/stylesStroke";
+import { ButtonPortafolio, ArticleStyles, HeroStyles } from "../styles/stylesStroke";
 
-import { FooterForm } from "../footer";
 
 function PortafolioIllustrationForm (props){
     return(
         <article>
            <HeroStyles>
+            hola
             </HeroStyles>
             <section>
             </section>
-            <FooterForm>
-            </FooterForm>
+            <footer>
+                <Link  href="../about_me" passHref>
+                    <button>About me</button>
+                </Link>
+            </footer>
         </article>
+        
         
     )
 }
