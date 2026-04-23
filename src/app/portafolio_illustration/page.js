@@ -1,7 +1,7 @@
 import React from "react";
 import { Portafolio, Section } from "../styles/StylesParagraph.styles";
 import { ButtonPortafolio, ArticleStyles, HeroStyles } from "../styles/stylesStroke";
-
+import Link from "next/link";
 
 function PortafolioIllustrationForm (props){
     return(
