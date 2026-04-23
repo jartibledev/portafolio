@@ -3,12 +3,12 @@ import { ButtonStar, App, ButtonPortafolio, BlankSpace, HeadPortafolio, FooterSt
 import { Head, Section, Portafolio, Subtitle, SocialNetwork, Dropline, Date, Contact, Footer, FooterText, FooterSubtitle, Projects, LabelSocialMedia,F    } from "../styles/StylesParagraph.styles"
 import FooterForm from "../footer";
 import Link from 'next/link';
-import HomePageForm from "../home_page/HomePage";
+import HomePageForm from "../home_page/page";
 
 function CoverForm (props){
     return(
         <article>
-            <Link href="../home_page/HomePage" passHref >
+            <Link href="../home_page" passHref >
                 <ButtonStar>
                     <Head>
                         Start

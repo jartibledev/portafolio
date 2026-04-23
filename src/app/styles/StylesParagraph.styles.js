@@ -44,7 +44,7 @@ export const Button = styled.p`
     font-weight: 600 ;
     font-size: 1 rem ;
     color : black ;
-     line-height: 145%; 
+    line-height: 145%; 
 
 `;
 export const Footer = styled.p`
