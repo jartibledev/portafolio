@@ -2,6 +2,7 @@ import React from "react";
 import { Portafolio, Section } from "../styles/StylesParagraph.styles";
 import { ButtonPortafolio } from "../styles/stylesStroke";
 
+
 function HomePageForm (props){
     return(
         <article>
