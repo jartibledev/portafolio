@@ -29,6 +29,12 @@ export const HeroStyles = styled.footer`
     display: grid;
     grid-template-columns: auto auto  ;
 `;
+export const sectionStyles = styled.section`
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto auto  ;
+`;
 
 export const BlankSpace = styled.div`
     padding: 0rem 3rem 0rem 3rem ;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Portafolio, Section } from "../styles/StylesParagraph.styles";
-import { ButtonPortafolio } from "../styles/stylesStroke";
+import { ButtonPortafolio, sectionStyles } from "../styles/stylesStroke";
 import Link from "next/link";
 
 function HomePageForm (props){
@@ -40,6 +40,9 @@ function HomePageForm (props){
                     </Section>
                 </ButtonPortafolio>
             </Link>
+            <sectionStyles>
+                
+            </sectionStyles>
             
         </article>
         
