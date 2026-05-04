@@ -1,16 +1,40 @@
 import React from "react";
-import { Portafolio, Section } from "../styles/StylesParagraph.styles";
-import { ButtonPortafolio, ArticleStyles, HeroStyles } from "../styles/stylesStroke";
+import { Footer, Portafolio, Projects, sectionStyles, Section } from "../styles/StylesParagraph.styles";
+import { ButtonPortafolio, ArticleStyles, HeroStyles, SectionStyles, ContainerPicture, Picture, FooterPicture } from "../styles/stylesStroke";
 import Link from "next/link";
+import Image from 'next/image';
+//import miImagen from '../concepart_1_2_export.jpg'
 
 function PortafolioIllustrationForm (props){
     return(
         <article>
            <HeroStyles>
-            hola
+                <ButtonPortafolio>
+                    <Portafolio>
+                        Portafolio
+                    </Portafolio>
+                    <Section>
+                        illustration
+                    </Section>
+                </ButtonPortafolio>
             </HeroStyles>
-            <section>
-            </section>
+            <SectionStyles>
+                <ContainerPicture>
+                    <Picture>
+                        <Image src="/images/concepart_1_2_export.jpg"
+                        alt = "illustration concept art"
+                        fill
+                        style= {{ objectFit: 'cover' }}
+                        >
+                              
+                        </Image>
+                    </Picture> 
+                    <FooterPicture>
+                        <Projects>Concept Art</Projects>
+                        <Date>2027</Date>
+                    </FooterPicture>
+                </ContainerPicture>
+            </SectionStyles>
             <footer>
                 <Link  href="../about_me" passHref>
                     <button>About me</button>

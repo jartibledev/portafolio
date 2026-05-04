@@ -1,4 +1,6 @@
+'use client';
 import styled from "styled-components";
+import Image from "next/image";
 
 const borderBox = "1.2rem solid black ";
 const borderRadius = " border-radius: 0px";
@@ -29,7 +31,7 @@ export const HeroStyles = styled.footer`
     display: grid;
     grid-template-columns: auto auto  ;
 `;
-export const sectionStyles = styled.section`
+export const SectionStyles = styled.section`
     width: 100%;
     height: 100%;
     display: grid;
@@ -39,7 +41,7 @@ export const sectionStyles = styled.section`
     grid-gap: 2em; 
     padding: 6em 0 0 6em;
 `;
-export const ContainerPicture = styled.section`
+export const ContainerPicture = styled.div`
     width: 100%;
     height: 100%;
     display: grid;
@@ -47,6 +49,37 @@ export const ContainerPicture = styled.section`
     align-items: start;
     grid-template-columns: auto auto ;
     grid-gap: 1.5em; 
+    
+`;
+
+export const Picture = styled.div`
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    border-radius: 16px;
+    transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+    cursor:pointer;  
+    filter:blur(9px);
+    backdrop-filter: blur(9px);
+    &:hover {
+            filter: none;
+            backdrop-filter: none;
+        } 
+    
+`;
+export const FooterPicture = styled.div`
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+    cursor:pointer;
+    filter: none;
+    backdrop-filter: none;  
+    
+    &:hover {
+        filter:blur(9px);
+        backdrop-filter: blur(9px);   
+    } 
     
 `;
 
