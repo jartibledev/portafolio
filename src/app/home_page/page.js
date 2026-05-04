@@ -41,7 +41,9 @@ function HomePageForm (props){
                 </ButtonPortafolio>
             </Link>
             <sectionStyles>
-                
+                <button>Hola</button>    
+                <button>Hola</button>    
+                <button>Hola</button>    
             </sectionStyles>
             
         </article>

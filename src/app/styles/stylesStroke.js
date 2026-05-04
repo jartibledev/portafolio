@@ -33,7 +33,11 @@ export const sectionStyles = styled.section`
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: auto auto  ;
+    grid-auto-flow: row;
+    align-items: center;
+    grid-template-columns: auto auto ;
+    grid-gap: 2em; 
+    padding: 6em 0 0 6em;
 `;
 
 export const BlankSpace = styled.div`
