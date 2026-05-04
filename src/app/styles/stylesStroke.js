@@ -39,6 +39,18 @@ export const sectionStyles = styled.section`
     grid-gap: 2em; 
     padding: 6em 0 0 6em;
 `;
+export const ContainerPicture = styled.section`
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: start;
+    grid-template-columns: auto auto ;
+    grid-gap: 1.5em; 
+    
+`;
+
+
 
 export const BlankSpace = styled.div`
     padding: 0rem 3rem 0rem 3rem ;
