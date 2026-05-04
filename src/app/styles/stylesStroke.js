@@ -31,6 +31,29 @@ export const HeroStyles = styled.footer`
     display: grid;
     grid-template-columns: auto auto  ;
 `;
+
+export const Picture = styled.div`
+    width: 100%;
+    max-width: 500px;
+    height: 780px;
+    border-radius: 16px;
+    transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+    cursor:pointer;  
+    filter:blur(9px);
+    backdrop-filter: blur(9px);
+    
+`;
+export const FooterPicture = styled.div`
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+    cursor:pointer;
+    filter: none;
+    backdrop-filter: none;  
+    
+    
+`;
 export const SectionStyles = styled.section`
     width: 100%;
     height: 100%;
@@ -48,40 +71,22 @@ export const ContainerPicture = styled.div`
     grid-auto-flow: column;
     align-items: start;
     grid-template-columns: auto auto ;
-    grid-gap: 1.5em; 
-    
-`;
+    grid-gap: 1.5em;
 
-export const Picture = styled.div`
-    width: 100%;
-    max-width: 500px;
-    height: 300px;
-    border-radius: 16px;
-    transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
-    cursor:pointer;  
-    filter:blur(9px);
-    backdrop-filter: blur(9px);
-    &:hover {
+     &:hover ${Picture} {
             filter: none;
             backdrop-filter: none;
         } 
-    
-`;
-export const FooterPicture = styled.div`
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
-    cursor:pointer;
-    filter: none;
-    backdrop-filter: none;  
-    
-    &:hover {
+
+      &:hover ${FooterPicture} {
         filter:blur(9px);
         backdrop-filter: blur(9px);   
     } 
+     
     
 `;
+
+
 
 
 
