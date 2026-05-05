@@ -64,11 +64,18 @@ export const FooterStyles = styled.footer`
     padding-right: 25%;
     padding-top: 2%;
     padding-bottom: 2%;
-    ${({ $isVisible }) =>
-     $isVisible &&
-    css`
-      animation: ${slideInLeft} 1s ease-out forwards;
-    `}
+
+    opacity: 0;
+    transform: translateY(-100px); 
+
+    transition: opacity 2s ease-out, 
+              transform 2s cubic-bezier(0.17, 0.55, 0.55, 1),
+              filter 2s ease-out;
+      ${({ $isVisible }) => $isVisible && css`
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  `}
 
 `;
 export const HeroStyles = styled.div`
@@ -132,11 +139,20 @@ export const PhilosophySection = styled.section`
     padding-right: 25%;
     padding-top: 1em;
     padding-bottom: 1em;
-    ${( {$isVisible}) =>
-    $isVisible &&
-    css`
-      animation: ${slideInLeft} 1s ease-out forwards;
-    `}
+
+    opacity: 0;
+    transform: translateX(-100px); 
+    filter: blur(10px);
+
+    transition: opacity 0.8s ease-out, 
+              transform 0.8s cubic-bezier(0.17, 0.55, 0.55, 1),
+              filter 0.8s ease-out;
+
+    ${({ $isVisible }) => $isVisible && css`
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0px);
+  `}
 
    
 `;

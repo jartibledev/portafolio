@@ -135,7 +135,11 @@ export const SocialNetwork = styled.p`
     font-size: 0.8em ;
     color : black ;
     line-height: 145%;
-    margin-bottom: 0.5em;  
+    margin-bottom: 0.5em;
+     &:hover {
+            filter:blur(2px);
+            backdrop-filter: blur(2px);
+        }   
 
 `;
 export const PortafolioPress = styled.p`

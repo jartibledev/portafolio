@@ -30,6 +30,7 @@ function PortafolioIllustrationForm (props){
                 },
                 {
                     threshold: 0.05,
+                    rootMargin: "0px 0px -50px 0px"
                 }
             );
 
@@ -112,7 +113,7 @@ function PortafolioIllustrationForm (props){
                     </FooterPicture>
                 </ContainerPicture>
             </SectionStyles>
-            <PhilosophySection ref={sectionRef} $isVisible={isVisible}> 
+            <PhilosophySection ref={sectionRef} $isVisible={isVisible} > 
                 <Parraph>
                     <ReachOut>Reach out</ReachOut>
                     <Link href="mailto:mayalopezdesign@gmail.com">
