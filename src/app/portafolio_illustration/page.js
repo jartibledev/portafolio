@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
 import { Footer, Portafolio, Projects, sectionStyles, Section, Date, HeadPhilosophy, Dropline, SocialNetwork, ReachOut } from "../styles/StylesParagraph.styles";
-import { ButtonPortafolio, ArticleStyles, HeroStyles, SectionStyles, ContainerPicture, Picture, FooterPicture, HeadPortafolio, BlankSpace, Parraph, FooterStyles } from "../styles/stylesStroke";
+import { ButtonPortafolio, ArticleStyles, HeroStyles, SectionStyles, ContainerPicture, Picture, FooterPicture, HeadPortafolio, BlankSpace, Parraph, FooterStyles, PhilosophySection } from "../styles/stylesStroke";
 import Link from "next/link";
 import Image from 'next/image';
 //import miImagen from '../concepart_1_2_export.jpg'
@@ -29,7 +29,7 @@ function PortafolioIllustrationForm (props){
                     }
                 },
                 {
-                    threshold: 0.2,
+                    threshold: 0.05,
                 }
             );
 
@@ -112,7 +112,7 @@ function PortafolioIllustrationForm (props){
                     </FooterPicture>
                 </ContainerPicture>
             </SectionStyles>
-            <SectionStyles> 
+            <PhilosophySection ref={sectionRef} $isVisible={isVisible}> 
                 <Parraph>
                     <ReachOut>Reach out</ReachOut>
                     <Link href="mailto:mayalopezdesign@gmail.com">
@@ -131,8 +131,8 @@ function PortafolioIllustrationForm (props){
                     <Dropline>Behind every portfolio is a point of view. A great project page gives that sense of perspective to offer a glimpse of the person behind the work. Is it a particular artistic movement? A way of experiencing the world? What drives all these things to be the way they are?</Dropline>
                 </Parraph> 
                
-            </SectionStyles>
-            <FooterStyles ref={sectionRef} isVisible={isVisible}>
+            </PhilosophySection>
+            <FooterStyles ref={sectionRef} $isVisible={isVisible}>
                 <Link style = {linkDisplay} href="..\portafolio_dev" passHref>
                 <ButtonPortafolio>
                     <Portafolio>

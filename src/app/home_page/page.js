@@ -1,4 +1,5 @@
-import React from "react";
+'use client'
+import React, {useEffect, useState, UseRef} from "react";
 import { Footer, Portafolio, Section } from "../styles/StylesParagraph.styles";
 import { BlankSpace, ButtonPortafolio, sectionStyles, ArticleStyles, SectionStyles } from "../styles/stylesStroke";
 import Link from "next/link";
@@ -6,7 +7,10 @@ const linkDisplay = {
     display:"flex", 
     justifyContent: "center"
 }
+
 function HomePageForm (props){
+
+
     return(
         <ArticleStyles>
             <section style={{display: "flex", flexDirection: "column", justifyContent:"center", marginTop: "20vh", marginBottom: "20vh"  }}>

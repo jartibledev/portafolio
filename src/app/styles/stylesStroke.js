@@ -1,17 +1,18 @@
 'use client';
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 import Image from "next/image";
+
 
 const borderBox = "1.2rem solid black ";
 const borderRadius = " border-radius: 0px";
 const slideInLeft = keyframes`
      from {
     opacity: 0;
-    transform: translateX(-100%);
+    filter:blur(9px);
+    backdrop-filter: blur(9px);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
   }
 `;
 const animationEntry = keyframes`
@@ -63,7 +64,11 @@ export const FooterStyles = styled.footer`
     padding-right: 25%;
     padding-top: 2%;
     padding-bottom: 2%;
-     animation: ${slideInLeft} 1s ease-out slide-bottom;
+    ${({ $isVisible }) =>
+     $isVisible &&
+    css`
+      animation: ${slideInLeft} 1s ease-out forwards;
+    `}
 
 `;
 export const HeroStyles = styled.div`
@@ -116,6 +121,26 @@ export const SectionStyles = styled.section`
     
    
 `;
+
+export const PhilosophySection = styled.section`
+    width: 100% ;
+    height: 80vh ;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    ${( {$isVisible}) =>
+    $isVisible &&
+    css`
+      animation: ${slideInLeft} 1s ease-out forwards;
+    `}
+
+   
+`;
+
 export const ContainerPicture = styled.div`
     width: 100%;
     height: 100%;
