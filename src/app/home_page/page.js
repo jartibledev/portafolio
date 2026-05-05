@@ -1,7 +1,7 @@
 'use client'
-import React, {useEffect, useState, UseRef} from "react";
+import React, { useEffect, useState, useRef} from "react";
 import { Footer, Portafolio, Section } from "../styles/StylesParagraph.styles";
-import { BlankSpace, ButtonPortafolio, sectionStyles, ArticleStyles, SectionStyles } from "../styles/stylesStroke";
+import { BlankSpace, ButtonPortafolio, sectionStyles, ArticleStyles, SectionStyles, IntroStyles } from "../styles/stylesStroke";
 import Link from "next/link";
 const linkDisplay = { 
     display:"flex", 
@@ -9,11 +9,36 @@ const linkDisplay = {
 }
 
 function HomePageForm (props){
+    const [isVisible, setIsVisible] = useState(false);
+            const sectionRef = useRef(null);
 
+            useEffect(() =>{
+                const observer = new IntersectionObserver(
+                    ([entry]) => {
+                        if(entry.isIntersecting){
+                            setIsVisible(true);
+                            observer.unobserve(entry.target)
+                        }
+                    },
+                    {
+                        threshold: 0.05,
+                        rootMargin: "0px 0px -50px 0px"
+                    }
+                );
+
+                if (sectionRef.current){
+                    observer.observe(sectionRef.current);
+                }
+                return()=>{
+                    if(sectionRef.current){
+                        observer.unobserve(sectionRef.current);
+                    }
+                };
+            }, []);
 
     return(
         <ArticleStyles>
-            <section style={{display: "flex", flexDirection: "column", justifyContent:"center", marginTop: "20vh", marginBottom: "20vh"  }}>
+            <IntroStyles ref={sectionRef} $isVisible={isVisible}>
             <Link style = {linkDisplay} href="..\portafolio_dev" passHref>
                 <ButtonPortafolio>
                     <Portafolio>
@@ -62,7 +87,7 @@ function HomePageForm (props){
                     <BlankSpace></BlankSpace>
                 </ButtonPortafolio>
             </Link>
-            </section>
+            </IntroStyles>
          </ArticleStyles>
         
         

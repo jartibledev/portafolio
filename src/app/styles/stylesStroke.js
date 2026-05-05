@@ -54,6 +54,24 @@ export const ArticleStyles = styled.article`
     justify-content: center;
 
 `;
+export const IntroStyles = styled.article`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(-100px); 
+
+    transition: opacity 2s ease-out, 
+              transform 2s cubic-bezier(0.17, 0.55, 0.55, 1),
+              filter 2s ease-out;
+      ${({ $isVisible }) => $isVisible && css`
+          opacity: 1;
+          transform: translateY(0);
+          filter: blur(0px);
+      `}
+
+
+`;
 export const FooterStyles = styled.footer`
     width: 100%;
     height: 50vh;
