@@ -159,7 +159,7 @@ export const SectionPressed = styled.p`
 `;
 
 export const Portafolio = styled.p`
-    margin: 10px;
+    margin: 1em;
     font-family:"Inter", sans-serif;
     font-weight: bold ;
     font-size: 1.5em ;

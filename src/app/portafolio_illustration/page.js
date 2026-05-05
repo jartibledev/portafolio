@@ -1,4 +1,5 @@
-import React from "react";
+'use client'
+import React, { useEffect, useState, useRef} from "react";
 import { Footer, Portafolio, Projects, sectionStyles, Section, Date, HeadPhilosophy, Dropline, SocialNetwork, ReachOut } from "../styles/StylesParagraph.styles";
 import { ButtonPortafolio, ArticleStyles, HeroStyles, SectionStyles, ContainerPicture, Picture, FooterPicture, HeadPortafolio, BlankSpace, Parraph, FooterStyles } from "../styles/stylesStroke";
 import Link from "next/link";
@@ -9,8 +10,38 @@ const styleImage ={
     objectPosition: ' top'
       
 }
+const linkDisplay = { 
+    display:"flex", 
+    justifyContent: "center"
+}
+
 
 function PortafolioIllustrationForm (props){
+    const [isVisible, setIsVisible] = useState(false);
+        const sectionRef = useRef(null);
+
+        useEffect(() =>{
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if(entry.isIntersecting){
+                        setIsVisible(true);
+                        observer.unobserve(entry.target)
+                    }
+                },
+                {
+                    threshold: 0.2,
+                }
+            );
+
+            if (sectionRef.current){
+                observer.observe(sectionRef.current);
+            }
+            return()=>{
+                if(sectionRef.current){
+                    observer.unobserve(sectionRef.current);
+                }
+            };
+        }, []);
     return(
         <ArticleStyles>
            <HeroStyles>
@@ -81,7 +112,7 @@ function PortafolioIllustrationForm (props){
                     </FooterPicture>
                 </ContainerPicture>
             </SectionStyles>
-            <FooterStyles> 
+            <SectionStyles> 
                 <Parraph>
                     <ReachOut>Reach out</ReachOut>
                     <Link href="mailto:mayalopezdesign@gmail.com">
@@ -100,6 +131,24 @@ function PortafolioIllustrationForm (props){
                     <Dropline>Behind every portfolio is a point of view. A great project page gives that sense of perspective to offer a glimpse of the person behind the work. Is it a particular artistic movement? A way of experiencing the world? What drives all these things to be the way they are?</Dropline>
                 </Parraph> 
                
+            </SectionStyles>
+            <FooterStyles ref={sectionRef} isVisible={isVisible}>
+                <Link style = {linkDisplay} href="..\portafolio_dev" passHref>
+                <ButtonPortafolio>
+                    <Portafolio>
+                        About
+                    </Portafolio>
+                    <BlankSpace></BlankSpace>
+                    <BlankSpace></BlankSpace>
+                    <BlankSpace></BlankSpace>
+                    <BlankSpace></BlankSpace>
+                    <Section>
+                        me
+                    </Section>
+                </ButtonPortafolio>
+            </Link>
+            
+            
             </FooterStyles>
         </ArticleStyles>
         
