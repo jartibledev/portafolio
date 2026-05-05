@@ -76,7 +76,6 @@ export const FooterSubtitle = styled.p`
 
 `;
 export const Projects = styled.p`
-    justifyContent: flex-start;
     font-family: "Fragment Mono", monospace;
     font-weight: regular ;
     font-size: 2 rem ;
@@ -87,7 +86,6 @@ export const Projects = styled.p`
 `;
 
 export const Date = styled.p`
-    justifyContent: flex-end;
     font-family: "Fragment Mono", monospace;
     font-weight: regular ;
     font-size: 1.8 rem ;

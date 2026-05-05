@@ -1,12 +1,13 @@
 import React from "react";
-import { Footer, Portafolio, Projects, sectionStyles, Section } from "../styles/StylesParagraph.styles";
+import { Footer, Portafolio, Projects, sectionStyles, Section, Date } from "../styles/StylesParagraph.styles";
 import { ButtonPortafolio, ArticleStyles, HeroStyles, SectionStyles, ContainerPicture, Picture, FooterPicture } from "../styles/stylesStroke";
 import Link from "next/link";
 import Image from 'next/image';
 //import miImagen from '../concepart_1_2_export.jpg'
 const styleImage ={
    objectFit: 'cover',
-    objectPosition: 'center'  
+    objectPosition: 'center'
+      
 }
 
 function PortafolioIllustrationForm (props){

@@ -46,12 +46,15 @@ export const Picture = styled.div`
 `;
 export const FooterPicture = styled.div`
     display: flex;
+    justify-content: space-between;
     width: 100%;
     height: 100%;
     transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
     cursor:pointer;
     filter: none;
-    backdrop-filter: none;  
+    backdrop-filter: none;
+    padding-top: 1em;
+    pading-bottom: 1em;  
     
     
 `;
@@ -78,9 +81,6 @@ export const ContainerPicture = styled.div`
 
      &:hover ${Picture} {
             filter: none;
-            
-            transform: none !important; /* Desactiva cualquier escala */
-            transition: none !important; /* Quita animaciones */
         } 
 
       &:hover ${FooterPicture} {
