@@ -1,39 +1,74 @@
 import React from "react";
 import { Footer, Portafolio, Projects, sectionStyles, Section, Date } from "../styles/StylesParagraph.styles";
-import { ButtonPortafolio, ArticleStyles, HeroStyles, SectionStyles, ContainerPicture, Picture, FooterPicture } from "../styles/stylesStroke";
+import { ButtonPortafolio, ArticleStyles, HeroStyles, SectionStyles, ContainerPicture, Picture, FooterPicture, HeadPortafolio } from "../styles/stylesStroke";
 import Link from "next/link";
 import Image from 'next/image';
 //import miImagen from '../concepart_1_2_export.jpg'
 const styleImage ={
-   objectFit: 'cover',
-    objectPosition: 'center'
+    objectFit: 'cover',
+    objectPosition: ' top'
       
 }
 
 function PortafolioIllustrationForm (props){
     return(
-        <article>
+        <ArticleStyles>
            <HeroStyles>
-                <ButtonPortafolio>
+                <HeadPortafolio>
                     <Portafolio>
                         Portafolio
                     </Portafolio>
                     <Section>
                         illustration
                     </Section>
-                </ButtonPortafolio>
+                </HeadPortafolio>
             </HeroStyles>
             <SectionStyles>
                 <ContainerPicture>
-                    <Picture>
-                        <Image src="/images/concepart_1_2_export.jpg"
-                        alt = "illustration concept art"
-                        fill
-                        style= {styleImage}
-                        >
-                              
-                        </Image>
-                    </Picture> 
+                        <Picture>
+                            <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">
+                            <Image src="/images/concepart_1_2_export.jpg"
+                            alt = "illustration concept art"
+                            fill
+                            style= {styleImage}
+                            >
+                            </Image>
+                             </Link>
+                        </Picture>
+                    <FooterPicture>
+                        <Projects>Concept Art</Projects>
+                        <Date>2027</Date>
+                    </FooterPicture>
+                </ContainerPicture>
+            </SectionStyles>
+            <SectionStyles>
+                <ContainerPicture>
+                        <Picture>
+                            <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">
+                            <Image src="/images/experimentation_2_export_to_web.jpg"
+                            alt = "Chappel Roan"
+                            fill
+                            style= {styleImage}
+                            >
+                            </Image>
+                             </Link>
+                        </Picture>
+                    <FooterPicture>
+                        <Projects>Concept Art</Projects>
+                        <Date>2027</Date>
+                    </FooterPicture>
+                </ContainerPicture>
+                <ContainerPicture>
+                        <Picture>
+                            <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">
+                            <Image src="/images/minadesolada_web_export.jpg"
+                            alt = "illustration concept art"
+                            fill
+                            style= {styleImage}
+                            >
+                            </Image>
+                             </Link>
+                        </Picture>
                     <FooterPicture>
                         <Projects>Concept Art</Projects>
                         <Date>2027</Date>
@@ -45,7 +80,7 @@ function PortafolioIllustrationForm (props){
                     <button>About me</button>
                 </Link>
             </footer>
-        </article>
+        </ArticleStyles>
         
         
     )

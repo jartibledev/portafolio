@@ -12,12 +12,13 @@ export const App = styled.div`
     text-align: center;
     display: flex;
     flex-direction: column;
+    
 `;
 export const ArticleStyles = styled.article`
-    width: 100%;
-    height: 100%;
-    display: grid;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 `;
 export const FooterStyles = styled.footer`
     width: 100%;
@@ -25,11 +26,12 @@ export const FooterStyles = styled.footer`
     display: grid;
     grid-template-columns: auto auto  ;
 `;
-export const HeroStyles = styled.footer`
+export const HeroStyles = styled.div`
     width: 100%;
     height: 100%;
-    display: grid;
-    grid-template-columns: auto auto  ;
+    display: flex;
+
+    justify-content: center;
 `;
 
 export const Picture = styled.div`
@@ -48,7 +50,7 @@ export const FooterPicture = styled.div`
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 100%;
+    height: 10%;
     transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
     cursor:pointer;
     filter: none;
@@ -59,15 +61,18 @@ export const FooterPicture = styled.div`
     
 `;
 export const SectionStyles = styled.section`
-    width: 1040px;
-    height: 841px;
+    width: 100% ;
+    height: 80vh ;
     display: flex;
     flex-direction: row;
     align-items: center;
     grid-template-columns: auto auto ;
     grid-gap: 2em; 
-    padding-right: 6.5em;
-    padding-left: 6.5em;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    
    
 `;
 export const ContainerPicture = styled.div`
@@ -136,8 +141,9 @@ export const ButtonPortafolio = styled.button`
 
 export const HeadPortafolio = styled.div`
         display: grid;
-        grid-template-columns: auto auto auto ;
-         transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+        width: 25vh;
+        height: 10vh;
+        transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
         border: ${borderBox};
         border-radius: ${borderRadius};
         cursor:pointer;
