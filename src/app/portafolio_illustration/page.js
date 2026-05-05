@@ -1,6 +1,6 @@
 import React from "react";
-import { Footer, Portafolio, Projects, sectionStyles, Section, Date } from "../styles/StylesParagraph.styles";
-import { ButtonPortafolio, ArticleStyles, HeroStyles, SectionStyles, ContainerPicture, Picture, FooterPicture, HeadPortafolio } from "../styles/stylesStroke";
+import { Footer, Portafolio, Projects, sectionStyles, Section, Date, HeadPhilosophy, Dropline, SocialNetwork, ReachOut } from "../styles/StylesParagraph.styles";
+import { ButtonPortafolio, ArticleStyles, HeroStyles, SectionStyles, ContainerPicture, Picture, FooterPicture, HeadPortafolio, BlankSpace, Parraph, FooterStyles } from "../styles/stylesStroke";
 import Link from "next/link";
 import Image from 'next/image';
 //import miImagen from '../concepart_1_2_export.jpg'
@@ -14,13 +14,19 @@ function PortafolioIllustrationForm (props){
     return(
         <ArticleStyles>
            <HeroStyles>
-                <HeadPortafolio>
-                    <Portafolio>
-                        Portafolio
-                    </Portafolio>
-                    <Section>
-                        illustration
-                    </Section>
+               <HeadPortafolio>
+                    <BlankSpace/>
+                    <BlankSpace/>
+                                    
+                                    <Portafolio>
+                                        Portafolio
+                                    </Portafolio>
+                                    <Section>
+                                        illustration
+                                    </Section>
+                    <BlankSpace/>
+                    <BlankSpace/>
+                                    
                 </HeadPortafolio>
             </HeroStyles>
             <SectionStyles>
@@ -37,7 +43,7 @@ function PortafolioIllustrationForm (props){
                         </Picture>
                     <FooterPicture>
                         <Projects>Concept Art</Projects>
-                        <Date>2027</Date>
+                        <Date>2026</Date>
                     </FooterPicture>
                 </ContainerPicture>
             </SectionStyles>
@@ -54,8 +60,8 @@ function PortafolioIllustrationForm (props){
                              </Link>
                         </Picture>
                     <FooterPicture>
-                        <Projects>Concept Art</Projects>
-                        <Date>2027</Date>
+                        <Projects>Chappel Roan</Projects>
+                        <Date>2026</Date>
                     </FooterPicture>
                 </ContainerPicture>
                 <ContainerPicture>
@@ -70,16 +76,31 @@ function PortafolioIllustrationForm (props){
                              </Link>
                         </Picture>
                     <FooterPicture>
-                        <Projects>Concept Art</Projects>
-                        <Date>2027</Date>
+                        <Projects>Carrie</Projects>
+                        <Date>2026</Date>
                     </FooterPicture>
                 </ContainerPicture>
             </SectionStyles>
-            <footer>
-                <Link  href="../about_me" passHref>
-                    <button>About me</button>
-                </Link>
-            </footer>
+            <FooterStyles> 
+                <Parraph>
+                    <ReachOut>Reach out</ReachOut>
+                    <Link href="mailto:mayalopezdesign@gmail.com">
+                        <SocialNetwork>Email</SocialNetwork>
+                    </Link>
+                    <Link href="https://www.linkedin.com/in/sergio-maya-l%C3%B3pez-6981b331a/">
+                        <SocialNetwork>Linkdln</SocialNetwork>
+                    </Link>
+                    <Link href="https://cara.app/icouldlie">
+                        <SocialNetwork>Cara App</SocialNetwork>
+                    </Link>
+               
+                </Parraph>
+                <Parraph>
+                    <HeadPhilosophy>my art philosophy</HeadPhilosophy>
+                    <Dropline>Behind every portfolio is a point of view. A great project page gives that sense of perspective to offer a glimpse of the person behind the work. Is it a particular artistic movement? A way of experiencing the world? What drives all these things to be the way they are?</Dropline>
+                </Parraph> 
+               
+            </FooterStyles>
         </ArticleStyles>
         
         

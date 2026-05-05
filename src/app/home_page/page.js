@@ -1,47 +1,66 @@
 import React from "react";
-import { Portafolio, Section } from "../styles/StylesParagraph.styles";
-import { ButtonPortafolio, sectionStyles } from "../styles/stylesStroke";
+import { Footer, Portafolio, Section } from "../styles/StylesParagraph.styles";
+import { BlankSpace, ButtonPortafolio, sectionStyles, ArticleStyles, SectionStyles } from "../styles/stylesStroke";
 import Link from "next/link";
-
+const linkDisplay = { 
+    display:"flex", 
+    justifyContent: "center"
+}
 function HomePageForm (props){
     return(
-        <article>
-            <Link href="..\portafolio_dev" passHref>
+        <ArticleStyles>
+            <section style={{display: "flex", flexDirection: "column", justifyContent:"center", marginTop: "20vh", marginBottom: "20vh"  }}>
+            <Link style = {linkDisplay} href="..\portafolio_dev" passHref>
                 <ButtonPortafolio>
                     <Portafolio>
                         Portafolio
                     </Portafolio>
+                    <BlankSpace></BlankSpace>
+                    <BlankSpace></BlankSpace>
+                    <BlankSpace></BlankSpace>
+                    <BlankSpace></BlankSpace>
                     <Section>
                         dev
                     </Section>
                 </ButtonPortafolio>
             </Link>
             
-            <Link href="..\portafolio_design" passHref>
+            <Link style = {linkDisplay} href="..\portafolio_design" passHref>
                 <ButtonPortafolio>
-                    <Section>
-                        design
-                    </Section>
+                    
+                    <BlankSpace></BlankSpace>
+                    <BlankSpace></BlankSpace>
                     <Portafolio>
                         Portafolio
                     </Portafolio>
+                    <Section>
+                        design
+                    </Section>
+                    <BlankSpace></BlankSpace>
+                    <BlankSpace></BlankSpace>
+                    
                 </ButtonPortafolio>
             </Link>
             
             
           
-            <Link href="..\portafolio_illustration" passHref>
+            <Link style = {linkDisplay} href="..\portafolio_illustration" passHref>
                 <ButtonPortafolio>
+                    <BlankSpace></BlankSpace>
+                    <BlankSpace></BlankSpace>
                     <Portafolio>
                         Portafolio
                     </Portafolio>
                     <Section>
                         illustration
                     </Section>
+                    <BlankSpace></BlankSpace>
+                    <BlankSpace></BlankSpace>
                 </ButtonPortafolio>
             </Link>
-            
-        </article>
+            </section>
+         </ArticleStyles>
+        
         
     )
 }

@@ -15,6 +15,18 @@ export const Head = styled.h1`
     line-height: 110%; 
 `;
 
+export const HeadPhilosophy = styled.h2`
+    font-family: 'Dm Mono' ;
+    font-size: 3em ;
+    font-weight: normal;
+    color : black;
+    text-align: right;
+    letter-sparcing: -5%;
+    line-height: 110%;
+    margin-bottom: 5%;
+    
+`;
+
 export const Subtitle = styled.h2`
     font-family: 'Dm Mono';
     font-weight: medium;
@@ -26,8 +38,9 @@ export const Subtitle = styled.h2`
 export const Dropline = styled.h3`
     font-family:"Geist Mono", monospace;
     font-weight: bold;
-    font-size: 0.9 rem ;
+    font-size: 0.9em ;
     color : ${greyColor} ;
+    text-align: right;
 
 `;
 
@@ -94,29 +107,41 @@ export const Date = styled.p`
      line-height: 120%; 
 
 `;
+export const ReachOut = styled.h3`
+    font-family: "Dm Mono", monospace;
+    font-weight: medium ;
+    font-size: 2em ;
+    color : black ;
+    letter-spacing: -2%;
+    line-height: 120%;
+    margin-bottom: 1em; 
+
+`;
 
 export const LabelSocialMedia = styled.p`
     font-family: "Fragment Mono", monospace;
     font-weight: regular ;
-    font-size: 2 rem ;
+    font-size: 2em ;
     color : black ;
     letter-spacing: -2%;
-     line-height: 120%; 
+    line-height: 120%;
+    margin-bottom: 1em;  
 
 `;
 
 export const SocialNetwork = styled.p`
     font-family: "Fragment Mono", monospace;
     font-weight: regular ;
-    font-size: 1.8 rem ;
+    font-size: 0.8em ;
     color : black ;
-     line-height: 145%; 
+    line-height: 145%;
+    margin-bottom: 0.5em;  
 
 `;
 export const PortafolioPress = styled.p`
     font-family: "Cutive Mono", monospace;
     font-weight: regular ;
-    font-size: 2.5 rem ;
+    font-size: 2.5em ;
     color : black ;
     letter-spacing: -2.5%;
      line-height: 110%; 
@@ -137,7 +162,7 @@ export const Portafolio = styled.p`
     margin: 10px;
     font-family:"Inter", sans-serif;
     font-weight: bold ;
-    font-size: 2rem ;
+    font-size: 1.5em ;
     color : black ;
     letter-spacing: -2.5%;
      line-height: 110%; 
@@ -146,7 +171,7 @@ export const Portafolio = styled.p`
 export const Section = styled.h1`
     margin: 0px 10px 10px 0px  ;
     font-family: 'Dm Mono';
-    font-size: 3rem ;
+    font-size: 2.5em ;
     font-weight: normal;
     color : black;
     letter-sparcing: -5%;
