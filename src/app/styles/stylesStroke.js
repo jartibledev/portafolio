@@ -34,8 +34,9 @@ export const HeroStyles = styled.footer`
 
 export const Picture = styled.div`
     width: 100%;
-    max-width: 500px;
-    height: 780px;
+    height: 100%;
+    overflow: hidden;
+    
     border-radius: 16px;
     transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
     cursor:pointer;  
@@ -55,27 +56,31 @@ export const FooterPicture = styled.div`
     
 `;
 export const SectionStyles = styled.section`
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-auto-flow: row;
+    width: 1040px;
+    height: 841px;
+    display: flex;
+    flex-direction: row;
     align-items: center;
     grid-template-columns: auto auto ;
     grid-gap: 2em; 
-    padding: 6em 0 0 6em;
+    padding-right: 6.5em;
+    padding-left: 6.5em;
+   
 `;
 export const ContainerPicture = styled.div`
     width: 100%;
     height: 100%;
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
+    flex-direction: column;
     align-items: start;
     grid-template-columns: auto auto ;
     grid-gap: 1.5em;
 
      &:hover ${Picture} {
             filter: none;
-            backdrop-filter: none;
+            
+            transform: none !important; /* Desactiva cualquier escala */
+            transition: none !important; /* Quita animaciones */
         } 
 
       &:hover ${FooterPicture} {

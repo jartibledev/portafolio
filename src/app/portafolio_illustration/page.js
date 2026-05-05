@@ -4,6 +4,10 @@ import { ButtonPortafolio, ArticleStyles, HeroStyles, SectionStyles, ContainerPi
 import Link from "next/link";
 import Image from 'next/image';
 //import miImagen from '../concepart_1_2_export.jpg'
+const styleImage ={
+   objectFit: 'cover',
+    objectPosition: 'center'  
+}
 
 function PortafolioIllustrationForm (props){
     return(
@@ -24,7 +28,7 @@ function PortafolioIllustrationForm (props){
                         <Image src="/images/concepart_1_2_export.jpg"
                         alt = "illustration concept art"
                         fill
-                        style= {{ objectFit: 'cover' }}
+                        style= {styleImage}
                         >
                               
                         </Image>
