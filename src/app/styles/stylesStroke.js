@@ -147,6 +147,31 @@ export const SectionStyles = styled.section`
    
 `;
 
+export const SectionAboutMeStyles = styled.section`
+    width: 100% ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    animation: ${animationEntry} 2s ease-in-out forwards;
+    
+   
+`;
+export const ContainersAboutMeStyles = styled.div`
+    width: 100% ;
+    height: 20rem;
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+    margin-left: 5%;
+    animation: ${animationEntry} 2s ease-in-out forwards;
+    
+   
+`;
+
 export const PhilosophySection = styled.section`
     width: 100% ;
     height: 80vh ;
@@ -194,6 +219,32 @@ export const ContainerPicture = styled.div`
         filter:blur(9px);
         backdrop-filter: blur(9px);   
     }   
+`;
+export const ContainerPictureAboutMe = styled.div`
+    width: 100%;
+    height:100%;
+  
+    display: flex;
+    flex-direction: arrow;
+    align-items: start;
+    margin-left: 5%;
+    margin-right: 5%;
+`;
+export const ContainerPictureAboutMeBlur = styled.div`
+    width: 100%;
+    height: 25vh ;
+    min-height: 10rem;
+    display: flex;
+    flex-direction: arrow;
+    align-items: start;
+    margin-left: 5%;
+    margin-right: 5%;
+     transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ; 
+    filter:blur(9px);
+    backdrop-filter: blur(9px);
+     &:hover {
+            filter: none;
+        }  
 `;
 
 export const BlankSpace = styled.div`

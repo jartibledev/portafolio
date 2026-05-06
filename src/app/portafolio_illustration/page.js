@@ -134,7 +134,7 @@ function PortafolioIllustrationForm (props){
                
             </PhilosophySection>
             <FooterStyles ref={sectionRef} $isVisible={isVisible}>
-                <Link style = {linkDisplay} href="..\portafolio_dev" passHref>
+                <Link style = {linkDisplay} href="..\about_me" passHref>
                 <ButtonPortafolio>
                     <Portafolio>
                         About
