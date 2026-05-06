@@ -98,10 +98,11 @@ export const Projects = styled.p`
 
 `;
 
-export const Date = styled.p`
+export const DateFooter = styled.p`
     font-family: "Fragment Mono", monospace;
     font-weight: regular ;
-    font-size: 1.8 rem ;
+    font-size: 1.8em ;
+    
     color : ${greyColor} ;
     letter-spacing: -2%;
      line-height: 120%; 
@@ -182,12 +183,20 @@ export const Section = styled.h1`
     line-height: 110%; 
 `;
 export const Work = styled.p`
-    font-family: "Inter", sans-serif;
-    font-weight: bold ;
-    font-size: 3 rem ;
+    font-family: "Dm Mono";
+    font-weight: medium ;
+    font-size: 2em ;
     color : black ;
     letter-spacing: -2%;
-     line-height: 110%; 
+    line-height: 120%; 
+
+`;
+export const Courses = styled.p`
+    font-family: "Dm Mono";
+    font-weight: medium ;
+    font-size: 1em ;
+    color : gray ;
+    line-height: 145%; 
 
 `;
 

@@ -119,16 +119,17 @@ export const Picture = styled.div`
     
 `;
 export const FooterPicture = styled.div`
-    display: flex;
-    justify-content: space-between;
     width: 100%;
-    height: 10%;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
     transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
     cursor:pointer;
     filter: none;
     backdrop-filter: none;
     padding-top: 1em;
     pading-bottom: 1em;  
+    justify-content: space-between;
     
     
 `;
@@ -152,25 +153,26 @@ export const SectionAboutMeStyles = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 25%;
-    padding-right: 25%;
+    padding-left: 10%;
+    padding-right: 10%;
     padding-top: 1em;
     padding-bottom: 1em;
     animation: ${animationEntry} 2s ease-in-out forwards;
     
    
 `;
-export const ContainersAboutMeStyles = styled.div`
+
+export const GalleryAboutMeStyles = styled.div`
     width: 100% ;
-    height: 20rem;
+    min-width: 20vh;
     display: flex;
     flex-direction: row;
-    margin-top: 5%;
-    margin-left: 5%;
     animation: ${animationEntry} 2s ease-in-out forwards;
     
    
 `;
+
+
 
 export const PhilosophySection = styled.section`
     width: 100% ;
@@ -222,18 +224,17 @@ export const ContainerPicture = styled.div`
 `;
 export const ContainerPictureAboutMe = styled.div`
     width: 100%;
-    height:100%;
-  
+    height: 20em;
     display: flex;
     flex-direction: arrow;
-    align-items: start;
     margin-left: 5%;
     margin-right: 5%;
+    position: relative;
 `;
 export const ContainerPictureAboutMeBlur = styled.div`
     width: 100%;
-    height: 25vh ;
-    min-height: 10rem;
+    height: 50vh;
+    
     display: flex;
     flex-direction: arrow;
     align-items: start;
@@ -305,6 +306,8 @@ export const HeadPortafolio = styled.div`
         }       
 `;
 export const Parraph = styled.div`
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     margin-left: 5%;

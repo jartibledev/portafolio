@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
-import { Footer, Portafolio, Projects, sectionStyles, Section, Date, HeadPhilosophy, Dropline, SocialNetwork, ReachOut } from "../styles/StylesParagraph.styles";
+import { Footer, Portafolio, Projects, sectionStyles, Section, DateFooter, HeadPhilosophy, Dropline, SocialNetwork, ReachOut } from "../styles/StylesParagraph.styles";
 import { ButtonPortafolio, ArticleStyles, HeroStyles, SectionStyles, ContainerPicture, Picture, FooterPicture, HeadPortafolio, BlankSpace, Parraph, FooterStyles, PhilosophySection } from "../styles/stylesStroke";
 import Link from "next/link";
 import Image from 'next/image';
@@ -75,7 +75,7 @@ function PortafolioDevForm (props){
                         </Picture>
                     <FooterPicture>
                         <Projects>Rename App</Projects>
-                        <Date>2026</Date>
+                        <DateFooter>2026</DateFooter>
                     </FooterPicture>
                 </ContainerPicture>
             </SectionStyles>
@@ -93,7 +93,7 @@ function PortafolioDevForm (props){
                         </Picture>
                     <FooterPicture>
                         <Projects>Monochromatic Palette</Projects>
-                        <Date>2026</Date>
+                        <DateFooter>2026</DateFooter>
                     </FooterPicture>
                 </ContainerPicture>
             </SectionStyles>

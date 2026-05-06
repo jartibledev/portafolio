@@ -1,14 +1,14 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
-import { ButtonStar, App, ButtonPortafolio, BlankSpace, HeadPortafolio, FooterStyles, ArticleStyles, SectionStyles, HeroStyles, Parraph, Picture, ContainerPicture, ContainerPictureAboutMeBlur, SectionAboutMeStyles, ContainerPictureAboutMe, ContainersAboutMeStyles  } from "../styles/stylesStroke"
-import { Head, Section, Portafolio, Subtitle, SocialNetwork, Dropline, Date, Contact, Footer, FooterText, FooterSubtitle, Projects, LabelSocialMedia,F, HeadPhilosophy    } from "../styles/StylesParagraph.styles"
+import {  HeadPortafolio,  ArticleStyles,  HeroStyles, Parraph, ContainerPictureAboutMeBlur, SectionAboutMeStyles, ContainerPictureAboutMe, GalleryAboutMeStyles, FooterPicture  } from "../styles/stylesStroke"
+import { Head, FooterText, HeadPhilosophy, Work, DateFooter, Courses    } from "../styles/StylesParagraph.styles"
 import FooterForm from "../footer";
 import Link from 'next/link';
 import Image from "next/image";
 import HomePageForm from "../home_page/page";
 
 const styleImage ={
-    objectFit: 'contain',
+    objectFit: 'cover',
     objectPosition: ' center',
       
 }
@@ -61,15 +61,16 @@ function CoverForm (props){
             
            </HeroStyles>
 
-           <SectionAboutMeStyles>
-            <ContainersAboutMeStyles>
+           <SectionAboutMeStyles style ={{ flexDirection: 'row'}}>
+            <GalleryAboutMeStyles>
             <ContainerPictureAboutMeBlur>
                 <Image src="/images/image_bio.jpg"
                         alt = "picture of me"
                         fill
                         style= {styleImage}></Image>
                 
-            </ContainerPictureAboutMeBlur>
+            </ContainerPictureAboutMeBlur> 
+            </GalleryAboutMeStyles>
                 <Parraph>
                    <HeadPhilosophy>
                     hi!
@@ -86,7 +87,7 @@ function CoverForm (props){
                         connections, so let's connect!
                    </FooterText>
                 </Parraph>
-            </ContainersAboutMeStyles>
+           
            </SectionAboutMeStyles>
                 
            <SectionAboutMeStyles>
@@ -100,29 +101,74 @@ function CoverForm (props){
                     </FooterText>
                 </Parraph>
 
-                <ContainersAboutMeStyles>   
-                    <ContainerPictureAboutMe>
-                        <ContainerPictureAboutMe style={styleLogos}>
-                        <Image src="/images/LOGOUMA.jpg"
-                        alt = "picture of me"
-                        fill
-                        ></Image>
+                <GalleryAboutMeStyles>   
+                    
+                        <ContainerPictureAboutMe >
+                            <Image src="/images/LOGOUMA.jpg"
+                            alt = "picture of me"
+                            fill
+                            style={styleImage}
+                            ></Image>
                         </ContainerPictureAboutMe>
-                        <ContainerPictureAboutMe style={styleLogos}>
-                        <Image src="/images/LOGOUPV.png"
-                        alt = "picture of me"
-                        fill
-                        ></Image>
+                        <ContainerPictureAboutMe >
+                            <Image src="/images/UPV-Emblem.png"
+                            alt = "picture of me"
+                            fill
+                            style={styleImage}
+                            ></Image>
                         </ContainerPictureAboutMe>
-                        <ContainerPictureAboutMe style={styleLogos}>
-                        <Image src="/images/LOGO_STANDFORD.png"
-                        alt = "picture of me"
-                        fill
-                        ></Image>
+                        <ContainerPictureAboutMe >
+                            <Image src="/images/LOGO_STANDFORD.png"
+                            alt = "picture of me"
+                            fill
+                            style={styleImage}
+                            ></Image>
                         </ContainerPictureAboutMe>
 
-                    </ContainerPictureAboutMe>
-                </ContainersAboutMeStyles>
+                    
+                </GalleryAboutMeStyles>
+                <Parraph>
+                    <FooterPicture>
+                        <Work>
+                            University of Málaga
+                        </Work>
+                        <DateFooter>
+                            2018-2023
+                        </DateFooter>
+                    </FooterPicture>
+                    <FooterPicture>
+                        <Courses>
+                            Extense Course of Adobe Illustrator
+                        </Courses>
+                    </FooterPicture>
+                    <FooterPicture>
+                        <Courses>
+                            Extense Course of Adobe Indesign
+                        </Courses>
+                    </FooterPicture>
+                    <FooterPicture>
+                        <Courses>
+                            Extense Course of Fashion Illustration
+                        </Courses>
+                    </FooterPicture>
+                    
+                    <FooterPicture>
+                        <Work>
+                            Politechnic University of València
+                        </Work>
+                        <DateFooter>
+                            2023-Actuality 
+                        </DateFooter>
+                    </FooterPicture>
+                    <FooterPicture>
+                        <Work>
+                            University of Standford
+                        </Work>
+                        <DateFooter>
+                            2026
+                        </DateFooter>
+                    </FooterPicture>
+                </Parraph>
            </SectionAboutMeStyles>
            <SectionAboutMeStyles>
 
