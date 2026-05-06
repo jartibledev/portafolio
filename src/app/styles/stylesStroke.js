@@ -25,6 +25,16 @@ const animationEntry = keyframes`
     transform: translateX(0);
   }
 `;
+const animationEntryRight = keyframes`
+ from {
+    opacity: 0;
+    transform: translateX(200%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
 const animationBottom = keyframes`
  from {
     opacity: 0;
@@ -148,6 +158,18 @@ export const SectionStyles = styled.section`
    
 `;
 
+export const IntroSectionAboutMeStyles = styled.section`
+    width: 100% ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 2%;
+    animation: ${animationEntry} 2s ease-in-out forwards;
+    
+   
+`;
 export const SectionAboutMeStyles = styled.section`
     width: 100% ;
     display: flex;
@@ -157,7 +179,21 @@ export const SectionAboutMeStyles = styled.section`
     padding-right: 10%;
     padding-top: 1em;
     padding-bottom: 1em;
-    animation: ${animationEntry} 2s ease-in-out forwards;
+    margin-bottom: 10%;
+
+    opacity: 0;
+    transform: translateX(-100px); 
+    filter: blur(10px);
+
+    transition: opacity 0.8s ease-out, 
+              transform 0.8s cubic-bezier(0.17, 0.55, 0.55, 1),
+              filter 0.8s ease-out;
+
+    ${({ $isVisible }) => $isVisible && css`
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0px);
+  `}
     
    
 `;
@@ -167,7 +203,9 @@ export const GalleryAboutMeStyles = styled.div`
     min-width: 20vh;
     display: flex;
     flex-direction: row;
-    animation: ${animationEntry} 2s ease-in-out forwards;
+    margin-bottom: 5%;
+     animation: ${animationEntry} 2s ease-in-out forwards;
+
     
    
 `;
@@ -312,4 +350,5 @@ export const Parraph = styled.div`
     flex-direction: column;
     margin-left: 5%;
     margin-right: 5%;
+    margin-bottom: 5%;
 `;

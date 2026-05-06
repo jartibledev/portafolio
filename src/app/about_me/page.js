@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
-import {  HeadPortafolio,  ArticleStyles,  HeroStyles, Parraph, ContainerPictureAboutMeBlur, SectionAboutMeStyles, ContainerPictureAboutMe, GalleryAboutMeStyles, FooterPicture  } from "../styles/stylesStroke"
+import {  HeadPortafolio,  ArticleStyles,  HeroStyles, Parraph, ContainerPictureAboutMeBlur, SectionAboutMeStyles, IntroSectionAboutMeStyles, ContainerPictureAboutMe, GalleryAboutMeStyles, FooterPicture  } from "../styles/stylesStroke"
 import { Head, FooterText, HeadPhilosophy, Work, DateFooter, Courses    } from "../styles/StylesParagraph.styles"
 import FooterForm from "../footer";
 import Link from 'next/link';
@@ -48,7 +48,7 @@ function CoverForm (props){
             }, []);
     return(
         <ArticleStyles>
-            <HeroStyles>
+            <HeroStyles >
             <Link href="../home_page" passHref >
                 <button>Back to hompe page</button>
             </Link>
@@ -61,8 +61,8 @@ function CoverForm (props){
             
            </HeroStyles>
 
-           <SectionAboutMeStyles style ={{ flexDirection: 'row'}}>
-            <GalleryAboutMeStyles>
+           <IntroSectionAboutMeStyles style= {{flexDirection: 'row'}}>
+            <GalleryAboutMeStyles >
             <ContainerPictureAboutMeBlur>
                 <Image src="/images/image_bio.jpg"
                         alt = "picture of me"
@@ -71,7 +71,7 @@ function CoverForm (props){
                 
             </ContainerPictureAboutMeBlur> 
             </GalleryAboutMeStyles>
-                <Parraph>
+                <Parraph  >
                    <HeadPhilosophy>
                     hi!
                    </HeadPhilosophy>
@@ -88,9 +88,9 @@ function CoverForm (props){
                    </FooterText>
                 </Parraph>
            
-           </SectionAboutMeStyles>
+           </IntroSectionAboutMeStyles>
                 
-           <SectionAboutMeStyles>
+           <SectionAboutMeStyles ref={sectionRef} $isVisible={isVisible} >
                 
                 <Parraph>
                     <HeadPhilosophy style={{textAlign: 'left'}}>
@@ -101,7 +101,7 @@ function CoverForm (props){
                     </FooterText>
                 </Parraph>
 
-                <GalleryAboutMeStyles>   
+                <GalleryAboutMeStyles  >   
                     
                         <ContainerPictureAboutMe >
                             <Image src="/images/LOGOUMA.jpg"
@@ -127,7 +127,7 @@ function CoverForm (props){
 
                     
                 </GalleryAboutMeStyles>
-                <Parraph>
+                <Parraph >
                     <FooterPicture>
                         <Work>
                             University of Málaga
