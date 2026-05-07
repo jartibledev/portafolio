@@ -84,7 +84,6 @@ export const IntroStyles = styled.article`
 `;
 export const FooterStyles = styled.footer`
     width: 100%;
-    height: 50vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -214,7 +213,6 @@ export const GalleryAboutMeStyles = styled.div`
 
 export const PhilosophySection = styled.section`
     width: 100% ;
-    height: 80vh ;
     display: flex;
     flex-direction: row;
     align-items: center;
