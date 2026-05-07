@@ -101,7 +101,7 @@ export const Projects = styled.p`
 export const DateFooter = styled.p`
     font-family: "Fragment Mono", monospace;
     font-weight: regular ;
-    font-size: 1.8em ;
+    font-size: 1.25em ;
     
     color : ${greyColor} ;
     letter-spacing: -2%;
@@ -189,6 +189,16 @@ export const Work = styled.p`
     color : black ;
     letter-spacing: -2%;
     line-height: 120%; 
+
+`;
+export const DateWork = styled.p`
+    font-family: "Fragment Mono", monospace;
+    font-weight: regular ;
+    font-size: 2em ;
+    
+    color : ${greyColor} ;
+    letter-spacing: -2%;
+     line-height: 120%; 
 
 `;
 export const Courses = styled.p`

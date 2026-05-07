@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
-import {  HeadPortafolio,  ArticleStyles,  HeroStyles, Parraph, ContainerPictureAboutMeBlur, SectionAboutMeStyles, IntroSectionAboutMeStyles, ContainerPictureAboutMe, GalleryAboutMeStyles, FooterPicture  } from "../styles/stylesStroke"
-import { Head, FooterText, HeadPhilosophy, Work, DateFooter, Courses    } from "../styles/StylesParagraph.styles"
+import {  HeadPortafolio,  ArticleStyles,  HeroStyles, Parraph, ContainerPictureAboutMeBlur, SectionAboutMeStyles, IntroSectionAboutMeStyles, ContainerPictureAboutMe, GalleryAboutMeStyles, WorkNameAndDate, CourseSection, WorkSection, SliderContainer, SliderTrack, Slide  } from "../styles/stylesStroke"
+import { Head, FooterText, HeadPhilosophy, Work, DateWork, Courses    } from "../styles/StylesParagraph.styles"
 import FooterForm from "../footer";
 import Link from 'next/link';
 import Image from "next/image";
@@ -19,7 +19,21 @@ const styleLogos ={
    
       
 }
+
+const images = [
+  '/images/png-javascript-badge-picture-8.png',
+  '/images/HTML5.png',
+  '/images/CSS3.png',
+  '/images/react.png',
+  '/images/java_logo.png',
+  '/images/c++.svg',
+  '/images/vulkan.png',
+  '/images/opengl.png',
+  '/images/python.png',
+];
+
 function CoverForm (props){
+    const infiniteImages = [...images, ...images];
     const [isVisible, setIsVisible] = useState(false);
             const sectionRef = useRef(null);
     
@@ -101,7 +115,7 @@ function CoverForm (props){
                     </FooterText>
                 </Parraph>
 
-                <GalleryAboutMeStyles  >   
+                <GalleryAboutMeStyles >   
                     
                         <ContainerPictureAboutMe >
                             <Image src="/images/LOGOUMA.jpg"
@@ -128,49 +142,78 @@ function CoverForm (props){
                     
                 </GalleryAboutMeStyles>
                 <Parraph >
-                    <FooterPicture>
+                    <WorkSection>
+                    <WorkNameAndDate>
                         <Work>
                             University of Málaga
                         </Work>
-                        <DateFooter>
+                        <DateWork>
                             2018-2023
-                        </DateFooter>
-                    </FooterPicture>
-                    <FooterPicture>
+                        </DateWork>
+                    </WorkNameAndDate>
+                    <CourseSection>
                         <Courses>
                             Extense Course of Adobe Illustrator
                         </Courses>
-                    </FooterPicture>
-                    <FooterPicture>
+                    </CourseSection>
+                    <CourseSection>
                         <Courses>
                             Extense Course of Adobe Indesign
                         </Courses>
-                    </FooterPicture>
-                    <FooterPicture>
+                    </CourseSection>
+                    <CourseSection>
                         <Courses>
                             Extense Course of Fashion Illustration
                         </Courses>
-                    </FooterPicture>
-                    
-                    <FooterPicture>
+                    </CourseSection>
+                    </WorkSection>
+
+                    <WorkSection>
+                    <WorkNameAndDate>
                         <Work>
                             Politechnic University of València
                         </Work>
-                        <DateFooter>
+                        <DateWork>
                             2023-Actuality 
-                        </DateFooter>
-                    </FooterPicture>
-                    <FooterPicture>
+                        </DateWork>
+                    </WorkNameAndDate>
+                    </WorkSection>
+                    <WorkSection>
+                    <WorkNameAndDate>
                         <Work>
                             University of Standford
                         </Work>
-                        <DateFooter>
+                        <DateWork>
                             2026
-                        </DateFooter>
-                    </FooterPicture>
+                        </DateWork>
+                    </WorkNameAndDate>
+                </WorkSection>    
                 </Parraph>
            </SectionAboutMeStyles>
-           <SectionAboutMeStyles>
+           <SectionAboutMeStyles ref={sectionRef} $isVisible={isVisible}>
+                <Parraph>
+                    <HeadPhilosophy style={{textAlign: 'right'}}>
+                        skills
+                    </HeadPhilosophy>
+                    <FooterText>
+                        A little section to round out the professional purpose of this webpage. Who’s the person behind it, really? What do they like—and what are they like? Sections like this can go a little bit longer because it’s nice to learn more about what makes someone tick.
+                    </FooterText>
+                </Parraph>
+                <SliderContainer>
+                    <SliderTrack>
+                        {infiniteImages.map((src, index) => (
+                                <Slide key={index}>
+                                    <Image 
+                                    src={src} 
+                                    alt={`Trabajo ${index}`} 
+                                    width={150} 
+                                    height={150}
+                                    style={{ objectFit: 'contain', borderRadius: '10px' }}
+                                    />
+                                </Slide>
+                            ))}
+                    </SliderTrack>
+                </SliderContainer>
 
            </SectionAboutMeStyles>
            <SectionAboutMeStyles>

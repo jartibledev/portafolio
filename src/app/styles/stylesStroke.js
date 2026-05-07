@@ -50,6 +50,11 @@ const animationBottom = keyframes`
   }
 `;
 
+const scroll = keyframes`
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-250px * 9)); } /* Ancho de imagen * número de imágenes */
+`;
+
 export const App = styled.div`
     margin: 0;
     padding: 0;
@@ -68,6 +73,8 @@ export const IntroStyles = styled.article`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 20%;
+
     opacity: 0;
     transform: translateY(-100px); 
 
@@ -142,6 +149,58 @@ export const FooterPicture = styled.div`
     
     
 `;
+export const WorkSection = styled.div`
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+    cursor:pointer;
+    filter: none;
+    backdrop-filter: none;
+    padding-top: 1em;
+    pading-bottom: 1em;  
+    justify-content: space-between;
+    margin-bottom: 3%;
+    
+    
+`;
+export const WorkNameAndDate = styled.div`
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+    cursor:pointer;
+    filter: none;
+    backdrop-filter: none;
+    padding-top: 1em;
+    pading-bottom: 1em;  
+    justify-content: space-between;
+    margin-bottom: 2%;
+    
+    
+`;
+
+
+export const CourseSection = styled.div`
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+    cursor:pointer;
+    filter: none;
+    backdrop-filter: none;
+    padding-top: 1em;
+    pading-bottom: 1em;  
+    justify-content: space-between;
+    margin-bottom: 1.5%;
+    
+    
+`;
+
+
 export const SectionStyles = styled.section`
     width: 100% ;
     height: 80vh ;
@@ -178,7 +237,7 @@ export const SectionAboutMeStyles = styled.section`
     padding-right: 10%;
     padding-top: 1em;
     padding-bottom: 1em;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 
     opacity: 0;
     transform: translateX(-100px); 
@@ -349,4 +408,45 @@ export const Parraph = styled.div`
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 5%;
+`;
+
+
+
+export const SliderContainer = styled.div`
+  width: 100%;
+  height: 300px;
+  margin: auto;
+  overflow: hidden; /* Esconde lo que sale de la pantalla */
+  position: relative;
+  background: white;
+
+  /* Gradientes a los lados para efecto de desvanecido (opcional) */
+  &::before, &::after {
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+  }
+  &::before { left: 0; background: linear-gradient(to right, white 0%, rgba(255,255,255,0) 100%); }
+  &::after { right: 0; background: linear-gradient(to left, white 0%, rgba(255,255,255,0) 100%); }
+`;
+
+export const SliderTrack = styled.div`
+  display: flex;
+  width: calc(250px * 10); /* El doble de imágenes para el efecto infinito */
+  animation: ${scroll} 40s linear infinite;
+
+  &:hover {
+    animation-play-state: paused; /* Se detiene al poner el mouse */
+  }
+`;
+
+export const Slide = styled.div`
+  width: 250px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  position: relative;
 `;
