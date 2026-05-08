@@ -55,6 +55,8 @@ const scroll = keyframes`
   100% { transform: translateX(calc(-250px * 9)); } /* Ancho de imagen * número de imágenes */
 `;
 
+
+
 export const App = styled.div`
     margin: 0;
     padding: 0;
@@ -73,7 +75,7 @@ export const IntroStyles = styled.article`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 20%;
+    margin-top: 10%;
 
     opacity: 0;
     transform: translateY(-100px); 
@@ -223,7 +225,7 @@ export const IntroSectionAboutMeStyles = styled.section`
     align-items: center;
     padding-left: 10%;
     padding-right: 10%;
-    margin-bottom: 2%;
+     margin-bottom: 20%;
     animation: ${animationEntry} 2s ease-in-out forwards;
     
    
@@ -238,20 +240,6 @@ export const SectionAboutMeStyles = styled.section`
     padding-top: 1em;
     padding-bottom: 1em;
     margin-bottom: 5%;
-
-    opacity: 0;
-    transform: translateX(-100px); 
-    filter: blur(10px);
-
-    transition: opacity 0.8s ease-out, 
-              transform 0.8s cubic-bezier(0.17, 0.55, 0.55, 1),
-              filter 0.8s ease-out;
-
-    ${({ $isVisible }) => $isVisible && css`
-    opacity: 1;
-    transform: translateX(0);
-    filter: blur(0px);
-  `}
     
    
 `;
@@ -449,4 +437,24 @@ export const Slide = styled.div`
   align-items: center;
   padding: 15px;
   position: relative;
+`;
+
+export const AnimatedSection = styled.div`
+  opacity: 0;
+  /* Estado inicial según dirección */
+  transform: ${props => props.$direction === 'left' ? 'translateX(-50px)' : 'translateX(50px)'};
+  filter: blur(5px);
+  
+  transition: 
+    opacity 0.6s ease-out, 
+    transform 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+    filter 0.6s ease-out;
+  
+  transition-delay: ${props => props.$delay};
+
+  ${({ $isVisible }) => $isVisible && css`
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0px);
+  `}
 `;

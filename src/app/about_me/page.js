@@ -2,10 +2,9 @@
 import React, { useEffect, useState, useRef} from "react";
 import {  HeadPortafolio,  ArticleStyles,  HeroStyles, Parraph, ContainerPictureAboutMeBlur, SectionAboutMeStyles, IntroSectionAboutMeStyles, ContainerPictureAboutMe, GalleryAboutMeStyles, WorkNameAndDate, CourseSection, WorkSection, SliderContainer, SliderTrack, Slide  } from "../styles/stylesStroke"
 import { Head, FooterText, HeadPhilosophy, Work, DateWork, Courses    } from "../styles/StylesParagraph.styles"
-import FooterForm from "../footer";
 import Link from 'next/link';
 import Image from "next/image";
-import HomePageForm from "../home_page/page";
+import ScrollReveal from "./ScrollReveal";
 
 const styleImage ={
     objectFit: 'cover',
@@ -46,8 +45,8 @@ function CoverForm (props){
                         }
                     },
                     {
-                        threshold: 0.05,
-                        rootMargin: "0px 0px -50px 0px"
+                        threshold: 0.01,
+                        rootMargin: "0px 0px 1000px 0px"
                     }
                 );
     
@@ -103,8 +102,8 @@ function CoverForm (props){
                 </Parraph>
            
            </IntroSectionAboutMeStyles>
-                
-           <SectionAboutMeStyles ref={sectionRef} $isVisible={isVisible} >
+            <ScrollReveal direction="right" delay="0.2s">
+           <SectionAboutMeStyles ref={sectionRef} $isVisible={isVisible} $direction="right" $delay="4s" >
                 
                 <Parraph>
                     <HeadPhilosophy style={{textAlign: 'left'}}>
@@ -190,7 +189,8 @@ function CoverForm (props){
                 </WorkSection>    
                 </Parraph>
            </SectionAboutMeStyles>
-           <SectionAboutMeStyles ref={sectionRef} $isVisible={isVisible}>
+           </ScrollReveal>    
+           <SectionAboutMeStyles >
                 <Parraph>
                     <HeadPhilosophy style={{textAlign: 'right'}}>
                         skills
