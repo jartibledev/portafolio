@@ -310,6 +310,7 @@ export const ContainerPictureAboutMe = styled.div`
     height: 20em;
     display: flex;
     flex-direction: arrow;
+    justify-content: flex-start
     margin-left: 5%;
     margin-right: 5%;
     position: relative;
@@ -317,7 +318,6 @@ export const ContainerPictureAboutMe = styled.div`
 export const ContainerPictureAboutMeBlur = styled.div`
     width: 100%;
     height: 50vh;
-    
     display: flex;
     flex-direction: arrow;
     align-items: start;
@@ -457,4 +457,11 @@ export const AnimatedSection = styled.div`
     transform: translateX(0);
     filter: blur(0px);
   `}
+`;
+export const AlbumImages = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10%;
+
 `;

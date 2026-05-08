@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
-import {  HeadPortafolio,  ArticleStyles,  HeroStyles, Parraph, ContainerPictureAboutMeBlur, SectionAboutMeStyles, IntroSectionAboutMeStyles, ContainerPictureAboutMe, GalleryAboutMeStyles, WorkNameAndDate, CourseSection, WorkSection, SliderContainer, SliderTrack, Slide  } from "../styles/stylesStroke"
+import {  HeadPortafolio,  ArticleStyles,  HeroStyles, Parraph, ContainerPictureAboutMeBlur, SectionAboutMeStyles, IntroSectionAboutMeStyles, ContainerPictureAboutMe, GalleryAboutMeStyles, WorkNameAndDate, CourseSection, WorkSection, SliderContainer, SliderTrack, Slide, AlbumImages  } from "../styles/stylesStroke"
 import { Head, FooterText, HeadPhilosophy, Work, DateWork, Courses    } from "../styles/StylesParagraph.styles"
 import Link from 'next/link';
 import Image from "next/image";
@@ -16,6 +16,32 @@ const styleLogos ={
     objectPosition: ' center',
     width: "200px"
    
+      
+}
+const styleLogosLeanguages ={
+    objectFit: 'contain',
+    objectPosition: ' center',
+    width: '25%'
+      
+}
+const styleLogosLeanguagesProgressBar ={
+    objectFit: 'contain',
+    objectPosition: ' center',
+    width:'100%'
+      
+}
+const styleLogoImageLeanguages ={
+    objectFit: 'contain',
+    objectPosition: ' center',
+      
+}
+const styleLogoImageLeanguagesGallery ={
+    objectFit: 'contain',
+    objectPosition: ' center',
+    overFlow: 'hiden',
+    width: '100%',
+    height: '2vh',
+    marginBottom: ' 20%'
       
 }
 
@@ -221,24 +247,84 @@ function CoverForm (props){
            </ScrollReveal>
 
            <ScrollReveal>
-           <SectionAboutMeStyles >
-                                <Parraph>
-                                        <HeadPhilosophy style= {{textAlign: 'left'}}>
-                                            leanguages
-                                        </HeadPhilosophy>
-                                        <ContainerPictureAboutMe>
-                                            
-                                        </ContainerPictureAboutMe>
-                                        <ContainerPictureAboutMe>
-                                            
-                                        </ContainerPictureAboutMe>
-                                        <ContainerPictureAboutMe>
-                                            
-                                        </ContainerPictureAboutMe>
-                                </Parraph>
+                <SectionAboutMeStyles >
+                                        <Parraph>
+                                                <HeadPhilosophy style= {{textAlign: 'left'}}>
+                                                    leanguages
+                                                </HeadPhilosophy>
+                                                <AlbumImages style ={{width: '100%'}}>
+                                                        <GalleryAboutMeStyles style={styleLogoImageLeanguagesGallery}>
+                                                            <ContainerPictureAboutMe style={styleLogosLeanguages}>
+                                                                <Image src="/images/Spanish_flag.svg"
+                                                                    alt = "Spanish flag"
+                                                                    fill
+                                                                    style={styleLogoImageLeanguages}
+                                                                    ></Image>
+                                                                    </ContainerPictureAboutMe>
+                                                            <ContainerPictureAboutMe style={styleLogosLeanguagesProgressBar}>
+                                                                <Image src="/images/progress_bar_Spanish.svg"
+                                                                    alt = "Progress bar Spain"
+                                                                    fill
+                                                                    style={styleLogoImageLeanguages}
+                                                                    ></Image>
+                                                            </ContainerPictureAboutMe>        
+                                                        </GalleryAboutMeStyles>
 
-                    
-           </SectionAboutMeStyles>
+                                                    <GalleryAboutMeStyles  style={styleLogoImageLeanguagesGallery}>
+                                                        <ContainerPictureAboutMe style={styleLogosLeanguages}>
+                                                            <Image src="/images/England_flag.svg"
+                                                                alt = "UK flag"
+                                                                fill
+                                                                style={styleLogoImageLeanguages}
+                                                                ></Image>
+                                                        </ContainerPictureAboutMe>
+                                                        <ContainerPictureAboutMe style={styleLogosLeanguagesProgressBar}>
+                                                                <Image src="/images/progress_bar_english.svg"
+                                                                alt = "Progress bar English"
+                                                                fill
+                                                                style={styleLogoImageLeanguages}
+                                                                ></Image>
+                                                        </ContainerPictureAboutMe>    
+                                                    </GalleryAboutMeStyles>
+
+                                                    <GalleryAboutMeStyles  style={styleLogoImageLeanguagesGallery}>
+                                                        <ContainerPictureAboutMe style={styleLogosLeanguages}>
+                                                            <Image src="/images/French_flag.svg"
+                                                                alt = "French flag"
+                                                                fill
+                                                                style={styleLogoImageLeanguages}
+                                                                ></Image>
+                                                        </ContainerPictureAboutMe>
+                                                        <ContainerPictureAboutMe style={styleLogosLeanguagesProgressBar}>
+                                                                <Image src="/images/progress_bar_French.svg"
+                                                                alt = "Progress bar French"
+                                                                fill
+                                                                style={styleLogoImageLeanguages}
+                                                                ></Image>
+                                                        </ContainerPictureAboutMe>    
+                                                    </GalleryAboutMeStyles>
+
+                                                    <GalleryAboutMeStyles>
+                                                        <ContainerPictureAboutMe style={styleLogosLeanguages}>
+                                                            <Image src="/images/German_flag.svg"
+                                                                alt = "German flag"
+                                                                fill
+                                                                style={styleLogoImageLeanguages}
+                                                                ></Image>
+                                                        </ContainerPictureAboutMe>
+                                                        <ContainerPictureAboutMe style={styleLogosLeanguagesProgressBar}>
+                                                                <Image src="/images/progress_bar_German.svg"
+                                                                alt = "Progress bar German"
+                                                                fill
+                                                                style={styleLogoImageLeanguages}
+                                                                ></Image>
+                                                        </ContainerPictureAboutMe>
+                                                    </GalleryAboutMeStyles>
+                                                </AlbumImages>
+                                        </Parraph>
+
+                            
+                </SectionAboutMeStyles>
            </ScrollReveal>
 
             <ScrollReveal>
