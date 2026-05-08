@@ -4,7 +4,7 @@ import {  HeadPortafolio,  ArticleStyles,  HeroStyles, Parraph, ContainerPicture
 import { Head, FooterText, HeadPhilosophy, Work, DateWork, Courses    } from "../styles/StylesParagraph.styles"
 import Link from 'next/link';
 import Image from "next/image";
-import ScrollReveal from "./ScrollReveal";
+import ScrollReveal from "../ScrollReveal";
 
 const styleImage ={
     objectFit: 'cover',
@@ -73,7 +73,7 @@ function CoverForm (props){
                 </HeadPortafolio>
             
            </HeroStyles>
-
+            
            <IntroSectionAboutMeStyles style= {{flexDirection: 'row'}}>
             <GalleryAboutMeStyles >
             <ContainerPictureAboutMeBlur>
@@ -115,7 +115,6 @@ function CoverForm (props){
                 </Parraph>
 
                 <GalleryAboutMeStyles >   
-                    
                         <ContainerPictureAboutMe >
                             <Image src="/images/LOGOUMA.jpg"
                             alt = "picture of me"
@@ -189,7 +188,8 @@ function CoverForm (props){
                 </WorkSection>    
                 </Parraph>
            </SectionAboutMeStyles>
-           </ScrollReveal>    
+           </ScrollReveal>
+           <ScrollReveal direction="right" delay="0.2s">    
            <SectionAboutMeStyles >
                 <Parraph>
                     <HeadPhilosophy style={{textAlign: 'right'}}>
@@ -199,29 +199,86 @@ function CoverForm (props){
                         A little section to round out the professional purpose of this webpage. Who’s the person behind it, really? What do they like—and what are they like? Sections like this can go a little bit longer because it’s nice to learn more about what makes someone tick.
                     </FooterText>
                 </Parraph>
-                <SliderContainer>
-                    <SliderTrack>
-                        {infiniteImages.map((src, index) => (
-                                <Slide key={index}>
-                                    <Image 
-                                    src={src} 
-                                    alt={`Trabajo ${index}`} 
-                                    width={150} 
-                                    height={150}
-                                    style={{ objectFit: 'contain', borderRadius: '10px' }}
-                                    />
-                                </Slide>
-                            ))}
-                    </SliderTrack>
-                </SliderContainer>
+                <ScrollReveal  direction="right" delay="0.5s">
+                    <SliderContainer>
+                        <SliderTrack>
+                            {infiniteImages.map((src, index) => (
+                                    <Slide key={index}>
+                                        <Image 
+                                        src={src} 
+                                        alt={`Trabajo ${index}`} 
+                                        width={150} 
+                                        height={150}
+                                        style={{ objectFit: 'contain', borderRadius: '10px' }}
+                                        />
+                                    </Slide>
+                                ))}
+                        </SliderTrack>
+                    </SliderContainer>
+                </ScrollReveal>
 
            </SectionAboutMeStyles>
-           <SectionAboutMeStyles>
+           </ScrollReveal>
 
-           </SectionAboutMeStyles>
-           <SectionAboutMeStyles>
+           <ScrollReveal>
+           <SectionAboutMeStyles >
+                                <Parraph>
+                                        <HeadPhilosophy style= {{textAlign: 'left'}}>
+                                            leanguages
+                                        </HeadPhilosophy>
+                                        <ContainerPictureAboutMe>
+                                            
+                                        </ContainerPictureAboutMe>
+                                        <ContainerPictureAboutMe>
+                                            
+                                        </ContainerPictureAboutMe>
+                                        <ContainerPictureAboutMe>
+                                            
+                                        </ContainerPictureAboutMe>
+                                </Parraph>
 
+                    
            </SectionAboutMeStyles>
+           </ScrollReveal>
+
+            <ScrollReveal>
+                <SectionAboutMeStyles>
+                    <Parraph>
+                        <HeadPhilosophy>
+                            interests and hobbies
+                        </HeadPhilosophy>
+                        <FooterText>
+                            A little section to round out the professional purpose of this webpage. Who’s the person behind it, really? What do they like—and what are they like? Sections like this can go a little bit longer because it’s nice to learn more about what makes someone tick.
+                        </FooterText>
+                    </Parraph>
+                    <GalleryAboutMeStyles >   
+                    
+                        <ContainerPictureAboutMe >
+                            <Image src="/images/LOGOUMA.jpg"
+                            alt = "picture of me"
+                            fill
+                            style={styleImage}
+                            ></Image>
+                        </ContainerPictureAboutMe>
+                        <ContainerPictureAboutMe >
+                            <Image src="/images/UPV-Emblem.png"
+                            alt = "picture of me"
+                            fill
+                            style={styleImage}
+                            ></Image>
+                        </ContainerPictureAboutMe>
+                        <ContainerPictureAboutMe >
+                            <Image src="/images/LOGO_STANDFORD.png"
+                            alt = "picture of me"
+                            fill
+                            style={styleImage}
+                            ></Image>
+                        </ContainerPictureAboutMe>
+
+                    
+                </GalleryAboutMeStyles>
+                </SectionAboutMeStyles>
+           </ScrollReveal>
            <SectionAboutMeStyles>
 
            </SectionAboutMeStyles>

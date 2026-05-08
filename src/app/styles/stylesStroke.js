@@ -225,7 +225,7 @@ export const IntroSectionAboutMeStyles = styled.section`
     align-items: center;
     padding-left: 10%;
     padding-right: 10%;
-     margin-bottom: 20%;
+     margin-bottom: 10%;
     animation: ${animationEntry} 2s ease-in-out forwards;
     
    
@@ -442,7 +442,7 @@ export const Slide = styled.div`
 export const AnimatedSection = styled.div`
   opacity: 0;
   /* Estado inicial según dirección */
-  transform: ${props => props.$direction === 'left' ? 'translateX(-50px)' : 'translateX(50px)'};
+  transform: ${props => props.$direction === 'left' ? 'translateX(-50px)' : props.$direction === 'right' ? 'translateX(50px)' : props.$direction === 'down' ? 'translateY(-50px)' : props.$direction === 'up' ? 'translateY(50px)' : 'translateY(0px)' };
   filter: blur(5px);
   
   transition: 
