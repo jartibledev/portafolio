@@ -22,7 +22,7 @@ function PortafolioIllustrationForm (props){
     return(
         <ArticleComponent>
             
-           <SectionComponent height="40vh">
+           <SectionComponent height="50vh" >
                <rectangleComponent>
                     <BlankSpaceComponent/>
                     <BlankSpaceComponent/>
@@ -39,7 +39,7 @@ function PortafolioIllustrationForm (props){
                 </rectangleComponent>
             </SectionComponent>
             <FirstAnimation>
-            <SectionComponent height="50vh">
+            <SectionComponent height="80vh" flexDirection="row">
                 <ContainerPictureComponent>
                         <PictureComponent  height="100%">
                             <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">

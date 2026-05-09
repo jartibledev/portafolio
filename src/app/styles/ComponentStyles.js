@@ -153,7 +153,6 @@ export const PictureComponent = styled.div`
     width:  ${props => props.width || "100%"};
     height: ${props => props.height || "auto"};
     min-height: ${props => props.minheight || "250px"};
-    
     overflow:  ${props => props.overflow || "hidden"};
     border-radius:${props => props.borderRadius || "16px"};
     cursor: ${props => props.cursor || "pointer"};
@@ -162,19 +161,6 @@ export const PictureComponent = styled.div`
     backdrop-filter: ${props => props.backdropfilter || "blur(9px)"};
     
     transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;
-    
-    img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover; /* Crucial para que no se deforme */
-        display: block;
-        
-        /* Herencia de opacidad para ScrollReveal */
-        opacity: inherit !important; 
-        transition: inherit !important;
-        animation: none !important;  
-  }
-
 `;
 
 export const ContainerPictureComponent = styled.div`
