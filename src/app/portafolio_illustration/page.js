@@ -60,7 +60,7 @@ function PortafolioIllustrationForm (props){
            </FirstAnimation>
 
            
-            <SectionComponent flexdirection="row"  >
+            <SectionComponent flexdirection="row" height="auto"  >
                <ScrollReveal>
                 <ContainerPictureComponent > 
                     

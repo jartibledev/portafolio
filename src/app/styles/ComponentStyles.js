@@ -161,6 +161,18 @@ export const PictureComponent = styled.div`
     backdrop-filter: ${props => props.backdropfilter || "blur(9px)"};
     
     transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;
+
+    img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover; /* Crucial para que no se deforme */
+        display: block;
+        
+        /* Herencia de opacidad para ScrollReveal */
+        opacity: inherit !important; 
+        transition: inherit !important;
+        animation: none !important; 
+    }
 `;
 
 export const ContainerPictureComponent = styled.div`
@@ -188,7 +200,8 @@ export const AnimatedSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: stretch; /* Obliga a los hijos (Picture) a expandirse */
-  
+  margin-right: ${props => (props.marginright || "5%" )};
+  margin-left: ${props => (props.marginleft || "5%" )};
   /* 2. ESTADO INICIAL */
   opacity: 0;
   filter: blur(5px);
