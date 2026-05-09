@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { AnimatedSection } from './styles/stylesStroke'; // Importa tus estilos
 
-export default function ScrollReveal({ children, delay = "0s", direction = "left" }) {
+export default function ScrollReveal({ children, delay = "0s", direction = "left", opacity = "0", filter = "blur(5px)", opacityTransition = "opacity 0.6s ease-out", transform = "transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)", filterTransition="filter 0.6s ease-out"   }) {
   const [isVisible, setIsVisible] = useState(false);
   const domRef = useRef();
 
@@ -37,6 +37,12 @@ export default function ScrollReveal({ children, delay = "0s", direction = "left
       $isVisible={isVisible} 
       $delay={delay}
       $direction={direction}
+      opacity={opacity}
+      filter={filter}
+      opacityTransition={opacityTransition}
+      transform={transform}
+      filterTransition={filterTransition}
+
     >
       {children}
     </AnimatedSection>

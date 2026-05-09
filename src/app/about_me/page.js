@@ -5,6 +5,7 @@ import { Head, FooterText, HeadPhilosophy, Work, DateWork, Courses    } from "..
 import Link from 'next/link';
 import Image from "next/image";
 import ScrollReveal from "../ScrollReveal";
+import { GalleryComponent } from "../styles/ComponentStyles";
 
 const styleImage ={
     objectFit: 'cover',
@@ -89,7 +90,11 @@ function CoverForm (props){
             }, []);
     return(
         <ArticleStyles>
+            
             <HeroStyles >
+                <GalleryComponent width='100%'>
+
+            </GalleryComponent>
             <Link href="../home_page" passHref >
                 <FooterText>Back to see my others portafolios</FooterText> 
             </Link>
