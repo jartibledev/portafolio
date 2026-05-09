@@ -164,12 +164,18 @@ export const PictureComponent = styled.div`
     
     transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;
 
+    isolation: isolate;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
     img {
         /* Esto obliga a la imagen a seguir la opacidad del ScrollReveal */
         opacity: inherit !important;
         width: 100% !important;
         height: 100% !important;
         object-fit: cover;
+        transition: transform 0.4s ease-out;
     }
 `;
 
@@ -193,47 +199,42 @@ export const ContainerPictureComponent = styled.div`
      
 `;
 export const AnimatedSection = styled.div`
-  /* ARREGLO DE TAMAÑO: Esto evita que las imágenes se vean pequeñas */
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
 
-  /* ESTADO INICIAL (Para evitar el Pop) */
+  /* 1. ESTADO ATÓMICO INICIAL */
   opacity: 0;
-  /* Usamos visibility para que no 'popee' antes de tiempo */
-  visibility: ${props => (props.$isVisible ? 'visible' : 'hidden')};
-  filter: ${props => props.filter || "blur(5px)"};
+  visibility: hidden;
+  /* El will-change prepara al navegador para la animación y evita el parpadeo */
+  will-change: opacity, transform; 
   
   transform: ${props => {
-    if (props.$direction === 'none') return 'translate(0,0)';
-    const offset = '50px';
-    switch (props.$direction) {
-      case 'left': return `translateX(-${offset})`;
-      case 'right': return `translateX(${offset})`;
-      case 'down': return `translateY(-${offset})`;
-      case 'up': return `translateY(${offset})`;
-      default: return `translateY(${offset})`;
-    }
+    const offset = '100px';
+    if (props.$direction === 'left') return `translateX(-${offset})`;
+    if (props.$direction === 'right') return `translateX(${offset})`;
+    return `translateY(${offset})`;
   }};
 
-  /* TRANSICIONES */
+  /* 2. TRANSICIÓN */
+  /* Aumentamos a 0.8s para que el ojo humano no perciba saltos bruscos */
   transition: 
-    ${props => props.opacitytransition || "opacity 0.6s ease-out"}, 
-    transform 0.6s cubic-bezier(0.23, 1, 0.32, 1),
-    ${props => props.filtertransition || "filter 0.6s ease-out"},
-    visibility 0.6s; /* Importante para suavizar el cambio de visibility */
-  
+    opacity 0.8s ease-out, 
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+    visibility 0.8s;
   transition-delay: ${props => props.$delay};
-
-  /* ESTADO VISIBLE */
+  margin-right: ${props => props.marginright || "5%"};
+  margin-left: ${props => props.margginleft || "5%"};
+  
+  /* 3. ESTADO VISIBLE */
   ${({ $isVisible }) => $isVisible && css`
-    opacity: 1;
-    filter: blur(0px);
-    transform: translate(0, 0); /* Resetea tanto X como Y */
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translate(0, 0) !important;
+    filter: none !important;
+    will-change: auto;
   `}
 `;
-
 
 
 export const FirstAnimation = styled.div`

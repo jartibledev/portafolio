@@ -9,7 +9,9 @@ import Image from 'next/image';
 //import miImagen from '../concepart_1_2_export.jpg'
 const styleImage ={
     objectFit: 'cover',
-    objectPosition: ' top'
+    objectPosition: ' top',
+    opacity: "inherit",
+    transition: "inherit"
       
 }
 const linkDisplay = { 
@@ -45,8 +47,12 @@ function PortafolioIllustrationForm (props){
                             <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">
                             <Image src="/images/concepart_1_2_export.jpg"
                             alt = "illustration concept art"
+                            priority={false}
                             fill
                             style= {styleImage}
+                            onLoadingComplete={(img) => {
+                            img.style.opacity = "1";
+                            }}
                             >
                             </Image>
                              </Link>
@@ -61,7 +67,7 @@ function PortafolioIllustrationForm (props){
 
            
             <SectionComponent flexdirection="row" height="auto"  >
-               <ScrollReveal >
+               <ScrollReveal  >
                 <ContainerPictureComponent > 
                     
                         <PictureComponent >
@@ -69,7 +75,11 @@ function PortafolioIllustrationForm (props){
                             <Image src="/images/experimentation_2_export_to_web.jpg"
                             alt = "Chappel Roan"
                             fill
+                            priority={false}
                             style= {styleImage}
+                            onLoadingComplete={(img) => {
+                            img.style.opacity = "1";
+                            }}
                             >
                             </Image>
                              </Link>
@@ -88,7 +98,11 @@ function PortafolioIllustrationForm (props){
                                 <Image src="/images/minadesolada_web_export.jpg"
                                 alt = "illustration concept art"
                                 fill
+                                priority={false}
                                 style= {styleImage}
+                                onLoadingComplete={(img) => {
+                                img.style.opacity = "1";
+                                }}
                                 >
                                 </Image>
                                 </Link>
