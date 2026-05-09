@@ -22,7 +22,7 @@ function PortafolioIllustrationForm (props){
     return(
         <ArticleComponent>
             
-           <SectionComponent height="100%" >
+           <SectionComponent height="40vh">
                <rectangleComponent>
                     <BlankSpaceComponent/>
                     <BlankSpaceComponent/>
@@ -39,9 +39,9 @@ function PortafolioIllustrationForm (props){
                 </rectangleComponent>
             </SectionComponent>
             <FirstAnimation>
-            <SectionComponent>
+            <SectionComponent height="50vh">
                 <ContainerPictureComponent>
-                        <PictureComponent>
+                        <PictureComponent  height="100%">
                             <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">
                             <Image src="/images/concepart_1_2_export.jpg"
                             alt = "illustration concept art"
@@ -60,10 +60,11 @@ function PortafolioIllustrationForm (props){
            </FirstAnimation>
 
            
-            <SectionComponent flexdirection="row" >
-                <ScrollReveal direction="right">
-                <ContainerPictureComponent >
-                        <PictureComponent height="auto">
+            <SectionComponent flexdirection="row"  >
+               <ScrollReveal>
+                <ContainerPictureComponent > 
+                    
+                        <PictureComponent >
                             <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">
                             <Image src="/images/experimentation_2_export_to_web.jpg"
                             alt = "Chappel Roan"
@@ -79,8 +80,9 @@ function PortafolioIllustrationForm (props){
                     </FooterPictureComponent>
                 </ContainerPictureComponent>
                </ScrollReveal>
-               <ScrollReveal direction="left">
+               <ScrollReveal >
                     <ContainerPictureComponent>
+                        
                             <PictureComponent height="auto">
                                 <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">
                                 <Image src="/images/minadesolada_web_export.jpg"
@@ -94,13 +96,14 @@ function PortafolioIllustrationForm (props){
                         <FooterPictureComponent>
                             <Projects>Carrie</Projects>
                             <DateFooter>2026</DateFooter>
-                        </FooterPictureComponent>
+                        </FooterPictureComponent> 
+                      
                     </ContainerPictureComponent>
-                    </ScrollReveal> 
+                     </ScrollReveal> 
               
             </SectionComponent> 
            
-            <ScrollReveal direction="left">
+            <ScrollReveal >
                 <SectionComponent> 
                     <TextComponent>
                         <ReachOut>Reach out</ReachOut>

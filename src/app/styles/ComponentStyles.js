@@ -27,6 +27,7 @@ const animationEntryBlured = keyframes`
 
 export const ArticleComponent = styled.article`
     display: flex;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
 
@@ -55,9 +56,7 @@ export const SectionComponent = styled.section`
     align-items: ${props => props.alignitems || "center"};
     padding-left: ${props => props.paddingleft || "25%"};
     padding-right: ${props => props.paddingright || "25%"};
-    padding-top:  ${props => props.paddingtop || "1em"};
-    padding-bottom: ${props => props.paddingbottom || "1em"};
-    margin-bottom: ${props => props.paddingbottom || "10%"};
+    padding-bottom: ${props => props.paddingbottom || "2%"};
 `;
 
 export const TextComponent = styled.div`
@@ -109,23 +108,73 @@ export const FooterPictureComponent = styled.div`
     
 `;
 
+export const PictureComponent1 = styled.div`
+    /* 1. Dimensiones: Usamos flex para asegurar que el contenido llene el espacio */
+    width:  ${props => props.width || "100%"};
+    height: ${props => props.height || "auto"}; /* 'auto' es mejor si no controlas la altura del padre */
+    min-height: ${props => props.minHeight || "250px"};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* 2. Estética corregida */
+    overflow: ${props => props.overflow || "hidden"};
+    border-radius: ${props => props.borderRadius || "16px"}; /* Corregido de props.overflow */
+    cursor: ${props => props.cursor || "pointer"};
+    position: relative;
+
+    /* 3. Filtros iniciales (Ojo: si dejas blur por defecto, se verá borroso siempre) */
+    filter: ${props => props.filter || "none"}; 
+    backdrop-filter: ${props => props.backdropfilter || "none"};
+    
+    /* 4. Transiciones */
+    transition: filter 300ms ease-out, backdrop-filter 300ms ease-out, opacity 0.6s ease-out;
+
+    /* 5. Ajuste de la imagen interna */
+    img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover; /* Crucial para que no se deforme */
+        display: block;
+        
+        /* Herencia de opacidad para ScrollReveal */
+        opacity: inherit !important; 
+        transition: inherit !important;
+        animation: none !important; 
+    }
+
+    /* Efecto Hover opcional para probar los filtros */
+    &:hover {
+        filter: ${props => props.hoverFilter || "brightness(1.1)"};
+    }
+`;
+
 export const PictureComponent = styled.div`
     width:  ${props => props.width || "100%"};
-    height: ${props => props.height || "100%"};
-    display: block;
+    height: ${props => props.height || "auto"};
+    min-height: ${props => props.minHeight || "250px"};
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow:  ${props => props.overflow || "hidden"};
-    min-height: 250px;
-    border-radius:${props => props.overflow || "16px"};
-    transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
-    cursor: ${props => props.cursor || "pointer"};  
+    border-radius:${props => props.borderRadius || "16px"};
+    cursor: ${props => props.cursor || "pointer"};
+    position: relative;    
     filter: ${props => props.filter || "blur(16px)"};
     backdrop-filter: ${props => props.backdropfilter || "blur(9px)"};
-    position: relative;
+    
+    transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;
+    
     img {
-    display: block;
-    width: 100% !important;
-    height: auto !important;
-    position: relative !important; /* Si no usas fill, asegúrate de que sea relativa */
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover; /* Crucial para que no se deforme */
+        display: block;
+        
+        /* Herencia de opacidad para ScrollReveal */
+        opacity: inherit !important; 
+        transition: inherit !important;
+        animation: none !important;  
   }
 
 `;
@@ -135,9 +184,8 @@ export const ContainerPictureComponent = styled.div`
     height: ${props => props.height || "100%"};
     display: ${props => props.display || "flex"};
     flex-direction: ${props => props.flexdirection || "column"};
-    align-items: ${props => props.alignitems || "start"};
-    margin-left:  ${props => props.marginLeft || "20%"};
-    margin-right:  ${props => props.marginRight || "20%"};
+    margin-left:  ${props => props.marginLeft || "5%"};
+    margin-right:  ${props => props.marginRight || "5%"};
 
     &:hover ${PictureComponent} {
                 filter: none;
@@ -150,27 +198,51 @@ export const ContainerPictureComponent = styled.div`
     
      
 `;
-
 export const AnimatedSection = styled.div`
-  opacity: ${props => props.opacity || "0"};
-  /* Estado inicial según dirección */
-  transform: ${props => props.$direction === 'left' ? 'translateX(-50px)' : props.$direction === 'right' ? 'translateX(50px)' : props.$direction === 'down' ? 'translateY(-50px)' : props.$direction === 'up' ? 'translateY(50px)' : props.$direction === 'none' ? 'translateY(0)' : 'translateX(0)' };
-  filter: ${props => props.filter || "blur(5px)"};
+  /* 1. CORRECCIÓN DE TAMAÑO Y ESTRUCTURA */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Obliga a los hijos (Picture) a expandirse */
   
-    transition: ${props => props.opacityTransition || "opacity 0.6s ease-out"};
-    transition:${props => props.transform  || "transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)" };
-    transition:${props => props.filtertransition || "filter 0.6s ease-out"};
-
-  transition-delay: ${props => props.$delay};
-
+  /* 2. ESTADO INICIAL */
+  opacity: 0;
+  filter: blur(5px);
+  /* Mantenemos el elemento oculto para el puntero hasta que sea visible */
+  visibility: ${props => (props.$isVisible ? 'visible' : 'hidden')};
   
+  transform: ${props => {
+    switch (props.$direction) {
+      case 'left': return 'translateX(-50px)';
+      case 'right': return 'translateX(50px)';
+      case 'down': return 'translateY(-50px)';
+      case 'up': return 'translateY(50px)';
+      default: return 'translateY(0px)';
+    }
+  }};
 
+  /* 3. OPTIMIZACIÓN DE RENDIMIENTO */
+  will-change: opacity, transform, filter;
+
+  /* 4. TRANSICIONES */
+  transition: 
+    ${props => props.opacityTransition || "opacity 0.8s ease-out"}, 
+    ${props => props.$direction === "none" ? "" : "transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)"},
+    ${props => props.filtertransition || "filter 0.8s ease-out"},
+    visibility 0.8s;
+  
+  transition-delay: ${props => props.$delay || "0s"};
+
+  /* 5. ESTADO VISIBLE (CORREGIDO) */
   ${({ $isVisible }) => $isVisible && css`
     opacity: 1;
-    transform: translateX(0);
     filter: blur(0px);
+    /* IMPORTANTE: Usamos 'translate(0,0)' para resetear tanto X como Y */
+    transform: translate(0, 0);
   `}
 `;
+
+
 
 export const FirstAnimation = styled.div`
     animation: ${animationEntryBlured} 2s ease-in-out forwards;
