@@ -153,6 +153,8 @@ export const PictureComponent = styled.div`
     width:  ${props => props.width || "100%"};
     height: ${props => props.height || "auto"};
     min-height: ${props => props.minheight || "250px"};
+    display: block;
+    position: relative;
     overflow:  ${props => props.overflow || "hidden"};
     border-radius:${props => props.borderRadius || "16px"};
     cursor: ${props => props.cursor || "pointer"};
@@ -163,15 +165,11 @@ export const PictureComponent = styled.div`
     transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;
 
     img {
+        /* Esto obliga a la imagen a seguir la opacidad del ScrollReveal */
+        opacity: inherit !important;
         width: 100% !important;
         height: 100% !important;
-        object-fit: cover; /* Crucial para que no se deforme */
-        display: block;
-        
-        /* Herencia de opacidad para ScrollReveal */
-        opacity: inherit !important; 
-        transition: inherit !important;
-        animation: none !important; 
+        object-fit: cover;
     }
 `;
 
@@ -195,47 +193,44 @@ export const ContainerPictureComponent = styled.div`
      
 `;
 export const AnimatedSection = styled.div`
-  /* 1. CORRECCIÓN DE TAMAÑO Y ESTRUCTURA */
+  /* ARREGLO DE TAMAÑO: Esto evita que las imágenes se vean pequeñas */
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: stretch; /* Obliga a los hijos (Picture) a expandirse */
-  margin-right: ${props => (props.marginright || "5%" )};
-  margin-left: ${props => (props.marginleft || "5%" )};
-  /* 2. ESTADO INICIAL */
+  align-items: stretch;
+
+  /* ESTADO INICIAL (Para evitar el Pop) */
   opacity: 0;
-  filter: blur(5px);
-  /* Mantenemos el elemento oculto para el puntero hasta que sea visible */
+  /* Usamos visibility para que no 'popee' antes de tiempo */
   visibility: ${props => (props.$isVisible ? 'visible' : 'hidden')};
+  filter: ${props => props.filter || "blur(5px)"};
   
   transform: ${props => {
+    if (props.$direction === 'none') return 'translate(0,0)';
+    const offset = '50px';
     switch (props.$direction) {
-      case 'left': return 'translateX(-50px)';
-      case 'right': return 'translateX(50px)';
-      case 'down': return 'translateY(-50px)';
-      case 'up': return 'translateY(50px)';
-      default: return 'translateY(0px)';
+      case 'left': return `translateX(-${offset})`;
+      case 'right': return `translateX(${offset})`;
+      case 'down': return `translateY(-${offset})`;
+      case 'up': return `translateY(${offset})`;
+      default: return `translateY(${offset})`;
     }
   }};
 
-  /* 3. OPTIMIZACIÓN DE RENDIMIENTO */
-  will-change: opacity, transform, filter;
-
-  /* 4. TRANSICIONES */
+  /* TRANSICIONES */
   transition: 
-    ${props => props.opacityTransition || "opacity 0.8s ease-out"}, 
-    ${props => props.$direction === "none" ? "" : "transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)"},
-    ${props => props.filtertransition || "filter 0.8s ease-out"},
-    visibility 0.8s;
+    ${props => props.opacitytransition || "opacity 0.6s ease-out"}, 
+    transform 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+    ${props => props.filtertransition || "filter 0.6s ease-out"},
+    visibility 0.6s; /* Importante para suavizar el cambio de visibility */
   
-  transition-delay: ${props => props.$delay || "0s"};
+  transition-delay: ${props => props.$delay};
 
-  /* 5. ESTADO VISIBLE (CORREGIDO) */
+  /* ESTADO VISIBLE */
   ${({ $isVisible }) => $isVisible && css`
     opacity: 1;
     filter: blur(0px);
-    /* IMPORTANTE: Usamos 'translate(0,0)' para resetear tanto X como Y */
-    transform: translate(0, 0);
+    transform: translate(0, 0); /* Resetea tanto X como Y */
   `}
 `;
 
@@ -265,7 +260,7 @@ export const rectangleComponent = styled.div`
     display: ${props => props.display || 'grid'};
     grid-template-columns: ${props => props.gridTemplateColumns || 'auto auto auto'} ;
     transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
-    border: ${props => props.border || '1.2em solid black'} ;
+    border: ${props => props.border || '1.2rem solid black'} ;
     border-radius: ${props => props.borderRadius || ' border-radius: 0px'};
     cursor: ${props => props.cursor || ' pointer'};
     filter:  ${props => props.filter || ' none'};
