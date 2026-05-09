@@ -465,3 +465,16 @@ export const AlbumImages = styled.div`
     margin-bottom: 10%;
 
 `;
+
+export const ProgressBarContainer = styled.div`
+  width: 100%;
+  height: 50px;
+  border: 10px solid black;
+  margin: 20px;
+`;
+
+export const ProgressBar = styled.div`
+    width: ${props => props.progress || '25%'};
+    height: 100%;
+    background-color: black;
+`;

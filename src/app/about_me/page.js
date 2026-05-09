@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
-import {  HeadPortafolio,  ArticleStyles,  HeroStyles, Parraph, ContainerPictureAboutMeBlur, SectionAboutMeStyles, IntroSectionAboutMeStyles, ContainerPictureAboutMe, GalleryAboutMeStyles, WorkNameAndDate, CourseSection, WorkSection, SliderContainer, SliderTrack, Slide, AlbumImages  } from "../styles/stylesStroke"
+import {  HeadPortafolio,  ArticleStyles,  HeroStyles, Parraph, ContainerPictureAboutMeBlur, SectionAboutMeStyles, IntroSectionAboutMeStyles, ContainerPictureAboutMe, GalleryAboutMeStyles, WorkNameAndDate, CourseSection, WorkSection, SliderContainer, SliderTrack, Slide, AlbumImages, ProgressBarContainer, ProgressBar  } from "../styles/stylesStroke"
 import { Head, FooterText, HeadPhilosophy, Work, DateWork, Courses    } from "../styles/StylesParagraph.styles"
 import Link from 'next/link';
 import Image from "next/image";
@@ -27,7 +27,9 @@ const styleLogosLeanguages ={
 const styleLogosLeanguagesProgressBar ={
     objectFit: 'contain',
     objectPosition: ' center',
-    width:'100%'
+    width:'100%',
+    justifyContent: 'center', /* Centrado horizontal */
+  alignItems: 'center'
       
 }
 const styleLogoImageLeanguages ={
@@ -89,7 +91,7 @@ function CoverForm (props){
         <ArticleStyles>
             <HeroStyles >
             <Link href="../home_page" passHref >
-                <button>Back to hompe page</button>
+                <FooterText>Back to see my others portafolios</FooterText> 
             </Link>
                 <HeadPortafolio>
                     <Head>
@@ -261,12 +263,11 @@ function CoverForm (props){
                                                                     style={styleLogoImageLeanguages}
                                                                     ></Image>
                                                                     </ContainerPictureAboutMe>
+
                                                             <ContainerPictureAboutMe style={styleLogosLeanguagesProgressBar}>
-                                                                <Image src="/images/progress_bar_Spanish.svg"
-                                                                    alt = "Progress bar Spain"
-                                                                    fill
-                                                                    style={styleLogoImageLeanguages}
-                                                                    ></Image>
+                                                                <ProgressBarContainer>
+                                                                    <ProgressBar progress='100%'></ProgressBar>
+                                                                </ProgressBarContainer>
                                                             </ContainerPictureAboutMe>        
                                                         </GalleryAboutMeStyles>
 
@@ -279,11 +280,9 @@ function CoverForm (props){
                                                                 ></Image>
                                                         </ContainerPictureAboutMe>
                                                         <ContainerPictureAboutMe style={styleLogosLeanguagesProgressBar}>
-                                                                <Image src="/images/progress_bar_english.svg"
-                                                                alt = "Progress bar English"
-                                                                fill
-                                                                style={styleLogoImageLeanguages}
-                                                                ></Image>
+                                                                <ProgressBarContainer>
+                                                                    <ProgressBar progress='90%'></ProgressBar>
+                                                                </ProgressBarContainer>
                                                         </ContainerPictureAboutMe>    
                                                     </GalleryAboutMeStyles>
 
@@ -296,11 +295,9 @@ function CoverForm (props){
                                                                 ></Image>
                                                         </ContainerPictureAboutMe>
                                                         <ContainerPictureAboutMe style={styleLogosLeanguagesProgressBar}>
-                                                                <Image src="/images/progress_bar_French.svg"
-                                                                alt = "Progress bar French"
-                                                                fill
-                                                                style={styleLogoImageLeanguages}
-                                                                ></Image>
+                                                                <ProgressBarContainer>
+                                                                    <ProgressBar progress='40%'></ProgressBar>
+                                                                </ProgressBarContainer>
                                                         </ContainerPictureAboutMe>    
                                                     </GalleryAboutMeStyles>
 
@@ -313,11 +310,9 @@ function CoverForm (props){
                                                                 ></Image>
                                                         </ContainerPictureAboutMe>
                                                         <ContainerPictureAboutMe style={styleLogosLeanguagesProgressBar}>
-                                                                <Image src="/images/progress_bar_German.svg"
-                                                                alt = "Progress bar German"
-                                                                fill
-                                                                style={styleLogoImageLeanguages}
-                                                                ></Image>
+                                                               <ProgressBarContainer>
+                                                                    <ProgressBar progress='20%'></ProgressBar>
+                                                                </ProgressBarContainer>
                                                         </ContainerPictureAboutMe>
                                                     </GalleryAboutMeStyles>
                                                 </AlbumImages>
