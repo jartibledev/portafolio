@@ -152,10 +152,8 @@ export const PictureComponent1 = styled.div`
 export const PictureComponent = styled.div`
     width:  ${props => props.width || "100%"};
     height: ${props => props.height || "auto"};
-    min-height: ${props => props.minHeight || "250px"};
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-height: ${props => props.minheight || "250px"};
+    
     overflow:  ${props => props.overflow || "hidden"};
     border-radius:${props => props.borderRadius || "16px"};
     cursor: ${props => props.cursor || "pointer"};
