@@ -21,11 +21,26 @@ export const ArticleComponent = styled.article`
 
 `;
 
+const animationBottom = keyframes`
+ from {
+    opacity: 0;
+    transform: translateY(-100%);
+    filter:blur(9px);
+    backdrop-filter: blur(9px);
+  }
+  to {
+    
+    
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 export const SectionComponent = styled.section`
     width: ${props => props.width || "100%"} ;
-    height: ${props => props.height || "20vh"} ;
+    height: ${props => props.height || " 80vh"} ;
     display: ${props => props.display || "flex"};
-    flex-direction:${props => props.flexDirection || "column"};
+    flex-direction:${props => props.flexdirection || "column"};
     align-items: ${props => props.alignItems || "center"};
     padding-left: ${props => props.paddingLeft || "25%"};
     padding-right: ${props => props.paddingRight || "25%"};
@@ -66,7 +81,7 @@ export const WorkSection = styled.div`
     
     
 `;
-export const FooterPicture = styled.div`
+export const FooterPictureComponent = styled.div`
     width:  ${props => props.width || "100%"};
     flex: ${props => props.flex || "1"};
     display: ${props => props.display || "flex"};
@@ -82,7 +97,7 @@ export const FooterPicture = styled.div`
     
 `;
 
-export const Picture = styled.div`
+export const PictureComponent = styled.div`
     width:  ${props => props.width || "100%"};
     height: ${props => props.height || "100%"};
     overflow:  ${props => props.overflow || "100%"};
@@ -95,7 +110,7 @@ export const Picture = styled.div`
     
 `;
 
-export const ContainerPicture = styled.div`
+export const ContainerPictureComponent = styled.div`
     width:  ${props => props.width || "100%"};
     height: ${props => props.height || "100%"};
     display: ${props => props.display || "flex"};
@@ -104,11 +119,11 @@ export const ContainerPicture = styled.div`
     margin-left:  ${props => props.marginLeft || "5%"};
     margin-right:  ${props => props.marginRight || "5%"};
 
-    &:hover ${Picture} {
+    &:hover ${PictureComponent} {
                 filter: none;
             } 
     
-    &:hover ${FooterPicture} {
+    &:hover ${FooterPictureComponent} {
         filter:blur(9px);
         backdrop-filter: blur(9px);   
         } 
@@ -125,7 +140,7 @@ export const AnimatedSection = styled.div`
   transition: 
     ${props => props.opacityTransition || "opacity 0.6s ease-out"} , 
     ${props => props.transform || "transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)"},
-     ${props => props.filter || "filter 0.6s ease-out"};
+     ${props => props.filterTransition || "filter 0.6s ease-out"};
   
   transition-delay: ${props => props.$delay};
 
@@ -135,3 +150,49 @@ export const AnimatedSection = styled.div`
     filter: blur(0px);
   `}
 `;
+
+export const ProgressBarContainerComponent = styled.div`
+  width: 100%;
+  height: 50px;
+  border: 10px solid black;
+  margin: 20px;
+`;
+
+export const ProgressBarComponent = styled.div`
+    width: ${props => props.progress || '25%'};
+    height: 100%;
+    background-color: black;
+`;
+
+export const BlankSpaceComponent = styled.div`
+    padding: 2em ;
+`;
+export const rectangleComponent = styled.div`
+    display: ${props => props.display || 'grid'};
+    grid-template-columns: ${props => props.gridTemplateColumns || 'auto auto auto'} ;
+    transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+    border: ${props => props.border || '1.2rem solid black'} ;
+    border-radius: ${props => props.borderRadius || ' border-radius: 0px'};
+    cursor: ${props => props.cursor || ' pointer'};
+    filter:  ${props => props.filter || ' none'};
+    backdrop-filter:  ${props => props.backdropFilter || ' none'};
+    animation: ${animationBottom} 2s ease-in-out forwards;  
+    &:hover {
+    
+        filter:${props => props.filterHover || ' 9px'};
+        backdrop-filter: ${props => props.backdropFilterHover || 'blur(9px)'};
+    }
+`;
+
+export const FooterComponent = styled.footer`
+    width: ${props => props.width || "100%"};
+    display: ${props => props.display || 'flex'};
+    flex-direction: ${props => props.flexDirection || "row"};
+    justify-content: ${props => props.justifyContent || "center"};
+    padding-left: ${props => props.paddingLeft || "25%"};
+    padding-right: ${props => props.paddingRight || "25%"};
+    padding-top:  ${props => props.paddingTop || "2%"};
+    padding-bottom: ${props => props.paddingBottom || "2%"}
+
+  
+  `;

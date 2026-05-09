@@ -92,9 +92,6 @@ function CoverForm (props){
         <ArticleStyles>
             
             <HeroStyles >
-                <GalleryComponent width='100%'>
-
-            </GalleryComponent>
             <Link href="../home_page" passHref >
                 <FooterText>Back to see my others portafolios</FooterText> 
             </Link>
