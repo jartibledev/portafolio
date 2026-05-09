@@ -2,12 +2,14 @@
 import { useState, useEffect, useRef } from 'react';
 import { AnimatedSection } from './styles/stylesStroke'; // Importa tus estilos
 
-export default function ScrollReveal({ children, delay = "0s", direction = "left", opacity = "0", filter = "blur(5px)", opacityTransition = "opacity 0.6s ease-out", transform = "transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)", filterTransition="filter 0.6s ease-out"   }) {
+export default function ScrollReveal({ children, delay = "0s", direction = "left", opacity = "0", filter = "blur(5px)", opacitytransition = "opacity 0.6s ease-out", transform = "transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)", filtertransition="filter 0.6s ease-out", threshold ="0.1", rootMargin = "0px 0px -50px 0px", alltransition   }) {
   const [isVisible, setIsVisible] = useState(false);
   const domRef = useRef();
 
   useEffect(() => {
+    
     const observer = new IntersectionObserver(
+      
       ([entry]) => {
         // Si el elemento entra en el área (o está cerca de entrar)
        // Si entra en pantalla, lo mostramos
@@ -20,8 +22,8 @@ export default function ScrollReveal({ children, delay = "0s", direction = "left
         }
       },
       {
-        threshold: 0.1// Se activa cuando asoma el 10%
-        
+        threshold: threshold,// Se activa cuando asoma el 10%
+        rootMargin: rootMargin
       }
     );
 
@@ -39,9 +41,10 @@ export default function ScrollReveal({ children, delay = "0s", direction = "left
       $direction={direction}
       opacity={opacity}
       filter={filter}
-      opacityTransition={opacityTransition}
+      opacitytransition={opacitytransition}
       transform={transform}
-      filterTransition={filterTransition}
+      filtertransition={filtertransition}
+      alltransition={alltransition}
 
     >
       {children}
