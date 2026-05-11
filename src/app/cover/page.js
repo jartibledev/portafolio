@@ -1,13 +1,11 @@
 'use client'
-import React, { useEffect, useState, useRef} from "react";
-import { ButtonStar, App, ButtonPortafolio, BlankSpace, HeadPortafolio, FooterStyles, ArticleStyles, IntroStyles  } from "../styles/stylesStroke"
+import { useEffect , useState, useRef } from 'react';
+import { ArticleComponent, FirstAnimation, SectionComponent, RectangleComponent } from "../styles/ComponentStyles";
 import { Head, Section, Portafolio, Subtitle, SocialNetwork, Dropline, Date, Contact, Footer, FooterText, FooterSubtitle, Projects, LabelSocialMedia,F    } from "../styles/StylesParagraph.styles"
-import FooterForm from "../footer";
 import Link from 'next/link';
-import HomePageForm from "../home_page/page";
 
 function CoverForm (props){
-      const [isVisible, setIsVisible] = useState(false);
+        const [isVisible, setIsVisible] = useState(false);
                 const sectionRef = useRef(null);
     
                 useEffect(() =>{
@@ -19,7 +17,7 @@ function CoverForm (props){
                             }
                         },
                         {
-                            threshold: 0.05,
+                            threshold: 0.2,
                             rootMargin: "0px 0px -50px 0px"
                         }
                     );
@@ -33,21 +31,24 @@ function CoverForm (props){
                         }
                     };
                 }, []);
-    
-
     return(
-        <ArticleStyles>
-            <IntroStyles ref={sectionRef} $isVisible={isVisible}>
-            <Link href="../home_page" passHref >
-                <ButtonStar>
+        <ArticleComponent>
+            <FirstAnimation ref={sectionRef} $isVisible={isVisible}>
+            <SectionComponent height="auto">
+            
+            
+            <Link style ={{margin: 'auto', display: 'flex'}} href="../home_page" passHref >
+                <RectangleComponent filter="blur(9px)"  backdropfilter= "blur(9px)"  filterhover ="none" backdropfilterhover="none" >
                     <Head>
                         Start
                     </Head>
 
-                </ButtonStar>
+                </RectangleComponent>
             </Link>
-           </IntroStyles>
-        </ArticleStyles>
+    
+           </SectionComponent>
+           </FirstAnimation> 
+        </ArticleComponent>
         
     )
 }

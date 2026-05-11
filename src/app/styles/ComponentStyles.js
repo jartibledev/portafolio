@@ -183,7 +183,25 @@ export const AnimatedSection = styled.div`
 
 
 export const FirstAnimation = styled.div`
-    animation: ${animationEntryBlured} 2s ease-in-out forwards;
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10%;
+
+    opacity: 0;
+    transform: translateY(-100px); 
+
+    transition: opacity 2s ease-out, 
+              transform 2s cubic-bezier(0.17, 0.55, 0.55, 1),
+              filter 2s ease-out;
+      ${({ $isVisible }) => $isVisible && css`
+          opacity: 1;
+          transform: translateY(0);
+          filter: blur(0px);
+      `}
+
+
 `;
 
 export const ProgressBarContainerComponent = styled.div`
@@ -204,10 +222,10 @@ export const BlankSpaceComponent = styled.div`
 `;
 export const RectangleComponent = styled.div`
     display: ${props => props.display || 'grid'};
-    grid-template-columns: ${props => props.gridTemplateColumns || 'auto auto auto'} ;
+    grid-template-columns: ${props => props.gridtemplatecolumns || 'auto auto auto'} ;
     
     border: ${props => props.border || '1.2rem solid black'} ;
-    border-radius: ${props => props.borderRadius || ' border-radius: 0px'};
+    border-radius: ${props => props.borderradius || ' border-radius: 0px'};
     cursor: ${props => props.cursor || ' pointer'};
     filter:  ${props => props.filter || ' none'};
     backdrop-filter:  ${props => props.backdropfilter || ' none'};
@@ -215,8 +233,8 @@ export const RectangleComponent = styled.div`
     transform: translateZ(0);  
     &:hover {
         transform: translateY(-2px);
-        filter:${props => props.filterHover || ' 9px'};
-        backdrop-filter: ${props => props.backdropFilterHover || 'blur(9px)'};
+        filter:${props => props.filterhover || ' 9px'};
+        backdrop-filter: ${props => props.backdropfilterhover || 'blur(9px)'};
     }
     &:active{
     transform: translateY(0);
