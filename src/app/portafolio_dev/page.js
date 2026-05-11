@@ -1,13 +1,17 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
-import { Footer, Portafolio, Projects, sectionStyles, Section, DateFooter, HeadPhilosophy, Dropline, SocialNetwork, ReachOut } from "../styles/StylesParagraph.styles";
-import { ButtonPortafolio, ArticleStyles, HeroStyles, SectionStyles, ContainerPicture, Picture, FooterPicture, HeadPortafolio, BlankSpace, Parraph, FooterStyles, PhilosophySection } from "../styles/stylesStroke";
+import { Footer, Portafolio, Projects, Section, DateFooter, HeadPhilosophy, Dropline, SocialNetwork, ReachOut } from "../styles/StylesParagraph.styles";
+import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, FooterPictureComponent, PictureComponent, ContainerPictureComponent, RectangleComponent, FooterComponent, BlankSpaceComponent, FirstAnimation } from "../styles/ComponentStyles";
+import ScrollReveal from "../ScrollReveal";
 import Link from "next/link";
 import Image from 'next/image';
+
 //import miImagen from '../concepart_1_2_export.jpg'
 const styleImage ={
-    objectFit: 'contain',
-    objectPosition: ' center'
+    objectFit: 'cover',
+    objectPosition: ' top',
+    opacity: "inherit",
+    transition: "inherit"
       
 }
 const linkDisplay = { 
@@ -16,129 +20,148 @@ const linkDisplay = {
 }
 
 
-function PortafolioDevForm (props){
-    const [isVisible, setIsVisible] = useState(false);
-        const sectionRef = useRef(null);
-
-        useEffect(() =>{
-            const observer = new IntersectionObserver(
-                ([entry]) => {
-                    if(entry.isIntersecting){
-                        setIsVisible(true);
-                        observer.unobserve(entry.target)
-                    }
-                },
-                {
-                    threshold: 0.05,
-                    rootMargin: "0px 0px -50px 0px"
-                }
-            );
-
-            if (sectionRef.current){
-                observer.observe(sectionRef.current);
-            }
-            return()=>{
-                if(sectionRef.current){
-                    observer.unobserve(sectionRef.current);
-                }
-            };
-        }, []);
+function PortafolioIllustrationForm (props){
     return(
-        <ArticleStyles>
-           <HeroStyles>
-               <HeadPortafolio>
-                    <BlankSpace/>
-                    <BlankSpace/>
+        <ArticleComponent>
+            
+           <SectionComponent height="25vh" >
+               <RectangleComponent>
+                    <BlankSpaceComponent/>
+                    <BlankSpaceComponent/>
                                     
                                     <Portafolio>
                                         Portafolio
                                     </Portafolio>
                                     <Section>
-                                        dev
+                                        illustration
                                     </Section>
-                    <BlankSpace/>
-                    <BlankSpace/>
+                    <BlankSpaceComponent/>
+                    <BlankSpaceComponent/>
                                     
-                </HeadPortafolio>
-            </HeroStyles>
-            <SectionStyles>
-                <ContainerPicture>
-                        <Picture>
-                            <Link href="https://github.com/jartibledev/order-comic-pages.git">
-                            <Image src="/images/icon_rename.png"
-                            alt = "icon_rename_logo"
+                </RectangleComponent>
+            </SectionComponent>
+            <FirstAnimation>
+            <SectionComponent height="80vh" flexdirection="row">
+                <ContainerPictureComponent>
+                        <PictureComponent  height="100%">
+                            <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">
+                            <Image src="/images/concepart_1_2_export.jpg"
+                            alt = "illustration concept art"
+                            priority={false}
                             fill
                             style= {styleImage}
+                            onLoadingComplete={(img) => {
+                            img.style.opacity = "1";
+                            }}
                             >
                             </Image>
                              </Link>
-                        </Picture>
-                    <FooterPicture>
-                        <Projects>Rename App</Projects>
+                        </PictureComponent>
+                    <FooterPictureComponent>
+                        <Projects>Concept Art</Projects>
                         <DateFooter>2026</DateFooter>
-                    </FooterPicture>
-                </ContainerPicture>
-            </SectionStyles>
-            <SectionStyles>
-                <ContainerPicture>
-                        <Picture>
-                            <Link href="https://github.com/jartibledev/plugin-monochromatic-palette-generator.git">
-                            <Image src="/images/palette_generator_logo_web.jpg"
-                            alt = "Monochromatic Generator Pallete Icon"
+                    </FooterPictureComponent>
+                </ContainerPictureComponent>
+            </SectionComponent>
+           </FirstAnimation>
+
+           
+            <SectionComponent flexdirection="row" height="auto" paddingbottom = "5%"  >
+               <ScrollReveal $direction="left">
+                <ContainerPictureComponent > 
+                    
+                        <PictureComponent >
+                            <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">
+                            <Image src="/images/experimentation_2_export_to_web.jpg"
+                            alt = "Chappel Roan"
                             fill
+                            priority={false}
                             style= {styleImage}
+                            onLoadingComplete={(img) => {
+                            img.style.opacity = "1";
+                            }}
                             >
                             </Image>
                              </Link>
-                        </Picture>
-                    <FooterPicture>
-                        <Projects>Monochromatic Palette</Projects>
+                        </PictureComponent>
+                    <FooterPictureComponent>
+                        <Projects>Chappel Roan</Projects>
                         <DateFooter>2026</DateFooter>
-                    </FooterPicture>
-                </ContainerPicture>
-            </SectionStyles>
-            <PhilosophySection ref={sectionRef} $isVisible={isVisible} > 
-                <Parraph>
-                    <ReachOut>Reach out</ReachOut>
-                    <Link href="mailto:jartibledev@proton.me">
-                        <SocialNetwork>Email</SocialNetwork>
-                    </Link>
-                    <Link href="https://www.linkedin.com/in/sergio-maya-l%C3%B3pez-6981b331a/">
-                        <SocialNetwork>Linkdln</SocialNetwork>
-                    </Link>
-                    <Link href="https://github.com/jartibledev">
-                        <SocialNetwork>Git Hub</SocialNetwork>
-                    </Link>
-               
-                </Parraph>
-                <Parraph>
-                    <HeadPhilosophy>my code philosophy</HeadPhilosophy>
-                    <Dropline>Behind every portfolio is a point of view. A great project page gives that sense of perspective to offer a glimpse of the person behind the work. Is it a particular artistic movement? A way of experiencing the world? What drives all these things to be the way they are?</Dropline>
-                </Parraph> 
-               
-            </PhilosophySection>
-            <FooterStyles ref={sectionRef} $isVisible={isVisible}>
-                <Link style = {linkDisplay} href="..\portafolio_dev" passHref>
-                <ButtonPortafolio>
+                    </FooterPictureComponent>
+                </ContainerPictureComponent>
+               </ScrollReveal>
+               <ScrollReveal $direction={"right"} >
+                    <ContainerPictureComponent>
+                        
+                            <PictureComponent height="auto">
+                                <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">
+                                <Image src="/images/minadesolada_web_export.jpg"
+                                alt = "illustration concept art"
+                                fill
+                                priority={false}
+                                style= {styleImage}
+                                onLoadingComplete={(img) => {
+                                img.style.opacity = "1";
+                                }}
+                                >
+                                </Image>
+                                </Link>
+                            </PictureComponent>
+                        <FooterPictureComponent>
+                            <Projects>Carrie</Projects>
+                            <DateFooter>2026</DateFooter>
+                        </FooterPictureComponent> 
+                      
+                    </ContainerPictureComponent>
+                     </ScrollReveal> 
+              
+            </SectionComponent> 
+           
+            <ScrollReveal >
+                <SectionComponent flexdirection="row" height="auto" > 
+                    <TextComponent>
+                        <ReachOut>Reach out</ReachOut>
+                        <Link href="mailto:mayalopezdesign@gmail.com">
+                            <SocialNetwork>Email</SocialNetwork>
+                        </Link>
+                        <Link href="https://www.linkedin.com/in/sergio-maya-l%C3%B3pez-6981b331a/">
+                            <SocialNetwork>Linkdln</SocialNetwork>
+                        </Link>
+                        <Link href="https://cara.app/icouldlie">
+                            <SocialNetwork>Cara App</SocialNetwork>
+                        </Link>
+                
+                    </TextComponent>
+                    <TextComponent>
+                        <HeadPhilosophy>my art philosophy</HeadPhilosophy>
+                        <Dropline>Behind every portfolio is a point of view. A great project page gives that sense of perspective to offer a glimpse of the person behind the work. Is it a particular artistic movement? A way of experiencing the world? What drives all these things to be the way they are?</Dropline>
+                    </TextComponent> 
+                
+                </SectionComponent>
+            </ScrollReveal>
+            
+            <FooterComponent>
+                <Link style = {linkDisplay} href="..\about_me" passHref>
+                <RectangleComponent>
                     <Portafolio>
                         About
                     </Portafolio>
-                    <BlankSpace></BlankSpace>
-                    <BlankSpace></BlankSpace>
-                    <BlankSpace></BlankSpace>
-                    <BlankSpace></BlankSpace>
+                    <BlankSpaceComponent></BlankSpaceComponent>
+                    <BlankSpaceComponent></BlankSpaceComponent>
+                    <BlankSpaceComponent></BlankSpaceComponent>
+                    <BlankSpaceComponent></BlankSpaceComponent>
                     <Section>
                         me
                     </Section>
-                </ButtonPortafolio>
+                </RectangleComponent>
             </Link>
             
             
-            </FooterStyles>
-        </ArticleStyles>
+            </FooterComponent>
+        </ArticleComponent>
         
         
     )
 }
 
-export default PortafolioDevForm;
+export default PortafolioIllustrationForm;

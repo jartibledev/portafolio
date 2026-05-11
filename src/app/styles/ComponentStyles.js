@@ -3,16 +3,6 @@ import styled, { keyframes, css } from "styled-components";
 
 
 
-const animationEntry = keyframes`
- from {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-`;
 const animationEntryBlured = keyframes`
  from {
     opacity: 0;
@@ -48,6 +38,11 @@ const animationBottom = keyframes`
   }
 `;
 
+const scroll = keyframes`
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-250px * 9)); } /* Ancho de imagen * número de imágenes */
+`;
+
 export const SectionComponent = styled.section`
     width: ${props => props.width || "100%"} ;
     height: ${props => props.height || " 80vh"} ;
@@ -76,22 +71,6 @@ export const GalleryComponent = styled.div`
 
 `;
 
-export const WorkSection = styled.div`
-    width:  ${props => props.width || "100%"};
-    flex: ${props => props.flex || "1"};
-    display: ${props => props.display || "flex"};
-    flex-direction: ${props => props.flexdirection || "column"};
-    transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
-    cursor: ${props => props.cursor || "pointer"};
-    filter: ${props => props.filter || "none"};
-    backdrop-filter:  ${props => props.backdropfilter || "none"};
-    padding-top:  ${props => props.paddingtop || "1em"};
-    padding-bottom: ${props => props.paddingbottom || "1em"};  
-    justify-content: ${props => props.paddingbottom || "space-between"};
-    margin-bottom: ${props => props.margginbottom || "3%"};
-    
-    
-`;
 export const FooterPictureComponent = styled.div`
     width:  ${props => props.width || "100%"};
     flex: ${props => props.flex || "1"};
@@ -226,17 +205,21 @@ export const BlankSpaceComponent = styled.div`
 export const RectangleComponent = styled.div`
     display: ${props => props.display || 'grid'};
     grid-template-columns: ${props => props.gridTemplateColumns || 'auto auto auto'} ;
-    transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+    
     border: ${props => props.border || '1.2rem solid black'} ;
     border-radius: ${props => props.borderRadius || ' border-radius: 0px'};
     cursor: ${props => props.cursor || ' pointer'};
     filter:  ${props => props.filter || ' none'};
     backdrop-filter:  ${props => props.backdropfilter || ' none'};
-    animation: ${animationBottom} 2s ease-in-out forwards;  
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateZ(0);  
     &:hover {
-    
+        transform: translateY(-2px);
         filter:${props => props.filterHover || ' 9px'};
         backdrop-filter: ${props => props.backdropFilterHover || 'blur(9px)'};
+    }
+    &:active{
+    transform: translateY(0);
     }
 `;
 
@@ -252,3 +235,41 @@ export const FooterComponent = styled.footer`
 
   
   `;
+
+  export const SliderContainer = styled.div`
+  width: 100%;
+  height: 300px;
+  margin: auto;
+  overflow: hidden; /* Esconde lo que sale de la pantalla */
+  position: relative;
+  background: white;
+
+  /* Gradientes a los lados para efecto de desvanecido (opcional) */
+  &::before, &::after {
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+  }
+  &::before { left: 0; background: linear-gradient(to right, white 0%, rgba(255,255,255,0) 100%); }
+  &::after { right: 0; background: linear-gradient(to left, white 0%, rgba(255,255,255,0) 100%); }
+`;
+
+export const SliderTrack = styled.div`
+  display: flex;
+  width: calc(250px * 10); /* El doble de imágenes para el efecto infinito */
+  animation: ${scroll} 40s linear infinite;
+
+  &:hover {
+    animation-play-state: paused; /* Se detiene al poner el mouse */
+  }
+`;
+export const Slide = styled.div`
+  width: 250px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  position: relative;
+`;

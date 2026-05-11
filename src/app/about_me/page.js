@@ -1,11 +1,10 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
-import {  HeadPortafolio,  ArticleStyles,  HeroStyles, Parraph, ContainerPictureAboutMeBlur, SectionAboutMeStyles, IntroSectionAboutMeStyles, ContainerPictureAboutMe, GalleryAboutMeStyles, WorkNameAndDate, CourseSection, WorkSection, SliderContainer, SliderTrack, Slide, AlbumImages, ProgressBarContainer, ProgressBar  } from "../styles/stylesStroke"
-import { Head, FooterText, HeadPhilosophy, Work, DateWork, Courses    } from "../styles/StylesParagraph.styles"
-import Link from 'next/link';
-import Image from "next/image";
+import { Head, FooterText, Work, DateWork, Courses, Footer, Portafolio, Projects, Section, DateFooter, HeadPhilosophy, Dropline, SocialNetwork, ReachOut } from "../styles/StylesParagraph.styles";
+import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, FooterPictureComponent, PictureComponent, ContainerPictureComponent, RectangleComponent, FooterComponent,  FirstAnimation, SliderContainer, SliderTrack, Slide, ProgressBarContainerComponent, ProgressBarComponent } from "../styles/ComponentStyles";
 import ScrollReveal from "../ScrollReveal";
-import { GalleryComponent } from "../styles/ComponentStyles";
+import Link from "next/link";
+import Image from 'next/image';
 
 const styleImage ={
     objectFit: 'cover',
@@ -89,32 +88,32 @@ function CoverForm (props){
                 };
             }, []);
     return(
-        <ArticleStyles>
+        <ArticleComponent>
             
-            <HeroStyles >
+            <SectionComponent >
             <Link href="../home_page" passHref >
-                <FooterText>Back to see my others portafolios</FooterText> 
+                <FooterComponent>Back to see my others portafolios</FooterComponent> 
             </Link>
-                <HeadPortafolio>
+                <RectangleComponent>
                     <Head>
                         About me
                     </Head>
 
-                </HeadPortafolio>
+                </RectangleComponent>
             
-           </HeroStyles>
+           </SectionComponent>
             
-           <IntroSectionAboutMeStyles style= {{flexDirection: 'row'}}>
-            <GalleryAboutMeStyles >
-            <ContainerPictureAboutMeBlur>
+           <FirstAnimation style= {{flexDirection: 'row'}}>
+            <GalleryComponent >
+            <PictureComponent>
                 <Image src="/images/image_bio.jpg"
                         alt = "picture of me"
                         fill
                         style= {styleImage}></Image>
                 
-            </ContainerPictureAboutMeBlur> 
-            </GalleryAboutMeStyles>
-                <Parraph  >
+            </PictureComponent> 
+            </GalleryComponent>
+                <TextComponent  >
                    <HeadPhilosophy>
                     hi!
                    </HeadPhilosophy>
@@ -129,106 +128,106 @@ function CoverForm (props){
                         challenge and opportunities to meet diferent
                         connections, so let's connect!
                    </FooterText>
-                </Parraph>
+                </TextComponent>
            
-           </IntroSectionAboutMeStyles>
-            <ScrollReveal direction="right" delay="0.2s">
-           <SectionAboutMeStyles ref={sectionRef} $isVisible={isVisible} $direction="right" $delay="4s" >
+           </FirstAnimation>
+            <ScrollReveal>
+           <SectionComponent >
                 
-                <Parraph>
+                <TextComponent>
                     <HeadPhilosophy style={{textAlign: 'left'}}>
                         formation
                     </HeadPhilosophy>
-                    <FooterText>
+                    <FooterComponent>
                         A little section to round out the professional purpose of this webpage. Who’s the person behind it, really? What do they like—and what are they like? Sections like this can go a little bit longer because it’s nice to learn more about what makes someone tick.
-                    </FooterText>
-                </Parraph>
+                    </FooterComponent>
+                </TextComponent>
 
-                <GalleryAboutMeStyles >   
-                        <ContainerPictureAboutMe >
+                <GalleryComponent >   
+                        <PictureComponent >
                             <Image src="/images/LOGOUMA.jpg"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
-                        </ContainerPictureAboutMe>
-                        <ContainerPictureAboutMe >
+                        </PictureComponent>
+                        <PictureComponent >
                             <Image src="/images/UPV-Emblem.png"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
-                        </ContainerPictureAboutMe>
-                        <ContainerPictureAboutMe >
+                        </PictureComponent>
+                        <PictureComponent >
                             <Image src="/images/LOGO_STANDFORD.png"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
-                        </ContainerPictureAboutMe>
+                        </PictureComponent>
 
                     
-                </GalleryAboutMeStyles>
-                <Parraph >
-                    <WorkSection>
-                    <WorkNameAndDate>
+                </GalleryComponent>
+                <TextComponent >
+                    <TextComponent>
+                    <FooterPictureComponent>
                         <Work>
                             University of Málaga
                         </Work>
                         <DateWork>
                             2018-2023
                         </DateWork>
-                    </WorkNameAndDate>
-                    <CourseSection>
+                    </FooterPictureComponent>
+                    <TextComponent>
                         <Courses>
                             Extense Course of Adobe Illustrator
                         </Courses>
-                    </CourseSection>
-                    <CourseSection>
+                    </TextComponent>
+                    <TextComponent>
                         <Courses>
                             Extense Course of Adobe Indesign
                         </Courses>
-                    </CourseSection>
-                    <CourseSection>
+                    </TextComponent>
+                    <TextComponent>
                         <Courses>
                             Extense Course of Fashion Illustration
                         </Courses>
-                    </CourseSection>
-                    </WorkSection>
+                    </TextComponent>
+                    </TextComponent>
 
-                    <WorkSection>
-                    <WorkNameAndDate>
+                    <TextComponent>
+                    <FooterPictureComponent>
                         <Work>
                             Politechnic University of València
                         </Work>
                         <DateWork>
                             2023-Actuality 
                         </DateWork>
-                    </WorkNameAndDate>
-                    </WorkSection>
-                    <WorkSection>
-                    <WorkNameAndDate>
+                    </FooterPictureComponent>
+                    </TextComponent>
+                    <TextComponent>
+                    <FooterPictureComponent>
                         <Work>
                             University of Standford
                         </Work>
                         <DateWork>
                             2026
                         </DateWork>
-                    </WorkNameAndDate>
-                </WorkSection>    
-                </Parraph>
-           </SectionAboutMeStyles>
+                    </FooterPictureComponent>
+                </TextComponent>    
+                </TextComponent>
+           </SectionComponent>
            </ScrollReveal>
            <ScrollReveal direction="right" delay="0.2s">    
-           <SectionAboutMeStyles >
-                <Parraph>
+           <SectionComponent >
+                <TextComponent>
                     <HeadPhilosophy style={{textAlign: 'right'}}>
                         skills
                     </HeadPhilosophy>
-                    <FooterText>
+                    <FooterComponent>
                         A little section to round out the professional purpose of this webpage. Who’s the person behind it, really? What do they like—and what are they like? Sections like this can go a little bit longer because it’s nice to learn more about what makes someone tick.
-                    </FooterText>
-                </Parraph>
+                    </FooterComponent>
+                </TextComponent>
                 <ScrollReveal  direction="right" delay="0.5s">
                     <SliderContainer>
                         <SliderTrack>
@@ -247,131 +246,131 @@ function CoverForm (props){
                     </SliderContainer>
                 </ScrollReveal>
 
-           </SectionAboutMeStyles>
+           </SectionComponent>
            </ScrollReveal>
 
            <ScrollReveal>
-                <SectionAboutMeStyles >
-                                        <Parraph>
+                <SectionComponent >
+                                        <TextComponent>
                                                 <HeadPhilosophy style= {{textAlign: 'left'}}>
                                                     leanguages
                                                 </HeadPhilosophy>
-                                                <AlbumImages style ={{width: '100%'}}>
-                                                        <GalleryAboutMeStyles style={styleLogoImageLeanguagesGallery}>
-                                                            <ContainerPictureAboutMe style={styleLogosLeanguages}>
+                                                <GalleryComponent>
+                                                        <ContainerPictureComponent style={styleLogoImageLeanguagesGallery}>
+                                                            <PictureComponent style={styleLogosLeanguages}>
                                                                 <Image src="/images/Spanish_flag.svg"
                                                                     alt = "Spanish flag"
                                                                     fill
                                                                     style={styleLogoImageLeanguages}
                                                                     ></Image>
-                                                                    </ContainerPictureAboutMe>
+                                                                    </PictureComponent>
 
-                                                            <ContainerPictureAboutMe style={styleLogosLeanguagesProgressBar}>
-                                                                <ProgressBarContainer>
-                                                                    <ProgressBar progress='100%'></ProgressBar>
-                                                                </ProgressBarContainer>
-                                                            </ContainerPictureAboutMe>        
-                                                        </GalleryAboutMeStyles>
+                                                            <PictureComponent style={styleLogosLeanguagesProgressBar}>
+                                                                <ProgressBarContainerComponent>
+                                                                    <ProgressBarComponent progress='100%'></ProgressBarComponent>
+                                                                </ProgressBarContainerComponent>
+                                                            </PictureComponent>        
+                                                        </ContainerPictureComponent>
 
-                                                    <GalleryAboutMeStyles  style={styleLogoImageLeanguagesGallery}>
-                                                        <ContainerPictureAboutMe style={styleLogosLeanguages}>
+                                                    <ContainerPictureComponent  style={styleLogoImageLeanguagesGallery}>
+                                                        <PictureComponent style={styleLogosLeanguages}>
                                                             <Image src="/images/England_flag.svg"
                                                                 alt = "UK flag"
                                                                 fill
                                                                 style={styleLogoImageLeanguages}
                                                                 ></Image>
-                                                        </ContainerPictureAboutMe>
-                                                        <ContainerPictureAboutMe style={styleLogosLeanguagesProgressBar}>
-                                                                <ProgressBarContainer>
-                                                                    <ProgressBar progress='90%'></ProgressBar>
-                                                                </ProgressBarContainer>
-                                                        </ContainerPictureAboutMe>    
-                                                    </GalleryAboutMeStyles>
+                                                        </PictureComponent>
+                                                        <PictureComponent style={styleLogosLeanguagesProgressBar}>
+                                                                <ProgressBarContainerComponent>
+                                                                    <ProgressBarComponent progress='90%'></ProgressBarComponent>
+                                                                </ProgressBarContainerComponent>
+                                                        </PictureComponent>    
+                                                    </ContainerPictureComponent>
 
-                                                    <GalleryAboutMeStyles  style={styleLogoImageLeanguagesGallery}>
-                                                        <ContainerPictureAboutMe style={styleLogosLeanguages}>
+                                                    <ContainerPictureComponent  style={styleLogoImageLeanguagesGallery}>
+                                                        <PictureComponent style={styleLogosLeanguages}>
                                                             <Image src="/images/French_flag.svg"
                                                                 alt = "French flag"
                                                                 fill
                                                                 style={styleLogoImageLeanguages}
                                                                 ></Image>
-                                                        </ContainerPictureAboutMe>
-                                                        <ContainerPictureAboutMe style={styleLogosLeanguagesProgressBar}>
-                                                                <ProgressBarContainer>
-                                                                    <ProgressBar progress='40%'></ProgressBar>
-                                                                </ProgressBarContainer>
-                                                        </ContainerPictureAboutMe>    
-                                                    </GalleryAboutMeStyles>
+                                                        </PictureComponent>
+                                                        <PictureComponent style={styleLogosLeanguagesProgressBar}>
+                                                                <ProgressBarContainerComponent>
+                                                                    <ProgressBarComponent progress='40%'></ProgressBarComponent>
+                                                                </ProgressBarContainerComponent>
+                                                        </PictureComponent>    
+                                                    </ContainerPictureComponent>
 
-                                                    <GalleryAboutMeStyles>
-                                                        <ContainerPictureAboutMe style={styleLogosLeanguages}>
+                                                    <ContainerPictureComponent>
+                                                        <PictureComponent style={styleLogosLeanguages}>
                                                             <Image src="/images/German_flag.svg"
                                                                 alt = "German flag"
                                                                 fill
                                                                 style={styleLogoImageLeanguages}
                                                                 ></Image>
-                                                        </ContainerPictureAboutMe>
-                                                        <ContainerPictureAboutMe style={styleLogosLeanguagesProgressBar}>
-                                                               <ProgressBarContainer>
-                                                                    <ProgressBar progress='20%'></ProgressBar>
-                                                                </ProgressBarContainer>
-                                                        </ContainerPictureAboutMe>
-                                                    </GalleryAboutMeStyles>
-                                                </AlbumImages>
-                                        </Parraph>
+                                                        </PictureComponent>
+                                                        <PictureComponent style={styleLogosLeanguagesProgressBar}>
+                                                               <ProgressBarContainerComponent>
+                                                                    <ProgressBarComponent progress='20%'></ProgressBarComponent>
+                                                                </ProgressBarContainerComponent>
+                                                        </PictureComponent>
+                                                    </ContainerPictureComponent>
+                                                </GalleryComponent>
+                                        </TextComponent>
 
                             
-                </SectionAboutMeStyles>
+                </SectionComponent>
            </ScrollReveal>
 
             <ScrollReveal>
-                <SectionAboutMeStyles>
-                    <Parraph>
+                <SectionComponent>
+                    <TextComponent>
                         <HeadPhilosophy>
                             interests and hobbies
                         </HeadPhilosophy>
                         <FooterText>
                             A little section to round out the professional purpose of this webpage. Who’s the person behind it, really? What do they like—and what are they like? Sections like this can go a little bit longer because it’s nice to learn more about what makes someone tick.
                         </FooterText>
-                    </Parraph>
-                    <GalleryAboutMeStyles >   
+                    </TextComponent>
+                    <GalleryComponent >   
                     
-                        <ContainerPictureAboutMe >
+                        <PictureComponent >
                             <Image src="/images/LOGOUMA.jpg"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
-                        </ContainerPictureAboutMe>
-                        <ContainerPictureAboutMe >
+                        </PictureComponent>
+                        <PictureComponent >
                             <Image src="/images/UPV-Emblem.png"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
-                        </ContainerPictureAboutMe>
-                        <ContainerPictureAboutMe >
+                        </PictureComponent>
+                        <PictureComponent >
                             <Image src="/images/LOGO_STANDFORD.png"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
-                        </ContainerPictureAboutMe>
+                        </PictureComponent>
 
                     
-                </GalleryAboutMeStyles>
-                </SectionAboutMeStyles>
+                </GalleryComponent>
+                </SectionComponent>
            </ScrollReveal>
-           <SectionAboutMeStyles>
+           <SectionComponent>
 
-           </SectionAboutMeStyles>
-           <SectionAboutMeStyles>
+           </SectionComponent>
+           <SectionComponent>
 
-           </SectionAboutMeStyles>
-           <SectionAboutMeStyles>
+           </SectionComponent>
+           <SectionComponent>
 
-           </SectionAboutMeStyles>
-        </ArticleStyles>
+           </SectionComponent>
+        </ArticleComponent>
         
     )
 }
