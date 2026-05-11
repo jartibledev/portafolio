@@ -21,15 +21,22 @@ const styleLogos ={
 const styleLogosLeanguages ={
     objectFit: 'contain',
     objectPosition: ' center',
-    width: '25%'
+    width: '25%',
+    filter: "none",
+    backdropFilter:  "none"
       
 }
 const styleLogosLeanguagesProgressBar ={
+    display: 'flex',
     objectFit: 'contain',
     objectPosition: ' center',
     width:'100%',
     justifyContent: 'center', /* Centrado horizontal */
-  alignItems: 'center'
+    alignItems: 'center',
+    filter: "none",
+    backdropFilter:  "none",
+    verticalAlign: 'middle',
+    margin: 'auto'
       
 }
 const styleLogoImageLeanguages ={
@@ -42,8 +49,9 @@ const styleLogoImageLeanguagesGallery ={
     objectPosition: ' center',
     overFlow: 'hiden',
     width: '100%',
-    height: '2vh',
-    marginBottom: ' 20%'
+    height: 'auto',
+    paddingBottom: '5%',
+    flexDirection: 'row'
       
 }
 
@@ -90,7 +98,7 @@ function CoverForm (props){
     return(
         <ArticleComponent>
             
-            <SectionComponent >
+            <SectionComponent height= "30vh" >
             <Link href="../home_page" passHref >
                 <FooterComponent>Back to see my others portafolios</FooterComponent> 
             </Link>
@@ -102,9 +110,10 @@ function CoverForm (props){
                 </RectangleComponent>
             
            </SectionComponent>
-            
-           <FirstAnimation style= {{flexDirection: 'row'}}>
-            <GalleryComponent >
+           
+           <FirstAnimation style= {{flexDirection: 'row'}}> 
+            <SectionComponent flexdirection="row" >
+            <ContainerPictureComponent >
             <PictureComponent>
                 <Image src="/images/image_bio.jpg"
                         alt = "picture of me"
@@ -112,7 +121,7 @@ function CoverForm (props){
                         style= {styleImage}></Image>
                 
             </PictureComponent> 
-            </GalleryComponent>
+            </ContainerPictureComponent>
                 <TextComponent  >
                    <HeadPhilosophy>
                     hi!
@@ -129,36 +138,36 @@ function CoverForm (props){
                         connections, so let's connect!
                    </FooterText>
                 </TextComponent>
-           
+           </SectionComponent>
            </FirstAnimation>
             <ScrollReveal>
-           <SectionComponent >
+           <SectionComponent paddingbottom="10%" height="auto" >
                 
-                <TextComponent>
+                <TextComponent >
                     <HeadPhilosophy style={{textAlign: 'left'}}>
                         formation
                     </HeadPhilosophy>
-                    <FooterComponent>
+                    <FooterText>
                         A little section to round out the professional purpose of this webpage. Who’s the person behind it, really? What do they like—and what are they like? Sections like this can go a little bit longer because it’s nice to learn more about what makes someone tick.
-                    </FooterComponent>
+                    </FooterText>
                 </TextComponent>
 
-                <GalleryComponent >   
-                        <PictureComponent >
+                <GalleryComponent flexdirection="row" >   
+                        <PictureComponent filter="none" filterbackdrop="none">
                             <Image src="/images/LOGOUMA.jpg"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
                         </PictureComponent>
-                        <PictureComponent >
+                        <PictureComponent filter="none" filterbackdrop="none">
                             <Image src="/images/UPV-Emblem.png"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
                         </PictureComponent>
-                        <PictureComponent >
+                        <PictureComponent filter="none" filterbackdrop="none" >
                             <Image src="/images/LOGO_STANDFORD.png"
                             alt = "picture of me"
                             fill
@@ -218,15 +227,15 @@ function CoverForm (props){
                 </TextComponent>
            </SectionComponent>
            </ScrollReveal>
-           <ScrollReveal direction="right" delay="0.2s">    
+           <ScrollReveal>    
            <SectionComponent >
                 <TextComponent>
                     <HeadPhilosophy style={{textAlign: 'right'}}>
                         skills
                     </HeadPhilosophy>
-                    <FooterComponent>
+                    <FooterText>
                         A little section to round out the professional purpose of this webpage. Who’s the person behind it, really? What do they like—and what are they like? Sections like this can go a little bit longer because it’s nice to learn more about what makes someone tick.
-                    </FooterComponent>
+                    </FooterText>
                 </TextComponent>
                 <ScrollReveal  direction="right" delay="0.5s">
                     <SliderContainer>
@@ -250,14 +259,14 @@ function CoverForm (props){
            </ScrollReveal>
 
            <ScrollReveal>
-                <SectionComponent >
-                                        <TextComponent>
+                <SectionComponent height='auto' >
+                                       
                                                 <HeadPhilosophy style= {{textAlign: 'left'}}>
                                                     leanguages
                                                 </HeadPhilosophy>
                                                 <GalleryComponent>
                                                         <ContainerPictureComponent style={styleLogoImageLeanguagesGallery}>
-                                                            <PictureComponent style={styleLogosLeanguages}>
+                                                            <PictureComponent filter="none" filterbackdrop="none" style={styleLogosLeanguages}>
                                                                 <Image src="/images/Spanish_flag.svg"
                                                                     alt = "Spanish flag"
                                                                     fill
@@ -265,7 +274,7 @@ function CoverForm (props){
                                                                     ></Image>
                                                                     </PictureComponent>
 
-                                                            <PictureComponent style={styleLogosLeanguagesProgressBar}>
+                                                            <PictureComponent filter="none" filterbackdrop="none" style={styleLogosLeanguagesProgressBar}>
                                                                 <ProgressBarContainerComponent>
                                                                     <ProgressBarComponent progress='100%'></ProgressBarComponent>
                                                                 </ProgressBarContainerComponent>
@@ -273,14 +282,14 @@ function CoverForm (props){
                                                         </ContainerPictureComponent>
 
                                                     <ContainerPictureComponent  style={styleLogoImageLeanguagesGallery}>
-                                                        <PictureComponent style={styleLogosLeanguages}>
+                                                        <PictureComponent filter="none" filterbackdrop="none" style={styleLogosLeanguages}>
                                                             <Image src="/images/England_flag.svg"
                                                                 alt = "UK flag"
                                                                 fill
                                                                 style={styleLogoImageLeanguages}
                                                                 ></Image>
                                                         </PictureComponent>
-                                                        <PictureComponent style={styleLogosLeanguagesProgressBar}>
+                                                        <PictureComponent filter="none" filterbackdrop="none" style={styleLogosLeanguagesProgressBar}>
                                                                 <ProgressBarContainerComponent>
                                                                     <ProgressBarComponent progress='90%'></ProgressBarComponent>
                                                                 </ProgressBarContainerComponent>
@@ -302,7 +311,7 @@ function CoverForm (props){
                                                         </PictureComponent>    
                                                     </ContainerPictureComponent>
 
-                                                    <ContainerPictureComponent>
+                                                    <ContainerPictureComponent style={styleLogoImageLeanguagesGallery}>
                                                         <PictureComponent style={styleLogosLeanguages}>
                                                             <Image src="/images/German_flag.svg"
                                                                 alt = "German flag"
@@ -317,14 +326,14 @@ function CoverForm (props){
                                                         </PictureComponent>
                                                     </ContainerPictureComponent>
                                                 </GalleryComponent>
-                                        </TextComponent>
+                                       
 
                             
                 </SectionComponent>
            </ScrollReveal>
 
             <ScrollReveal>
-                <SectionComponent>
+                <SectionComponent height= "auto">
                     <TextComponent>
                         <HeadPhilosophy>
                             interests and hobbies
@@ -333,23 +342,23 @@ function CoverForm (props){
                             A little section to round out the professional purpose of this webpage. Who’s the person behind it, really? What do they like—and what are they like? Sections like this can go a little bit longer because it’s nice to learn more about what makes someone tick.
                         </FooterText>
                     </TextComponent>
-                    <GalleryComponent >   
+                    <GalleryComponent flexdirection = "row" >   
                     
-                        <PictureComponent >
+                        <PictureComponent filter="none" filterbackdrop="none" >
                             <Image src="/images/LOGOUMA.jpg"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
                         </PictureComponent>
-                        <PictureComponent >
+                        <PictureComponent filter="none" filterbackdrop="none" >
                             <Image src="/images/UPV-Emblem.png"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
                         </PictureComponent>
-                        <PictureComponent >
+                        <PictureComponent filter="none" filterbackdrop="none" >
                             <Image src="/images/LOGO_STANDFORD.png"
                             alt = "picture of me"
                             fill
