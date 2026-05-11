@@ -56,7 +56,7 @@ export const SectionComponent = styled.section`
     align-items: ${props => props.alignitems || "center"};
     padding-left: ${props => props.paddingleft || "25%"};
     padding-right: ${props => props.paddingright || "25%"};
-    padding-bottom: ${props => props.paddingbottom || "2%"};
+    padding-bottom: ${props => props.paddingbottom || "5%"};
 `;
 
 export const TextComponent = styled.div`
@@ -210,10 +210,15 @@ export const AnimatedSection = styled.div`
   will-change: opacity, transform; 
   
   transform: ${props => {
-    const offset = '100px';
-    if (props.$direction === 'left') return `translateX(-${offset})`;
-    if (props.$direction === 'right') return `translateX(${offset})`;
-    return `translateY(${offset})`;
+    if (props.$direction === 'none') return 'translate(0,0)';
+    const offset = '50px';
+    switch (props.$direction){
+        case 'left': return `translateX(-${offset})`;
+        case 'right': return `translateX(${offset})`;
+        case 'down': return `translateY(-${offset})`;
+        case 'up': return `translateY(${offset})`;
+        default: return `translateY(${offset})`;
+    }
   }};
 
   /* 2. TRANSICIÓN */
@@ -257,7 +262,7 @@ export const ProgressBarComponent = styled.div`
 export const BlankSpaceComponent = styled.div`
     padding: 2em ;
 `;
-export const rectangleComponent = styled.div`
+export const RectangleComponent = styled.div`
     display: ${props => props.display || 'grid'};
     grid-template-columns: ${props => props.gridTemplateColumns || 'auto auto auto'} ;
     transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  

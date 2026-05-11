@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
 import { Footer, Portafolio, Projects, Section, DateFooter, HeadPhilosophy, Dropline, SocialNetwork, ReachOut } from "../styles/StylesParagraph.styles";
-import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, FooterPictureComponent, PictureComponent, ContainerPictureComponent, rectangleComponent, FooterComponent, BlankSpaceComponent, FirstAnimation } from "../styles/ComponentStyles";
+import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, FooterPictureComponent, PictureComponent, ContainerPictureComponent, RectangleComponent, FooterComponent, BlankSpaceComponent, FirstAnimation } from "../styles/ComponentStyles";
 import ScrollReveal from "../ScrollReveal";
 import Link from "next/link";
 import Image from 'next/image';
@@ -24,8 +24,8 @@ function PortafolioIllustrationForm (props){
     return(
         <ArticleComponent>
             
-           <SectionComponent height="50vh" >
-               <rectangleComponent>
+           <SectionComponent height="25vh" >
+               <RectangleComponent>
                     <BlankSpaceComponent/>
                     <BlankSpaceComponent/>
                                     
@@ -38,7 +38,7 @@ function PortafolioIllustrationForm (props){
                     <BlankSpaceComponent/>
                     <BlankSpaceComponent/>
                                     
-                </rectangleComponent>
+                </RectangleComponent>
             </SectionComponent>
             <FirstAnimation>
             <SectionComponent height="80vh" flexdirection="row">
@@ -66,8 +66,8 @@ function PortafolioIllustrationForm (props){
            </FirstAnimation>
 
            
-            <SectionComponent flexdirection="row" height="auto"  >
-               <ScrollReveal  >
+            <SectionComponent flexdirection="row" height="auto" paddingbottom = "5%"  >
+               <ScrollReveal $direction="left">
                 <ContainerPictureComponent > 
                     
                         <PictureComponent >
@@ -90,7 +90,7 @@ function PortafolioIllustrationForm (props){
                     </FooterPictureComponent>
                 </ContainerPictureComponent>
                </ScrollReveal>
-               <ScrollReveal >
+               <ScrollReveal $direction={"right"} >
                     <ContainerPictureComponent>
                         
                             <PictureComponent height="auto">
@@ -118,7 +118,7 @@ function PortafolioIllustrationForm (props){
             </SectionComponent> 
            
             <ScrollReveal >
-                <SectionComponent> 
+                <SectionComponent flexdirection="row" height="auto" > 
                     <TextComponent>
                         <ReachOut>Reach out</ReachOut>
                         <Link href="mailto:mayalopezdesign@gmail.com">
@@ -139,9 +139,10 @@ function PortafolioIllustrationForm (props){
                 
                 </SectionComponent>
             </ScrollReveal>
+            
             <FooterComponent>
                 <Link style = {linkDisplay} href="..\about_me" passHref>
-                <rectangleComponent>
+                <RectangleComponent>
                     <Portafolio>
                         About
                     </Portafolio>
@@ -152,7 +153,7 @@ function PortafolioIllustrationForm (props){
                     <Section>
                         me
                     </Section>
-                </rectangleComponent>
+                </RectangleComponent>
             </Link>
             
             
