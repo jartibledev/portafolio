@@ -67,9 +67,9 @@ const images = [
   '/images/opengl.png',
   '/images/python.png',
 ];
-
+  const infiniteImages = [...images, ...images];
 function AboutMe (props){
-    const infiniteImages = [...images, ...images];
+  
     const [isVisible, setIsVisible] = useState(false);
             const sectionRef = useRef(null);
     
@@ -99,7 +99,7 @@ function AboutMe (props){
     return(
         <ArticleComponent>
             
-            <SectionComponent height= "30vh" >
+            <SectionComponent $height= "30vh" >
             <Link href="../home_page" passHref >
                 <FooterComponent>Back to see my others portafolios</FooterComponent> 
             </Link>
@@ -142,7 +142,7 @@ function AboutMe (props){
             </SectionComponent>
            </FirstAnimation>
             <ScrollReveal>
-           <SectionComponent paddingbottom="10%" height="auto" >
+           <SectionComponent $paddingbottom="10%" $height="auto" >
                 
                 <TextComponent >
                     <HeadPhilosophy style={{textAlign: 'left'}}>
@@ -153,22 +153,22 @@ function AboutMe (props){
                     </FooterText>
                 </TextComponent>
 
-                <GalleryComponent flexdirection="row" >   
-                        <PictureComponent filter="none" filterbackdrop="none">
+                <GalleryComponent $flexdirection="row" >   
+                        <PictureComponent $filter="none" $filterbackdrop="none">
                             <Image src="/images/LOGOUMA.jpg"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
                         </PictureComponent>
-                        <PictureComponent filter="none" filterbackdrop="none">
+                        <PictureComponent $filter="none" $filterbackdrop="none">
                             <Image src="/images/UPV-Emblem.png"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
                         </PictureComponent>
-                        <PictureComponent filter="none" filterbackdrop="none" >
+                        <PictureComponent $filter="none" $filterbackdrop="none" >
                             <Image src="/images/LOGO_STANDFORD.png"
                             alt = "picture of me"
                             fill
@@ -229,7 +229,7 @@ function AboutMe (props){
            </SectionComponent>
            </ScrollReveal>
            <ScrollReveal>    
-           <SectionComponent height="auto"  >
+           <SectionComponent $height="auto"  >
                 <TextComponent>
                     <HeadPhilosophy style={{textAlign: 'right'}}>
                         skills
@@ -238,46 +238,48 @@ function AboutMe (props){
                         A little section to round out the professional purpose of this webpage. Who’s the person behind it, really? What do they like—and what are they like? Sections like this can go a little bit longer because it’s nice to learn more about what makes someone tick.
                     </FooterText>
                 </TextComponent>
-                       <SliderContainer style={{ width: "100%", overflow: "hidden", position: "relative" }}>
-    <SliderTrack 
-        style={{ 
-            display: "flex", 
-            flexDirection: "row", 
-            flexWrap: "nowrap", 
-            width: "max-content", // Permite que el track crezca todo lo que necesite
-            animation: `${scroll.name} 25s linear infinite` // Usamos .name para el string exacto
-        }}
-    >
-        {infiniteImages.map((src, index) => (
-            <Slide key={index} style={{ flexShrink: 0, width: "250px" }}> 
-                <Image 
-                    src={src} 
-                    alt={`Trabajo ${index}`} 
-                    width={150} 
-                    height={150}
-                    style={{ objectFit: 'contain', borderRadius: '10px' }}
-                />
-            </Slide>
-        ))}
-    </SliderTrack>
-</SliderContainer>
+    
                 
                     
             
            </SectionComponent>
            </ScrollReveal>
-            <SectionComponent paddingright="5%"  paddingleft="5%">
+<SliderContainer style={{ width: "100%", overflow: "hidden", position: "relative" }}>
+        <SliderTrack 
+            style={{ 
+                display: "flex", 
+                flexDirection: "row", 
+                flexWrap: "nowrap", 
+                width: "max-content", // Permite que el track crezca todo lo que necesite
+                animation: `${scroll.name} 25s linear infinite` // Usamos .name para el string exacto
+            }}
+        >
+            {infiniteImages.map((src, index) => (
+                <Slide key={index} style={{ flexShrink: 0, width: "250px" }}> 
+                    <Image 
+                        src={src} 
+                        alt={`Trabajo ${index}`} 
+                        width={150} 
+                        height={150}
+                        style={{ objectFit: 'contain', borderRadius: '10px' }}
+                    />
+                </Slide>
+            ))}
+        </SliderTrack>
+</SliderContainer>
+
+            <SectionComponent $paddingright="5%"  $paddingleft="5%">
                 
             </SectionComponent>
            <ScrollReveal>
-                <SectionComponent height='auto' >
+                <SectionComponent $height='auto' >
                                        
                                                 <HeadPhilosophy style= {{textAlign: 'left'}}>
                                                     leanguages
                                                 </HeadPhilosophy>
                                                 <GalleryComponent>
                                                         <ContainerPictureComponent style={styleLogoImageLeanguagesGallery}>
-                                                            <PictureComponent filter="none" filterbackdrop="none" style={styleLogosLeanguages}>
+                                                            <PictureComponent $filter="none" $filterbackdrop="none" style={styleLogosLeanguages}>
                                                                 <Image src="/images/Spanish_flag.svg"
                                                                     alt = "Spanish flag"
                                                                     fill
@@ -285,7 +287,7 @@ function AboutMe (props){
                                                                     ></Image>
                                                                     </PictureComponent>
 
-                                                            <PictureComponent filter="none" filterbackdrop="none" style={styleLogosLeanguagesProgressBar}>
+                                                            <PictureComponent $filter="none" $filterbackdrop="none" style={styleLogosLeanguagesProgressBar}>
                                                                 <ProgressBarContainerComponent>
                                                                     <ProgressBarComponent progress='100%'></ProgressBarComponent>
                                                                 </ProgressBarContainerComponent>
@@ -293,14 +295,14 @@ function AboutMe (props){
                                                         </ContainerPictureComponent>
 
                                                     <ContainerPictureComponent  style={styleLogoImageLeanguagesGallery}>
-                                                        <PictureComponent filter="none" filterbackdrop="none" style={styleLogosLeanguages}>
+                                                        <PictureComponent $filter="none" $filterbackdrop="none" style={styleLogosLeanguages}>
                                                             <Image src="/images/England_flag.svg"
                                                                 alt = "UK flag"
                                                                 fill
                                                                 style={styleLogoImageLeanguages}
                                                                 ></Image>
                                                         </PictureComponent>
-                                                        <PictureComponent filter="none" filterbackdrop="none" style={styleLogosLeanguagesProgressBar}>
+                                                        <PictureComponent $filter="none" $filterbackdrop="none" style={styleLogosLeanguagesProgressBar}>
                                                                 <ProgressBarContainerComponent>
                                                                     <ProgressBarComponent progress='90%'></ProgressBarComponent>
                                                                 </ProgressBarContainerComponent>
@@ -344,7 +346,7 @@ function AboutMe (props){
            </ScrollReveal>
 
             <ScrollReveal>
-                <SectionComponent height= "auto">
+                <SectionComponent $height= "auto">
                     <TextComponent>
                         <HeadPhilosophy>
                             interests and hobbies
@@ -353,23 +355,23 @@ function AboutMe (props){
                             A little section to round out the professional purpose of this webpage. Who’s the person behind it, really? What do they like—and what are they like? Sections like this can go a little bit longer because it’s nice to learn more about what makes someone tick.
                         </FooterText>
                     </TextComponent>
-                    <GalleryComponent flexdirection = "row" >   
+                    <GalleryComponent $flexdirection = "row" >   
                     
-                        <PictureComponent filter="none" filterbackdrop="none" >
+                        <PictureComponent $filter="none" $filterbackdrop="none" >
                             <Image src="/images/LOGOUMA.jpg"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
                         </PictureComponent>
-                        <PictureComponent filter="none" filterbackdrop="none" >
+                        <PictureComponent $filter="none" $filterbackdrop="none" >
                             <Image src="/images/UPV-Emblem.png"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
                         </PictureComponent>
-                        <PictureComponent filter="none" filterbackdrop="none" >
+                        <PictureComponent $filter="none" $filterbackdrop="none" >
                             <Image src="/images/LOGO_STANDFORD.png"
                             alt = "picture of me"
                             fill

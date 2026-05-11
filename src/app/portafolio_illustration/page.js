@@ -50,7 +50,7 @@ function PortafolioIllustrationForm (props){
     return(
         <ArticleComponent>
             
-           <SectionComponent height="25vh" >
+           <SectionComponent $height="25vh" >
                <RectangleComponent>
                     <BlankSpaceComponent/>
                     <BlankSpaceComponent/>
@@ -67,9 +67,9 @@ function PortafolioIllustrationForm (props){
                 </RectangleComponent>
             </SectionComponent>
             <FirstAnimation ref={sectionRef} $isVisible={isVisible}>
-            <SectionComponent height="80vh" flexdirection="row">
+            <SectionComponent $height="80vh" $flexdirection="row">
                 <ContainerPictureComponent>
-                        <PictureComponent  height="100%">
+                        <PictureComponent  $height="100%">
                             <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">
                             <Image src="/images/concepart_1_2_export.jpg"
                             alt = "illustration concept art"
@@ -92,7 +92,7 @@ function PortafolioIllustrationForm (props){
            </FirstAnimation>
 
            
-            <SectionComponent flexdirection="row" height="auto" paddingbottom = "5%"  >
+            <SectionComponent $flexdirection="row" $height="auto" $paddingbottom = "5%"  >
                <ScrollReveal $direction="left">
                 <ContainerPictureComponent > 
                     
@@ -119,7 +119,7 @@ function PortafolioIllustrationForm (props){
                <ScrollReveal $direction={"right"} >
                     <ContainerPictureComponent>
                         
-                            <PictureComponent height="auto">
+                            <PictureComponent $height="auto">
                                 <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">
                                 <Image src="/images/minadesolada_web_export.jpg"
                                 alt = "illustration concept art"
@@ -144,7 +144,7 @@ function PortafolioIllustrationForm (props){
             </SectionComponent> 
            
             <ScrollReveal >
-                <SectionComponent flexdirection="row" height="auto" > 
+                <SectionComponent $flexdirection="row" $height="auto" > 
                     <TextComponent>
                         <ReachOut>Reach out</ReachOut>
                         <Link href="mailto:mayalopezdesign@gmail.com">

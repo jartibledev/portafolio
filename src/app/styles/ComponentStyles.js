@@ -50,57 +50,57 @@ export const scroll = keyframes`
 `;
 
 export const SectionComponent = styled.section`
-    width: ${props => props.width || "100%"} ;
-    height: ${props => props.height || " 80vh"} ;
-    display: ${props => props.display || "flex"};
-    flex-direction:${props => props.flexdirection || "column"};
-    align-items: ${props => props.alignitems || "center"};
-    padding-left: ${props => props.paddingleft || "25%"};
-    padding-right: ${props => props.paddingright || "25%"};
-    padding-bottom: ${props => props.paddingbottom || "5%"};
+    width: ${props => props.$width || "100%"} ;
+    height: ${props => props.$height || " 80vh"} ;
+    display: ${props => props.$display || "flex"};
+    flex-direction:${props => props.$flexdirection || "column"};
+    align-items: ${props => props.$alignitems || "center"};
+    padding-left: ${props => props.$paddingleft || "25%"};
+    padding-right: ${props => props.$paddingright || "25%"};
+    padding-bottom: ${props => props.$paddingbottom || "5%"};
 `;
 
 export const TextComponent = styled.div`
-    width:  ${props => props.width || "100%"};
-    display: ${props => props.display || "flex"};
-    flex-direction: ${props => props.flexdirection || "column"};
-    margin-left: ${props => props.margginleft || "5%"};
-    margin-right: ${props => props.margginright || "5%"};
-    margin-bottom: ${props => props.margginbottom || "5%"};
+    width:  ${props => props.$width || "100%"};
+    display: ${props => props.$display || "flex"};
+    flex-direction: ${props => props.$flexdirection || "column"};
+    margin-left: ${props => props.$margginleft || "5%"};
+    margin-right: ${props => props.$margginright || "5%"};
+    margin-bottom: ${props => props.$margginbottom || "5%"};
 `;
 
 export const GalleryComponent = styled.div`
-    width:  ${props => props.width || "100%"};
-    min-widht: ${props => props.minwidth || "20vh"};
-    display: ${props => props.display || "flex"};
-    flex-direction: ${props => props.flexdirection || "column"};
+    width:  ${props => props.$width || "100%"};
+    min-widht: ${props => props.$minwidth || "20vh"};
+    display: ${props => props.$display || "flex"};
+    flex-direction: ${props => props.$flexdirection || "column"};
 
 `;
 
 export const FooterPictureComponent = styled.div`
-    width:  ${props => props.width || "100%"};
-    flex: ${props => props.flex || "1"};
-    display: ${props => props.display || "flex"};
-    flex-direction: ${props => props.flexdirection || "row"};
+    width:  ${props => props.$width || "100%"};
+    flex: ${props => props.$flex || "1"};
+    display: ${props => props.$display || "flex"};
+    flex-direction: ${props => props.$flexdirection || "row"};
     transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
-    cursor: ${props => props.cursor || "pointer"};
-    filter: ${props => props.filter || "none"};
-    backdrop-filter:  ${props => props.backdropfilter || "none"};
-    padding-top:  ${props => props.paddingtop || "1em"};
-    padding-bottom: ${props => props.paddingbottom || "1em"};  
-    justify-content: ${props => props.paddingbottom || "space-between"};
+    cursor: ${props => props.$cursor || "pointer"};
+    filter: ${props => props.$filter || "none"};
+    backdrop-filter:  ${props => props.$backdropfilter || "none"};
+    padding-top:  ${props => props.$paddingtop || "1em"};
+    padding-bottom: ${props => props.$paddingbottom || "1em"};  
+    justify-content: ${props => props.$paddingbottom || "space-between"};
     
     
 `;
 
 export const IconComponent = styled.div`
-    width:  ${props => props.width || "100%"};
-    height: ${props => props.height || "auto"};
-    min-height: ${props => props.minheight || "250px"};
+    width:  ${props => props.$width || "100%"};
+    height: ${props => props.$height || "auto"};
+    min-height: ${props => props.$minheight || "250px"};
     display: block;
     position: relative;
-    overflow:  ${props => props.overflow || "hidden"};
-    border-radius:${props => props.borderRadius || "16px"};
+    overflow:  ${props => props.$overflow || "hidden"};
+    border-radius:${props => props.$borderradius || "16px"};
     
         
     
@@ -108,17 +108,17 @@ export const IconComponent = styled.div`
 `;
 
 export const PictureComponent = styled.div`
-    width:  ${props => props.width || "100%"};
-    height: ${props => props.height || "auto"};
-    min-height: ${props => props.minheight || "250px"};
+    width:  ${props => props.$width || "100%"};
+    height: ${props => props.$height || "auto"};
+    min-height: ${props => props.$minheight || "250px"};
     display: block;
     position: relative;
-    overflow:  ${props => props.overflow || "hidden"};
-    border-radius:${props => props.borderRadius || "16px"};
-    cursor: ${props => props.cursor || "pointer"};
+    overflow:  ${props => props.$overflow || "hidden"};
+    border-radius:${props => props.$borderradius || "16px"};
+    cursor: ${props => props.$cursor || "pointer"};
     position: relative;    
-    filter: ${props => props.filter || "blur(16px)"};
-    backdrop-filter: ${props => props.backdropfilter || "blur(9px)"};
+    filter: ${props => props.$filter || "blur(16px)"};
+    backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
     
     transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;
 
@@ -138,12 +138,12 @@ export const PictureComponent = styled.div`
 `;
 
 export const ContainerPictureComponent = styled.div`
-    width:  ${props => props.width || "100%"};
-    height: ${props => props.height || "100%"};
-    display: ${props => props.display || "flex"};
-    flex-direction: ${props => props.flexdirection || "column"};
-    margin-left:  ${props => props.marginLeft || "5%"};
-    margin-right:  ${props => props.marginRight || "5%"};
+    width:  ${props => props.$width || "100%"};
+    height: ${props => props.$height || "100%"};
+    display: ${props => props.$display || "flex"};
+    flex-direction: ${props => props.$flexdirection || "column"};
+    margin-left:  ${props => props.$marginleft || "5%"};
+    margin-right:  ${props => props.$marginright || "5%"};
 
     &:hover ${PictureComponent} {
                 filter: none;
@@ -186,8 +186,8 @@ export const AnimatedSection = styled.div`
     transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
     visibility 0.8s;
   transition-delay: ${props => props.$delay};
-  margin-right: ${props => props.marginright || "5%"};
-  margin-left: ${props => props.margginleft || "5%"};
+  margin-right: ${props => props.$marginright || "5%"};
+  margin-left: ${props => props.$margginleft || "5%"};
   
   /* 3. ESTADO VISIBLE */
   ${({ $isVisible }) => $isVisible && css`
@@ -221,7 +221,6 @@ export const FirstAnimation = styled.div`
 
 
 `;
-
 export const ProgressBarContainerComponent = styled.div`
   width: 100%;
   height: 50px;
@@ -316,3 +315,5 @@ export const Slide = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+
