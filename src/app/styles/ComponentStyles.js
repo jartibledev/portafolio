@@ -108,46 +108,7 @@ export const FooterPictureComponent = styled.div`
     
 `;
 
-export const PictureComponent1 = styled.div`
-    /* 1. Dimensiones: Usamos flex para asegurar que el contenido llene el espacio */
-    width:  ${props => props.width || "100%"};
-    height: ${props => props.height || "auto"}; /* 'auto' es mejor si no controlas la altura del padre */
-    min-height: ${props => props.minHeight || "250px"};
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    /* 2. Estética corregida */
-    overflow: ${props => props.overflow || "hidden"};
-    border-radius: ${props => props.borderRadius || "16px"}; /* Corregido de props.overflow */
-    cursor: ${props => props.cursor || "pointer"};
-    position: relative;
 
-    /* 3. Filtros iniciales (Ojo: si dejas blur por defecto, se verá borroso siempre) */
-    filter: ${props => props.filter || "none"}; 
-    backdrop-filter: ${props => props.backdropfilter || "none"};
-    
-    /* 4. Transiciones */
-    transition: filter 300ms ease-out, backdrop-filter 300ms ease-out, opacity 0.6s ease-out;
-
-    /* 5. Ajuste de la imagen interna */
-    img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover; /* Crucial para que no se deforme */
-        display: block;
-        
-        /* Herencia de opacidad para ScrollReveal */
-        opacity: inherit !important; 
-        transition: inherit !important;
-        animation: none !important; 
-    }
-
-    /* Efecto Hover opcional para probar los filtros */
-    &:hover {
-        filter: ${props => props.hoverFilter || "brightness(1.1)"};
-    }
-`;
 
 export const PictureComponent = styled.div`
     width:  ${props => props.width || "100%"};
