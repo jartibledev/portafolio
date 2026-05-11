@@ -1,13 +1,18 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
 import { Footer, Portafolio, Section } from "../styles/StylesParagraph.styles";
-import { BlankSpace, ButtonPortafolio, sectionStyles, ArticleStyles, SectionStyles, IntroStyles } from "../styles/stylesStroke";
+import { ArticleComponent, SectionComponent, RectangleComponent, BlankSpaceComponent, ContainerPictureComponent} from "../styles/ComponentStyles";
 import Link from "next/link";
 const linkDisplay = { 
     display:"flex", 
-    justifyContent: "center"
+    justifyContent: "center",
+    paddingBottom: "5%"
 }
+  const stylesHomePage = {
+                height: "auto",
+                margin: "10vh"
 
+            }
 function HomePageForm (props){
     const [isVisible, setIsVisible] = useState(false);
             const sectionRef = useRef(null);
@@ -35,60 +40,61 @@ function HomePageForm (props){
                     }
                 };
             }, []);
+          
 
     return(
-        <ArticleStyles>
-            <IntroStyles ref={sectionRef} $isVisible={isVisible}>
-            <Link style = {linkDisplay} href="..\portafolio_dev" passHref>
-                <ButtonPortafolio>
-                    <Portafolio>
-                        Portafolio
-                    </Portafolio>
-                    <BlankSpace></BlankSpace>
-                    <BlankSpace></BlankSpace>
-                    <BlankSpace></BlankSpace>
-                    <BlankSpace></BlankSpace>
-                    <Section>
-                        dev
-                    </Section>
-                </ButtonPortafolio>
-            </Link>
+        <ArticleComponent>
+            <SectionComponent style={stylesHomePage} >
             
-            <Link style = {linkDisplay} href="..\portafolio_design" passHref>
-                <ButtonPortafolio>
-                    
-                    <BlankSpace></BlankSpace>
-                    <BlankSpace></BlankSpace>
-                    <Portafolio>
-                        Portafolio
-                    </Portafolio>
-                    <Section>
-                        design
-                    </Section>
-                    <BlankSpace></BlankSpace>
-                    <BlankSpace></BlankSpace>
-                    
-                </ButtonPortafolio>
-            </Link>
-            
-            
-          
-            <Link style = {linkDisplay} href="..\portafolio_illustration" passHref>
-                <ButtonPortafolio>
-                    <BlankSpace></BlankSpace>
-                    <BlankSpace></BlankSpace>
-                    <Portafolio>
-                        Portafolio
-                    </Portafolio>
-                    <Section>
-                        illustration
-                    </Section>
-                    <BlankSpace></BlankSpace>
-                    <BlankSpace></BlankSpace>
-                </ButtonPortafolio>
-            </Link>
-            </IntroStyles>
-         </ArticleStyles>
+                <Link style = {linkDisplay} href="..\portafolio_dev" passHref>
+                    <RectangleComponent filter="blur(9px)" filterbackdrop="blur(9px)" filterhover="none" backfilterhoover="none" >
+                        <Portafolio>
+                            Portafolio
+                        </Portafolio>
+                        <BlankSpaceComponent></BlankSpaceComponent>
+                        <BlankSpaceComponent></BlankSpaceComponent>
+                        <BlankSpaceComponent></BlankSpaceComponent>
+                        <BlankSpaceComponent></BlankSpaceComponent>
+                        <Section>
+                            dev
+                        </Section>
+                    </RectangleComponent>
+                </Link>
+               
+                <Link style = {linkDisplay} href="..\portafolio_design" passHref>
+                    <RectangleComponent filter="blur(9px)" filterbackdrop="blur(9px)" filterhover="none" backfilterhoover="none">
+                        
+                        <BlankSpaceComponent></BlankSpaceComponent>
+                        <BlankSpaceComponent></BlankSpaceComponent>
+                        <Portafolio>
+                            Portafolio
+                        </Portafolio>
+                        <Section>
+                            design
+                        </Section>
+                        <BlankSpaceComponent></BlankSpaceComponent>
+                        <BlankSpaceComponent></BlankSpaceComponent>
+                        
+                    </RectangleComponent>
+                </Link>    
+               
+                <Link style = {linkDisplay} href="..\portafolio_illustration" passHref>
+                    <RectangleComponent filter="blur(9px)" filterbackdrop="blur(9px)" filterhover="none" backfilterhoover="none">
+                        <BlankSpaceComponent></BlankSpaceComponent>
+                        <BlankSpaceComponent></BlankSpaceComponent>
+                        <Portafolio>
+                            Portafolio
+                        </Portafolio>
+                        <Section>
+                            illustration
+                        </Section>
+                        <BlankSpaceComponent></BlankSpaceComponent>
+                        <BlankSpaceComponent></BlankSpaceComponent>
+                    </RectangleComponent>
+                </Link>
+   
+            </SectionComponent>
+        </ArticleComponent>
         
         
     )

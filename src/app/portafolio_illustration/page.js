@@ -21,6 +21,32 @@ const linkDisplay = {
 
 
 function PortafolioIllustrationForm (props){
+        const [isVisible, setIsVisible] = useState(false);
+                const sectionRef = useRef(null);
+    
+                useEffect(() =>{
+                    const observer = new IntersectionObserver(
+                        ([entry]) => {
+                            if(entry.isIntersecting){
+                                setIsVisible(true);
+                                observer.unobserve(entry.target)
+                            }
+                        },
+                        {
+                            threshold: 0.2,
+                            rootMargin: "0px 0px -50px 0px"
+                        }
+                    );
+    
+                    if (sectionRef.current){
+                        observer.observe(sectionRef.current);
+                    }
+                    return()=>{
+                        if(sectionRef.current){
+                            observer.unobserve(sectionRef.current);
+                        }
+                    };
+                }, []);
     return(
         <ArticleComponent>
             
@@ -40,7 +66,7 @@ function PortafolioIllustrationForm (props){
                                     
                 </RectangleComponent>
             </SectionComponent>
-            <FirstAnimation>
+            <FirstAnimation ref={sectionRef} $isVisible={isVisible}>
             <SectionComponent height="80vh" flexdirection="row">
                 <ContainerPictureComponent>
                         <PictureComponent  height="100%">

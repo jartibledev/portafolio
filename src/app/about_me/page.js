@@ -1,8 +1,9 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
 import { Head, FooterText, Work, DateWork, Courses, Footer, Portafolio, Projects, Section, DateFooter, HeadPhilosophy, Dropline, SocialNetwork, ReachOut } from "../styles/StylesParagraph.styles";
-import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, FooterPictureComponent, PictureComponent, ContainerPictureComponent, RectangleComponent, FooterComponent,  FirstAnimation, SliderContainer, SliderTrack, Slide, ProgressBarContainerComponent, ProgressBarComponent } from "../styles/ComponentStyles";
+import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, FooterPictureComponent, PictureComponent, ContainerPictureComponent, RectangleComponent, FooterComponent,  FirstAnimation,  ProgressBarContainerComponent, ProgressBarComponent, SliderContainer, SliderTrack, Slide  } from "../styles/ComponentStyles";
 import ScrollReveal from "../ScrollReveal";
+
 import Link from "next/link";
 import Image from 'next/image';
 
@@ -67,7 +68,7 @@ const images = [
   '/images/python.png',
 ];
 
-function CoverForm (props){
+function AboutMe (props){
     const infiniteImages = [...images, ...images];
     const [isVisible, setIsVisible] = useState(false);
             const sectionRef = useRef(null);
@@ -81,7 +82,7 @@ function CoverForm (props){
                         }
                     },
                     {
-                        threshold: 0.01,
+                        threshold: 0.2,
                         rootMargin: "0px 0px 1000px 0px"
                     }
                 );
@@ -111,7 +112,7 @@ function CoverForm (props){
             
            </SectionComponent>
            
-           <FirstAnimation style= {{flexDirection: 'row'}}> 
+           <FirstAnimation ref={sectionRef} $isVisible={isVisible} style= {{flexDirection: 'row'}}> 
             <SectionComponent flexdirection="row" >
             <ContainerPictureComponent >
             <PictureComponent>
@@ -228,7 +229,7 @@ function CoverForm (props){
            </SectionComponent>
            </ScrollReveal>
            <ScrollReveal>    
-           <SectionComponent >
+           <SectionComponent height="auto"  >
                 <TextComponent>
                     <HeadPhilosophy style={{textAlign: 'right'}}>
                         skills
@@ -237,9 +238,14 @@ function CoverForm (props){
                         A little section to round out the professional purpose of this webpage. Who’s the person behind it, really? What do they like—and what are they like? Sections like this can go a little bit longer because it’s nice to learn more about what makes someone tick.
                     </FooterText>
                 </TextComponent>
-                <ScrollReveal  direction="right" delay="0.5s">
-                    <SliderContainer>
-                        <SliderTrack>
+                
+                    
+            
+           </SectionComponent>
+           </ScrollReveal>
+            <SectionComponent paddingright="5%"  paddingleft="5%">
+                <SliderContainer >
+                        <SliderTrack style={{display:"flex", flexDirection:"row"}}>
                             {infiniteImages.map((src, index) => (
                                     <Slide key={index}>
                                         <Image 
@@ -252,12 +258,7 @@ function CoverForm (props){
                                     </Slide>
                                 ))}
                         </SliderTrack>
-                    </SliderContainer>
-                </ScrollReveal>
-
-           </SectionComponent>
-           </ScrollReveal>
-
+                    </SliderContainer></SectionComponent>
            <ScrollReveal>
                 <SectionComponent height='auto' >
                                        
@@ -384,4 +385,4 @@ function CoverForm (props){
     )
 }
 
-export default CoverForm;
+export default AboutMe;

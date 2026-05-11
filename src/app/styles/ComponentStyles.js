@@ -39,9 +39,15 @@ const animationBottom = keyframes`
 `;
 
 const scroll = keyframes`
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-250px * 9)); } /* Ancho de imagen * número de imágenes */
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Prueba con un valor fijo como -1000px para ver si arranca */
+    transform: translateX(-2250px); 
+  }
 `;
+
 
 export const SectionComponent = styled.section`
     width: ${props => props.width || "100%"} ;
@@ -141,7 +147,7 @@ export const ContainerPictureComponent = styled.div`
 export const AnimatedSection = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: "column";
 
   /* 1. ESTADO ATÓMICO INICIAL */
   opacity: 0;
@@ -233,7 +239,7 @@ export const RectangleComponent = styled.div`
     transform: translateZ(0);  
     &:hover {
         transform: translateY(-2px);
-        filter:${props => props.filterhover || ' 9px'};
+        filter:${props => props.filterhover || ' blur(9px'};
         backdrop-filter: ${props => props.backdropfilterhover || 'blur(9px)'};
     }
     &:active{
@@ -262,6 +268,7 @@ export const FooterComponent = styled.footer`
   position: relative;
   background: white;
 
+
   /* Gradientes a los lados para efecto de desvanecido (opcional) */
   &::before, &::after {
     content: "";
@@ -276,18 +283,25 @@ export const FooterComponent = styled.footer`
 
 export const SliderTrack = styled.div`
   display: flex;
-  width: calc(250px * 10); /* El doble de imágenes para el efecto infinito */
-  animation: ${scroll} 40s linear infinite;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  /* IMPORTANTE: max-content asegura que el track sea una linea infinita */
+  width: max-content; 
+  
+  /* Verifica que 'scroll' sea el nombre de tus keyframes */
+  animation: ${scroll} 20s linear infinite;
 
   &:hover {
-    animation-play-state: paused; /* Se detiene al poner el mouse */
+    animation-play-state: paused;
   }
 `;
 export const Slide = styled.div`
   width: 250px;
   height: 300px;
+  /* ESTO ES VITAL */
+  flex-shrink: 0; 
   display: flex;
   align-items: center;
-  padding: 15px;
-  position: relative;
+  justify-content: center;
+  padding: 0 15px;
 `;
