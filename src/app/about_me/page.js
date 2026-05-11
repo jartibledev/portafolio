@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
 import { Head, FooterText, Work, DateWork, Courses, Footer, Portafolio, Projects, Section, DateFooter, HeadPhilosophy, Dropline, SocialNetwork, ReachOut } from "../styles/StylesParagraph.styles";
-import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, FooterPictureComponent, PictureComponent, ContainerPictureComponent, RectangleComponent, FooterComponent,  FirstAnimation,  ProgressBarContainerComponent, ProgressBarComponent, SliderContainer, SliderTrack, Slide  } from "../styles/ComponentStyles";
+import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, FooterPictureComponent, PictureComponent, ContainerPictureComponent, RectangleComponent, FooterComponent,  FirstAnimation,  ProgressBarContainerComponent, ProgressBarComponent, SliderContainer, SliderTrack, Slide, scroll  } from "../styles/ComponentStyles";
 import ScrollReveal from "../ScrollReveal";
 
 import Link from "next/link";
@@ -113,33 +113,33 @@ function AboutMe (props){
            </SectionComponent>
            
            <FirstAnimation ref={sectionRef} $isVisible={isVisible} style= {{flexDirection: 'row'}}> 
-            <SectionComponent flexdirection="row" >
-            <ContainerPictureComponent >
-            <PictureComponent>
-                <Image src="/images/image_bio.jpg"
-                        alt = "picture of me"
-                        fill
-                        style= {styleImage}></Image>
-                
-            </PictureComponent> 
-            </ContainerPictureComponent>
-                <TextComponent  >
-                   <HeadPhilosophy>
-                    hi!
-                   </HeadPhilosophy>
-                   <FooterText style={{textAlign: 'right'}}>
-                        I'm Sergio. I specialize in Design UI and
-                        Graphic Design . Always I love experiment with
-                        new forms of artistic expression, such as code.
-                        I consider coding as a form to create new
-                        pleasant experiences for the user.
-                        In my free times you can find me trying to learn
-                        guitar and drawing illustrations. I like a good
-                        challenge and opportunities to meet diferent
-                        connections, so let's connect!
-                   </FooterText>
-                </TextComponent>
-           </SectionComponent>
+                <SectionComponent flexdirection="row" >
+                    <ContainerPictureComponent >
+                        <PictureComponent>
+                            <Image src="/images/image_bio.jpg"
+                                    alt = "picture of me"
+                                    fill
+                                    style= {styleImage}></Image>
+                            
+                        </PictureComponent> 
+                    </ContainerPictureComponent>
+                    <TextComponent  >
+                        <HeadPhilosophy>
+                            hi!
+                        </HeadPhilosophy>
+                        <FooterText style={{textAlign: 'right'}}>
+                                I'm Sergio. I specialize in Design UI and
+                                Graphic Design . Always I love experiment with
+                                new forms of artistic expression, such as code.
+                                I consider coding as a form to create new
+                                pleasant experiences for the user.
+                                In my free times you can find me trying to learn
+                                guitar and drawing illustrations. I like a good
+                                challenge and opportunities to meet diferent
+                                connections, so let's connect!
+                        </FooterText>
+                    </TextComponent>
+            </SectionComponent>
            </FirstAnimation>
             <ScrollReveal>
            <SectionComponent paddingbottom="10%" height="auto" >
@@ -238,27 +238,37 @@ function AboutMe (props){
                         A little section to round out the professional purpose of this webpage. Who’s the person behind it, really? What do they like—and what are they like? Sections like this can go a little bit longer because it’s nice to learn more about what makes someone tick.
                     </FooterText>
                 </TextComponent>
+                       <SliderContainer style={{ width: "100%", overflow: "hidden", position: "relative" }}>
+    <SliderTrack 
+        style={{ 
+            display: "flex", 
+            flexDirection: "row", 
+            flexWrap: "nowrap", 
+            width: "max-content", // Permite que el track crezca todo lo que necesite
+            animation: `${scroll.name} 25s linear infinite` // Usamos .name para el string exacto
+        }}
+    >
+        {infiniteImages.map((src, index) => (
+            <Slide key={index} style={{ flexShrink: 0, width: "250px" }}> 
+                <Image 
+                    src={src} 
+                    alt={`Trabajo ${index}`} 
+                    width={150} 
+                    height={150}
+                    style={{ objectFit: 'contain', borderRadius: '10px' }}
+                />
+            </Slide>
+        ))}
+    </SliderTrack>
+</SliderContainer>
                 
                     
             
            </SectionComponent>
            </ScrollReveal>
             <SectionComponent paddingright="5%"  paddingleft="5%">
-                <SliderContainer >
-                        <SliderTrack style={{display:"flex", flexDirection:"row"}}>
-                            {infiniteImages.map((src, index) => (
-                                    <Slide key={index}>
-                                        <Image 
-                                        src={src} 
-                                        alt={`Trabajo ${index}`} 
-                                        width={150} 
-                                        height={150}
-                                        style={{ objectFit: 'contain', borderRadius: '10px' }}
-                                        />
-                                    </Slide>
-                                ))}
-                        </SliderTrack>
-                    </SliderContainer></SectionComponent>
+                
+            </SectionComponent>
            <ScrollReveal>
                 <SectionComponent height='auto' >
                                        
@@ -380,6 +390,7 @@ function AboutMe (props){
            <SectionComponent>
 
            </SectionComponent>
+   
         </ArticleComponent>
         
     )

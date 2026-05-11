@@ -1,5 +1,5 @@
 'use client';
-import styled, { keyframes, css } from "styled-components";
+import  { keyframes, styled, css } from "styled-components";
 
 
 
@@ -38,16 +38,16 @@ const animationBottom = keyframes`
   }
 `;
 
-const scroll = keyframes`
-  0% {
+export const scroll = keyframes`
+  from {
     transform: translateX(0);
   }
-  100% {
-    /* Prueba con un valor fijo como -1000px para ver si arranca */
+  to {
+    /* IMPORTANTE: Este valor debe ser exactamente la mitad del ancho total */
+    /* Si tienes 9 imágenes de 250px, la mitad son 2250px */
     transform: translateX(-2250px); 
   }
 `;
-
 
 export const SectionComponent = styled.section`
     width: ${props => props.width || "100%"} ;
@@ -93,7 +93,19 @@ export const FooterPictureComponent = styled.div`
     
 `;
 
-
+export const IconComponent = styled.div`
+    width:  ${props => props.width || "100%"};
+    height: ${props => props.height || "auto"};
+    min-height: ${props => props.minheight || "250px"};
+    display: block;
+    position: relative;
+    overflow:  ${props => props.overflow || "hidden"};
+    border-radius:${props => props.borderRadius || "16px"};
+    
+        
+    
+    
+`;
 
 export const PictureComponent = styled.div`
     width:  ${props => props.width || "100%"};
@@ -261,12 +273,13 @@ export const FooterComponent = styled.footer`
   `;
 
   export const SliderContainer = styled.div`
-  width: 100%;
+  width: 100%; /* Asegúrate de que tenga valor */
   height: 300px;
   margin: auto;
-  overflow: hidden; /* Esconde lo que sale de la pantalla */
+  overflow: hidden; 
   position: relative;
   background: white;
+  display: block;
 
 
   /* Gradientes a los lados para efecto de desvanecido (opcional) */
@@ -282,14 +295,15 @@ export const FooterComponent = styled.footer`
 `;
 
 export const SliderTrack = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  /* IMPORTANTE: max-content asegura que el track sea una linea infinita */
-  width: max-content; 
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
   
-  /* Verifica que 'scroll' sea el nombre de tus keyframes */
-  animation: ${scroll} 20s linear infinite;
+  /* 18 imágenes (9 + 9) * 250px = 4500px */
+  width: 4500px !important; 
+  
+  /* Animación */
+  animation: ${scroll} 25s linear infinite;
 
   &:hover {
     animation-play-state: paused;
@@ -297,11 +311,8 @@ export const SliderTrack = styled.div`
 `;
 export const Slide = styled.div`
   width: 250px;
-  height: 300px;
-  /* ESTO ES VITAL */
   flex-shrink: 0; 
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 0 15px;
+  align-items: center;
 `;
