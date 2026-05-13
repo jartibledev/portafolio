@@ -168,7 +168,7 @@ function PortafolioIllustrationForm (props){
             
             <FooterComponent>
                 <Link style = {linkDisplay} href="..\about_me" passHref>
-                <RectangleComponent>
+                <RectangleComponent >
                     <Portafolio>
                         About
                     </Portafolio>

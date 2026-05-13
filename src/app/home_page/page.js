@@ -47,7 +47,7 @@ function HomePageForm (props){
             <SectionComponent style={stylesHomePage} >
             
                 <Link style = {linkDisplay} href="..\portafolio_dev" passHref>
-                    <RectangleComponent filter="blur(9px)" filterbackdrop="blur(9px)" filterhover="none" backfilterhoover="none" >
+                    <RectangleComponent $filter="blur(9px)" $filterbackdrop="blur(9px)" $filterhover="none" $backfilterhoover="none" >
                         <Portafolio>
                             Portafolio
                         </Portafolio>
@@ -62,7 +62,7 @@ function HomePageForm (props){
                 </Link>
                
                 <Link style = {linkDisplay} href="..\portafolio_design" passHref>
-                    <RectangleComponent filter="blur(9px)" filterbackdrop="blur(9px)" filterhover="none" backfilterhoover="none">
+                    <RectangleComponent $filter="blur(9px)" $filterbackdrop="blur(9px)" $filterhover="none" $backfilterhoover="none">
                         
                         <BlankSpaceComponent></BlankSpaceComponent>
                         <BlankSpaceComponent></BlankSpaceComponent>
@@ -79,7 +79,7 @@ function HomePageForm (props){
                 </Link>    
                
                 <Link style = {linkDisplay} href="..\portafolio_illustration" passHref>
-                    <RectangleComponent filter="blur(9px)" filterbackdrop="blur(9px)" filterhover="none" backfilterhoover="none">
+                    <RectangleComponent $filter="blur(9px)" $filterbackdrop="blur(9px)" $filterhover="none" $backfilterhoover="none">
                         <BlankSpaceComponent></BlankSpaceComponent>
                         <BlankSpaceComponent></BlankSpaceComponent>
                         <Portafolio>

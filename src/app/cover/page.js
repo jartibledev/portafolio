@@ -38,7 +38,7 @@ function CoverForm (props){
             
             
             <Link style ={{margin: 'auto', display: 'flex'}} href="../home_page" passHref >
-                <RectangleComponent filter="blur(9px)"  backdropfilter= "blur(9px)"  filterhover ="none" backdropfilterhover="none" >
+                <RectangleComponent $filter="blur(9px)"  $backdropfilter= "blur(9px)"  $filterhover ="none" $backdropfilterhover="none" >
                     <Head>
                         Start
                     </Head>
