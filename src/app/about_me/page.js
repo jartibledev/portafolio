@@ -57,15 +57,15 @@ const styleLogoImageLeanguagesGallery ={
 }
 
 const logos = [
-  '/images/png-javascript-badge-picture-8.png',
-  '/images/HTML5.png',
-  '/images/CSS3.png',
-  '/images/react_icon.png',
-  '/images/java_logo.png',
-  '/images/c++.svg',
-  '/images/vulkan.png',
-  '/images/opengl.png',
-  '/images/python.png',
+  '/icons/leanguages_programs/png-javascript-badge-picture-8.png',
+  '/icons/leanguages_programs/HTML5.png',
+  '/icons/leanguages_programs/CSS3.png',
+  '/icons/leanguages_programs/react_icon.png',
+  '/icons/leanguages_programs/java_logo.png',
+  '/icons/leanguages_programs/c++.svg',
+  '/icons/leanguages_programs/vulkan.png',
+  '/icons/leanguages_programs/opengl.png',
+  '/icons/leanguages_programs/python.png',
 ];
   const infiniteImages = [...logos, ...logos];
 function AboutMe (props){
@@ -116,7 +116,7 @@ function AboutMe (props){
                 <SectionComponent $flexdirection="row" $height="auto" >
                     <ContainerPictureComponent >
                         <PictureComponent $height="100%">
-                            <Image src="/images/image_bio.jpg"
+                            <Image src="/profile/image_bio.jpg"
                                     alt = "picture of me"
                                     fill
                                     style= {styleImage}></Image>
@@ -155,21 +155,21 @@ function AboutMe (props){
 
                 <GalleryComponent $flexdirection="row" $paddingbottom="10%"  >   
                         <PictureComponent $filter="none" $filterbackdrop="none">
-                            <Image src="/images/LOGOUMA.jpg"
+                            <Image src="/icons/universities/LOGOUMA.jpg"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
                         </PictureComponent>
                         <PictureComponent $filter="none" $filterbackdrop="none">
-                            <Image src="/images/UPV-Emblem.png"
+                            <Image src="/icons/universities/UPV-Emblem.png"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
                         </PictureComponent>
                         <PictureComponent $filter="none" $filterbackdrop="none" >
-                            <Image src="/images/LOGO_STANDFORD.png"
+                            <Image src="/icons/universities/LOGO_STANDFORD.png"
                             alt = "picture of me"
                             fill
                             style={styleImage}
@@ -276,7 +276,7 @@ function AboutMe (props){
                                                 <GalleryComponent>
                                                         <ContainerPictureComponent style={styleLogoImageLeanguagesGallery}>
                                                             <PictureComponent $filter="none" $filterbackdrop="none" style={styleLogosLeanguages}>
-                                                                <Image src="/images/Spanish_flag.svg"
+                                                                <Image src="/icons/leanguages/Spanish_flag.svg"
                                                                     alt = "Spanish flag"
                                                                     fill
                                                                     style={styleLogoImageLeanguages}
@@ -292,7 +292,7 @@ function AboutMe (props){
 
                                                     <ContainerPictureComponent  style={styleLogoImageLeanguagesGallery}>
                                                         <PictureComponent $filter="none" $filterbackdrop="none" style={styleLogosLeanguages}>
-                                                            <Image src="/images/England_flag.svg"
+                                                            <Image src="/icons/leanguages/England_flag.svg"
                                                                 alt = "UK flag"
                                                                 fill
                                                                 style={styleLogoImageLeanguages}
@@ -307,7 +307,7 @@ function AboutMe (props){
 
                                                     <ContainerPictureComponent  style={styleLogoImageLeanguagesGallery}>
                                                         <PictureComponent style={styleLogosLeanguages}>
-                                                            <Image src="/images/French_flag.svg"
+                                                            <Image src="/icons/leanguages/French_flag.svg"
                                                                 alt = "French flag"
                                                                 fill
                                                                 style={styleLogoImageLeanguages}
@@ -322,7 +322,7 @@ function AboutMe (props){
 
                                                     <ContainerPictureComponent style={styleLogoImageLeanguagesGallery}>
                                                         <PictureComponent style={styleLogosLeanguages}>
-                                                            <Image src="/images/German_flag.svg"
+                                                            <Image src="/icons/leanguages/German_flag.svg"
                                                                 alt = "German flag"
                                                                 fill
                                                                 style={styleLogoImageLeanguages}
@@ -361,14 +361,14 @@ function AboutMe (props){
                             ></Image>
                         </PictureComponent>
                         <PictureComponent $filter="none" $filterbackdrop="none" >
-                            <Image src="/images/UPV-Emblem.png"
+                            <Image src="/icons/universities/UPV-Emblem.png"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
                         </PictureComponent>
                         <PictureComponent $filter="none" $filterbackdrop="none" >
-                            <Image src="/images/LOGO_STANDFORD.png"
+                            <Image src="/icons/universities/LOGO_STANDFORD.png"
                             alt = "picture of me"
                             fill
                             style={styleImage}

@@ -71,7 +71,7 @@ function PortafolioIllustrationForm (props){
                 <ContainerPictureComponent>
                         <PictureComponent  $height="100%">
                             <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">
-                            <Image src="/images/concepart_1_2_export.jpg"
+                            <Image src="/illustrations/concepart_1_2_export.jpg"
                             alt = "illustration concept art"
                             priority={false}
                             fill
@@ -98,7 +98,7 @@ function PortafolioIllustrationForm (props){
                     
                         <PictureComponent >
                             <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">
-                            <Image src="/images/experimentation_2_export_to_web.jpg"
+                            <Image src="/illustrations/experimentation_2_export_to_web.jpg"
                             alt = "Chappel Roan"
                             fill
                             priority={false}
@@ -121,7 +121,7 @@ function PortafolioIllustrationForm (props){
                         
                             <PictureComponent $height="auto">
                                 <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">
-                                <Image src="/images/minadesolada_web_export.jpg"
+                                <Image src="/illustrations/minadesolada_web_export.jpg"
                                 alt = "illustration concept art"
                                 fill
                                 priority={false}
