@@ -51,7 +51,7 @@ function PortafolioIllustrationForm (props){
         <ArticleComponent>
             
            <SectionComponent $height="25vh" >
-               <RectangleComponent>
+               <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">
                     <BlankSpaceComponent/>
                     <BlankSpaceComponent/>
                                     
@@ -168,7 +168,7 @@ function PortafolioIllustrationForm (props){
             
             <FooterComponent>
                 <Link style = {linkDisplay} href="..\about_me" passHref>
-                <RectangleComponent >
+                <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">
                     <Portafolio>
                         About
                     </Portafolio>

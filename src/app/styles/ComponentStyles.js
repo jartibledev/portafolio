@@ -238,20 +238,20 @@ export const BlankSpaceComponent = styled.div`
     padding: 2em ;
 `;
 export const RectangleComponent = styled.div`
-    display: ${props => props.display || 'grid'};
-    grid-template-columns: ${props => props.gridtemplatecolumns || 'auto auto auto'} ;
+    display: ${props => props.$display || 'grid'};
+    grid-template-columns: ${props => props.$gridtemplatecolumns || 'auto auto auto'} ;
     
     border: ${props => props.border || '1.2rem solid black'} ;
-    border-radius: ${props => props.borderradius || ' border-radius: 0px'};
-    cursor: ${props => props.cursor || ' pointer'};
-    filter:  ${props => props.filter || ' none'};
-    backdrop-filter:  ${props => props.backdropfilter || ' none'};
+    border-radius: ${props => props.$borderradius || ' border-radius: 0px'};
+    cursor: ${props => props.$cursor || ' pointer'};
+    filter:  ${props => props.$filter || ' none'};
+    backdrop-filter:  ${props => props.$backdropfilter || ' none'};
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateZ(0);  
     &:hover {
         transform: translateY(-2px);
-        filter:${props => props.filterhover || ' blur(9px'};
-        backdrop-filter: ${props => props.backdropfilterhover || 'blur(9px)'};
+        filter:${props => props.$filterhover || ' blur(9px'};
+        backdrop-filter: ${props => props.$backdropfilterhover || 'blur(9px)'};
     }
     &:active{
     transform: translateY(0);
@@ -259,14 +259,14 @@ export const RectangleComponent = styled.div`
 `;
 
 export const FooterComponent = styled.footer`
-    width: ${props => props.width || "100%"};
-    display: ${props => props.display || 'flex'};
-    flex-direction: ${props => props.flexdirection || "row"};
-    justify-content: ${props => props.justifyContent || "center"};
-    padding-left: ${props => props.paddingleft || "25%"};
-    padding-right: ${props => props.paddingright || "25%"};
-    padding-top:  ${props => props.paddingtop || "2%"};
-    padding-bottom: ${props => props.paddingbottom || "2%"}
+    width: ${props => props.$width || "100%"};
+    display: ${props => props.$display || 'flex'};
+    flex-direction: ${props => props.$flexdirection || "row"};
+    justify-content: ${props => props.$justifyContent || "center"};
+    padding-left: ${props => props.$paddingleft || "25%"};
+    padding-right: ${props => props.$paddingright || "25%"};
+    padding-top:  ${props => props.$paddingtop || "2%"};
+    padding-bottom: ${props => props.$paddingbottom || "2%"}
 
   
   `;
