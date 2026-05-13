@@ -56,18 +56,18 @@ const styleLogoImageLeanguagesGallery ={
       
 }
 
-const images = [
+const logos = [
   '/images/png-javascript-badge-picture-8.png',
   '/images/HTML5.png',
   '/images/CSS3.png',
-  '/images/react.png',
+  '/images/react_icon.png',
   '/images/java_logo.png',
   '/images/c++.svg',
   '/images/vulkan.png',
   '/images/opengl.png',
   '/images/python.png',
 ];
-  const infiniteImages = [...images, ...images];
+  const infiniteImages = [...logos, ...logos];
 function AboutMe (props){
   
     const [isVisible, setIsVisible] = useState(false);
@@ -99,7 +99,7 @@ function AboutMe (props){
     return(
         <ArticleComponent>
             
-            <SectionComponent $height= "30vh" >
+            <SectionComponent $height= "30vh">
             <Link href="../home_page" passHref >
                 <FooterComponent>Back to see my others portafolios</FooterComponent> 
             </Link>
@@ -112,10 +112,10 @@ function AboutMe (props){
             
            </SectionComponent>
            
-           <FirstAnimation ref={sectionRef} $isVisible={isVisible} style= {{flexDirection: 'row'}}> 
-                <SectionComponent flexdirection="row" >
+           <FirstAnimation ref={sectionRef} $isVisible={isVisible} style= {{flexDirection: 'row'}} $margin> 
+                <SectionComponent $flexdirection="row" $height="auto" >
                     <ContainerPictureComponent >
-                        <PictureComponent>
+                        <PictureComponent $height="100%">
                             <Image src="/images/image_bio.jpg"
                                     alt = "picture of me"
                                     fill
@@ -153,7 +153,7 @@ function AboutMe (props){
                     </FooterText>
                 </TextComponent>
 
-                <GalleryComponent $flexdirection="row" >   
+                <GalleryComponent $flexdirection="row" $paddingbottom="10%"  >   
                         <PictureComponent $filter="none" $filterbackdrop="none">
                             <Image src="/images/LOGOUMA.jpg"
                             alt = "picture of me"
@@ -267,10 +267,6 @@ function AboutMe (props){
             ))}
         </SliderTrack>
 </SliderContainer>
-
-            <SectionComponent $paddingright="5%"  $paddingleft="5%">
-                
-            </SectionComponent>
            <ScrollReveal>
                 <SectionComponent $height='auto' >
                                        

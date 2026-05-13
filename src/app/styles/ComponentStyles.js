@@ -74,6 +74,8 @@ export const GalleryComponent = styled.div`
     min-widht: ${props => props.$minwidth || "20vh"};
     display: ${props => props.$display || "flex"};
     flex-direction: ${props => props.$flexdirection || "column"};
+    padding-bottom: ${props => props.$paddingbottom || "5%"};
+    padding-top: ${props => props.$paddingtop || "5%"};
 
 `;
 
@@ -111,6 +113,7 @@ export const PictureComponent = styled.div`
     width:  ${props => props.$width || "100%"};
     height: ${props => props.$height || "auto"};
     min-height: ${props => props.$minheight || "250px"};
+    min-width: ${props => props.$minwidth || "250px"};
     display: block;
     position: relative;
     overflow:  ${props => props.$overflow || "hidden"};
@@ -205,7 +208,7 @@ export const FirstAnimation = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 10%;
+    
 
     opacity: 0;
     transform: translateY(-100px); 
