@@ -103,7 +103,7 @@ function AboutMe (props){
             <Link href="../home_page" passHref >
                 <FooterComponent>Back to see my others portafolios</FooterComponent> 
             </Link>
-                <RectangleComponent>
+                <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">
                     <Head>
                         About me
                     </Head>
