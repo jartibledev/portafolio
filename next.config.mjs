@@ -2,6 +2,10 @@
 const nextConfig = {
   /* config options here */
   reactCompiler: true,
+  compiler:{
+    styledComponets: true,
+  },
+  transpilePackages: ['styled-components'],
 };
 
 export default nextConfig;

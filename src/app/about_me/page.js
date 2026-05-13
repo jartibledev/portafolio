@@ -392,7 +392,6 @@ function AboutMe (props){
            <SectionComponent>
 
            </SectionComponent>
-   
         </ArticleComponent>
         
     )
