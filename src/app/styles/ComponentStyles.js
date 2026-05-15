@@ -142,15 +142,19 @@ export const PictureComponent = styled.div`
 `;
 
 export const ProjectSinopsis = styled.div`
-  display: none; /* Oculto por defecto */
+  display: block; /* Oculto por defecto */
   position: absolute;
+  opacity:0;
+  visibility: hidden;
   top: 0;
   left: ${props => props.$left || "auto"}; /* Lo empuja a la derecha del elemento principal (deja un 5% de margen) */
   right: ${props => props.$right || "auto"}; /* Lo empuja a la derecha del elemento principal (deja un 5% de margen) */
   white-space: nowrap; /* Evita que el texto se rompa en varias líneas */;
   margin-left:  ${props => props.$marginleft || "5%"};
   margin-right:  ${props => props.$marginright || "5%"};
-  transition: all 0.6s ease;
+  filter: ${props => props.$filter || "blur(16px)"};
+  backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
+  transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ; 
 `;
 
 export const ContainerPictureComponent = styled.div`
@@ -171,7 +175,10 @@ export const ContainerPictureComponent = styled.div`
         } 
     
     &:hover ${ProjectSinopsis} {
-        display: block; 
+        filter: ${props => props.$filter || "none"};
+        backdrop-filter: ${props => props.$backdropfilter || "none"};
+        opacity:1;
+        visibility: visible;
         } 
     
      

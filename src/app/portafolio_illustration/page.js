@@ -88,6 +88,7 @@ function PortafolioIllustrationForm (props){
                         <Projects>Concept Art</Projects>
                         <DateFooter>2026</DateFooter>
                     </FooterPictureComponent>
+                    <ProjectComponent project="Concept Art" explanation="This is a conceopt art" $left="75%" ></ProjectComponent>
                 </ContainerPictureComponent>
             </SectionComponent>
            </FirstAnimation>
@@ -115,16 +116,7 @@ function PortafolioIllustrationForm (props){
                         <Projects>Chappel Roan</Projects>
                         <DateFooter>2026</DateFooter>
                     </FooterPictureComponent>
-                    <ProjectSinopsis $right="105%">
-                        <TextComponent>
-                            <Projects>
-                                Chappel Roan
-                            </Projects>
-                            <FooterText>
-                                This text explain the illustration
-                            </FooterText>
-                        </TextComponent>
-                    </ProjectSinopsis>
+                     <ProjectComponent project="Chappel Roan" explanation="This is an illustration of Chappel Roan" $right="105%"></ProjectComponent>
                 </ContainerPictureComponent>
                </ScrollReveal>
                <ScrollReveal $direction={"right"} >
