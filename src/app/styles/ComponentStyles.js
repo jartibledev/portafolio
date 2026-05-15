@@ -141,6 +141,18 @@ export const PictureComponent = styled.div`
     }
 `;
 
+export const ProjectSinopsis = styled.div`
+  width:  ${props => props.$width || "100%"};
+  height: ${props => props.$height || "100%"};
+  display: ${props => props.$display || "flex"};
+  flex-direction: ${props => props.$flexdirection || "column"};
+  margin-left:  ${props => props.$marginleft || "5%"};
+  margin-right:  ${props => props.$marginright || "5%"};
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+`;
+
 export const ContainerPictureComponent = styled.div`
     width:  ${props => props.$width || "100%"};
     height: ${props => props.$height || "100%"};
@@ -156,6 +168,11 @@ export const ContainerPictureComponent = styled.div`
     &:hover ${FooterPictureComponent} {
         filter:blur(9px);
         backdrop-filter: blur(9px);   
+        } 
+    
+    &:hover ${ProjectSinopsis} {
+        opacity: 1;
+        visibility: visible;  
         } 
     
      
