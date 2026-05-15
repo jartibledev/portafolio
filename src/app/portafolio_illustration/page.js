@@ -6,7 +6,7 @@ import ScrollReveal from "../ScrollReveal";
 import Link from "next/link";
 import Image from 'next/image';
 import ProjectComponent from "../styles/ProjectSinopsisComponent";
-
+import PostComponent from "../styles/modal";
 //import miImagen from '../concepart_1_2_export.jpg'
 const styleImage ={
     objectFit: 'cover',
@@ -145,6 +145,13 @@ function PortafolioIllustrationForm (props){
                      </ScrollReveal> 
               
             </SectionComponent> 
+            <SectionComponent>
+                <ScrollReveal >
+                    <PostComponent  linkImage="/illustrations/minadesolada_web_export.jpg" project="Prueba" date="2026" explanation="Esta es una prueba" >
+
+                    </PostComponent>
+                </ScrollReveal>
+            </SectionComponent>
            
             <ScrollReveal >
                 <SectionComponent $flexdirection="row" $height="auto" > 

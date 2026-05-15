@@ -116,11 +116,11 @@ export const PictureComponent = styled.div`
     min-height: ${props => props.$minheight || "250px"};
     min-width: ${props => props.$minwidth || "250px"};
     display: block;
-    position: relative;
+    position:${props => props.$position || "relative"};;
     overflow:  ${props => props.$overflow || "hidden"};
     border-radius:${props => props.$borderradius || "16px"};
     cursor: ${props => props.$cursor || "pointer"};
-    position: relative;    
+   
     filter: ${props => props.$filter || "blur(16px)"};
     backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
     
