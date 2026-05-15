@@ -142,19 +142,23 @@ export const PictureComponent = styled.div`
 `;
 
 export const ProjectSinopsis = styled.div`
-  display: block; /* Oculto por defecto */
+  display: block;
   position: absolute;
   opacity:0;
   visibility: hidden;
   top: 0;
-  left: ${props => props.$left || "auto"}; /* Lo empuja a la derecha del elemento principal (deja un 5% de margen) */
-  right: ${props => props.$right || "auto"}; /* Lo empuja a la derecha del elemento principal (deja un 5% de margen) */
-  white-space: nowrap; /* Evita que el texto se rompa en varias líneas */;
+  left: ${props => props.$left || "auto"}; 
+  right: ${props => props.$right || "auto"}; 
+  white-space: nowrap;
   margin-left:  ${props => props.$marginleft || "5%"};
   margin-right:  ${props => props.$marginright || "5%"};
   filter: ${props => props.$filter || "blur(16px)"};
   backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
-  transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ; 
+  transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;
+  
+  & * {
+    text-align: ${props => props.$textalign || "blur(9px)"}
+  }
 `;
 
 export const ContainerPictureComponent = styled.div`

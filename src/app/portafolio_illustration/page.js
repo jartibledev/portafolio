@@ -116,7 +116,7 @@ function PortafolioIllustrationForm (props){
                         <Projects>Chappel Roan</Projects>
                         <DateFooter>2026</DateFooter>
                     </FooterPictureComponent>
-                     <ProjectComponent project="Chappel Roan" explanation="This is an illustration of Chappel Roan" $right="105%"></ProjectComponent>
+                     <ProjectComponent project="Chappel Roan" explanation="This is an illustration of Chappel Roan" $right="105%" $textalign="end"></ProjectComponent>
                 </ContainerPictureComponent>
                </ScrollReveal>
                <ScrollReveal $direction={"right"} >

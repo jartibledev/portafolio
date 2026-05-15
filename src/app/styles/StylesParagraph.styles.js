@@ -76,7 +76,7 @@ export const FooterText = styled.p`
     font-size: 1 rem ;
     color : ${greyColor} ;
     letter-spacing: -2%;
-     line-height: 145%; 
+    line-height: 145%; 
 
 `;
 export const FooterSubtitle = styled.p`
