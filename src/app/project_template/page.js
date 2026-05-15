@@ -98,10 +98,10 @@ function AboutMe (props){
             }, []);
     return(
         <ArticleComponent>
-            <SectionComponent>
+            <SectionComponent $height= "30vh"> 
                 <Link href="../home_page" passHref >
-                <FooterComponent>Back to see my others portafolios</FooterComponent> 
-            </Link>
+                    <FooterComponent>Back to see my others portafolios</FooterComponent> 
+                </Link>
                 <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">
                     <Head>
                         About me
@@ -143,8 +143,9 @@ function AboutMe (props){
                             </FooterText>
                         </TextComponent>
                     </SectionComponent>
-                </ScrollReveal>           
-           <SectionComponent>
+                </ScrollReveal>
+                <ScrollReveal>          
+           <SectionComponent $paddingbottom="10%" $height="auto">
                 <TextComponent >
                     <HeadPhilosophy style={{textAlign: 'left'}}>
                         The problem
@@ -155,30 +156,33 @@ function AboutMe (props){
 
                 </TextComponent>
                     <GalleryComponent $flexdirection="row" $paddingbottom="10%"  >   
-                    <PictureComponent $filter="none" $filterbackdrop="none">
-                        <Image src="/icons/universities/LOGOUMA.jpg"
-                        alt = "picture of me"
-                        fill
-                        style={styleImage}
-                        ></Image>
-                    </PictureComponent>
-                    <PictureComponent $filter="none" $filterbackdrop="none">
-                        <Image src="/icons/universities/UPV-Emblem.png"
-                        alt = "picture of me"
-                        fill
-                        style={styleImage}
-                        ></Image>
-                    </PictureComponent>
-                    <PictureComponent $filter="none" $filterbackdrop="none" >
-                        <Image src="/icons/universities/LOGO_STANDFORD.png"
-                        alt = "picture of me"
-                        fill
-                        style={styleImage}
-                        ></Image>
-                    </PictureComponent>                 
+                        <PictureComponent $filter="none" $filterbackdrop="none">
+                            <Image src="/icons/universities/LOGOUMA.jpg"
+                            alt = "picture of me"
+                            fill
+                            style={styleImage}
+                            ></Image>
+                        </PictureComponent>
+                        <PictureComponent $filter="none" $filterbackdrop="none">
+                            <Image src="/icons/universities/UPV-Emblem.png"
+                            alt = "picture of me"
+                            fill
+                            style={styleImage}
+                            ></Image>
+                        </PictureComponent>
+                        <PictureComponent $filter="none" $filterbackdrop="none" >
+                            <Image src="/icons/universities/LOGO_STANDFORD.png"
+                            alt = "picture of me"
+                            fill
+                            style={styleImage}
+                            ></Image>
+                        </PictureComponent>                 
                 </GalleryComponent>
             </SectionComponent> 
-           <SectionComponent>
+        </ScrollReveal>
+
+        <ScrollReveal>
+           <SectionComponent $paddingbottom="10%" $height="auto">
                 <TextComponent >
                     <HeadPhilosophy style={{textAlign: 'left'}}>
                         The solution
@@ -211,42 +215,45 @@ function AboutMe (props){
                         ></Image>
                     </PictureComponent>                 
                 </GalleryComponent>
-            </SectionComponent> 
-           <SectionComponent>
-                <TextComponent >
-                    <HeadPhilosophy style={{textAlign: 'left'}}>
-                        The results
-                    </HeadPhilosophy>
-                    <FooterText>
-                        A little section to round out the professional purpose of this webpage. Who’s the person behind it, really? What do they like—and what are they like? Sections like this can go a little bit longer because it’s nice to learn more about what makes someone tick.
-                    </FooterText>
+            </SectionComponent>
+        </ScrollReveal>
 
-                </TextComponent>
-                    <GalleryComponent $flexdirection="row" $paddingbottom="10%"  >   
-                    <PictureComponent $filter="none" $filterbackdrop="none">
-                        <Image src="/icons/universities/LOGOUMA.jpg"
-                        alt = "picture of me"
-                        fill
-                        style={styleImage}
-                        ></Image>
-                    </PictureComponent>
-                    <PictureComponent $filter="none" $filterbackdrop="none">
-                        <Image src="/icons/universities/UPV-Emblem.png"
-                        alt = "picture of me"
-                        fill
-                        style={styleImage}
-                        ></Image>
-                    </PictureComponent>
-                    <PictureComponent $filter="none" $filterbackdrop="none" >
-                        <Image src="/icons/universities/LOGO_STANDFORD.png"
-                        alt = "picture of me"
-                        fill
-                        style={styleImage}
-                        ></Image>
-                    </PictureComponent>                 
-                </GalleryComponent>
-            </SectionComponent> 
-           
+        <ScrollReveal>
+                <SectionComponent $paddingbottom="10%" $height="auto">
+                    <TextComponent >
+                        <HeadPhilosophy style={{textAlign: 'left'}}>
+                            The results
+                        </HeadPhilosophy>
+                        <FooterText>
+                            A little section to round out the professional purpose of this webpage. Who’s the person behind it, really? What do they like—and what are they like? Sections like this can go a little bit longer because it’s nice to learn more about what makes someone tick.
+                        </FooterText>
+
+                    </TextComponent>
+                        <GalleryComponent $flexdirection="row" $paddingbottom="10%"  >   
+                        <PictureComponent $filter="none" $filterbackdrop="none">
+                            <Image src="/icons/universities/LOGOUMA.jpg"
+                            alt = "picture of me"
+                            fill
+                            style={styleImage}
+                            ></Image>
+                        </PictureComponent>
+                        <PictureComponent $filter="none" $filterbackdrop="none">
+                            <Image src="/icons/universities/UPV-Emblem.png"
+                            alt = "picture of me"
+                            fill
+                            style={styleImage}
+                            ></Image>
+                        </PictureComponent>
+                        <PictureComponent $filter="none" $filterbackdrop="none" >
+                            <Image src="/icons/universities/LOGO_STANDFORD.png"
+                            alt = "picture of me"
+                            fill
+                            style={styleImage}
+                            ></Image>
+                        </PictureComponent>                 
+                    </GalleryComponent>
+                </SectionComponent>
+            </ScrollReveal>
         </ArticleComponent>
         
     )
