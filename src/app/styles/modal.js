@@ -14,14 +14,18 @@ const styleImage ={
 };
 
 
-export default function PostComponent ({ children, linkImage, linkWeb, project="Project Name", date="2026", explanation="This text explain the illustration", ...props }) {
+export default function PostComponent ({ children, linkImage, linkWeb, project="Project Name", date="2026", explanation="This text explain the illustration", right, left, textalign, ...props }) {
      // Estado para controlar si el modal está abierto y guardar la imagen seleccionada
   const [isOpen, setIsOpen] = useState(false);
   const [imagenActual, setImagenActual] = useState('');
 
   return (
-    <ContainerPicture>
-        <PictureComponent {...props}>
+    <>
+   
+        <PictureComponent  onClick={() => {
+                                setImagenActual(linkImage);
+                                setIsOpen(true);
+                            }} {...props}>
                             
                             <Image src={linkImage}
                             alt = {project}
@@ -31,10 +35,7 @@ export default function PostComponent ({ children, linkImage, linkWeb, project="
                             onLoad={(e) => {
                             e.target.style.opacity = "1";
                             }}
-                            onClick={() => {
-                                setImagenActual(linkImage);
-                                setIsOpen(true);
-                            }}
+                           
                             >
                             </Image>
                              
@@ -43,9 +44,10 @@ export default function PostComponent ({ children, linkImage, linkWeb, project="
                                 <Projects>{project}</Projects>
                                 <DateFooter>{date}</DateFooter>
         </FooterPictureComponent>
-        <ProjectComponent project={project} explanation={explanation} ></ProjectComponent>
+        <ProjectComponent project={project} explanation={explanation} $right={right} $left={left} $textalign= {textalign} ></ProjectComponent>
     {isOpen && (
-        < PictureComponent onClick={() => setIsOpen(false)} $position = "fixed" style = {{ 
+        < div onClick={() => setIsOpen(false)}  style = {{
+            position:'fixed',
             top: "0", 
             left: "0", 
             width: '100vw', 
@@ -64,7 +66,7 @@ export default function PostComponent ({ children, linkImage, linkWeb, project="
               objectFit: 'contain'
             }}></Image>
         
-    </PictureComponent>)}
-   </ContainerPicture>
+    </div>)}
+</>
   );
 }

@@ -22,8 +22,10 @@ const linkDisplay = {
 
 
 function PortafolioIllustrationForm (props){
+        const [isOpen, setIsOpen] = useState(false);
+        const [imagenActual, setImagenActual] = useState('');
         const [isVisible, setIsVisible] = useState(false);
-                const sectionRef = useRef(null);
+        const sectionRef = useRef(null);
     
                 useEffect(() =>{
                     const observer = new IntersectionObserver(
@@ -48,6 +50,8 @@ function PortafolioIllustrationForm (props){
                         }
                     };
                 }, []);
+                
+                
     return(
         <ArticleComponent>
             
@@ -147,9 +151,60 @@ function PortafolioIllustrationForm (props){
             </SectionComponent> 
             <SectionComponent>
                 <ScrollReveal >
-                    <PostComponent  linkImage="/illustrations/minadesolada_web_export.jpg" project="Prueba" date="2026" explanation="Esta es una prueba" >
-
-                    </PostComponent>
+                    <ContainerPictureComponent>
+                    <PostComponent $height="auto" linkImage="/illustrations/minadesolada_web_export.jpg" project="Prueba" date="2026" explanation="Esta es una prueba" right="105%" textalign="end" >
+                    
+                    </PostComponent></ContainerPictureComponent>
+                </ScrollReveal>
+            </SectionComponent>
+                    
+            <SectionComponent>
+                <ScrollReveal>
+                    <PictureComponent $height="auto">
+                                <Image src="/illustrations/minadesolada_web_export.jpg"
+                                alt = "illustration concept art"
+                                fill
+                                priority={false}
+                                style= {styleImage}
+                                onLoadingComplete={(img) => {
+                                img.style.opacity = "1";
+                                }}
+                                onClick={() => {
+                                    setImagenActual("/illustrations/minadesolada_web_export.jpg");
+                                    setIsOpen(true);
+                                }}
+                                >
+                                     
+                                </Image>
+                                {isOpen && (
+                                            < PictureComponent onClick={() => setIsOpen(false)}
+                                             style = {{ 
+                                                position: 'fixed',
+                                                top: "0", 
+                                                left: "0", 
+                                                width: '100vw', 
+                                                height:'100vh', 
+                                                backgroundColor: 'rgba(0, 0, 0, 0.8)',  
+                                                display: 'flex',
+                                                justifyContent: 'center',
+                                                alignItems: 'center',
+                                                zIndex: 1000,
+                                                cursor: 'zoom-out' }} >
+                                    
+                                            <Image src= {imagenActual}  
+                                                alt="Vista completa"
+                                                fill
+                                                style={{
+                                                  objectFit: 'contain'
+                                                }}></Image>
+                                            
+                                        </PictureComponent>)}
+                            </PictureComponent>
+                        <FooterPictureComponent>
+                            <Projects>Prueba</Projects>
+                            <DateFooter>2027</DateFooter>
+                        </FooterPictureComponent> 
+                      <ProjectComponent project="Prueba 2" explanation="This is an illustration of Pueba 2" $left="105%"></ProjectComponent>
                 </ScrollReveal>
             </SectionComponent>
            

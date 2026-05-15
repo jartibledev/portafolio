@@ -171,6 +171,10 @@ export const ContainerPictureComponent = styled.div`
 
     &:hover ${PictureComponent} {
                 filter: none;
+                img {
+                  filter: none; /* Quita el blur por defecto */
+                  opacity: 1 !important;
+                }   
             } 
     
     &:hover ${FooterPictureComponent} {
