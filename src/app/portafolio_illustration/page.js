@@ -5,6 +5,7 @@ import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, Fo
 import ScrollReveal from "../ScrollReveal";
 import Link from "next/link";
 import Image from 'next/image';
+import ProjectComponent from "../styles/ProjectSinopsisComponent";
 
 //import miImagen from '../concepart_1_2_export.jpg'
 const styleImage ={
@@ -147,7 +148,7 @@ function PortafolioIllustrationForm (props){
                             <Projects>Carrie</Projects>
                             <DateFooter>2026</DateFooter>
                         </FooterPictureComponent> 
-                      
+                      <ProjectComponent project="Carrie" explanation="This is an illustration of Carrie" $left="105%"></ProjectComponent>
                     </ContainerPictureComponent>
                      </ScrollReveal> 
               
