@@ -145,11 +145,12 @@ export const ProjectSinopsis = styled.div`
   display: none; /* Oculto por defecto */
   position: absolute;
   top: 0;
-  left: 105%; /* Lo empuja a la derecha del elemento principal (deja un 5% de margen) */
+  left: ${props => props.$left || "auto"}; /* Lo empuja a la derecha del elemento principal (deja un 5% de margen) */
+  right: ${props => props.$right || "auto"}; /* Lo empuja a la derecha del elemento principal (deja un 5% de margen) */
   white-space: nowrap; /* Evita que el texto se rompa en varias líneas */;
   margin-left:  ${props => props.$marginleft || "5%"};
   margin-right:  ${props => props.$marginright || "5%"};
-  transition: all 0.3s ease;
+  transition: all 0.6s ease;
 `;
 
 export const ContainerPictureComponent = styled.div`

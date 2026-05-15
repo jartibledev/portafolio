@@ -114,7 +114,7 @@ function PortafolioIllustrationForm (props){
                         <Projects>Chappel Roan</Projects>
                         <DateFooter>2026</DateFooter>
                     </FooterPictureComponent>
-                    <ProjectSinopsis>
+                    <ProjectSinopsis $right="105%">
                         <TextComponent>
                             <Projects>
                                 Chappel Roan
