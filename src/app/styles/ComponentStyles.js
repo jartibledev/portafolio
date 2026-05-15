@@ -20,6 +20,7 @@ export const ArticleComponent = styled.article`
     width: 100%;
     flex-direction: column;
     justify-content: center;
+    overflow: hidden;
 
 `;
 
