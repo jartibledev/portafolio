@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
-import { Footer, Portafolio, Projects, Section, DateFooter, HeadPhilosophy, Dropline, SocialNetwork, ReachOut } from "../styles/StylesParagraph.styles";
-import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, FooterPictureComponent, PictureComponent, ContainerPictureComponent, RectangleComponent, FooterComponent, BlankSpaceComponent, FirstAnimation } from "../styles/ComponentStyles";
+import { Footer, Portafolio, Projects, Section, DateFooter, HeadPhilosophy, Dropline, SocialNetwork, ReachOut, FooterText } from "../styles/StylesParagraph.styles";
+import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, FooterPictureComponent, PictureComponent, ContainerPictureComponent, RectangleComponent, FooterComponent, BlankSpaceComponent, FirstAnimation, ProjectSinopsis } from "../styles/ComponentStyles";
 import ScrollReveal from "../ScrollReveal";
 import Link from "next/link";
 import Image from 'next/image';
@@ -114,6 +114,16 @@ function PortafolioIllustrationForm (props){
                         <Projects>Chappel Roan</Projects>
                         <DateFooter>2026</DateFooter>
                     </FooterPictureComponent>
+                    <ProjectSinopsis>
+                        <TextComponent>
+                            <Projects>
+                                Chappel Roan
+                            </Projects>
+                            <FooterText>
+                                This text explain the illustration
+                            </FooterText>
+                        </TextComponent>
+                    </ProjectSinopsis>
                 </ContainerPictureComponent>
                </ScrollReveal>
                <ScrollReveal $direction={"right"} >
