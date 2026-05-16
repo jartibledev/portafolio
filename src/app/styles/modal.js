@@ -50,14 +50,14 @@ export default function PostComponent ({ children, linkImage, linkWeb, project="
         <style>{`
             @keyframes fadeIn {
               from {
-                background-color: rgba(192, 192, 192, 0);
+               background-color: rgba(255, 255, 255, 0.16);
                 backdrop-filter: blur(0px);
                 -webkit-backdrop-filter: blur(0px);
               }
               to {
-                background-color: rgba(0, 0, 0, 0.6);
+                background-color: rgba(255, 255, 255, 0.49);
                 backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(20px);
               }
             }
 
@@ -86,14 +86,8 @@ export default function PostComponent ({ children, linkImage, linkWeb, project="
             alignItems: 'center',
             zIndex: 99999, 
             cursor: 'zoom-out',
-            animation: 'fadeIn 0.3s ease-out forwards' }} >
+            animation: 'fadeIn 1s ease-out forwards, scaleUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards' }} >
 
-        <div style={{ 
-                    position: 'relative', 
-                    width: '90vw', 
-                    height: '90vh',
-                    animation: 'scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards'
-                }}></div>
         <Image src= {imagenActual}  
             alt="Vista completa"
             fill
