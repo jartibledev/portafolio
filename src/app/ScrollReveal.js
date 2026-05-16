@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { AnimatedSection } from './styles/ComponentStyles';
 
-export default function ScrollReveal({ children, delay = "0s",  ...props }) {
+export default function ScrollReveal({ children, delay = "0s", threshold = 0.1,  ...props }) {
   const [isVisible, setIsVisible] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false); // Nuevo: Control de carga
   const domRef = useRef();
@@ -13,7 +13,7 @@ export default function ScrollReveal({ children, delay = "0s",  ...props }) {
         if (entry.isIntersecting) setIsVisible(true);
         else setIsVisible(false);
       },
-      { threshold: 0.1,
+      { threshold: threshold,
        }
     );
 

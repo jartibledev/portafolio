@@ -49,6 +49,16 @@ export const scroll = keyframes`
     transform: translateX(-2250px); 
   }
 `;
+export const toLeft = keyframes`
+  from {
+    transform: translateX(-2250px);
+  }
+  to {
+    /* IMPORTANTE: Este valor debe ser exactamente la mitad del ancho total */
+    /* Si tienes 9 imágenes de 250px, la mitad son 2250px */
+    transform: translateX(0px); 
+  }
+`;
 
 export const SectionComponent = styled.section`
     width: ${props => props.$width || "100%"} ;
@@ -68,6 +78,7 @@ export const TextComponent = styled.div`
     margin-left: ${props => props.$margginleft || "5%"};
     margin-right: ${props => props.$margginright || "5%"};
     margin-bottom: ${props => props.$margginbottom || "5%"};
+    text-align: ${props => props.$textalign || "start"} 
 `;
 
 export const GalleryComponent = styled.div`
@@ -303,8 +314,8 @@ export const FooterComponent = styled.footer`
   `;
 
   export const SliderContainer = styled.div`
-  width: 100%; /* Asegúrate de que tenga valor */
-  height: 300px;
+  width: ${props => props.$width || "100%"}; /* Asegúrate de que tenga valor */
+  height:  ${props => props.$height || "300px"};
   margin: auto;
   overflow: hidden; 
   position: relative;
@@ -320,8 +331,8 @@ export const FooterComponent = styled.footer`
     width: 200px;
     z-index: 2;
   }
-  &::before { left: 0; background: linear-gradient(to right, white 0%, rgba(255,255,255,0) 100%); }
-  &::after { right: 0; background: linear-gradient(to left, white 0%, rgba(255,255,255,0) 100%); }
+  &::before {  left: 0; background: linear-gradient(to right, white 0%, rgba(255,255,255,0) 100%); }
+  &::after {  right: 0; background: linear-gradient(to left, white 0%, rgba(255,255,255,0) 100%); }
 `;
 
 export const SliderTrack = styled.div`
@@ -333,7 +344,7 @@ export const SliderTrack = styled.div`
   width: 4500px !important; 
   
   /* Animación */
-  animation: ${scroll} 25s linear infinite;
+  animation:   ${props => props.$animation || scroll } 25s linear infinite;
 
   &:hover {
     animation-play-state: paused;

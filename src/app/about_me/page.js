@@ -1,11 +1,13 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
 import { Head, FooterText, Work, DateWork, Courses, Footer, Portafolio, Projects, Section, DateFooter, HeadPhilosophy, Dropline, SocialNetwork, ReachOut } from "../styles/StylesParagraph.styles";
-import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, FooterPictureComponent, PictureComponent, ContainerPictureComponent, RectangleComponent, FooterComponent,  FirstAnimation,  ProgressBarContainerComponent, ProgressBarComponent, SliderContainer, SliderTrack, Slide, scroll  } from "../styles/ComponentStyles";
+import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, FooterPictureComponent, PictureComponent, ContainerPictureComponent, RectangleComponent, FooterComponent,  FirstAnimation,  ProgressBarContainerComponent, ProgressBarComponent, SliderContainer, SliderTrack, Slide, scroll, toLeft  } from "../styles/ComponentStyles";
 import ScrollReveal from "../ScrollReveal";
 
 import Link from "next/link";
 import Image from 'next/image';
+
+
 
 const styleImage ={
     objectFit: 'cover',
@@ -56,6 +58,8 @@ const styleLogoImageLeanguagesGallery ={
       
 }
 
+
+
 const logos = [
   '/icons/leanguages_programs/png-javascript-badge-picture-8.png',
   '/icons/leanguages_programs/HTML5.png',
@@ -67,7 +71,19 @@ const logos = [
   '/icons/leanguages_programs/opengl.png',
   '/icons/leanguages_programs/python.png',
 ];
+const softwareDesign = [
+  '/icons/graphic_software/Adobe_Illustrator_CC_icon.svg.png',
+  '/icons/graphic_software/Adobe_InDesign_CC_icon.svg.png',
+  '/icons/graphic_software/Adobe_Photoshop_CC_icon.svg.png',
+  '/icons/graphic_software/Adobe_Premiere_Pro_CC_icon.svg.png',
+  '/icons/graphic_software/Blender_logo_no_text.svg.png',
+  '/icons/graphic_software/GIMP-Logo.wine.svg',
+  '/icons/graphic_software/Inkscape_Logo.svg.png',
+  '/icons/graphic_software/Logo_Blender.svg.png',
+  '/icons/graphic_software/Scribus_logo.svg.png',
+];
   const infiniteImages = [...logos, ...logos];
+  const infiniteImagesGraphicDesign = [...softwareDesign, ...softwareDesign];
 function AboutMe (props){
   
     const [isVisible, setIsVisible] = useState(false);
@@ -238,35 +254,73 @@ function AboutMe (props){
                         A little section to round out the professional purpose of this webpage. Who’s the person behind it, really? What do they like—and what are they like? Sections like this can go a little bit longer because it’s nice to learn more about what makes someone tick.
                     </FooterText>
                 </TextComponent>
-    
-                
-                    
-            
            </SectionComponent>
            </ScrollReveal>
-<SliderContainer style={{ width: "100%", overflow: "hidden", position: "relative" }}>
-        <SliderTrack 
-            style={{ 
-                display: "flex", 
-                flexDirection: "row", 
-                flexWrap: "nowrap", 
-                width: "max-content", // Permite que el track crezca todo lo que necesite
-                animation: `${scroll.name} 25s linear infinite` // Usamos .name para el string exacto
-            }}
-        >
-            {infiniteImages.map((src, index) => (
-                <Slide key={index} style={{ flexShrink: 0, width: "250px" }}> 
-                    <Image 
-                        src={src} 
-                        alt={`Trabajo ${index}`} 
-                        width={150} 
-                        height={150}
-                        style={{ objectFit: 'contain', borderRadius: '10px' }}
-                    />
-                </Slide>
-            ))}
-        </SliderTrack>
-</SliderContainer>
+           <ScrollReveal $direction="left">
+            <SectionComponent $height="auto" >
+                <TextComponent>
+                    <Work>
+                        Leanguages programmes
+                    </Work>
+                </TextComponent>
+            </SectionComponent>
+            </ScrollReveal>
+            <SliderContainer style={{ width: "100%", overflow: "hidden", position: "relative" }}>
+                    <SliderTrack 
+                        style={{ 
+                            display: "flex", 
+                            flexDirection: "row", 
+                            flexWrap: "nowrap", 
+                            width: "max-content", // Permite que el track crezca todo lo que necesite
+                            animation: `${scroll.name} 25s linear infinite` // Usamos .name para el string exacto
+                        }}
+                    >
+                        {infiniteImages.map((src, index) => (
+                            <Slide key={index} style={{ flexShrink: 0, width: "250px" }}> 
+                                <Image 
+                                    src={src} 
+                                    alt={`Trabajo ${index}`} 
+                                    width={150} 
+                                    height={150}
+                                    style={{ objectFit: 'contain', borderRadius: '10px' }}
+                                />
+                            </Slide>
+                        ))}
+                    </SliderTrack>
+            </SliderContainer>
+            <ScrollReveal $direction="left">
+            <SectionComponent $height="auto" >
+                <TextComponent $textalign = "end">
+                    <Work>
+                        Software design
+                    </Work>
+                </TextComponent>
+            </SectionComponent>
+            </ScrollReveal>
+             <SliderContainer  style={{ width: "100%", overflow: "hidden", position: "relative" }}>
+                    <SliderTrack 
+                        style={{ 
+                            display: "flex", 
+                            flexDirection: "row", 
+                            flexWrap: "nowrap", 
+                            width: "max-content", // Permite que el track crezca todo lo que necesite
+                            // Usamos .name para el string exacto
+                        }}
+                        $animation = {toLeft}
+                    >
+                        {infiniteImagesGraphicDesign.map((src, index) => (
+                            <Slide key={index} style={{ flexShrink: 0, width: "250px" }}> 
+                                <Image 
+                                    src={src} 
+                                    alt={`Trabajo ${index}`} 
+                                    width={150} 
+                                    height={150}
+                                    style={{ objectFit: 'contain', borderRadius: '10px' }}
+                                />
+                            </Slide>
+                        ))}
+                    </SliderTrack>
+            </SliderContainer>
            <ScrollReveal>
                 <SectionComponent $height='auto' >
                                        
@@ -274,6 +328,8 @@ function AboutMe (props){
                                                     leanguages
                                                 </HeadPhilosophy>
                                                 <GalleryComponent>
+
+                                                    <ScrollReveal threshold={0.8}>
                                                         <ContainerPictureComponent style={styleLogoImageLeanguagesGallery}>
                                                             <PictureComponent $minwidth="50px" $minheight="auto" $filter="none" $filterbackdrop="none" style={styleLogosLeanguages}>
                                                                 <Image src="/icons/leanguages/Spanish_flag.svg"
@@ -289,7 +345,10 @@ function AboutMe (props){
                                                                 </ProgressBarContainerComponent>
                                                             </PictureComponent>        
                                                         </ContainerPictureComponent>
+                                                    </ScrollReveal>
 
+
+                                                    <ScrollReveal  threshold={0.8}>
                                                     <ContainerPictureComponent  style={styleLogoImageLeanguagesGallery}>
                                                         <PictureComponent $minwidth="50px" $minheight="auto" $filter="none" $filterbackdrop="none" style={styleLogosLeanguages}>
                                                             <Image src="/icons/leanguages/England_flag.svg"
@@ -298,13 +357,16 @@ function AboutMe (props){
                                                                 style={styleLogoImageLeanguages}
                                                                 ></Image>
                                                         </PictureComponent>
+
                                                         <PictureComponent  $minwidth="50px" $minheight="auto" $filter="none" $filterbackdrop="none" style={styleLogosLeanguagesProgressBar}>
                                                                 <ProgressBarContainerComponent $width="100%" $height="10px">
                                                                     <ProgressBarComponent  $progress='90%'></ProgressBarComponent>
                                                                 </ProgressBarContainerComponent>
                                                         </PictureComponent>    
                                                     </ContainerPictureComponent>
+                                                    </ScrollReveal>
 
+                                                    <ScrollReveal threshold={0.8} >
                                                     <ContainerPictureComponent  style={styleLogoImageLeanguagesGallery}>
                                                         <PictureComponent  $minwidth="50px" $minheight="auto" style={styleLogosLeanguages}>
                                                             <Image src="/icons/leanguages/French_flag.svg"
@@ -312,13 +374,18 @@ function AboutMe (props){
                                                                 fill
                                                                 style={styleLogoImageLeanguages}
                                                                 ></Image>
-                                                        </PictureComponent>
+                                                        </PictureComponent> 
+                                                        
+
                                                         <PictureComponent  $minwidth="50px" $minheight="auto" style={styleLogosLeanguagesProgressBar}>
                                                                 <ProgressBarContainerComponent $width="100%" $height="10px">
                                                                     <ProgressBarComponent $width="100%" $height="10px" $progress='40%'></ProgressBarComponent>
                                                                 </ProgressBarContainerComponent>
                                                         </PictureComponent>    
                                                     </ContainerPictureComponent>
+                                                    </ScrollReveal>
+
+                                                    <ScrollReveal threshold={0.8} >
 
                                                     <ContainerPictureComponent style={styleLogoImageLeanguagesGallery}>
                                                         <PictureComponent  $minwidth="50px" $minheight="auto" style={styleLogosLeanguages}>
@@ -328,12 +395,14 @@ function AboutMe (props){
                                                                 style={styleLogoImageLeanguages}
                                                                 ></Image>
                                                         </PictureComponent>
+                                                       
                                                         <PictureComponent  $minwidth="50px" $minheight="auto" style={styleLogosLeanguagesProgressBar}>
                                                                <ProgressBarContainerComponent $width="100%" $height="10px">
                                                                     <ProgressBarComponent  $progress='20%'></ProgressBarComponent>
                                                                 </ProgressBarContainerComponent>
                                                         </PictureComponent>
                                                     </ContainerPictureComponent>
+                                                    </ScrollReveal>
                                                 </GalleryComponent>
                                        
 
