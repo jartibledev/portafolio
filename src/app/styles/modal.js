@@ -50,7 +50,7 @@ export default function PostComponent ({ children, linkImage, linkWeb, project="
         <style>{`
             @keyframes fadeIn {
               from {
-               background-color: rgba(255, 255, 255, 0.16);
+               background-color: rgba(255, 255, 255, 0.42);
                 backdrop-filter: blur(0px);
                 -webkit-backdrop-filter: blur(0px);
               }
