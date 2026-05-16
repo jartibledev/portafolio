@@ -1,10 +1,12 @@
 'use client'
-import { Footer, Portafolio, Projects, Section, DateFooter, HeadPhilosophy, Dropline, SocialNetwork, ReachOut } from "../styles/StylesParagraph.styles";
-import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, FooterPictureComponent, PictureComponent, ContainerPictureComponent, RectangleComponent, FooterComponent, BlankSpaceComponent, FirstAnimation } from "../styles/ComponentStyles";
+import React, { useEffect, useState, useRef} from "react";
+import { Footer, Portafolio, Projects, Section, DateFooter, HeadPhilosophy, Dropline, SocialNetwork, ReachOut, FooterText } from "../styles/StylesParagraph.styles";
+import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, FooterPictureComponent, PictureComponent, ContainerPictureComponent, RectangleComponent, FooterComponent, BlankSpaceComponent, FirstAnimation, ProjectSinopsis } from "../styles/ComponentStyles";
 import ScrollReveal from "../ScrollReveal";
 import Link from "next/link";
 import Image from 'next/image';
-
+import ProjectComponent from "../styles/ProjectSinopsisComponent";
+import PostComponent from "../styles/modal";
 //import miImagen from '../concepart_1_2_export.jpg'
 const styleImage ={
     objectFit: 'cover',
@@ -20,37 +22,41 @@ const linkDisplay = {
 
 
 function PortafolioDesignForm (props){
-         const [isVisible, setIsVisible] = useState(false);
-                        const sectionRef = useRef(null);
-            
-                        useEffect(() =>{
-                            const observer = new IntersectionObserver(
-                                ([entry]) => {
-                                    if(entry.isIntersecting){
-                                        setIsVisible(true);
-                                        observer.unobserve(entry.target)
-                                    }
-                                },
-                                {
-                                    threshold: 0.2,
-                                    rootMargin: "0px 0px -50px 0px"
-                                }
-                            );
-            
-                            if (sectionRef.current){
-                                observer.observe(sectionRef.current);
+        const [isOpen, setIsOpen] = useState(false);
+        const [imagenActual, setImagenActual] = useState('');
+        const [isVisible, setIsVisible] = useState(false);
+        const sectionRef = useRef(null);
+    
+                useEffect(() =>{
+                    const observer = new IntersectionObserver(
+                        ([entry]) => {
+                            if(entry.isIntersecting){
+                                setIsVisible(true);
+                                observer.unobserve(entry.target)
                             }
-                            return()=>{
-                                if(sectionRef.current){
-                                    observer.unobserve(sectionRef.current);
-                                }
-                            };
-                        }, []);
+                        },
+                        {
+                            threshold: 0.2,
+                            rootMargin: "0px 0px -50px 0px"
+                        }
+                    );
+    
+                    if (sectionRef.current){
+                        observer.observe(sectionRef.current);
+                    }
+                    return()=>{
+                        if(sectionRef.current){
+                            observer.unobserve(sectionRef.current);
+                        }
+                    };
+                }, []);
+                
+                
     return(
         <ArticleComponent>
             
-           <SectionComponent height="25vh" >
-               <RectangleComponent>
+           <SectionComponent $height="25vh" >
+               <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">
                     <BlankSpaceComponent/>
                     <BlankSpaceComponent/>
                                     
@@ -66,84 +72,34 @@ function PortafolioDesignForm (props){
                 </RectangleComponent>
             </SectionComponent>
             <FirstAnimation ref={sectionRef} $isVisible={isVisible}>
-            <SectionComponent height="80vh" flexdirection="row">
+            <SectionComponent $height="80vh" $flexdirection="row">
                 <ContainerPictureComponent>
-                        <PictureComponent  height="100%">
-                            <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">
-                            <Image src="/images/concepart_1_2_export.jpg"
-                            alt = "illustration concept art"
-                            priority={false}
-                            fill
-                            style= {styleImage}
-                            onLoadingComplete={(img) => {
-                            img.style.opacity = "1";
-                            }}
-                            >
-                            </Image>
-                             </Link>
-                        </PictureComponent>
-                    <FooterPictureComponent>
-                        <Projects>Concept Art</Projects>
-                        <DateFooter>2026</DateFooter>
-                    </FooterPictureComponent>
+                    <PostComponent $height="100%" linkImage="/illustrations/concepart_1_2_export.jpg" project="Concept Art" date="2026" explanation="This is a concept art" left="79%" textalign="start" >
+                    </PostComponent>
                 </ContainerPictureComponent>
             </SectionComponent>
            </FirstAnimation>
 
            
-            <SectionComponent flexdirection="row" height="auto" paddingbottom = "5%"  >
+            <SectionComponent $flexdirection="row" $height="auto" $paddingbottom = "5%"  >
                <ScrollReveal $direction="left">
                 <ContainerPictureComponent > 
-                    
-                        <PictureComponent >
-                            <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">
-                            <Image src="/images/experimentation_2_export_to_web.jpg"
-                            alt = "Chappel Roan"
-                            fill
-                            priority={false}
-                            style= {styleImage}
-                            onLoadingComplete={(img) => {
-                            img.style.opacity = "1";
-                            }}
-                            >
-                            </Image>
-                             </Link>
-                        </PictureComponent>
-                    <FooterPictureComponent>
-                        <Projects>Chappel Roan</Projects>
-                        <DateFooter>2026</DateFooter>
-                    </FooterPictureComponent>
+                    <PostComponent $height="auto" linkImage="/illustrations/experimentation_2_export_to_web.jpg" project="Chappel Roan" date="2026" explanation="This is an illsutration of Chappel Roan" right="105%" textalign="end" >
+                    </PostComponent>
                 </ContainerPictureComponent>
                </ScrollReveal>
+
+
                <ScrollReveal $direction={"right"} >
                     <ContainerPictureComponent>
-                        
-                            <PictureComponent height="auto">
-                                <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">
-                                <Image src="/images/minadesolada_web_export.jpg"
-                                alt = "illustration concept art"
-                                fill
-                                priority={false}
-                                style= {styleImage}
-                                onLoadingComplete={(img) => {
-                                img.style.opacity = "1";
-                                }}
-                                >
-                                </Image>
-                                </Link>
-                            </PictureComponent>
-                        <FooterPictureComponent>
-                            <Projects>Carrie</Projects>
-                            <DateFooter>2026</DateFooter>
-                        </FooterPictureComponent> 
-                      
+                        <PostComponent $height="auto" linkImage="/illustrations/minadesolada_web_export.jpg" project="Prueba" date="2026" explanation="Esta es una prueba" left="105%" textalign="start" >
+                    </PostComponent>
                     </ContainerPictureComponent>
                      </ScrollReveal> 
-              
             </SectionComponent> 
            
             <ScrollReveal >
-                <SectionComponent flexdirection="row" height="auto" > 
+                <SectionComponent $flexdirection="row" $height="auto" > 
                     <TextComponent>
                         <ReachOut>Reach out</ReachOut>
                         <Link href="mailto:mayalopezdesign@gmail.com">
@@ -167,7 +123,7 @@ function PortafolioDesignForm (props){
             
             <FooterComponent>
                 <Link style = {linkDisplay} href="..\about_me" passHref>
-                <RectangleComponent>
+                <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">
                     <Portafolio>
                         About
                     </Portafolio>
