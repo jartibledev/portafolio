@@ -74,25 +74,8 @@ function PortafolioIllustrationForm (props){
             <FirstAnimation ref={sectionRef} $isVisible={isVisible}>
             <SectionComponent $height="80vh" $flexdirection="row">
                 <ContainerPictureComponent>
-                        <PictureComponent  $height="100%">
-                            <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">
-                            <Image src="/illustrations/concepart_1_2_export.jpg"
-                            alt = "illustration concept art"
-                            priority={false}
-                            fill
-                            style= {styleImage}
-                            onLoadingComplete={(img) => {
-                            img.style.opacity = "1";
-                            }}
-                            >
-                            </Image>
-                             </Link>
-                        </PictureComponent>
-                    <FooterPictureComponent>
-                        <Projects>Concept Art</Projects>
-                        <DateFooter>2026</DateFooter>
-                    </FooterPictureComponent>
-                    <ProjectComponent project="Concept Art" explanation="This is a conceopt art" $left="75%" ></ProjectComponent>
+                    <PostComponent $height="100%" linkImage="/illustrations/concepart_1_2_export.jpg" project="Concept Art" date="2026" explanation="This is a concept art" left="79%" textalign="start" >
+                    </PostComponent>
                 </ContainerPictureComponent>
             </SectionComponent>
            </FirstAnimation>
@@ -101,112 +84,19 @@ function PortafolioIllustrationForm (props){
             <SectionComponent $flexdirection="row" $height="auto" $paddingbottom = "5%"  >
                <ScrollReveal $direction="left">
                 <ContainerPictureComponent > 
-                    
-                        <PictureComponent >
-                            <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">
-                            <Image src="/illustrations/experimentation_2_export_to_web.jpg"
-                            alt = "Chappel Roan"
-                            fill
-                            priority={false}
-                            style= {styleImage}
-                            onLoadingComplete={(img) => {
-                            img.style.opacity = "1";
-                            }}
-                            >
-                            </Image>
-                             </Link>
-                        </PictureComponent>
-                    <FooterPictureComponent>
-                        <Projects>Chappel Roan</Projects>
-                        <DateFooter>2026</DateFooter>
-                    </FooterPictureComponent>
-                     <ProjectComponent project="Chappel Roan" explanation="This is an illustration of Chappel Roan" $right="105%" $textalign="end"></ProjectComponent>
+                    <PostComponent $height="auto" linkImage="/illustrations/experimentation_2_export_to_web.jpg" project="Chappel Roan" date="2026" explanation="This is an illsutration of Chappel Roan" right="105%" textalign="end" >
+                    </PostComponent>
                 </ContainerPictureComponent>
                </ScrollReveal>
+
+
                <ScrollReveal $direction={"right"} >
                     <ContainerPictureComponent>
-                        
-                            <PictureComponent $height="auto">
-                                <Link href="https://cara.app/post/ea7e25f8-c93d-4227-a13c-d110513520fb">
-                                <Image src="/illustrations/minadesolada_web_export.jpg"
-                                alt = "illustration concept art"
-                                fill
-                                priority={false}
-                                style= {styleImage}
-                                onLoadingComplete={(img) => {
-                                img.style.opacity = "1";
-                                }}
-                                >
-                                </Image>
-                                </Link>
-                            </PictureComponent>
-                        <FooterPictureComponent>
-                            <Projects>Carrie</Projects>
-                            <DateFooter>2026</DateFooter>
-                        </FooterPictureComponent> 
-                      <ProjectComponent project="Carrie" explanation="This is an illustration of Carrie" $left="105%"></ProjectComponent>
+                        <PostComponent $height="auto" linkImage="/illustrations/minadesolada_web_export.jpg" project="Prueba" date="2026" explanation="Esta es una prueba" left="105%" textalign="start" >
+                    </PostComponent>
                     </ContainerPictureComponent>
                      </ScrollReveal> 
-              
             </SectionComponent> 
-            <SectionComponent>
-                <ScrollReveal >
-                    <ContainerPictureComponent>
-                    <PostComponent $height="auto" linkImage="/illustrations/minadesolada_web_export.jpg" project="Prueba" date="2026" explanation="Esta es una prueba" right="105%" textalign="end" >
-                    
-                    </PostComponent></ContainerPictureComponent>
-                </ScrollReveal>
-            </SectionComponent>
-                    
-            <SectionComponent>
-                <ScrollReveal>
-                    <PictureComponent $height="auto">
-                                <Image src="/illustrations/minadesolada_web_export.jpg"
-                                alt = "illustration concept art"
-                                fill
-                                priority={false}
-                                style= {styleImage}
-                                onLoadingComplete={(img) => {
-                                img.style.opacity = "1";
-                                }}
-                                onClick={() => {
-                                    setImagenActual("/illustrations/minadesolada_web_export.jpg");
-                                    setIsOpen(true);
-                                }}
-                                >
-                                     
-                                </Image>
-                                {isOpen && (
-                                            < PictureComponent onClick={() => setIsOpen(false)}
-                                             style = {{ 
-                                                position: 'fixed',
-                                                top: "0", 
-                                                left: "0", 
-                                                width: '100vw', 
-                                                height:'100vh', 
-                                                backgroundColor: 'rgba(0, 0, 0, 0.8)',  
-                                                display: 'flex',
-                                                justifyContent: 'center',
-                                                alignItems: 'center',
-                                                zIndex: 1000,
-                                                cursor: 'zoom-out' }} >
-                                    
-                                            <Image src= {imagenActual}  
-                                                alt="Vista completa"
-                                                fill
-                                                style={{
-                                                  objectFit: 'contain'
-                                                }}></Image>
-                                            
-                                        </PictureComponent>)}
-                            </PictureComponent>
-                        <FooterPictureComponent>
-                            <Projects>Prueba</Projects>
-                            <DateFooter>2027</DateFooter>
-                        </FooterPictureComponent> 
-                      <ProjectComponent project="Prueba 2" explanation="This is an illustration of Pueba 2" $left="105%"></ProjectComponent>
-                </ScrollReveal>
-            </SectionComponent>
            
             <ScrollReveal >
                 <SectionComponent $flexdirection="row" $height="auto" > 
