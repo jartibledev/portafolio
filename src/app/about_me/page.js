@@ -275,7 +275,7 @@ function AboutMe (props){
                                                 </HeadPhilosophy>
                                                 <GalleryComponent>
                                                         <ContainerPictureComponent style={styleLogoImageLeanguagesGallery}>
-                                                            <PictureComponent $filter="none" $filterbackdrop="none" style={styleLogosLeanguages}>
+                                                            <PictureComponent $minwidth="50px" $minheight="auto" $filter="none" $filterbackdrop="none" style={styleLogosLeanguages}>
                                                                 <Image src="/icons/leanguages/Spanish_flag.svg"
                                                                     alt = "Spanish flag"
                                                                     fill
@@ -283,54 +283,54 @@ function AboutMe (props){
                                                                     ></Image>
                                                                     </PictureComponent>
 
-                                                            <PictureComponent $filter="none" $filterbackdrop="none" style={styleLogosLeanguagesProgressBar}>
-                                                                <ProgressBarContainerComponent>
-                                                                    <ProgressBarComponent progress='100%'></ProgressBarComponent>
+                                                            <PictureComponent $minwidth="50px" $minheight="auto"  $filter="none" $filterbackdrop="none" style={styleLogosLeanguagesProgressBar}>
+                                                                <ProgressBarContainerComponent $width="100%" $height="10px">
+                                                                    <ProgressBarComponent $progress='100%'></ProgressBarComponent>
                                                                 </ProgressBarContainerComponent>
                                                             </PictureComponent>        
                                                         </ContainerPictureComponent>
 
                                                     <ContainerPictureComponent  style={styleLogoImageLeanguagesGallery}>
-                                                        <PictureComponent $filter="none" $filterbackdrop="none" style={styleLogosLeanguages}>
+                                                        <PictureComponent $minwidth="50px" $minheight="auto" $filter="none" $filterbackdrop="none" style={styleLogosLeanguages}>
                                                             <Image src="/icons/leanguages/England_flag.svg"
                                                                 alt = "UK flag"
                                                                 fill
                                                                 style={styleLogoImageLeanguages}
                                                                 ></Image>
                                                         </PictureComponent>
-                                                        <PictureComponent $filter="none" $filterbackdrop="none" style={styleLogosLeanguagesProgressBar}>
-                                                                <ProgressBarContainerComponent>
-                                                                    <ProgressBarComponent progress='90%'></ProgressBarComponent>
+                                                        <PictureComponent  $minwidth="50px" $minheight="auto" $filter="none" $filterbackdrop="none" style={styleLogosLeanguagesProgressBar}>
+                                                                <ProgressBarContainerComponent $width="100%" $height="10px">
+                                                                    <ProgressBarComponent  $progress='90%'></ProgressBarComponent>
                                                                 </ProgressBarContainerComponent>
                                                         </PictureComponent>    
                                                     </ContainerPictureComponent>
 
                                                     <ContainerPictureComponent  style={styleLogoImageLeanguagesGallery}>
-                                                        <PictureComponent style={styleLogosLeanguages}>
+                                                        <PictureComponent  $minwidth="50px" $minheight="auto" style={styleLogosLeanguages}>
                                                             <Image src="/icons/leanguages/French_flag.svg"
                                                                 alt = "French flag"
                                                                 fill
                                                                 style={styleLogoImageLeanguages}
                                                                 ></Image>
                                                         </PictureComponent>
-                                                        <PictureComponent style={styleLogosLeanguagesProgressBar}>
-                                                                <ProgressBarContainerComponent>
-                                                                    <ProgressBarComponent progress='40%'></ProgressBarComponent>
+                                                        <PictureComponent  $minwidth="50px" $minheight="auto" style={styleLogosLeanguagesProgressBar}>
+                                                                <ProgressBarContainerComponent $width="100%" $height="10px">
+                                                                    <ProgressBarComponent $width="100%" $height="10px" $progress='40%'></ProgressBarComponent>
                                                                 </ProgressBarContainerComponent>
                                                         </PictureComponent>    
                                                     </ContainerPictureComponent>
 
                                                     <ContainerPictureComponent style={styleLogoImageLeanguagesGallery}>
-                                                        <PictureComponent style={styleLogosLeanguages}>
+                                                        <PictureComponent  $minwidth="50px" $minheight="auto" style={styleLogosLeanguages}>
                                                             <Image src="/icons/leanguages/German_flag.svg"
                                                                 alt = "German flag"
                                                                 fill
                                                                 style={styleLogoImageLeanguages}
                                                                 ></Image>
                                                         </PictureComponent>
-                                                        <PictureComponent style={styleLogosLeanguagesProgressBar}>
-                                                               <ProgressBarContainerComponent>
-                                                                    <ProgressBarComponent progress='20%'></ProgressBarComponent>
+                                                        <PictureComponent  $minwidth="50px" $minheight="auto" style={styleLogosLeanguagesProgressBar}>
+                                                               <ProgressBarContainerComponent $width="100%" $height="10px">
+                                                                    <ProgressBarComponent  $progress='20%'></ProgressBarComponent>
                                                                 </ProgressBarContainerComponent>
                                                         </PictureComponent>
                                                     </ContainerPictureComponent>

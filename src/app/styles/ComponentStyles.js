@@ -171,10 +171,6 @@ export const ContainerPictureComponent = styled.div`
 
     &:hover ${PictureComponent} {
                 filter: none;
-                img {
-                  filter: none; /* Quita el blur por defecto */
-                  opacity: 1 !important;
-                }   
             } 
     
     &:hover ${FooterPictureComponent} {
@@ -257,14 +253,14 @@ export const FirstAnimation = styled.div`
 
 `;
 export const ProgressBarContainerComponent = styled.div`
-  width: 100%;
-  height: 50px;
-  border: 10px solid black;
-  margin: 20px;
+  width: ${props => props.$width || '100%'};
+  height:${props => props.$height || '100%'};
+  outline: ${props => props.$outline || '5px solid black'};
+  margin: ${props => props.$margin || '5%'};
 `;
 
 export const ProgressBarComponent = styled.div`
-    width: ${props => props.progress || '25%'};
+    width: ${props => props.$progress || '25%'};
     height: 100%;
     background-color: black;
 `;
