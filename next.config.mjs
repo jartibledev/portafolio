@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-import i18nConfig from './next-i18next.config.js';
+
 const nextConfig = {
   /* config options here */
   
@@ -8,7 +8,10 @@ const nextConfig = {
     styledComponets: true,
   },
   transpilePackages: ['styled-components'],
-  i18n: i18nConfig.i18n,
+ i18n: {
+    defaultLocale: 'es',
+    locales: ['es', 'en', 'fr', 'de'],
+  },
 };
 
 export default nextConfig;

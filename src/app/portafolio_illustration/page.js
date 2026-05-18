@@ -7,8 +7,8 @@ import Link from "next/link";
 import Image from 'next/image';
 import ProjectComponent from "../styles/ProjectSinopsisComponent";
 import PostComponent from "../styles/modal";
-import { useTranslation } from "next-i18next/pages";
-import { Trans } from "next-i18next/pages";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 //import miImagen from '../concepart_1_2_export.jpg'
 const styleImage ={
@@ -26,6 +26,11 @@ const linkDisplay = {
 
 function PortafolioIllustrationForm (props){
         const { t } = useTranslation('common');
+        const router = useRouter();
+        const { locale, locales } = router;
+        const changeLanguage = (lng) => {
+        router.push(router.pathname, router.asPath, { locale: lng });
+        };
         const [isOpen, setIsOpen] = useState(false);
         const [imagenActual, setImagenActual] = useState('');
         const [isVisible, setIsVisible] = useState(false);
