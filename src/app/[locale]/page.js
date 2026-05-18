@@ -1,8 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-
 import CoverForm from "./cover/page";
-import HomePage from "./home_page/page";
 
 export default function Home() {
   return (

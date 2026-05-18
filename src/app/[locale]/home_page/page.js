@@ -1,8 +1,10 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
-import { Footer, Portafolio, Section } from "../styles/StylesParagraph.styles";
-import { ArticleComponent, SectionComponent, RectangleComponent, BlankSpaceComponent, ContainerPictureComponent} from "../styles/ComponentStyles";
+import { Footer, Portafolio, Section } from "../../styles/StylesParagraph.styles";
+import { ArticleComponent, SectionComponent, RectangleComponent, BlankSpaceComponent, ContainerPictureComponent} from "../../styles/ComponentStyles";
 import Link from "next/link";
+import { useRouter, useParams } from 'next/navigation';
+
 const linkDisplay = { 
     display:"flex", 
     justifyContent: "center",

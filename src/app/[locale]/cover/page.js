@@ -1,12 +1,13 @@
 'use client'
 import { useEffect , useState, useRef } from 'react';
-import { ArticleComponent, FirstAnimation, SectionComponent, RectangleComponent } from "../styles/ComponentStyles";
-import { Head, Section, Portafolio, Subtitle, SocialNetwork, Dropline, Date, Contact, Footer, FooterText, FooterSubtitle, Projects, LabelSocialMedia,F    } from "../styles/StylesParagraph.styles"
-import Link from 'next/link';
+import { ArticleComponent, FirstAnimation, SectionComponent, RectangleComponent } from "../../styles/ComponentStyles";
+import { Head   } from "../../styles/StylesParagraph.styles"
+import { useRouter, useParams } from 'next/navigation';
+import LinkComponent from '../../../../LinkComponent';
 
 function CoverForm (props){
         const [isVisible, setIsVisible] = useState(false);
-                const sectionRef = useRef(null);
+        const sectionRef = useRef(null);
     
                 useEffect(() =>{
                     const observer = new IntersectionObserver(
@@ -37,14 +38,14 @@ function CoverForm (props){
             <SectionComponent height="auto">
             
             
-            <Link style ={{margin: 'auto', display: 'flex'}} href="../home_page" passHref >
+            <LinkComponent>
                 <RectangleComponent $filter="blur(9px)"  $backdropfilter= "blur(9px)"  $filterhover ="none" $backdropfilterhover="none" >
                     <Head>
                         Start
                     </Head>
 
                 </RectangleComponent>
-            </Link>
+            </LinkComponent>
     
            </SectionComponent>
            </FirstAnimation> 

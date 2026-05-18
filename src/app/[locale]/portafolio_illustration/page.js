@@ -1,12 +1,14 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
-import { Footer, Portafolio, Projects, Section, DateFooter, HeadPhilosophy, Dropline, SocialNetwork, ReachOut, FooterText } from "../styles/StylesParagraph.styles";
-import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, FooterPictureComponent, PictureComponent, ContainerPictureComponent, RectangleComponent, FooterComponent, BlankSpaceComponent, FirstAnimation, ProjectSinopsis } from "../styles/ComponentStyles";
-import ScrollReveal from "../ScrollReveal";
+import { Footer, Portafolio, Projects, Section, DateFooter, HeadPhilosophy, Dropline, SocialNetwork, ReachOut, FooterText } from "../../styles/StylesParagraph.styles";
+import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, FooterPictureComponent, PictureComponent, ContainerPictureComponent, RectangleComponent, FooterComponent, BlankSpaceComponent, FirstAnimation, ProjectSinopsis } from "../../styles/ComponentStyles";
+import ScrollReveal from "../../ScrollReveal";
 import Link from "next/link";
 import Image from 'next/image';
-import ProjectComponent from "../styles/ProjectSinopsisComponent";
-import PostComponent from "../styles/modal";
+import ProjectComponent from "../../styles/ProjectSinopsisComponent";
+import PostComponent from "../../styles/modal";
+import { useTranslations } from 'next-intl';
+
 //import miImagen from '../concepart_1_2_export.jpg'
 const styleImage ={
     objectFit: 'cover',
@@ -21,7 +23,9 @@ const linkDisplay = {
 }
 
 
-function PortafolioDesignForm (props){
+function PortafolioIllustrationForm (props){
+        const t = useTranslations();
+
         const [isOpen, setIsOpen] = useState(false);
         const [imagenActual, setImagenActual] = useState('');
         const [isVisible, setIsVisible] = useState(false);
@@ -101,7 +105,7 @@ function PortafolioDesignForm (props){
             <ScrollReveal >
                 <SectionComponent $flexdirection="row" $height="auto" > 
                     <TextComponent>
-                        <ReachOut>Reach out</ReachOut>
+                        <ReachOut>{t("ReachOut.Title")}</ReachOut>
                         <Link href="mailto:mayalopezdesign@gmail.com">
                             <SocialNetwork>Email</SocialNetwork>
                         </Link>
@@ -145,4 +149,4 @@ function PortafolioDesignForm (props){
     )
 }
 
-export default PortafolioDesignForm;
+export default PortafolioIllustrationForm;

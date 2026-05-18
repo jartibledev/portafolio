@@ -1,10 +1,10 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
-import { Head, FooterText, Work, DateWork, Courses, Footer, Portafolio, Projects, Section, DateFooter, HeadPhilosophy, Dropline, SocialNetwork, ReachOut } from "../styles/StylesParagraph.styles";
-import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, FooterPictureComponent, PictureComponent, ContainerPictureComponent, RectangleComponent, FooterComponent,  FirstAnimation,  ProgressBarContainerComponent, ProgressBarComponent, SliderContainer, SliderTrack, Slide, scroll, toLeft  } from "../styles/ComponentStyles";
-import ScrollReveal from "../ScrollReveal";
+import { Head, FooterText, Work, DateWork, Courses, Footer, Portafolio, Projects, Section, DateFooter, HeadPhilosophy, Dropline, SocialNetwork, ReachOut } from "../../styles/StylesParagraph.styles";
+import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, FooterPictureComponent, PictureComponent, ContainerPictureComponent, RectangleComponent, FooterComponent,  FirstAnimation,  ProgressBarContainerComponent, ProgressBarComponent, SliderContainer, SliderTrack, Slide, scroll, toLeft  } from "../../styles/ComponentStyles";
+import ScrollReveal from "../../ScrollReveal";
 
-import Link from "next/link";
+import Link from "next-intl";
 import Image from 'next/image';
 
 
