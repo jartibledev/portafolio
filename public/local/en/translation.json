@@ -1,0 +1,76 @@
+{
+    "Portafolio illustration": {
+        "Concept Art" :{
+            "Name" : "Fairy of the Forest",
+            "Explanation" : "Concept art project inspired by Caroline Polachek",
+            "Tools": "Tools:"
+        } ,
+
+        "ChappelRoan" : {
+            "Name" : "The Flower",
+            "Explanation" : "Chappel Roan portrait, made as fan art",
+            "Tools": "Tools:"
+        },
+        "Carrie" : {
+            "Name" : "Carrie",
+            "Explanation" : "Illustration for a loading screen videogame inspired by the main character of the mitic Stephen King's bestseller, Carrie",
+            "Tools": "Tools:"
+        }
+    },
+
+    "ReachOut": {
+        "Title": "Reach out",
+        "Phylosophy":{
+            "Title": "My art philosophy",
+            "Description": "As Richard Sennet wrote in The Artisan \"There is not art without craftwork\" For myself, all kind of illustration is an exercise of puting the eye on the detail and getting deeper in each aspect of the picture for the purpouse to obtain an amazing result." 
+        }
+    },
+
+    "AboutMe" : {
+        "Title" : "About me",
+        "Actuality" : "ACtuality",
+        "Bio": {
+          "Title": "Hi!",
+          "Description":  "I'm Sergio. I specialize in Design UI and Graphic Design . Always I love experiment with new forms of artistic expression, such as code. I consider coding as a form to create new pleasant experiences for the user. In my free times you can find me trying to learn guitar and drawing illustrations. I like a good challenge and opportunities to meet diferent connections, so let's connect!"
+        },
+        
+        "Formation": {
+          "Title": "Formation",
+          "Description":  "In Fine Arts I learned to code in some signatures, a part of getting skills in volume, composition, color's theory, photography edition (with Adobe Photoshop) and video edition (I profundice myself in wide notions about the use of Adobe Premiere). Furthemore, I specialiced in Adobe Illustrator, Adobe Indesign and textil stamps through extensive courses of universitary formation. After that, I studied a Master of Illustration and Design in València, where I get knowlegdments of design graphic. Actually, I'm doing a Python course in Standofor University ",
+         
+          "UMA" : {
+            "University":"University of Málaga",
+            "Grade": "Grade in Fine Arts",
+            "Courses": {
+                "Illustrator":" Extense Course of Adobe Illustrator",
+                "Indesign": "Extense Course of Adobe Indesign",
+                "Textil": "Extense Course of Fashion Illustration"
+            }
+          },
+          "UPV" : {
+            "University":"Politechnic University of València",
+            "Grade": "Master of Illustration and Design"
+            },
+          "Standford" : {
+            "University":"University of Standford",
+            "Grade": "Python Course"
+            }
+          
+        },
+
+        "Skills":{
+            "Title":"Skills",
+            "Description": "I know many programming languages which I use in my developemts, as Javascript, HTML, CSS3 to web development, or python to automatizations. For other hand, I usually design and illustrate with open source software like Gimp, Kryta and Inkscape. ",
+            "Programmes": "Tools",
+            "Sofware design": "Software design"
+        },
+        "Leanguages" : {
+            "Title": "Lenguages"
+        },
+        "Hobbies" : {
+            "Title": "Hobbys",
+            "Description": "I love playing guitar and walking on the beach while the sea touch my feets."
+        }
+        
+    }
+}
