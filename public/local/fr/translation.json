@@ -1,0 +1,7 @@
+{
+    "title" : "Esta es mi app",
+    "App": {
+        "title" : "Componente App",
+        "subtitle" : "Subtítulo de componente App"
+    }
+}
