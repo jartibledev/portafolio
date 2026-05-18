@@ -7,6 +7,9 @@ import Link from "next/link";
 import Image from 'next/image';
 import ProjectComponent from "../styles/ProjectSinopsisComponent";
 import PostComponent from "../styles/modal";
+import { useTranslation } from "next-i18next/pages";
+import { Trans } from "next-i18next/pages";
+
 //import miImagen from '../concepart_1_2_export.jpg'
 const styleImage ={
     objectFit: 'cover',
@@ -22,6 +25,7 @@ const linkDisplay = {
 
 
 function PortafolioIllustrationForm (props){
+        const { t } = useTranslation('common');
         const [isOpen, setIsOpen] = useState(false);
         const [imagenActual, setImagenActual] = useState('');
         const [isVisible, setIsVisible] = useState(false);
@@ -101,7 +105,7 @@ function PortafolioIllustrationForm (props){
             <ScrollReveal >
                 <SectionComponent $flexdirection="row" $height="auto" > 
                     <TextComponent>
-                        <ReachOut>Reach out</ReachOut>
+                        <ReachOut>{t("ReachOut.Title")}</ReachOut>
                         <Link href="mailto:mayalopezdesign@gmail.com">
                             <SocialNetwork>Email</SocialNetwork>
                         </Link>
