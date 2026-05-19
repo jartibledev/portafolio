@@ -2,7 +2,11 @@
 import  { keyframes, styled, css } from "styled-components";
 
 
-
+const scaleAnimation = keyframes`
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+`;
 const animationEntryBlured = keyframes`
  from {
     opacity: 0;
@@ -26,6 +30,7 @@ export const ArticleComponent = styled.article`
 
 const animationBottom = keyframes`
  from {
+ 
     opacity: 0;
     transform: translateY(-100%);
     filter:blur(9px);
@@ -197,6 +202,14 @@ export const ContainerPictureComponent = styled.div`
         opacity:1;
         visibility: visible;
         } 
+
+    img{
+       opacity: inherit !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+        transition: transform 0.4s ease-out;
+    }
     
      
 `;
@@ -359,5 +372,39 @@ export const Slide = styled.div`
   justify-content: center;
   align-items: center;
 `;
+export const ButtonComponent = styled.button`
+  display: ${props => props.$display || 'block'};
+  border: ${props => props.$border || 'none'};
+  padding: ${props => props.$padding || "0"};
+  margin: ${props => props.$margin || "0"};
+  cursor: ${props => props.$cursor || "pointer"};
+  font: ${props => props.$font || "inherit"};
+  width:${props => props.$width || "100%"};
+  height:${props => props.$height || "100%"};
+  background:${props => props.$background || "none"};
+  opacity:${props => props.$opacity || "0.5"};
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0);
 
+   &:hover {
+        opacity:${props => props.$opacity || "1"}; 
+        transform: translateY(-2px);
+        filter:${props => props.$filterhover || ' blur(9px'};
+        backdrop-filter: ${props => props.$backdropfilterhover || 'blur(9px)'};
+    }
+    &:active{
+        animation: ${animationBottom} 0.3s ease;
+    }
+      img{
+
+        opacity: inherit !important;
+      
+        }
+
+     ${({ isclicked }) =>
+    isclicked &&
+    css`
+      transform: scale(0.95); /* El botón se encoge un 5% al hacer clic */
+    `}   
+`;
 

@@ -2,7 +2,14 @@
 import { useRouter, usePathname } from 'next/navigation';
 import { createPortal } from 'react-dom';
 import { useEffect, useState } from 'react';
+import { ButtonComponent } from './ComponentStyles';
+import styled, { keyframes, css } from 'styled-components';
 
+const scaleAnimation = keyframes`
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+`;
 
 const styleImage ={
     objectFit: 'cover',
@@ -45,76 +52,70 @@ export default function LanguageSelector() {
     setIsClient(true);
   }, []);
 
+
   if(!isClient) return null;
 
   const ChangeLanguage = (nuevoIdioma) => {
     if (!pathname) return;
 
-    // Dividimos la ruta por las barras '/'
-    // Si la ruta es '/es/home_page', segmentos será ['', 'es', 'home_page']
+    
     const segmentos = pathname.split('/');
     
-    // Reemplazamos el idioma viejo (que siempre está en la posición 1) por el nuevo
     segmentos[1] = nuevoIdioma;
 
-    // Volvemos a unir la ruta reconstruida
     const newPath = segmentos.join('/');
 
-    // Redirigimos al usuario a la misma página pero con el nuevo idioma
     router.push(newPath);
   };
 
+
   return createPortal (
     <div style={container}>
-      <button 
+      <ButtonComponent 
         onClick={() => ChangeLanguage('es')} 
         className="tu-boton-idioma-style"
-        style= {bottom}
       > <img src="/icons/leanguages/Spanish_flag.svg"
-                                          alt = "picture of me"
+                                          alt = "ES"
                                           
                                           style = {styleImage}
 
                                           ></img>
-      </button>
+      </ButtonComponent>
       
-      <button 
+      <ButtonComponent 
         onClick={() => ChangeLanguage('en')} 
         className="tu-boton-idioma-style"
-        style= {bottom}
       >
        <img src="/icons/leanguages/England_flag.svg"
-                                          alt = "picture of me"
+                                          alt = "EN"
                                           
                                           style = {styleImage}
 
                                           ></img>
-      </button>
+      </ButtonComponent>
 
-      <button 
+      <ButtonComponent 
         onClick={() => ChangeLanguage('fr')} 
         className="tu-boton-idioma-style"
-        style= {bottom}
       >
         <img src="/icons/leanguages/French_flag.svg"
-                                          alt = "picture of me"
+                                          alt = "FR"
                                           
                                           style = {styleImage}
 
                                           ></img>
-      </button>
-      <button 
+      </ButtonComponent>
+      <ButtonComponent 
         onClick={() => ChangeLanguage('de')} 
         className="tu-boton-idioma-style"
-        style= {bottom}
       >
         <img src="/icons/leanguages/German_flag.svg"
-                                          alt = "picture of me"
+                                          alt = "DE"
                                           
                                           style = {styleImage}
 
                                           ></img>
-      </button>
+      </ButtonComponent>
     </div>,
      document.body
   );
