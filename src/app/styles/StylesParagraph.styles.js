@@ -76,7 +76,10 @@ export const FooterText = styled.p`
     font-size: 1 rem ;
     color : ${greyColor} ;
     letter-spacing: -2%;
-    line-height: 145%; 
+    line-height: 145%;
+    white-space: normal; 
+    word-wrap: break-word;
+    overflow-wrap: break-word; 
 
 `;
 export const FooterSubtitle = styled.p`
@@ -94,7 +97,10 @@ export const Projects = styled.p`
     font-size: 2 rem ;
     color : black ;
     letter-spacing: -2%;
-     line-height: 120%; 
+    line-height: 120%;
+    white-space: normal; 
+    word-wrap: break-word;
+    overflow-wrap: break-word; 
 
 `;
 

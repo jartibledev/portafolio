@@ -1,10 +1,11 @@
 'use client';
 import React, { useState } from 'react';
-import { FooterText, Projects, DateFooter } from './StylesParagraph.styles';
-import { TextComponent, PictureComponent, FooterPictureComponent  } from './ComponentStyles';
+import {  Projects, DateFooter } from './StylesParagraph.styles';
+import {  PictureComponent, FooterPictureComponent  } from './ComponentStyles';
 import Image from 'next/image';
 import { createPortal } from 'react-dom'
 import ProjectComponent from './ProjectSinopsisComponent';
+import { useTranslations } from 'next-intl';
 
 
 
@@ -15,9 +16,10 @@ const styleImage ={
 };
 
 
-export default function PostComponent ({ children, linkImage, linkWeb, project="Project Name", date="2026", explanation="This text explain the illustration", right, left, textalign, ...props }) {
+export default function PostComponent ({ children, linkImage, linkWeb, project="Project Name", date="2026", explanation="This text explain the illustration", right, left, textalign, width, ...props }) {
   const [isOpen, setIsOpen] = useState(false);
   const [imagenActual, setImagenActual] = useState('');
+  const t = useTranslations();
 
   return (
     <>
@@ -28,7 +30,7 @@ export default function PostComponent ({ children, linkImage, linkWeb, project="
                             }} {...props}>
                             
                             <Image src={linkImage}
-                            alt = {project}
+                            alt = {t(project)}
                             fill
                             priority={false}
                             style= {{...styleImage, cursor:'zoom-in'}}
@@ -41,10 +43,10 @@ export default function PostComponent ({ children, linkImage, linkWeb, project="
                              
         </PictureComponent>
          <FooterPictureComponent>
-                                <Projects>{project}</Projects>
+                                <Projects>{t(project)}</Projects>
                                 <DateFooter>{date}</DateFooter>
         </FooterPictureComponent>
-        <ProjectComponent project={project} explanation={explanation} $right={right} $left={left} $textalign= {textalign} ></ProjectComponent>
+        <ProjectComponent $width={width} project={t(project)} explanation={t(explanation)} $right={right} $left={left} $textalign= {textalign} ></ProjectComponent>
     {isOpen && createPortal(
         <>
         <style>{`

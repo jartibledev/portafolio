@@ -1,6 +1,8 @@
 {
-    "Portafolio illustration": {
-        "Concept Art" :{
+    "PortafolioIllustration": {
+        "Portafolio" : "Portafolio",
+        "Illustration" : "Ilustración",
+        "ConceptArt" :{
             "Name" : "Hada del bosque ",
             "Explanation" : "Proyecto de concept art inspirado en Carolina Polachek",
             "Tools": "Herramientas  usadas para desarrollar el proyecto:"
@@ -62,10 +64,10 @@
             "Title":"Competencias",
             "Description": "Tengo un amplio bagage en uso de variado número de lenguage de programación en mis proyectos. Desde Javascript, HTML, CSS3 para desarrollo web pasando por Python para automatizaciones hasta proyectos en Java y C++ para desarrollo de videojuegos. Para mí el código es otra forma de expresión artística. Por otro lado, suelo usar en la parte gráfica de mis desarrollos herramientas de código abierto como Gimp, Krita e Inkscape para la creación illsutraciones y componentes para las interfaces",
             "Programmes": "Lenguajes de programación",
-            "Sofware design": "Herramientas de diseño"
+            "SofwareDesign": "Herramientas de diseño"
         },
         "Leanguages" : {
-            "Title": "Lenguages"
+            "Title": "Idiomas"
         },
         "Hobbies" : {
             "Title": "Intereses",

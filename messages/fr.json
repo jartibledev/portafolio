@@ -1,8 +1,10 @@
 {
     "Portafolio illustration": {
+        "Portafolio" : "Portafolio",
+        "Illustration" : "Ilustración",
         "Concept Art" :{
-            "Name" : "Hada del bosque ",
-            "Explanation" : "Proyecto de concept art inspirado en Carolina Polachek",
+            "Name" : "Fée de Bois ",
+            "Explanation" : "Projecte du concept art inspirée en Caroline Polachek",
             "Tools": "Herramientas  usadas para desarrollar el proyecto:"
         } ,
 

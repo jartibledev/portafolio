@@ -1,9 +1,9 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
-import { Footer, Portafolio, Section } from "../../styles/StylesParagraph.styles";
-import { ArticleComponent, SectionComponent, RectangleComponent, BlankSpaceComponent, ContainerPictureComponent} from "../../styles/ComponentStyles";
+import { Portafolio, Section } from "../../styles/StylesParagraph.styles";
+import { ArticleComponent, SectionComponent, RectangleComponent, BlankSpaceComponent} from "../../styles/ComponentStyles";
 import Link from "next/link";
-import { useRouter, useParams } from 'next/navigation';
+import { useParams } from 'next/navigation';
 
 const linkDisplay = { 
     display:"flex", 
@@ -18,6 +18,8 @@ const linkDisplay = {
 function HomePageForm (props){
     const [isVisible, setIsVisible] = useState(false);
             const sectionRef = useRef(null);
+            const params = useParams();
+            const currentLocale = params?.locale || 'es';
 
             useEffect(() =>{
                 const observer = new IntersectionObserver(
@@ -48,7 +50,7 @@ function HomePageForm (props){
         <ArticleComponent>
             <SectionComponent style={stylesHomePage} >
             
-                <Link style = {linkDisplay} href="..\portafolio_dev" passHref>
+                <Link style = {linkDisplay} href={`/${currentLocale}/portafolio_illustration`} prefetch={true}>
                     <RectangleComponent $filter="blur(9px)" $filterbackdrop="blur(9px)" $filterhover="none" $backfilterhoover="none" >
                         <Portafolio>
                             Portafolio
@@ -63,7 +65,7 @@ function HomePageForm (props){
                     </RectangleComponent>
                 </Link>
                
-                <Link style = {linkDisplay} href="..\portafolio_design" passHref>
+                <Link style = {linkDisplay} href={`/${currentLocale}/portafolio_dev`} prefetch={true}>
                     <RectangleComponent $filter="blur(9px)" $filterbackdrop="blur(9px)" $filterhover="none" $backfilterhoover="none">
                         
                         <BlankSpaceComponent></BlankSpaceComponent>
@@ -80,7 +82,7 @@ function HomePageForm (props){
                     </RectangleComponent>
                 </Link>    
                
-                <Link style = {linkDisplay} href="..\portafolio_illustration" passHref>
+                <Link style = {linkDisplay} href={`/${currentLocale}/portafolio_design`} prefetch={true}>
                     <RectangleComponent $filter="blur(9px)" $filterbackdrop="blur(9px)" $filterhover="none" $backfilterhoover="none">
                         <BlankSpaceComponent></BlankSpaceComponent>
                         <BlankSpaceComponent></BlankSpaceComponent>

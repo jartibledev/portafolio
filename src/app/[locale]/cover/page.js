@@ -2,8 +2,8 @@
 import { useEffect , useState, useRef } from 'react';
 import { ArticleComponent, FirstAnimation, SectionComponent, RectangleComponent } from "../../styles/ComponentStyles";
 import { Head   } from "../../styles/StylesParagraph.styles"
-import { useRouter, useParams } from 'next/navigation';
-import LinkComponent from '../../../../LinkComponent';
+import {  useParams } from 'next/navigation';
+import Link from 'next/link';
 
 function CoverForm (props){
         const [isVisible, setIsVisible] = useState(false);
@@ -32,20 +32,22 @@ function CoverForm (props){
                         }
                     };
                 }, []);
+                const params = useParams();
+                const currentLocale = params?.locale || 'es';
     return(
         <ArticleComponent>
             <FirstAnimation ref={sectionRef} $isVisible={isVisible}>
             <SectionComponent height="auto">
             
             
-            <LinkComponent>
+            <Link href={`/${currentLocale}/home_page`} prefetch={true}>
                 <RectangleComponent $filter="blur(9px)"  $backdropfilter= "blur(9px)"  $filterhover ="none" $backdropfilterhover="none" >
                     <Head>
                         Start
                     </Head>
 
                 </RectangleComponent>
-            </LinkComponent>
+            </Link>
     
            </SectionComponent>
            </FirstAnimation> 

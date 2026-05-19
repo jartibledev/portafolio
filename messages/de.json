@@ -1,6 +1,7 @@
 {
-    "title" : "Esta es mi app",
     "Portafolio illustration": {
+        "Portafolio" : "Portafolio",
+        "Illustration" : "Ilustración",
         "Concept Art" :{
             "Name" : "Hada del bosque ",
             "Explanation" : "Proyecto de concept art inspirado en Carolina Polachek",

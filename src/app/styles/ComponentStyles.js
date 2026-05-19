@@ -158,6 +158,7 @@ export const ProjectSinopsis = styled.div`
   opacity:0;
   visibility: hidden;
   top: 0;
+  width:${props => props.$width || "100%"}; 
   left: ${props => props.$left || "auto"}; 
   right: ${props => props.$right || "auto"}; 
   white-space: nowrap;
@@ -166,6 +167,7 @@ export const ProjectSinopsis = styled.div`
   filter: ${props => props.$filter || "blur(16px)"};
   backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
   transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;
+
   
   & * {
     text-align: ${props => props.$textalign || "blur(9px)"}

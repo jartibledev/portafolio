@@ -3,8 +3,9 @@ import React, { useEffect, useState, useRef} from "react";
 import { Head, FooterText, Work, DateWork, Courses, Footer, Portafolio, Projects, Section, DateFooter, HeadPhilosophy, Dropline, SocialNetwork, ReachOut } from "../../styles/StylesParagraph.styles";
 import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, FooterPictureComponent, PictureComponent, ContainerPictureComponent, RectangleComponent, FooterComponent,  FirstAnimation,  ProgressBarContainerComponent, ProgressBarComponent, SliderContainer, SliderTrack, Slide, scroll, toLeft  } from "../../styles/ComponentStyles";
 import ScrollReveal from "../../ScrollReveal";
-
-import Link from "next-intl";
+import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
+import Link from "next/link";
 import Image from 'next/image';
 
 
@@ -88,6 +89,9 @@ function AboutMe (props){
   
     const [isVisible, setIsVisible] = useState(false);
             const sectionRef = useRef(null);
+            const t = useTranslations();
+            const params = useParams();
+            const currentLocale = params?.locale || 'es';
     
             useEffect(() =>{
                 const observer = new IntersectionObserver(
@@ -121,7 +125,7 @@ function AboutMe (props){
             </Link>
                 <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">
                     <Head>
-                        About me
+                        {t("AboutMe.Title")}
                     </Head>
 
                 </RectangleComponent>
@@ -141,18 +145,10 @@ function AboutMe (props){
                     </ContainerPictureComponent>
                     <TextComponent  >
                         <HeadPhilosophy>
-                            hi!
+                            {t("AboutMe.Bio.Title")}
                         </HeadPhilosophy>
                         <FooterText style={{textAlign: 'right'}}>
-                                I'm Sergio. I specialize in Design UI and
-                                Graphic Design . Always I love experiment with
-                                new forms of artistic expression, such as code.
-                                I consider coding as a form to create new
-                                pleasant experiences for the user.
-                                In my free times you can find me trying to learn
-                                guitar and drawing illustrations. I like a good
-                                challenge and opportunities to meet diferent
-                                connections, so let's connect!
+                                {t("AboutMe.Bio.Description")}
                         </FooterText>
                     </TextComponent>
             </SectionComponent>
@@ -162,10 +158,10 @@ function AboutMe (props){
                 
                 <TextComponent >
                     <HeadPhilosophy style={{textAlign: 'left'}}>
-                        formation
+                        {t("AboutMe.Formation.Title")}
                     </HeadPhilosophy>
                     <FooterText>
-                        A little section to round out the professional purpose of this webpage. Who’s the person behind it, really? What do they like—and what are they like? Sections like this can go a little bit longer because it’s nice to learn more about what makes someone tick.
+                       {t("AboutMe.Formation.Description")}
                     </FooterText>
                 </TextComponent>
 
@@ -198,7 +194,7 @@ function AboutMe (props){
                     <TextComponent>
                     <FooterPictureComponent>
                         <Work>
-                            University of Málaga
+                            {t("AboutMe.Formation.UMA.University")}
                         </Work>
                         <DateWork>
                             2018-2023
@@ -206,17 +202,17 @@ function AboutMe (props){
                     </FooterPictureComponent>
                     <TextComponent>
                         <Courses>
-                            Extense Course of Adobe Illustrator
+                            {t("AboutMe.Formation.UMA.Courses.Illustrator")}
                         </Courses>
                     </TextComponent>
                     <TextComponent>
                         <Courses>
-                            Extense Course of Adobe Indesign
+                            {t("AboutMe.Formation.UMA.Courses.Indesign")}
                         </Courses>
                     </TextComponent>
                     <TextComponent>
                         <Courses>
-                            Extense Course of Fashion Illustration
+                            {t("AboutMe.Formation.UMA.Courses.Textil")}
                         </Courses>
                     </TextComponent>
                     </TextComponent>
@@ -224,20 +220,20 @@ function AboutMe (props){
                     <TextComponent>
                     <FooterPictureComponent>
                         <Work>
-                            Politechnic University of València
+                            {t("AboutMe.Formation.UPV.University")}
                         </Work>
                         <DateWork>
-                            2023-Actuality 
+                            2023-{t("AboutMe.Actuality")}
                         </DateWork>
                     </FooterPictureComponent>
                     </TextComponent>
                     <TextComponent>
                     <FooterPictureComponent>
                         <Work>
-                            University of Standford
+                            {t("AboutMe.Formation.Standford.University")}
                         </Work>
                         <DateWork>
-                            2026
+                            2026-{t("AboutMe.Actuality")}
                         </DateWork>
                     </FooterPictureComponent>
                 </TextComponent>    
@@ -248,10 +244,10 @@ function AboutMe (props){
            <SectionComponent $height="auto"  >
                 <TextComponent>
                     <HeadPhilosophy style={{textAlign: 'right'}}>
-                        skills
+                        {t("AboutMe.Skills.Title")}
                     </HeadPhilosophy>
                     <FooterText>
-                        A little section to round out the professional purpose of this webpage. Who’s the person behind it, really? What do they like—and what are they like? Sections like this can go a little bit longer because it’s nice to learn more about what makes someone tick.
+                        {t("AboutMe.Skills.Description")}
                     </FooterText>
                 </TextComponent>
            </SectionComponent>
@@ -260,7 +256,7 @@ function AboutMe (props){
             <SectionComponent $height="auto" >
                 <TextComponent>
                     <Work>
-                        Leanguages programmes
+                        {t("AboutMe.Skills.Programmes")}
                     </Work>
                 </TextComponent>
             </SectionComponent>
@@ -292,7 +288,7 @@ function AboutMe (props){
             <SectionComponent $height="auto" >
                 <TextComponent $textalign = "end">
                     <Work>
-                        Software design
+                        {t("AboutMe.Skills.SofwareDesign")}
                     </Work>
                 </TextComponent>
             </SectionComponent>
@@ -325,7 +321,7 @@ function AboutMe (props){
                 <SectionComponent $height='auto' >
                                        
                                                 <HeadPhilosophy style= {{textAlign: 'left'}}>
-                                                    leanguages
+                                                    {t("AboutMe.Leanguages.Title")}
                                                 </HeadPhilosophy>
                                                 <GalleryComponent>
 
@@ -414,10 +410,10 @@ function AboutMe (props){
                 <SectionComponent $height= "auto">
                     <TextComponent>
                         <HeadPhilosophy>
-                            interests and hobbies
+                            {t("AboutMe.Hobbies.Title")}
                         </HeadPhilosophy>
                         <FooterText>
-                            A little section to round out the professional purpose of this webpage. Who’s the person behind it, really? What do they like—and what are they like? Sections like this can go a little bit longer because it’s nice to learn more about what makes someone tick.
+                            {t("AboutMe.Hobbies.Description")}
                         </FooterText>
                     </TextComponent>
                     <GalleryComponent $flexdirection = "row" >   
