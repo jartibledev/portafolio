@@ -11,6 +11,7 @@ import Link from "next/link";
 import PostComponent from "../../styles/modal";
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import LanguageSelector from "@/app/styles/LanguageSelector";
 
 //import miImagen from '../concepart_1_2_export.jpg'
 const styleImage ={
@@ -67,14 +68,8 @@ function PortafolioIllustrationForm (props){
     return(
         <ArticleComponent>
             
-           <SectionComponent $height="25vh" >
-
-            <hr />
-<h2 style={{ color: "red", backgroundColor: "yellow", padding: "10px" }}>
-  TEST DE IDIOMA EN CLIENTE: {currentLocale}
-</h2>
-<hr />
-            
+           <SectionComponent $height="25vh" >  
+            <LanguageSelector></LanguageSelector>
             
                <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">
                     <BlankSpaceComponent/>
@@ -102,11 +97,6 @@ function PortafolioIllustrationForm (props){
 
            
             <SectionComponent $flexdirection="row" $height="auto" $paddingbottom = "5%"  >
-               <hr />
-<h2 style={{ color: "red", backgroundColor: "yellow", padding: "10px" }}>
-  TEST DE IDIOMA EN CLIENTE: {currentLocale}
-</h2>
-<hr />
                
                <ScrollReveal $direction="left">
                 <ContainerPictureComponent > 
@@ -137,7 +127,7 @@ function PortafolioIllustrationForm (props){
                         <Link href="https://cara.app/icouldlie">
                             <SocialNetwork>Cara App</SocialNetwork>
                         </Link>
-                <h1 style={{color: "black"}}>Idioma detectado en pantalla: {t('AboutMe.Title')}</h1>
+
                     </TextComponent>
                     <TextComponent>
                         <HeadPhilosophy>{t("ReachOut.Phylosophy.Title")}</HeadPhilosophy>
