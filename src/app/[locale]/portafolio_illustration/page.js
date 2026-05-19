@@ -1,4 +1,8 @@
 'use client'
+// ✅ Obliga a Next.js a renderizar la página de forma dinámica y no usar caché estática
+export const dynamic = 'force-dynamic'; 
+
+// ... (el resto de tus imports y tu código se quedan exactamente igual)
 import React, { useEffect, useState, useRef} from "react";
 import {  Portafolio,  Section,  HeadPhilosophy, Dropline, SocialNetwork, ReachOut } from "../../styles/StylesParagraph.styles";
 import { ArticleComponent, SectionComponent, TextComponent, ContainerPictureComponent, RectangleComponent, FooterComponent, BlankSpaceComponent, FirstAnimation } from "../../styles/ComponentStyles";
@@ -64,6 +68,13 @@ function PortafolioIllustrationForm (props){
         <ArticleComponent>
             
            <SectionComponent $height="25vh" >
+
+            <hr />
+<h2 style={{ color: "red", backgroundColor: "yellow", padding: "10px" }}>
+  TEST DE IDIOMA EN CLIENTE: {currentLocale}
+</h2>
+<hr />
+            
             
                <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">
                     <BlankSpaceComponent/>
@@ -91,6 +102,12 @@ function PortafolioIllustrationForm (props){
 
            
             <SectionComponent $flexdirection="row" $height="auto" $paddingbottom = "5%"  >
+               <hr />
+<h2 style={{ color: "red", backgroundColor: "yellow", padding: "10px" }}>
+  TEST DE IDIOMA EN CLIENTE: {currentLocale}
+</h2>
+<hr />
+               
                <ScrollReveal $direction="left">
                 <ContainerPictureComponent > 
                     <PostComponent $height="auto" linkImage="/illustrations/experimentation_2_export_to_web.jpg" project="PortafolioIllustration.ChappelRoan.Name" date="2026" explanation="PortafolioIllustration.ChappelRoan.Explanation" right="105%" textalign="end" >

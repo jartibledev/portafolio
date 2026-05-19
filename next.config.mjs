@@ -1,9 +1,12 @@
-/** @type {import('next').NextConfig} */
+
 
 import createNextIntlPlugin from 'next-intl/plugin';
 
-const withNextIntl = createNextIntlPlugin();
+const withNextIntl = createNextIntlPlugin(
+  './src/i18n/request.js' // Ruta a tu request.js real
+);
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   /* config options here */
   

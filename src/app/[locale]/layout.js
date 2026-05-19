@@ -1,7 +1,6 @@
 import { DM_Mono, Geist_Mono, Cascadia_Mono , Fragment_Mono, Cutive_Mono, Inter  } from "next/font/google";
 import "./globals.css";
 
-
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -41,18 +40,23 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children, params }) {
+  // 1. Desestructuramos el parámetro 'locale' de forma asíncrona (Obligatorio en Next.js 16)
   const { locale } = await params;
- 
 
+  // 2. Validación de seguridad para idiomas soportados
   if (!locales.includes(locale)) {
     notFound();
   }
-   const messages = await getMessages();
+
+  // 3. 🔥 CORRECCIÓN CLAVE: Pasamos el locale de forma explícita a getMessages para que next-intl cargue el JSON correcto
+  const messages = await getMessages({ locale });
+
   return (
     <html lang={locale}>
       <body className={`${dmMono.variable}${GeistMono.variable}${cascadiaMono.variable}${fragmentMono.variable}${cultiveMono.variable}`}>
+        {/* 4. Aseguramos que el Client Provider reciba tanto los mensajes como el locale actual */}
         <NextIntlClientProvider messages={messages} locale={locale}>
-        {children}
+          {children}
         </NextIntlClientProvider>
       </body>
     </html>
