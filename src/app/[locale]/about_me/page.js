@@ -7,6 +7,7 @@ import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import Link from "next/link";
 import Image from 'next/image';
+import LanguageSelector from "@/app/styles/LanguageSelector";
 
 
 
@@ -120,6 +121,7 @@ function AboutMe ( props ){
         <ArticleComponent>
             
             <SectionComponent $height= "30vh">
+                <LanguageSelector></LanguageSelector>
             <Link href="../home_page" passHref >
                 <FooterComponent>Back to see my others portafolios</FooterComponent> 
             </Link>

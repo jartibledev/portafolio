@@ -28,21 +28,27 @@ export default function LanguageSelector() {
         onClick={() => ChangeLanguage('es')} 
         className="tu-boton-idioma-style"
       >
-        🇪🇸 ES
+        ES
       </button>
       
       <button 
         onClick={() => ChangeLanguage('en')} 
         className="tu-boton-idioma-style"
       >
-        🇺🇸 EN
+        EN
       </button>
 
       <button 
         onClick={() => ChangeLanguage('fr')} 
         className="tu-boton-idioma-style"
       >
-        🇫🇷 FR
+        FR
+      </button>
+      <button 
+        onClick={() => ChangeLanguage('de')} 
+        className="tu-boton-idioma-style"
+      >
+        DE
       </button>
     </div>
   );

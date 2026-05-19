@@ -7,6 +7,7 @@ import Link from "next/link";
 import PostComponent from "../../styles/modal";
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import LanguageSelector from "@/app/styles/LanguageSelector";
 
 //import miImagen from '../concepart_1_2_export.jpg'
 const styleImage ={
@@ -64,6 +65,7 @@ function PortafolioDevForm (props ){
         <ArticleComponent>
             
            <SectionComponent $height="25vh" >
+            <LanguageSelector></LanguageSelector>
                <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">
                     <BlankSpaceComponent/>
                     <BlankSpaceComponent/>

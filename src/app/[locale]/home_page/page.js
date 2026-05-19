@@ -4,7 +4,7 @@ import { Portafolio, Section } from "../../styles/StylesParagraph.styles";
 import { ArticleComponent, SectionComponent, RectangleComponent, BlankSpaceComponent} from "../../styles/ComponentStyles";
 import Link from "next/link";
 import { useParams } from 'next/navigation';
-
+import LanguageSelector from "@/app/styles/LanguageSelector";
 const linkDisplay = { 
     display:"flex", 
     justifyContent: "center",
@@ -49,6 +49,7 @@ function HomePageForm (props){
     return(
         <ArticleComponent>
             <SectionComponent style={stylesHomePage} >
+                <LanguageSelector></LanguageSelector>
 
                 <Link style = {linkDisplay} href={`/${currentLocale}/portafolio_illustration`} prefetch={true}>
                     <RectangleComponent $filter="blur(9px)" $filterbackdrop="blur(9px)" $filterhover="none" $backfilterhoover="none" >

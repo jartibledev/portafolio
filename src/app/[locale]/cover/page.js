@@ -5,6 +5,7 @@ import { Head   } from "../../styles/StylesParagraph.styles"
 import {  useParams } from 'next/navigation';
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
+import LanguageSelector from '@/app/styles/LanguageSelector';
 
 function CoverForm (props ){
         const [isVisible, setIsVisible] = useState(false);
@@ -38,6 +39,7 @@ console.log("El idioma activo según next-intl es:", locale);
                 const currentLocale = params?.locale || 'es';
     return(
         <ArticleComponent>
+            <LanguageSelector></LanguageSelector>
             <FirstAnimation ref={sectionRef} $isVisible={isVisible}>
             <SectionComponent height="auto">
             
