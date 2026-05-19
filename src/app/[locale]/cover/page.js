@@ -4,11 +4,13 @@ import { ArticleComponent, FirstAnimation, SectionComponent, RectangleComponent 
 import { Head   } from "../../styles/StylesParagraph.styles"
 import {  useParams } from 'next/navigation';
 import Link from 'next/link';
+import { useLocale } from 'next-intl';
 
 function CoverForm (props){
         const [isVisible, setIsVisible] = useState(false);
         const sectionRef = useRef(null);
-    
+        const locale = useLocale();
+console.log("El idioma activo según next-intl es:", locale);
                 useEffect(() =>{
                     const observer = new IntersectionObserver(
                         ([entry]) => {

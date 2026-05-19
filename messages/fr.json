@@ -1,38 +1,38 @@
 {
     "Portafolio illustration": {
-        "Portafolio" : "Portafolio",
-        "Illustration" : "Ilustración",
+        "Portafolio" : "Portfolio",
+        "Illustration" : "Illustration",
         "Concept Art" :{
             "Name" : "Fée de Bois ",
             "Explanation" : "Projecte du concept art inspirée en Caroline Polachek",
-            "Tools": "Herramientas  usadas para desarrollar el proyecto:"
+            "Tools": "Outils:"
         } ,
 
         "ChappelRoan" : {
-            "Name" : "La flor",
-            "Explanation" : "Retrato de la cantante Chappel Roan",
-            "Tools": "Herramientas  usadas para desarrollar el proyecto:"
+            "Name" : "Le fleur",
+            "Explanation" : "Portrait du la chanteuse Chappel Roan",
+            "Tools": "Outils:"
         },
         "Carrie" : {
             "Name" : "Carrie",
-            "Explanation" : "Illustración para pantallas de carga de videojuegos inspirada en la ovela de Stephen King , Carrie",
-            "Tools": "Herramientas  usadas para desarrollar el proyecto:"
+            "Explanation" : "Illustration pour l'ecrans du charge de jeus vidéos inspirée à le personnage principal du la novelle de Stephen King , Carrie ",
+            "Tools": "Outils:"
         }
     },
 
     "ReachOut": {
-        "Title": "Contáctame",
+        "Title": "Contactez-moi",
         "Phylosophy":{
-            "Title": "Mi filosofía de arte",
-            "Description": "Como decía Richard Sennet en el Artesano  \"no hay arte sin artesanía\". Para mí toda ilustración es un ejercicio de poner ojo en el detalle y profundizar en cada aspecto de la ilustración para obtener un resultado extraordinario."
+            "Title": "Moi philosophy d'art",
+            "Description": "Comme dit Richard Sennet á l'Artisan  \"Il quelle n'ai pas art sans artesanie\". Pour moi toute illustration est un exercise du prèter attention aux détails et approfondir dans cheque aspect du l'illustration pour obtenir un résultat extraordinaire."
         }
     },
 
     "AboutMe" : {
-        "Title" : "Acerca de mí",
+        "Title" : "Sur moi",
         "Bio": {
-          "Title": "Hola!",
-          "Description":  "Soy Sergio y me he especializado en diseño gráfico, ilustración y diseño UI. Cuento con una formación sólida en Bellas Artes complementada con conocimientos de programación adquiridos durante mi trayectoria académica. Utilizo esta mezcla multidisciplinar para crear diseños que se adapten de forma óptima a diferentes procesos de desarrollo técnico. Le animo a echar un vistazo a mi portafolio para conocer mi trabajo de cerca."  
+          "Title": "Salut!",
+          "Description":  "Je suis Sergio,je suis un designer graphique qui aime UI/UX (et aussi pour le programmation) que designe en son temps libre et tenter apprendre a jouer de la guitare."  
         },
         
 
