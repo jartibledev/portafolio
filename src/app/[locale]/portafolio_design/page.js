@@ -22,7 +22,7 @@ const linkDisplay = {
 }
 
 
-function PortafolioDesignForm (props){
+function PortafolioDesignForm (props ){
         const t = useTranslations();
         const [isOpen, setIsOpen] = useState(false);
         const [imagenActual, setImagenActual] = useState('');

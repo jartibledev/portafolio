@@ -49,7 +49,7 @@ function HomePageForm (props){
     return(
         <ArticleComponent>
             <SectionComponent style={stylesHomePage} >
-            
+
                 <Link style = {linkDisplay} href={`/${currentLocale}/portafolio_illustration`} prefetch={true}>
                     <RectangleComponent $filter="blur(9px)" $filterbackdrop="blur(9px)" $filterhover="none" $backfilterhoover="none" >
                         <Portafolio>

@@ -6,7 +6,7 @@ import {  useParams } from 'next/navigation';
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
 
-function CoverForm (props){
+function CoverForm (props ){
         const [isVisible, setIsVisible] = useState(false);
         const sectionRef = useRef(null);
         const locale = useLocale();

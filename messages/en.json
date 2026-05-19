@@ -1,78 +1,74 @@
 {
-    "Portafolio illustration": {
-        "Portafolio" : "Portafolio",
-        "Illustration" : "Ilustración",
-        "Concept Art" :{
-            "Name" : "Fairy of the Forest",
+    "PortafolioIllustration": {
+        "Portafolio" : "Portfolio",
+        "Illustration" : "Illustration",
+        "ConceptArt" :{
+            "Name" : "Wood Fairy",
             "Explanation" : "Concept art project inspired by Caroline Polachek",
-            "Tools": "Tools:"
-        } ,
-
+            "Tools": "Tools used to develop the project:"
+        },
         "ChappelRoan" : {
             "Name" : "The Flower",
-            "Explanation" : "Chappel Roan portrait, made as fan art",
-            "Tools": "Tools:"
+            "Explanation" : "Chappell Roan portrait, made as fan art",
+            "Tools": "Tools used to develop the project:"
         },
         "Carrie" : {
             "Name" : "Carrie",
-            "Explanation" : "Illustration for a loading screen videogame inspired by the main character of the mitic Stephen King's bestseller, Carrie",
-            "Tools": "Tools:"
+            "Explanation" : "Illustration for a video game loading screen inspired by the main character of Stephen King's novel, Carrie",
+            "Tools": "Tools used to develop the project:"
         }
     },
 
     "ReachOut": {
-        "Title": "Reach out",
+        "Title": "Contact Me",
         "Phylosophy":{
-            "Title": "My art philosophy",
-            "Description": "As Richard Sennet wrote in The Artisan \"There is not art without craftwork\" For myself, all kind of illustration is an exercise of puting the eye on the detail and getting deeper in each aspect of the picture for the purpouse to obtain an amazing result." 
+            "Title": "My Art Philosophy",
+            "Description": "As Richard Sennett wrote in The Artisan \"There is no art without craftwork\". For myself, every illustration is an exercise in paying attention to detail and getting deeper into each aspect of the artwork to obtain an amazing result." 
         }
     },
 
     "AboutMe" : {
-        "Title" : "About me",
-        "Actuality" : "ACtuality",
+        "Title" : "About Me",
+        "Actuality" : "Current",
         "Bio": {
           "Title": "Hi!",
-          "Description":  "I'm Sergio. I specialize in Design UI and Graphic Design . Always I love experiment with new forms of artistic expression, such as code. I consider coding as a form to create new pleasant experiences for the user. In my free times you can find me trying to learn guitar and drawing illustrations. I like a good challenge and opportunities to meet diferent connections, so let's connect!"
+          "Description": "I'm Sergio. I specialize in UI Design and Graphic Design. I love experimenting with new forms of artistic expression, such as code. I consider coding as a way to create new pleasant experiences for the user. In my free time, you can find me trying to learn guitar and drawing illustrations. I like a good challenge and opportunities to meet different connections, so let's connect!"
         },
         
         "Formation": {
-          "Title": "Formation",
-          "Description":  "In Fine Arts I learned to code in some signatures, a part of getting skills in volume, composition, color's theory, photography edition (with Adobe Photoshop) and video edition (I profundice myself in wide notions about the use of Adobe Premiere). Furthemore, I specialiced in Adobe Illustrator, Adobe Indesign and textil stamps through extensive courses of universitary formation. After that, I studied a Master of Illustration and Design in València, where I get knowlegdments of design graphic. Actually, I'm doing a Python course in Standofor University ",
-         
+          "Title": "Education",
+          "Description": "In Fine Arts, I learned to code in several subjects, alongside gaining skills in volume, composition, color theory, photography editing (with Adobe Photoshop), and video editing (delving into wide notions about the use of Adobe Premiere). Furthermore, I specialized in Adobe Illustrator, Adobe InDesign, and textile stamps through extensive university extension courses. After that, I studied a Master's Degree in Illustration and Design in Valencia, where I gained graphic design knowledge. Currently, I am doing a Python course at Stanford University via Code Place.",
           "UMA" : {
             "University":"University of Málaga",
-            "Grade": "Grade in Fine Arts",
+            "Grade": "Bachelor's Degree in Fine Arts",
             "Courses": {
-                "Illustrator":" Extense Course of Adobe Illustrator",
-                "Indesign": "Extense Course of Adobe Indesign",
-                "Textil": "Extense Course of Fashion Illustration"
+                "Illustrator":"University Extension Course in Adobe Illustrator",
+                "Indesign": "University Extension Course in Adobe InDesign",
+                "Textil": "University Extension Course in Fashion Illustration"
             }
           },
           "UPV" : {
-            "University":"Politechnic University of València",
-            "Grade": "Master of Illustration and Design"
-            },
+            "University":"Polytechnic University of Valencia",
+            "Grade": "Master's Degree in Illustration and Design"
+          },
           "Standford" : {
-            "University":"University of Standford",
+            "University":"Stanford University",
             "Grade": "Python Course"
-            }
-          
+          }
         },
 
         "Skills":{
             "Title":"Skills",
-            "Description": "I know many programming languages which I use in my developemts, as Javascript, HTML, CSS3 to web development, or python to automatizations. For other hand, I usually design and illustrate with open source software like Gimp, Kryta and Inkscape. ",
+            "Description": "I know many programming languages which I use in my developments, such as JavaScript, HTML, and CSS3 for web development, or Python for automations. On the other hand, I usually design and illustrate with open-source software like Gimp, Krita, and Inkscape.",
             "Programmes": "Tools",
-            "Sofware design": "Software design"
+            "SofwareDesign": "Software Design"
         },
         "Leanguages" : {
-            "Title": "Lenguages"
+            "Title": "Languages"
         },
         "Hobbies" : {
-            "Title": "Hobbys",
-            "Description": "I love playing guitar and walking on the beach while the sea touch my feets."
+            "Title": "Hobbies",
+            "Description": "I love playing guitar and walking on the beach while the sea water caresses my feet."
         }
-        
     }
 }

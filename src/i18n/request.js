@@ -1,13 +1,14 @@
 import { getRequestConfig } from 'next-intl/server';
 
-const locales = ['es', 'en', 'fr', 'de'];
-
 export default getRequestConfig(async ({ locale }) => {
-  // Protección por si llega undefined o un idioma no soportado
+  const locales = ['es', 'en', 'fr', 'de'];
+  
+  // 🛡️ ESCUDO: Si 'locale' llega vacío o no está en la lista, forzamos "es"
   const currentLocale = locales.includes(locale) ? locale : 'es';
 
   return {
-    locale: currentLocale, // <-- ¡ESTA LÍNEA ES OBLIGATORIA AHORA!
-    messages: (await import(`../../messages/${currentLocale}.json`)).default
+    locale: currentLocale,
+    // Cargamos el archivo JSON de forma segura con el require relativo que ya acepta tu entorno
+    messages: require(`../../messages/${currentLocale}.json`)
   };
 });

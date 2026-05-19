@@ -85,7 +85,7 @@ const softwareDesign = [
 ];
   const infiniteImages = [...logos, ...logos];
   const infiniteImagesGraphicDesign = [...softwareDesign, ...softwareDesign];
-function AboutMe (props){
+function AboutMe ( props ){
   
     const [isVisible, setIsVisible] = useState(false);
             const sectionRef = useRef(null);

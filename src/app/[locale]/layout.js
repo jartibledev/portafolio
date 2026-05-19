@@ -1,8 +1,10 @@
 import { DM_Mono, Geist_Mono, Cascadia_Mono , Fragment_Mono, Cutive_Mono, Inter  } from "next/font/google";
 import "./globals.css";
 
+
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
+import { notFound } from 'next/navigation';
 
 const dmMono = DM_Mono({
   subsets: ['latin'],
@@ -31,6 +33,7 @@ const cultiveMono = Cutive_Mono ({
   variable:'--font-cutive-mono',
 });
 
+const locales = ['es', 'en', 'fr', 'de'];
 
 export const metadata = {
   title: "Create Next App",
@@ -39,11 +42,16 @@ export const metadata = {
 
 export default async function RootLayout({ children, params }) {
   const { locale } = await params;
-  const messages = await getMessages();
+ 
+
+  if (!locales.includes(locale)) {
+    notFound();
+  }
+   const messages = await getMessages();
   return (
     <html lang={locale}>
       <body className={`${dmMono.variable}${GeistMono.variable}${cascadiaMono.variable}${fragmentMono.variable}${cultiveMono.variable}`}>
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={messages} locale={locale}>
         {children}
         </NextIntlClientProvider>
       </body>

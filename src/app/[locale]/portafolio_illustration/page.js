@@ -64,6 +64,7 @@ function PortafolioIllustrationForm (props){
         <ArticleComponent>
             
            <SectionComponent $height="25vh" >
+            
                <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">
                     <BlankSpaceComponent/>
                     <BlankSpaceComponent/>
@@ -119,7 +120,7 @@ function PortafolioIllustrationForm (props){
                         <Link href="https://cara.app/icouldlie">
                             <SocialNetwork>Cara App</SocialNetwork>
                         </Link>
-                
+                <h1 style={{color: "black"}}>Idioma detectado en pantalla: {t('AboutMe.Title')}</h1>
                     </TextComponent>
                     <TextComponent>
                         <HeadPhilosophy>{t("ReachOut.Phylosophy.Title")}</HeadPhilosophy>
