@@ -119,9 +119,11 @@ function AboutMe ( props ){
             }, []);
     return(
         <ArticleComponent>
+
+            <nav style ={{display: 'flex', position:'sticky', flexDirection: 'row', justifyContent: 'center'}}> <LanguageSelector></LanguageSelector></nav>
             
             <SectionComponent $height= "30vh">
-                <LanguageSelector></LanguageSelector>
+               
             <Link href="../home_page" passHref >
                 <FooterComponent>Back to see my others portafolios</FooterComponent> 
             </Link>
