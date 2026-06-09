@@ -119,8 +119,8 @@ function AboutMe ( props ){
             }, []);
     return(
         <ArticleComponent>
-
-            <nav style ={{display: 'flex', position:'sticky', flexDirection: 'row', justifyContent: 'center'}}> <LanguageSelector></LanguageSelector></nav>
+            <LanguageSelector></LanguageSelector>
+            <nav style ={{display: 'flex', position:'sticky', flexDirection: 'row', justifyContent: 'center'}}> </nav>
             
             <SectionComponent $height= "30vh">
                

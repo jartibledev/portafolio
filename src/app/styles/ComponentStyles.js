@@ -32,7 +32,6 @@ const animationBottom = keyframes`
  from {
  
     opacity: 0;
-    transform: translateY(-100%);
     filter:blur(9px);
     backdrop-filter: blur(9px);
   }
@@ -389,16 +388,12 @@ export const ButtonComponent = styled.button`
    &:hover {
         opacity:${props => props.$opacity || "1"}; 
         transform: translateY(-2px);
-        filter:${props => props.$filterhover || ' blur(9px'};
-        backdrop-filter: ${props => props.$backdropfilterhover || 'blur(9px)'};
     }
     &:active{
         animation: ${animationBottom} 0.3s ease;
     }
       img{
-
         opacity: inherit !important;
-      
         }
 
      ${({ isclicked }) =>
