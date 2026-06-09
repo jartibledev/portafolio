@@ -63,26 +63,26 @@ const styleLogoImageLeanguagesGallery ={
 
 
 const logos = [
-  '/icons/leanguages_programs/png-javascript-badge-picture-8.png',
-  '/icons/leanguages_programs/HTML5.png',
-  '/icons/leanguages_programs/CSS3.png',
-  '/icons/leanguages_programs/react_icon.png',
-  '/icons/leanguages_programs/java_logo.png',
+  '/icons/leanguages_programs/avif-javascript-badge-picture-8.avif',
+  '/icons/leanguages_programs/HTML5.avif',
+  '/icons/leanguages_programs/CSS3.avif',
+  '/icons/leanguages_programs/react_icon.avif',
+  '/icons/leanguages_programs/java_logo.avif',
   '/icons/leanguages_programs/c++.svg',
-  '/icons/leanguages_programs/vulkan.png',
-  '/icons/leanguages_programs/opengl.png',
-  '/icons/leanguages_programs/python.png',
+  '/icons/leanguages_programs/vulkan.avif',
+  '/icons/leanguages_programs/opengl.avif',
+  '/icons/leanguages_programs/python.avif',
 ];
 const softwareDesign = [
-  '/icons/graphic_software/Adobe_Illustrator_CC_icon.svg.png',
-  '/icons/graphic_software/Adobe_InDesign_CC_icon.svg.png',
-  '/icons/graphic_software/Adobe_Photoshop_CC_icon.svg.png',
-  '/icons/graphic_software/Adobe_Premiere_Pro_CC_icon.svg.png',
-  '/icons/graphic_software/Blender_logo_no_text.svg.png',
+  '/icons/graphic_software/Adobe_Illustrator_CC_icon.svg.avif',
+  '/icons/graphic_software/Adobe_InDesign_CC_icon.svg.avif',
+  '/icons/graphic_software/Adobe_Photoshop_CC_icon.svg.avif',
+  '/icons/graphic_software/Adobe_Premiere_Pro_CC_icon.svg.avif',
+  '/icons/graphic_software/Blender_logo_no_text.svg.avif',
   '/icons/graphic_software/GIMP-Logo.wine.svg',
-  '/icons/graphic_software/Inkscape_Logo.svg.png',
-  '/icons/graphic_software/Logo_Blender.svg.png',
-  '/icons/graphic_software/Scribus_logo.svg.png',
+  '/icons/graphic_software/Inkscape_Logo.svg.avif',
+  '/icons/graphic_software/Logo_Blender.svg.avif',
+  '/icons/graphic_software/Scribus_logo.svg.avif',
 ];
   const infiniteImages = [...logos, ...logos];
   const infiniteImagesGraphicDesign = [...softwareDesign, ...softwareDesign];
@@ -140,7 +140,7 @@ function AboutMe ( props ){
                 <SectionComponent $flexdirection="row" $height="auto" >
                     <ContainerPictureComponent >
                         <PictureComponent $height="100%">
-                            <Image src="/profile/image_bio.jpg"
+                            <Image src="/profile/image_bio.avif"
                                     alt = "picture of me"
                                     fill
                                     style= {styleImage}></Image>
@@ -171,21 +171,21 @@ function AboutMe ( props ){
 
                 <GalleryComponent $flexdirection="row" $paddingbottom="10%"  >   
                         <PictureComponent $filter="none" $filterbackdrop="none">
-                            <Image src="/icons/universities/LOGOUMA.jpg"
+                            <Image src="/icons/universities/LOGOUMA.avif"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
                         </PictureComponent>
                         <PictureComponent $filter="none" $filterbackdrop="none">
-                            <Image src="/icons/universities/UPV-Emblem.png"
+                            <Image src="/icons/universities/UPV-Emblem.avif"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
                         </PictureComponent>
                         <PictureComponent $filter="none" $filterbackdrop="none" >
-                            <Image src="/icons/universities/LOGO_STANDFORD.png"
+                            <Image src="/icons/universities/LOGO_STANDFORD.avif"
                             alt = "picture of me"
                             fill
                             style={styleImage}
@@ -423,21 +423,21 @@ function AboutMe ( props ){
                     <GalleryComponent $flexdirection = "row" >   
                     
                         <PictureComponent $filter="none" $filterbackdrop="none" >
-                            <Image src="/images/LOGOUMA.jpg"
+                            <Image src="/images/LOGOUMA.avif"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
                         </PictureComponent>
                         <PictureComponent $filter="none" $filterbackdrop="none" >
-                            <Image src="/icons/universities/UPV-Emblem.png"
+                            <Image src="/icons/universities/UPV-Emblem.avif"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
                         </PictureComponent>
                         <PictureComponent $filter="none" $filterbackdrop="none" >
-                            <Image src="/icons/universities/LOGO_STANDFORD.png"
+                            <Image src="/icons/universities/LOGO_STANDFORD.avif"
                             alt = "picture of me"
                             fill
                             style={styleImage}

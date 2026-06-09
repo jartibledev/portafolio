@@ -13,7 +13,7 @@ import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import LanguageSelector from "@/app/styles/LanguageSelector";
 
-//import miImagen from '../concepart_1_2_export.jpg'
+//import miImagen from '../concepart_1_2_export.avif'
 const styleImage ={
     objectFit: 'cover',
     objectPosition: ' top',
@@ -89,7 +89,7 @@ function PortafolioIllustrationForm (props){
             <FirstAnimation ref={sectionRef} $isVisible={isVisible}>
             <SectionComponent $height="80vh" $flexdirection="row">
                 <ContainerPictureComponent>
-                    <PostComponent $height="100%" linkImage="/illustrations/concepart_1_2_export.jpg" project="PortafolioIllustration.ConceptArt.Name" date="2026" explanation="PortafolioIllustration.ConceptArt.Explanation" left="70%" textalign="start" width="300px" >
+                    <PostComponent $height="100%" linkImage="/illustrations/concepart_1_2_export.avif" project="PortafolioIllustration.ConceptArt.Name" date="2026" explanation="PortafolioIllustration.ConceptArt.Explanation" left="70%" textalign="start" width="300px" >
                     </PostComponent>
                 </ContainerPictureComponent>
             </SectionComponent>
@@ -100,7 +100,7 @@ function PortafolioIllustrationForm (props){
                
                <ScrollReveal $direction="left">
                 <ContainerPictureComponent > 
-                    <PostComponent $height="auto" linkImage="/illustrations/experimentation_2_export_to_web.jpg" project="PortafolioIllustration.ChappelRoan.Name" date="2026" explanation="PortafolioIllustration.ChappelRoan.Explanation" right="105%" textalign="end" >
+                    <PostComponent $height="auto" linkImage="/illustrations/experimentation_2_export_to_web.avif" project="PortafolioIllustration.ChappelRoan.Name" date="2026" explanation="PortafolioIllustration.ChappelRoan.Explanation" right="105%" textalign="end" >
                     </PostComponent>
                 </ContainerPictureComponent>
                </ScrollReveal>
@@ -108,7 +108,7 @@ function PortafolioIllustrationForm (props){
 
                <ScrollReveal $direction={"right"} >
                     <ContainerPictureComponent>
-                        <PostComponent $height="auto" linkImage="/illustrations/minadesolada_web_export.jpg" project="PortafolioIllustration.Carrie.Name" date="2026" explanation="PortafolioIllustration.Carrie.Explanation" left="105%" textalign="start" >
+                        <PostComponent $height="auto" linkImage="/illustrations/minadesolada_web_export.avif" project="PortafolioIllustration.Carrie.Name" date="2026" explanation="PortafolioIllustration.Carrie.Explanation" left="105%" textalign="start" >
                     </PostComponent>
                     </ContainerPictureComponent>
                      </ScrollReveal> 
