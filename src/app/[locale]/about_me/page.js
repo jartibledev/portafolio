@@ -63,7 +63,7 @@ const styleLogoImageLeanguagesGallery ={
 
 
 const logos = [
-  '/icons/leanguages_programs/avif-javascript-badge-picture-8.avif',
+  '/icons/leanguages_programs/png-javascript-badge-picture-8.avif',
   '/icons/leanguages_programs/HTML5.avif',
   '/icons/leanguages_programs/CSS3.avif',
   '/icons/leanguages_programs/react_icon.avif',
