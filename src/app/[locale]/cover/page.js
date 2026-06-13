@@ -40,8 +40,8 @@ console.log("El idioma activo según next-intl es:", locale);
     return(
         <ArticleComponent>
             <LanguageSelector></LanguageSelector>
-            <FirstAnimation ref={sectionRef} $isVisible={isVisible}>
-            <SectionComponent height="auto">
+            <FirstAnimation ref={sectionRef} $isVisible={isVisible} >
+            <SectionComponent height="auto" style={{justifyContent: 'center'}}>
             
             
             <Link href={`/${currentLocale}/home_page`} prefetch={true}>

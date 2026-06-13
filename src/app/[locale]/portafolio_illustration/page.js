@@ -79,7 +79,7 @@ function PortafolioIllustrationForm (props){
                                     {t("PortafolioIllustration.Portafolio")}
                                     </Portafolio>
                                     <Section>
-                                        {t("PortafolioIllustration.Illustration")}
+                                        {t("PortafolioIllustration.Section")}
                                     </Section>
                     <BlankSpaceComponent/>
                     <BlankSpaceComponent/>
@@ -117,7 +117,7 @@ function PortafolioIllustrationForm (props){
             <ScrollReveal >
                 <SectionComponent $flexdirection="row" $height="auto" > 
                     <TextComponent>
-                        <ReachOut>{t("ReachOut.Title")}</ReachOut>
+                        <ReachOut>{t("PortafolioIllustration.ReachOut.Title")}</ReachOut>
                         <Link href="mailto:mayalopezdesign@gmail.com">
                             <SocialNetwork>Email</SocialNetwork>
                         </Link>
@@ -130,8 +130,8 @@ function PortafolioIllustrationForm (props){
 
                     </TextComponent>
                     <TextComponent>
-                        <HeadPhilosophy>{t("ReachOut.Phylosophy.Title")}</HeadPhilosophy>
-                        <Dropline>{t("ReachOut.Phylosophy.Description")}</Dropline>
+                        <HeadPhilosophy>{t("PortafolioIllustration.ReachOut.Phylosophy.Title")}</HeadPhilosophy>
+                        <Dropline>{t("PortafolioIllustration.ReachOut.Phylosophy.Description")}</Dropline>
                     </TextComponent> 
                 
                 </SectionComponent>

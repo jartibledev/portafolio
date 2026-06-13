@@ -71,10 +71,10 @@ function PortafolioDevForm (props ){
                     <BlankSpaceComponent/>
                                     
                                     <Portafolio>
-                                    {t("PortafolioIllustration.Portafolio")}
+                                    {t("PortafolioDev.Portafolio")}
                                     </Portafolio>
                                     <Section>
-                                        {t("PortafolioIllustration.Illustration")}
+                                        {t("PortafolioDev.Section")}
                                     </Section>
                     <BlankSpaceComponent/>
                     <BlankSpaceComponent/>
@@ -84,7 +84,7 @@ function PortafolioDevForm (props ){
             <FirstAnimation ref={sectionRef} $isVisible={isVisible}>
             <SectionComponent $height="80vh" $flexdirection="row">
                 <ContainerPictureComponent>
-                    <PostComponent $height="100%" linkImage="/illustrations/concepart_1_2_export.avif" project="PortafolioIllustration.ConceptArt.Name" date="2026" explanation="PortafolioIllustration.ConceptArt.Explanation" left="70%" textalign="start" width="300px" >
+                    <PostComponent $height="100%" linkImage="/illustrations/concepart_1_2_export.avif" project="PortafolioDev.Post_1.Name" date="2026" explanation="PortafolioDev.Post_1.Explanation" left="70%" textalign="start" width="300px" >
                     </PostComponent>
                 </ContainerPictureComponent>
             </SectionComponent>
@@ -94,7 +94,7 @@ function PortafolioDevForm (props ){
             <SectionComponent $flexdirection="row" $height="auto" $paddingbottom = "5%"  >
                <ScrollReveal $direction="left">
                 <ContainerPictureComponent > 
-                    <PostComponent $height="auto" linkImage="/illustrations/experimentation_2_export_to_web.avif" project="PortafolioIllustration.ChappelRoan.Name" date="2026" explanation="PortafolioIllustration.ChappelRoan.Explanation" right="105%" textalign="end" >
+                    <PostComponent $height="auto" linkImage="/illustrations/experimentation_2_export_to_web.avif" project="PortafolioDev.Post_2.Name" date="2026" explanation="PortafolioDev.Post_2.Explanation" right="105%" textalign="end" >
                     </PostComponent>
                 </ContainerPictureComponent>
                </ScrollReveal>
@@ -102,7 +102,7 @@ function PortafolioDevForm (props ){
 
                <ScrollReveal $direction={"right"} >
                     <ContainerPictureComponent>
-                        <PostComponent $height="auto" linkImage="/illustrations/minadesolada_web_export.avif" project="PortafolioIllustration.Carrie.Name" date="2026" explanation="PortafolioIllustration.Carrie.Explanation" left="105%" textalign="start" >
+                        <PostComponent $height="auto" linkImage="/illustrations/minadesolada_web_export.avif" project="PortafolioDev.Post_3.Name" date="2026" explanation="PortafolioDev.Post_3.Explanation" left="105%" textalign="start" >
                     </PostComponent>
                     </ContainerPictureComponent>
                      </ScrollReveal> 
@@ -111,7 +111,7 @@ function PortafolioDevForm (props ){
             <ScrollReveal >
                 <SectionComponent $flexdirection="row" $height="auto" > 
                     <TextComponent>
-                        <ReachOut>{t("ReachOut.Title")}</ReachOut>
+                        <ReachOut>{t("PortafolioDev.ReachOut.Title")}</ReachOut>
                         <Link href="mailto:mayalopezdesign@gmail.com">
                             <SocialNetwork>Email</SocialNetwork>
                         </Link>
@@ -124,8 +124,8 @@ function PortafolioDevForm (props ){
                 
                     </TextComponent>
                     <TextComponent>
-                        <HeadPhilosophy>{t("ReachOut.Phylosophy.Title")}</HeadPhilosophy>
-                        <Dropline>{t("ReachOut.Phylosophy.Description")}</Dropline>
+                        <HeadPhilosophy>{t("PortafolioDev.ReachOut.Phylosophy.Title")}</HeadPhilosophy>
+                        <Dropline>{t("PortafolioDev.ReachOut.Phylosophy.Description")}</Dropline>
                     </TextComponent> 
                 
                 </SectionComponent>
