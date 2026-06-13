@@ -29,8 +29,8 @@
         "Portafolio" : "Portafolio",
         "Section" : "Dev",
         "Post_1" :{
-            "Name" : "Novela Visual",
-            "Explanation" : "Projecto de una novela visual alojada en web y con web responsive, sobretodo enfocado a su adaptabilidad en formato de teléfono móvil.",
+            "Name" : "Sleep",
+            "Explanation" : "Este videojuego nace de la fusión entre el arte conceptual, la narrativa intima y la ingenería de software. Consiste en una novela visual interactiva, alojada en la web, que aborda una historia de depresión, angustia y esperanza. Es una página que se adapta a todos los dispositivos para ampliar su alcance desde los gamers de PC hasta la generación Z más acomodada en los smartphones.Las illustraciones cuentan la historia mientras la música algorítmica ayuda a crear un ambiente que sumerge al jugador en las aventuras de la protagonista.\n\nEste proyecto demuestra mi capacidad para resolver los desafíos de un Technical Artist o Frontend Game Developer: la habilidad de transformar conceptos artísticos y narrativos abstractos en mecánicas de juego funcionales, optimizadas y accesibles para cualquier navegador del mundo, sin fricciones de instalación.",
             "Tools": "Herramientas usadas para desarrollar el proyecto:"
         },
         "Post_2" : {
@@ -41,6 +41,16 @@
         "Post_3" : {
             "Name" : "Exportar para desarrollo web",
             "Explanation" : "Plugin del programa de edición fotográfica GIMP que exporta imágenes en formato webp para proyectos de desarrollo web.",
+            "Tools": "Herramientas usadas para desarrollar el proyecto:"
+        },
+        "Post_4" : {
+            "Name" : "Rename",
+            "Explanation" : "Pluggin que renombra una gran cantidad de archivos de manera ordenada con solo un click.",
+            "Tools": "Herramientas usadas para desarrollar el proyecto:"
+        },
+        "Post_5" : {
+            "Name":"Generador de paletas",
+            "Explanation" : "Pluggin que genera una paleta cromática y lo exporta para poder usarla en Gimp y Krita.",
             "Tools": "Herramientas usadas para desarrollar el proyecto:"
         },
         "ReachOut": {

@@ -84,7 +84,7 @@ function PortafolioDevForm (props ){
             <FirstAnimation ref={sectionRef} $isVisible={isVisible}>
             <SectionComponent $height="80vh" $flexdirection="row">
                 <ContainerPictureComponent>
-                    <PostComponent $height="100%" linkImage="/illustrations/concepart_1_2_export.avif" project="PortafolioDev.Post_1.Name" date="2026" explanation="PortafolioDev.Post_1.Explanation" left="70%" textalign="start" width="300px" >
+                    <PostComponent $height="100%" linkImage="/illustrations/portada.avif" project="PortafolioDev.Post_1.Name" date="2026" explanation="PortafolioDev.Post_1.Explanation" left="70%" textalign="start" width="300px" >
                     </PostComponent>
                 </ContainerPictureComponent>
             </SectionComponent>
@@ -107,6 +107,22 @@ function PortafolioDevForm (props ){
                     </ContainerPictureComponent>
                      </ScrollReveal> 
             </SectionComponent> 
+            <SectionComponent $flexdirection="row" $height="auto" $paddingbottom = "5%"  >
+               <ScrollReveal $direction="left">
+                <ContainerPictureComponent > 
+                    <PostComponent $height="auto" linkImage="/icons/projects_devs/icon_rename.avif" project="PortafolioDev.Post_4.Name" date="2026" explanation="PortafolioDev.Post_4.Explanation" right="105%" textalign="end" cover="contain" >
+                    </PostComponent>
+                </ContainerPictureComponent>
+               </ScrollReveal>
+
+
+               <ScrollReveal $direction={"right"} >
+                    <ContainerPictureComponent>
+                        <PostComponent $height="auto" linkImage="/icons/projects_devs/palette_generator_logo.svg" project="PortafolioDev.Post_5.Name" date="2026" explanation="PortafolioDev.Post_5.Explanation" left="105%" textalign="start" cover="contain" >
+                    </PostComponent>
+                    </ContainerPictureComponent>
+                     </ScrollReveal> 
+            </SectionComponent> 
            
             <ScrollReveal >
                 <SectionComponent $flexdirection="row" $height="auto" > 
@@ -118,8 +134,8 @@ function PortafolioDevForm (props ){
                         <Link href="https://www.linkedin.com/in/sergio-maya-l%C3%B3pez-6981b331a/">
                             <SocialNetwork>Linkdln</SocialNetwork>
                         </Link>
-                        <Link href="https://cara.app/icouldlie">
-                            <SocialNetwork>Cara App</SocialNetwork>
+                        <Link href="https://github.com/jartibledev">
+                            <SocialNetwork>Github</SocialNetwork>
                         </Link>
                 
                     </TextComponent>

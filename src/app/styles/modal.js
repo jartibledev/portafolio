@@ -16,7 +16,7 @@ const styleImage ={
 };
 
 
-export default function PostComponent ({ children, linkImage, linkWeb, project="Project Name", date="2026", explanation="This text explain the illustration", right, left, textalign, width, ...props }) {
+export default function PostComponent ({ children, linkImage, linkWeb, project="Project Name", date="2026", explanation="This text explain the illustration", right, left, textalign, width, cover, ...props }) {
   const [isOpen, setIsOpen] = useState(false);
   const [imagenActual, setImagenActual] = useState('');
   const t = useTranslations();
@@ -33,7 +33,7 @@ export default function PostComponent ({ children, linkImage, linkWeb, project="
                             alt = {t(project)}
                             fill
                             priority={false}
-                            style= {{...styleImage, cursor:'zoom-in'}}
+                            style= {{objectFit: `${cover}`, objectPosition: ' top', cursor:'zoom-in'}}
                             onLoad={(e) => {
                             e.target.style.opacity = "1";
                             }}
