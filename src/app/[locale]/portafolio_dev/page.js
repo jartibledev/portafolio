@@ -85,8 +85,8 @@ function PortafolioDevForm (props ){
             <FirstAnimation ref={sectionRef} $isVisible={isVisible}>
             <SectionComponent $height="80vh" $flexdirection="row">
                 <ContainerPictureComponent>
-                    <PostComponent $height="100%" linkImage="/illustrations/portada.avif" project="PortafolioDev.Post_1.Name" date="2026" explanation="PortafolioDev.Post_1.Explanation" left="70%" textalign="start" width="300px" >
-                    </PostComponent>
+                    <PostComponentDev $height="100%"  linkvideo="https://youtu.be/ZtZeZpPKdzY" github="https://github.com/jartibledev/visual-novel-tfm.git" linkImage="/illustrations/portada.avif" project="PortafolioDev.Post_1.Name" date="2026" explanation="PortafolioDev.Post_1.Explanation" left="70%" textalign="start" width="300px" >
+                    </PostComponentDev>
                 </ContainerPictureComponent>
             </SectionComponent>
            </FirstAnimation>
