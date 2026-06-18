@@ -95,24 +95,24 @@ function PortafolioDevForm (props ){
             <SectionComponent $flexdirection="row" $height="auto" $paddingbottom = "5%"  >
                <ScrollReveal $direction="left">
                 <ContainerPictureComponent > 
-                    <PostComponent $height="auto" linkImage="/icons/projects_devs/export_to_web.svg" project="PortafolioDev.Post_2.Name" date="2026" explanation="PortafolioDev.Post_2.Explanation" right="105%" textalign="end" cover="contain" >
-                    </PostComponent>
+                    <PostComponentDev $height="auto" linkvideo="https://www.youtube.com/embed/XW3WmhowopM?si=iUNPMsYpzToqF8qC" github="https://github.com/jartibledev/export-to-web-gimp.git"  linkImage="/icons/projects_devs/export_to_web.svg" project="PortafolioDev.Post_2.Name" date="2026" explanation="PortafolioDev.Post_2.Explanation" right="105%" textalign="end" cover="contain" >
+                    </PostComponentDev>
                 </ContainerPictureComponent>
                </ScrollReveal>
 
 
                <ScrollReveal $direction={"right"} >
                     <ContainerPictureComponent>
-                        <PostComponent $height="auto" linkImage="/icons/projects_devs/export_to_webp.svg" project="PortafolioDev.Post_3.Name" date="2026" explanation="PortafolioDev.Post_3.Explanation" left="105%" textalign="start" cover="contain" >
-                    </PostComponent>
+                        <PostComponentDev $height="auto" linkvideo="https://www.youtube.com/embed/qxgFz8Qj3cM?si=XeYZfsiK14nf5K0W" github="https://github.com/jartibledev/export-to-webp-gimp.git" linkImage="/icons/projects_devs/export_to_webp.svg" project="PortafolioDev.Post_3.Name" date="2026" explanation="PortafolioDev.Post_3.Explanation" left="105%" textalign="start" cover="contain" >
+                    </PostComponentDev>
                     </ContainerPictureComponent>
                      </ScrollReveal> 
             </SectionComponent> 
             <SectionComponent $flexdirection="row" $height="auto" $paddingbottom = "5%"  >
                <ScrollReveal $direction="left">
                 <ContainerPictureComponent > 
-                    <PostComponent $height="auto" linkImage="/icons/projects_devs/icon_rename.avif" project="PortafolioDev.Post_4.Name" date="2026" explanation="PortafolioDev.Post_4.Explanation" right="105%" textalign="end" cover="contain" >
-                    </PostComponent>
+                    <PostComponentDev $height="auto" linkvideo="https://www.youtube.com/embed/KKl08aYvuH0?si=tcrKs3pW2HFZdSCj" github="https://github.com/jartibledev/rename-files" linkImage="/icons/projects_devs/icon_rename.avif" project="PortafolioDev.Post_4.Name" date="2026" explanation="PortafolioDev.Post_4.Explanation" right="105%" textalign="end" cover="contain" >
+                    </PostComponentDev>
                 </ContainerPictureComponent>
                </ScrollReveal>
 

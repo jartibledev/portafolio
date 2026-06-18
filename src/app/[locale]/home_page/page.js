@@ -51,7 +51,7 @@ function HomePageForm (props){
             <SectionComponent style={stylesHomePage} >
                 <LanguageSelector></LanguageSelector>
 
-                <Link style = {linkDisplay} href={`/${currentLocale}/portafolio_illustration`} prefetch={true}>
+                <Link style = {linkDisplay} href={`/${currentLocale}/portafolio_dev`} prefetch={true}>
                     <RectangleComponent $filter="blur(9px)" $filterbackdrop="blur(9px)" $filterhover="none" $backfilterhoover="none" >
                         <Portafolio>
                             Portafolio
@@ -66,7 +66,7 @@ function HomePageForm (props){
                     </RectangleComponent>
                 </Link>
                
-                <Link style = {linkDisplay} href={`/${currentLocale}/portafolio_dev`} prefetch={true}>
+                <Link style = {linkDisplay} href={`/${currentLocale}/portafolio_design`} prefetch={true}>
                     <RectangleComponent $filter="blur(9px)" $filterbackdrop="blur(9px)" $filterhover="none" $backfilterhoover="none">
                         
                         <BlankSpaceComponent></BlankSpaceComponent>
@@ -83,7 +83,7 @@ function HomePageForm (props){
                     </RectangleComponent>
                 </Link>    
                
-                <Link style = {linkDisplay} href={`/${currentLocale}/portafolio_design`} prefetch={true}>
+                <Link style = {linkDisplay} href={`/${currentLocale}/portafolio_illustration`} prefetch={true}>
                     <RectangleComponent $filter="blur(9px)" $filterbackdrop="blur(9px)" $filterhover="none" $backfilterhoover="none">
                         <BlankSpaceComponent></BlankSpaceComponent>
                         <BlankSpaceComponent></BlankSpaceComponent>
