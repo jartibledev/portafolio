@@ -1,0 +1,137 @@
+{
+    "PortafolioIllustration": {
+        "Portafolio" : "Portafolio",
+        "Section" : "Ilustración",
+        "ConceptArt" :{
+            "Name" : "Hada del bosque",
+            "Explanation" : "Proyecto de concept art inspirado en Caroline Polachek",
+            "Tools": "Herramientas usadas para desarrollar el proyecto:"
+        },
+        "ChappelRoan" : {
+            "Name" : "La flor",
+            "Explanation" : "Retrato de la cantante Chappell Roan",
+            "Tools": "Herramientas usadas para desarrollar el proyecto:"
+        },
+        "Carrie" : {
+            "Name" : "Carrie",
+            "Explanation" : "Ilustración para pantallas de carga de videojuegos inspirada en la novela de Stephen King, Carrie",
+            "Tools": "Herramientas usadas para desarrollar el proyecto:"
+        },
+        "ReachOut": {
+        "Title": "Contáctame",
+        "Phylosophy":{
+            "Title": "Mi filosofía de arte",
+            "Description": "Como decía Richard Sennett en El Artesano \"no hay arte sin artesanía\". Para mí toda ilustración es un ejercicio de poner ojo en el detalle y profundizar en cada aspecto de la ilustración para obtener un resultado extraordinario."
+        }
+    }
+    },
+    "PortafolioDev": {
+        "Portafolio" : "Portafolio",
+        "Section" : "Dev",
+        "Post_1" :{
+            "Name" : "Sleep",
+            "Explanation" : "Este videojuego nace de la fusión entre el arte conceptual, la narrativa intima y la ingenería de software. Consiste en una novela visual interactiva, alojada en la web, que aborda una historia de depresión, angustia y esperanza. Es una página que se adapta a todos los dispositivos para ampliar su alcance desde los gamers de PC hasta la generación Z más acomodada en los smartphones.Las illustraciones cuentan la historia mientras la música algorítmica ayuda a crear un ambiente que sumerge al jugador en las aventuras de la protagonista.\n\nEste proyecto demuestra mi capacidad para resolver los desafíos de un Technical Artist o Frontend Game Developer: la habilidad de transformar conceptos artísticos y narrativos abstractos en mecánicas de juego funcionales, optimizadas y accesibles para cualquier navegador del mundo, sin fricciones de instalación.",
+            "Tools": "Herramientas usadas para desarrollar el proyecto:"
+        },
+        "Post_2" : {
+            "Name" : "Exportar para web",
+            "Explanation" : "Plugin que exporta imágenes en formato jpg adaptadas para redes sociales.",
+            "Tools": "Herramientas usadas para desarrollar el proyecto:"
+        },
+        "Post_3" : {
+            "Name" : "Exportar para desarrollo web",
+            "Explanation" : "Plugin del programa de edición fotográfica GIMP que exporta imágenes en formato webp para proyectos de desarrollo web.",
+            "Tools": "Herramientas usadas para desarrollar el proyecto:"
+        },
+        "Post_4" : {
+            "Name" : "Rename",
+            "Explanation" : "Pluggin que renombra una gran cantidad de archivos de manera ordenada con solo un click.",
+            "Tools": "Herramientas usadas para desarrollar el proyecto:"
+        },
+        "Post_5" : {
+            "Name":"Generador de paletas",
+            "Explanation" : "Pluggin que genera una paleta cromática y lo exporta para poder usarla en Gimp y Krita.",
+            "Tools": "Herramientas usadas para desarrollar el proyecto:"
+        },
+        "ReachOut": {
+        "Title": "Contáctame",
+        "Phylosophy":{
+            "Title": "Mi filosofía de trabajo",
+            "Description": "Como decía Richard Sennett en El Artesano \"no hay arte sin artesanía\". Para mí todo código es una oportunidad para encontrar soluciones que optimicen y aligeren la carga de trabajo. Estoy obsecionado en buscar la eficiencia en todos los procesos de trabajo. Me siento orgulloso de poder mejorar la productividad de tu equipo. "
+        }
+    }
+    },
+    "PortafolioDesign": {
+        "Portafolio" : "Portafolio",
+        "Section" : "Design",
+        "ConceptArt" :{
+            "Name" : "Hada del bosque",
+            "Explanation" : "Proyecto de concept art inspirado en Caroline Polachek",
+            "Tools": "Herramientas usadas para desarrollar el proyecto:"
+        },
+        "ChappelRoan" : {
+            "Name" : "La flor",
+            "Explanation" : "Retrato de la cantante Chappell Roan",
+            "Tools": "Herramientas usadas para desarrollar el proyecto:"
+        },
+        "Carrie" : {
+            "Name" : "Carrie",
+            "Explanation" : "Ilustración para pantallas de carga de videojuegos inspirada en la novela de Stephen King, Carrie",
+            "Tools": "Herramientas usadas para desarrollar el proyecto:"
+        },
+        "ReachOut": {
+        "Title": "Contáctame",
+        "Phylosophy":{
+            "Title": "Mi filosofía de diseño",
+            "Description": "Como decía Richard Sennett en El Artesano \"no hay arte sin artesanía\". Para mí todo diseño es un ejercicio de poner ojo en el detalle y profundizar en cada aspecto de la gráfica para obtener un resultado extraordinario que marque la diferencia respecto a al competencia."
+        }
+    }
+    },
+
+    
+
+    "AboutMe" : {
+        "Title" : "Acerca de mí",
+        "Actuality" : "Actualidad",
+        "Bio": {
+          "Title": "Hola!",
+          "Description": "Soy Sergio y me he especializado en diseño gráfico, ilustración y diseño UI. Cuento con una formación sólida en Bellas Artes complementada con conocimientos de programación adquiridos durante mi trayectoria académica. Utilizo esta mezcla multidisciplinar para crear diseños que se adapten de forma óptima a diferentes procesos de desarrollo técnico. Le animo a echar un vistazo a mi portafolio para conocer mi trabajo de cerca."  
+        },
+        
+        "Formation": {
+          "Title": "Formación",
+          "Description": "En Bellas Artes aprendí a programar en varias asignaturas además de adquirir sólidos conocimientos en volumen, composición, teoría del color, edición de fotografía (con Adobe Photoshop) y edición de video (adquirí amplias nociones sobre el uso de Adobe Premiere). A parte de la formación principal, me especialicé en Adobe Illustrator, Adobe InDesign e Ilustración aplicada al Textil mediante cursos de formación extensiva universitaria. Después de mi estancia en la Universidad de Málaga, estudié el Máster de Ilustración y Diseño de la UPV, en el que profundicé en el oficio del diseño gráfico. Actualmente me encuentro estudiando un Curso de Python impartido en Code Place por la Universidad de Stanford.",
+          "UMA" : {
+            "University":"Universidad de Málaga",
+            "Grade": "Grado en Bellas Artes",
+            "Courses": {
+                "Illustrator":"Curso de extensión universitaria de Adobe Illustrator",
+                "Indesign": "Curso de extensión universitaria de Adobe InDesign",
+                "Textil": "Curso de extensión universitaria de Ilustración aplicada al textil"
+            }
+          },
+          "UPV" : {
+            "University":"Universitat Politècnica de València",
+            "Grade": "Máster de Ilustración y Diseño"
+          },
+          "Standford" : {
+            "University":"Universidad de Stanford",
+            "Grade": "Curso de Python"
+          }
+        },
+
+        "Skills":{
+            "Title":"Competencias",
+            "Description": "Tengo un amplio bagaje en el uso de un variado número de lenguajes de programación en mi desarrollo, como JavaScript, HTML, CSS3 para desarrollo web, o Python para automatizaciones. Por otro lado, suelo diseñar e ilustrar con software de código abierto como Gimp, Krita e Inkscape.",
+            "Programmes": "Herramientas",
+            "SofwareDesign": "Herramientas de diseño"
+        },
+        "Leanguages" : {
+            "Title": "Idiomas"
+        },
+        "Hobbies" : {
+            "Title": "Intereses",
+            "Description": "Amo tocar la guitarra y pasear por la playa mientras el agua del mar acaricia mis pies."
+        }
+    }
+}
