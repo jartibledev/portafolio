@@ -94,7 +94,7 @@ function PortafolioDevForm (props ){
             <SectionComponent $flexdirection="row" $height="auto" $paddingbottom = "5%"  >
                <ScrollReveal $direction="left">
                 <ContainerPictureComponent > 
-                    <PostComponent $height="auto" linkImage="/illustrations/experimentation_2_export_to_web.avif" project="PortafolioDev.Post_2.Name" date="2026" explanation="PortafolioDev.Post_2.Explanation" right="105%" textalign="end" >
+                    <PostComponent $height="auto" linkImage="/icons/projects_devs/export_to_web.svg" project="PortafolioDev.Post_2.Name" date="2026" explanation="PortafolioDev.Post_2.Explanation" right="105%" textalign="end" cover="contain" >
                     </PostComponent>
                 </ContainerPictureComponent>
                </ScrollReveal>
@@ -102,7 +102,7 @@ function PortafolioDevForm (props ){
 
                <ScrollReveal $direction={"right"} >
                     <ContainerPictureComponent>
-                        <PostComponent $height="auto" linkImage="/illustrations/minadesolada_web_export.avif" project="PortafolioDev.Post_3.Name" date="2026" explanation="PortafolioDev.Post_3.Explanation" left="105%" textalign="start" >
+                        <PostComponent $height="auto" linkImage="/icons/projects_devs/export_to_webp.svg" project="PortafolioDev.Post_3.Name" date="2026" explanation="PortafolioDev.Post_3.Explanation" left="105%" textalign="start" cover="contain" >
                     </PostComponent>
                     </ContainerPictureComponent>
                      </ScrollReveal> 

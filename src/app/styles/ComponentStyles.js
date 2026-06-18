@@ -73,6 +73,7 @@ export const SectionComponent = styled.section`
     padding-left: ${props => props.$paddingleft || "25%"};
     padding-right: ${props => props.$paddingright || "25%"};
     padding-bottom: ${props => props.$paddingbottom || "5%"};
+    
 `;
 
 export const TextComponent = styled.div`
