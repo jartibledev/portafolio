@@ -419,4 +419,41 @@ export const StyledIframe = styled.iframe`
   height: 100%;
   border: none;
 `;
+export const ButtomComponentLinks = styled.button`
+display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              margin-top: 20px;
+              padding: 12px 24px;
+              border: 0px solid rgba(100, 100, 100, 0);
+              border-radius: 10px;
+              background: linear-gradient(
+                50deg,
+                rgba(255, 255, 255, 0.4) 12%,
+                rgba(255, 255, 255, 0.1) 77%
+              );
+              background-blend-mode: ;
+              color: white;
+              font-family: inherit;
+              font-size: 14px;
+              font-weight: 500;
+              text-decoration: none;
+              border-radius: 6px;
+              border: 1px solid rgba(255, 255, 255, 0);
+              cursor: pointer;
+              transition: background-color 0.2s, transform 0.1s;
+              box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+
+   &:hover {
+      background: linear-gradient(
+      50deg,
+      rgba(255, 255, 255, 0.12) 12%,
+      rgba(255, 255, 255, 0.03) 77%
+      );
+        transform: translateY(-2px);
+    }
+    &:active{
+        animation: ${animationBottom} 0.3s ease;
+    }
+`; 
 

@@ -1,11 +1,13 @@
 'use client';
 import React, { useState } from 'react';
 import { Projects, DateFooter } from './StylesParagraph.styles';
-import { PictureComponent, FooterPictureComponent, VideoContainer, StyledIframe } from './ComponentStyles';
+import { PictureComponent, FooterPictureComponent, VideoContainer, StyledIframe, ButtomComponentLinks } from './ComponentStyles';
 import Image from 'next/image';
 import { createPortal } from 'react-dom';
 import ProjectComponent from './ProjectSinopsisComponent';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+
 
 export default function PostComponentDev({ 
   children, 
@@ -152,7 +154,7 @@ export default function PostComponentDev({
           <div className="modal-backdrop" onClick={() => setIsOpen(false)} style={{display: 'flex', flexDirection:'column'}}>
             
             {/* Botón de cierre posicionado elegantemente arriba a la derecha */}
-            <button className="modal-close-btn" onClick={() => setIsOpen(false)}>✕</button>
+            <button className="modal-close-btn"  onClick={() => setIsOpen(false)}>✕</button>
 
            
             
@@ -167,15 +169,13 @@ export default function PostComponentDev({
                 />
               </VideoContainer>
             </div>
-            <a 
-              href={githubUrl} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="github-btn"
+            <Link href={githubUrl} target="_blank" rel="noopener noreferrer">
+            <ButtomComponentLinks 
             >
               {/* Puedes dejar solo el texto o pintar un icono de SVG aquí dentro */}
-              {t('View Source on GitHub') || 'Ver Código en GitHub'}
-            </a>
+              { 'GitHub'}
+            </ButtomComponentLinks>
+            </Link>
           </div>
         </>,
         document.body
