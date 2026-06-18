@@ -403,4 +403,20 @@ export const ButtonComponent = styled.button`
       transform: scale(0.95); /* El botón se encoge un 5% al hacer clic */
     `}   
 `;
+export const VideoContainer = styled.div`
+  width: 100%;
+  max-width: 800px; /* Evita que el video se vuelva gigante en pantallas de escritorio */
+  margin: 0 auto;
+  aspect-ratio: 16 / 9; 
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+  background-color: #000; /* Fondo negro mientras carga el video */
+`;
+
+export const StyledIframe = styled.iframe`
+  width: 100%;
+  height: 100%;
+  border: none;
+`;
 

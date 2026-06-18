@@ -5,6 +5,7 @@ import { ArticleComponent, SectionComponent, TextComponent, ContainerPictureComp
 import ScrollReveal from "../../ScrollReveal";
 import Link from "next/link";
 import PostComponent from "../../styles/modal";
+import PostComponentDev from "../../styles/modaldev";
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import LanguageSelector from "@/app/styles/LanguageSelector";
@@ -118,8 +119,8 @@ function PortafolioDevForm (props ){
 
                <ScrollReveal $direction={"right"} >
                     <ContainerPictureComponent>
-                        <PostComponent $height="auto" linkImage="/icons/projects_devs/palette_generator_logo.svg" project="PortafolioDev.Post_5.Name" date="2026" explanation="PortafolioDev.Post_5.Explanation" left="105%" textalign="start" cover="contain" >
-                    </PostComponent>
+                        <PostComponentDev $height="auto"  linkvideo="https://www.youtube.com/embed/LDCdm_tKpcw?si=MkRZOMelJgO3veNg" github="https://github.com/jartibledev/plugin-monochromatic-palette-generator.git" linkImage="/icons/projects_devs/palette_generator_logo.svg" project="PortafolioDev.Post_5.Name" date="2026" explanation="PortafolioDev.Post_5.Explanation" left="105%" textalign="start" cover="contain" >
+                    </PostComponentDev>
                     </ContainerPictureComponent>
                      </ScrollReveal> 
             </SectionComponent> 
