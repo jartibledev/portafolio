@@ -35,14 +35,9 @@ const container = {
     padding: '10px', 
     width: '300px', 
     height: '150px',
-    position: 'fixed',
-    top: '20px', /* Distancia desde la parte inferior */
-    right: '20px',  /* Distancia desde la parte derecha */
-    zIndex: '9999'  /* Asegura que esté por encima de otros elementos */ 
-
 }
 
-export default function LanguageSelector({ opacity, ...props}) {
+export default function LanguageSelectorFixed({ opacity, ...props}) {
   const router = useRouter();
   const pathname = usePathname(); // Nos da la ruta actual (ej: /es/home_page)
   const [ isClient, setIsClient] = useState(false);
@@ -68,7 +63,7 @@ export default function LanguageSelector({ opacity, ...props}) {
   };
 
 
-  return createPortal (
+  return (
     <div style={container}>
       <ButtonComponent 
       $opacity = {opacity} 
@@ -119,7 +114,7 @@ export default function LanguageSelector({ opacity, ...props}) {
 
                                           ></img>
       </ButtonComponent>
-    </div>,
-     document.body
+    </div>
+     
   );
 }

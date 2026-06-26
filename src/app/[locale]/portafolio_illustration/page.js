@@ -13,6 +13,8 @@ import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import LanguageSelector from "@/app/styles/LanguageSelector";
 import { useIsTouchDevice } from "@/app/styles/useTablet";
+import { useIsMobile } from "@/app/styles/useMobile";
+import LanguageSelectorFixed from "@/app/styles/LanguageSelectorFixed";
 
 //import miImagen from '../concepart_1_2_export.avif'
 const styleImage ={
@@ -32,7 +34,7 @@ function PortafolioIllustrationForm (props){
         const t = useTranslations();
         const [isOpen, setIsOpen] = useState(false);
         const [imagenActual, setImagenActual] = useState('');
-        
+        const isMobile = useIsMobile();
         const [isVisible, setIsVisible] = useState(false);
         const sectionRef = useRef(null);
 
@@ -65,7 +67,7 @@ function PortafolioIllustrationForm (props){
                 $filterhover: "none",
                 $backdropfilter: "none"
             };       
-            const sectionProps = isTouch ? {
+            const sectionProps = isMobile ? {
                 $flexdirection:"column",
                 $height:"auto", 
                 $paddingbottom: "5%"
@@ -79,7 +81,14 @@ function PortafolioIllustrationForm (props){
                 } : { 
                 $marginbottom: "25%"
             };       
-                 
+            
+            useEffect(() => {
+                    setIsMounted(true);
+                }, []);
+
+                // Si aún no se ha montado, renderizamos algo neutro (o lo de PC por defecto)
+                // Esto evita el error de "Hydration Mismatch"
+                
                   
                   
         
@@ -115,9 +124,17 @@ function PortafolioIllustrationForm (props){
                 
     return(
         <ArticleComponent>
+            {isMobile ? (
+      <SectionComponent $height="10vh">
+        <LanguageSelectorFixed mobile={true} opacity={lenguageOpacity} />
+      </SectionComponent>
+    ) : (
+      <LanguageSelector opacity={lenguageOpacity} />
+    )}
+            
             
            <SectionComponent $height="25vh" >  
-            <LanguageSelector opacity={lenguageOpacity}></LanguageSelector>
+        
             
                <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">   
                                     
@@ -160,7 +177,7 @@ function PortafolioIllustrationForm (props){
            
             <ScrollReveal >
                 <SectionComponent {...sectionProps} > 
-                    <TextComponent {...textComponentsProps} >
+                    <TextComponent  >
                         <ReachOut>{t("PortafolioIllustration.ReachOut.Title")}</ReachOut>
                         <Link href="mailto:mayalopezdesign@gmail.com">
                             <SocialNetwork>Email</SocialNetwork>

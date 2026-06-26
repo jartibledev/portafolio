@@ -122,6 +122,16 @@ export const SectionComponent = styled.section`
     padding-right: 25%;
     padding-bottom: 5%;
     }
+    @media ${device.laptopL}{
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-bottom: 5%;
+    }
+    @media ${device.desktop}{
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-bottom: 5%;
+    }
     
     
 `;
@@ -144,6 +154,21 @@ export const TextComponent = styled.div`
     @media ${device.mobileL}{
     margin-top: 25%;
     margin-bottom: 25%;
+    }
+    @media ${device.laptop}{
+    margin-left: 5%;
+    margin-right:  5%;
+    margin-bottom: 5%;
+    }
+    @media ${device.laptopL}{
+    margin-left: 5%;
+    margin-right:  5%;
+    margin-bottom: 5%;
+    }
+    @media ${device.desktop}{
+    margin-left: 5%;
+    margin-right:  5%;
+    margin-bottom: 5%;
     }
 `;
 
