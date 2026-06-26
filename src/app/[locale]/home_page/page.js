@@ -5,6 +5,7 @@ import { ArticleComponent, SectionComponent, RectangleComponent, BlankSpaceCompo
 import Link from "next/link";
 import { useParams } from 'next/navigation';
 import LanguageSelector from "@/app/styles/LanguageSelector";
+import { useIsTouchDevice } from "@/app/styles/useTablet";
 const linkDisplay = { 
     display:"flex", 
     justifyContent: "center",
@@ -17,9 +18,28 @@ const linkDisplay = {
             }
 function HomePageForm (props){
     const [isVisible, setIsVisible] = useState(false);
-            const sectionRef = useRef(null);
-            const params = useParams();
-            const currentLocale = params?.locale || 'es';
+    const sectionRef = useRef(null);
+    const params = useParams();
+    const currentLocale = params?.locale || 'es';
+    const [isActive, setIsActive] = useState(false);
+    const isTouch = useIsTouchDevice();
+    const [isMounted, setIsMounted] = useState(false);
+    const rectProps = isTouch ? {
+            $filter: "none",
+            $backdropfilter: "none",
+            onTouchStart: () => setIsActive(true),
+            onTouchEnd: () => setTimeout(() => setIsActive(false), 1000)
+        } : {
+            $filter: "blur(9px)",
+            $backdropfilter: "blur(9px)",
+            $filterhover: "none",
+            $backdropfilter: "none"
+
+            // Las props de PC
+        };
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
             useEffect(() =>{
                 const observer = new IntersectionObserver(
@@ -52,7 +72,7 @@ function HomePageForm (props){
                 <LanguageSelector></LanguageSelector>
 
                 <Link style = {linkDisplay} href={`/${currentLocale}/portafolio_dev`} prefetch={true}>
-                    <RectangleComponent $filter="blur(9px)" $filterbackdrop="blur(9px)" $filterhover="none" $backfilterhoover="none" >
+                    <RectangleComponent {...rectProps} >
                         <Portafolio>
                             Portafolio
                         </Portafolio>
@@ -67,7 +87,7 @@ function HomePageForm (props){
                 </Link>
                
                 <Link style = {linkDisplay} href={`/${currentLocale}/portafolio_design`} prefetch={true}>
-                    <RectangleComponent $filter="blur(9px)" $filterbackdrop="blur(9px)" $filterhover="none" $backfilterhoover="none">
+                    <RectangleComponent {...rectProps}>
                         
                         <BlankSpaceComponent></BlankSpaceComponent>
                         <BlankSpaceComponent></BlankSpaceComponent>
@@ -84,7 +104,7 @@ function HomePageForm (props){
                 </Link>    
                
                 <Link style = {linkDisplay} href={`/${currentLocale}/portafolio_illustration`} prefetch={true}>
-                    <RectangleComponent $filter="blur(9px)" $filterbackdrop="blur(9px)" $filterhover="none" $backfilterhoover="none">
+                    <RectangleComponent {...rectProps}>
                         <BlankSpaceComponent></BlankSpaceComponent>
                         <BlankSpaceComponent></BlankSpaceComponent>
                         <Portafolio>

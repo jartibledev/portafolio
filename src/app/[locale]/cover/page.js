@@ -14,6 +14,7 @@ function CoverForm (props ){
         const sectionRef = useRef(null);
         const locale = useLocale();
         const isMobile = useIsMobile();
+        const [isActive, setIsActive] = useState(false);
         const isTouch = useIsTouchDevice();
         const [isMounted, setIsMounted] = useState(false);
 

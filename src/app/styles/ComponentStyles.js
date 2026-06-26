@@ -323,7 +323,6 @@ export const BlankSpaceComponent = styled.div`
 export const RectangleComponent = styled.div`
     display: ${props => props.$display || 'grid'};
     grid-template-columns: ${props => props.$gridtemplatecolumns || 'auto auto auto'} ;
-    
     border: ${props => props.border || '1.2rem solid black'} ;
     border-radius: ${props => props.$borderradius || ' border-radius: 0px'};
     cursor: ${props => props.$cursor || ' pointer'};
