@@ -13,7 +13,6 @@ function CoverForm (props ){
         const [isVisible, setIsVisible] = useState(false);
         const sectionRef = useRef(null);
         const locale = useLocale();
-        const isMobile = useIsMobile();
         const [isActive, setIsActive] = useState(false);
         const isTouch = useIsTouchDevice();
         const [isMounted, setIsMounted] = useState(false);
@@ -64,10 +63,17 @@ console.log("El idioma activo según next-intl es:", locale);
                     $backdropfilter: "none"
 
                     // Las props de PC
-                }; 
+                };
+                const lenguageSelectorProps = isTouch ? {
+                    $opacity: "1",
+                    onTouchStart: () => setIsActive(true),
+                    onTouchEnd: () => setTimeout(() => setIsActive(false), 1000)
+                } : {
+                    $opacity: "0.5"
+                }
     return(
         <ArticleComponent>
-            <LanguageSelector></LanguageSelector>
+            <LanguageSelector {... lenguageSelectorProps}></LanguageSelector>
             <FirstAnimation ref={sectionRef} $isVisible={isVisible} >
             <SectionComponent height="auto" style={{justifyContent: 'center'}}>
             

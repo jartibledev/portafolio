@@ -43,7 +43,7 @@ const container = {
 
 }
 
-export default function LanguageSelector() {
+export default function LanguageSelector({ ...props}) {
   const router = useRouter();
   const pathname = usePathname(); // Nos da la ruta actual (ej: /es/home_page)
   const [ isClient, setIsClient] = useState(false);
@@ -72,6 +72,7 @@ export default function LanguageSelector() {
   return createPortal (
     <div style={container}>
       <ButtonComponent 
+      $opacity = {{...props}} 
         onClick={() => ChangeLanguage('es')} 
         className="tu-boton-idioma-style"
       > <img src="/icons/leanguages/Spanish_flag.svg"
@@ -83,6 +84,7 @@ export default function LanguageSelector() {
       </ButtonComponent>
       
       <ButtonComponent 
+        $opacity = {{...props}}
         onClick={() => ChangeLanguage('en')} 
         className="tu-boton-idioma-style"
       >
@@ -95,6 +97,7 @@ export default function LanguageSelector() {
       </ButtonComponent>
 
       <ButtonComponent 
+        $opacity = {{...props}}
         onClick={() => ChangeLanguage('fr')} 
         className="tu-boton-idioma-style"
       >
@@ -106,6 +109,7 @@ export default function LanguageSelector() {
                                           ></img>
       </ButtonComponent>
       <ButtonComponent 
+        $opacity = {{...props}}
         onClick={() => ChangeLanguage('de')} 
         className="tu-boton-idioma-style"
       >
