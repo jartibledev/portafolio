@@ -19,6 +19,28 @@ const animationEntryBlured = keyframes`
   }
 `;
 
+const size = {
+  mobileS: '320px',
+  mobileM: '375px',
+  mobileL: '425px',
+  tablet: '768px',
+  laptop: '1024px',
+  laptopL: '1440px',
+  desktop: '2560px'
+}
+
+export const device = {
+  mobileS: `(min-width: ${size.mobileS})`,
+  mobileM: `(min-width: ${size.mobileM})`,
+  mobileL: `(min-width: ${size.mobileL})`,
+  tablet: `(min-width: ${size.tablet})`,
+  laptop: `(min-width: ${size.laptop})`,
+  laptopL: `(min-width: ${size.laptopL})`,
+  desktop: `(min-width: ${size.desktop})`,
+  desktopL: `(min-width: ${size.desktop})`
+};
+
+
 export const ArticleComponent = styled.article`
     display: flex;
     width: 100%;
@@ -43,6 +65,8 @@ const animationBottom = keyframes`
   }
 `;
 
+const borderBox = '1.2rem solid black';
+const borderRadius = '0px';
 export const scroll = keyframes`
   from {
     transform: translateX(0);
@@ -63,6 +87,8 @@ export const toLeft = keyframes`
     transform: translateX(0px); 
   }
 `;
+
+
 
 export const SectionComponent = styled.section`
     width: ${props => props.$width || "100%"} ;
@@ -301,13 +327,13 @@ export const RectangleComponent = styled.div`
     border: ${props => props.border || '1.2rem solid black'} ;
     border-radius: ${props => props.$borderradius || ' border-radius: 0px'};
     cursor: ${props => props.$cursor || ' pointer'};
-    filter:  ${props => props.$filter || ' none'};
-    backdrop-filter:  ${props => props.$backdropfilter || ' none'};
+    filter:  ${props => props.$filter || 'blur(9px)'};
+    backdrop-filter:  ${props => props.$backdropfilter || 'blur(9px)'};
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateZ(0);  
     &:hover {
         transform: translateY(-2px);
-        filter:${props => props.$filterhover || ' blur(9px'};
+        filter:${props => props.$filterhover || ' blur(9px)'};
         backdrop-filter: ${props => props.$backdropfilterhover || 'blur(9px)'};
     }
     &:active{

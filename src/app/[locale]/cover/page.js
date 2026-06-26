@@ -6,11 +6,19 @@ import {  useParams } from 'next/navigation';
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import LanguageSelector from '@/app/styles/LanguageSelector';
+import { useIsMobile } from '@/app/styles/useMobile';
 
 function CoverForm (props ){
         const [isVisible, setIsVisible] = useState(false);
         const sectionRef = useRef(null);
         const locale = useLocale();
+        const [isActive, setIsActive] = useState(false);
+        const isTouchDevice = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+        const [isTouch, setIsTouch] = useState(false);
+        const isMobile = useIsMobile();
+
+        
+        
 console.log("El idioma activo según next-intl es:", locale);
                 useEffect(() =>{
                     const observer = new IntersectionObserver(
@@ -37,6 +45,19 @@ console.log("El idioma activo según next-intl es:", locale);
                 }, []);
                 const params = useParams();
                 const currentLocale = params?.locale || 'es';
+                const rectProps = isMobile ? {
+                    $filter: "none",
+                    $backdropfilter: "none",
+                    onTouchStart: () => console.log("Acción móvil"),
+                    // ... otras props específicas de móvil
+                } : {
+                    $filter: "blur(9px)",
+                    $backdropfilter: "blur(9px)",
+                    $filterhover: "none",
+                    $backdropfilter: "none"
+
+                    // Las props de PC
+                }; 
     return(
         <ArticleComponent>
             <LanguageSelector></LanguageSelector>
@@ -45,7 +66,9 @@ console.log("El idioma activo según next-intl es:", locale);
             
             
             <Link href={`/${currentLocale}/home_page`} prefetch={true}>
-                <RectangleComponent $filter="blur(9px)"  $backdropfilter= "blur(9px)"  $filterhover ="none" $backdropfilterhover="none" >
+                <RectangleComponent 
+                    {...rectProps}
+                >
                     <Head>
                         Start
                     </Head>
