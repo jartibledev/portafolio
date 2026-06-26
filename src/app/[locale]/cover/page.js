@@ -7,16 +7,21 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import LanguageSelector from '@/app/styles/LanguageSelector';
 import { useIsMobile } from '@/app/styles/useMobile';
+import { useIsTouchDevice } from '@/app/styles/useTablet';
 
 function CoverForm (props ){
         const [isVisible, setIsVisible] = useState(false);
         const sectionRef = useRef(null);
         const locale = useLocale();
-        const [isActive, setIsActive] = useState(false);
-        const isTouchDevice = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
-        const [isTouch, setIsTouch] = useState(false);
         const isMobile = useIsMobile();
+        const isTouch = useIsTouchDevice();
+        const [isMounted, setIsMounted] = useState(false);
 
+        useEffect(() => {
+        setIsMounted(true);
+    }, []);
+    
+        
         
         
 console.log("El idioma activo según next-intl es:", locale);
@@ -45,11 +50,12 @@ console.log("El idioma activo según next-intl es:", locale);
                 }, []);
                 const params = useParams();
                 const currentLocale = params?.locale || 'es';
-                const rectProps = isMobile ? {
+                const rectProps = isTouch ? {
                     $filter: "none",
                     $backdropfilter: "none",
                     onTouchStart: () => console.log("Acción móvil"),
-                    // ... otras props específicas de móvil
+                    onTouchStart: () => setIsActive(true),
+                    onTouchEnd: () => setTimeout(() => setIsActive(false), 1000)
                 } : {
                     $filter: "blur(9px)",
                     $backdropfilter: "blur(9px)",
