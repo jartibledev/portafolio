@@ -70,11 +70,12 @@ function HomePageForm (props){
                 width: '300px',
                 height: '150px'
             }
+            const lenguageOpacity = isTouch ? "1" : "0.3";
 
     return(
         <ArticleComponent>
             <SectionComponent style={stylesHomePage} >
-                <LanguageSelector></LanguageSelector>
+                <LanguageSelector opacity={lenguageOpacity}></LanguageSelector>
 
                 <Link style = {linkDisplay} href={`/${currentLocale}/portafolio_dev`} prefetch={true}>
                     <RectangleComponent {...rectProps} style={dimensions} >

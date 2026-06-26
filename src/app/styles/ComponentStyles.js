@@ -49,6 +49,7 @@ export const ArticleComponent = styled.article`
     justify-content: center;
     align-items: center;
     overflow: hidden;
+   
 
 `;
 
@@ -93,7 +94,7 @@ export const toLeft = keyframes`
 
 
 export const SectionComponent = styled.section`
-    width: ${props => props.$width || "100%"} ;
+    width: ${props => props.$width || "100vw"} ;
     height: ${props => props.$height || " 80vh"} ;
     display: ${props => props.$display || "flex"};
     flex-direction:${props => props.$flexdirection || "column"};
@@ -101,6 +102,27 @@ export const SectionComponent = styled.section`
     padding-left: ${props => props.$paddingleft || "25%"};
     padding-right: ${props => props.$paddingright || "25%"};
     padding-bottom: ${props => props.$paddingbottom || "5%"};
+    @media ${device.mobileS}{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    }
+    @media ${device.mobileM}{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    }
+    @media ${device.mobileL}{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    }
+    @media ${device.laptop}{
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-bottom: 5%;
+    }
+    
     
 `;
 
@@ -111,7 +133,18 @@ export const TextComponent = styled.div`
     margin-left: ${props => props.$margginleft || "5%"};
     margin-right: ${props => props.$margginright || "5%"};
     margin-bottom: ${props => props.$margginbottom || "5%"};
-    text-align: ${props => props.$textalign || "start"} 
+    text-align: ${props => props.$textalign || "start"};
+    @media ${device.mobileS}{
+    margin-bottom: 25%;
+    }
+    @media ${device.mobileM}{
+    margin-bottom: 25%;
+    margin-top: 25%;
+    }
+    @media ${device.mobileL}{
+    margin-top: 25%;
+    margin-bottom: 25%;
+    }
 `;
 
 export const GalleryComponent = styled.div`
@@ -290,7 +323,7 @@ export const FirstAnimation = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+    width: fit-content;
 
     opacity: 0;
     transform: translateY(-100px); 

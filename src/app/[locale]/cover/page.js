@@ -64,16 +64,10 @@ console.log("El idioma activo según next-intl es:", locale);
 
                     // Las props de PC
                 };
-                const lenguageSelectorProps = isTouch ? {
-                    $opacity: "1",
-                    onTouchStart: () => setIsActive(true),
-                    onTouchEnd: () => setTimeout(() => setIsActive(false), 1000)
-                } : {
-                    $opacity: "0.5"
-                }
+                const languageOpacity = isTouch ? "1" : "0.3";
     return(
         <ArticleComponent>
-            <LanguageSelector {... lenguageSelectorProps}></LanguageSelector>
+            <LanguageSelector opacity={languageOpacity}></LanguageSelector>
             <FirstAnimation ref={sectionRef} $isVisible={isVisible} >
             <SectionComponent height="auto" style={{justifyContent: 'center'}}>
             
