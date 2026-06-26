@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { createPortal } from 'react-dom'
 import ProjectComponent from './ProjectSinopsisComponent';
 import { useTranslations } from 'next-intl';
+import { useIsMobile } from './useMobile';
 
 
 
@@ -20,7 +21,9 @@ export default function PostComponent ({ children, linkImage, linkWeb, project="
   const [isOpen, setIsOpen] = useState(false);
   const [imagenActual, setImagenActual] = useState('');
   const t = useTranslations();
-
+  const isMobile = useIsMobile();
+  const imageProps = isMobile ? 'relative' : 'absolute';
+  const dimensions = isMobile ? '100px': '100%'
   return (
     <>
    
@@ -84,18 +87,25 @@ export default function PostComponent ({ children, linkImage, linkWeb, project="
             backdropFilter: 'blur(10px)', 
             WebkitBackdropFilter: 'blur(10px)',
             display: 'flex',
+            flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
             zIndex: 99999, 
             cursor: 'zoom-out',
             animation: 'fadeIn 1s ease-out forwards, scaleUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards' }} >
-
+        <div style={{ position: 'relative', width: '90%', height: '80%' }}>
         <Image src= {imagenActual}  
             alt="Vista completa"
             fill
             style={{
               objectFit: 'contain'
-            }}></Image>
+       
+            }}></Image> 
+        </div>
+        {isMobile && (
+           <ProjectComponent $width='80%' $visibility='visible' $opacity='1' $position='relative' $filter='none' $backdropfilter= 'none' project={t(project)} explanation={t(explanation)} $textalign= {textalign} ></ProjectComponent>
+        )}
+       
         
     </div>
     </>,

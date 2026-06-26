@@ -244,19 +244,22 @@ export const PictureComponent = styled.div`
 `;
 
 export const ProjectSinopsis = styled.div`
-  display: block;
-  position: absolute;
-  opacity:0;
-  visibility: hidden;
-  top: 0;
+  display: ${props => props.$display || "block"};
+  position::${props => props.$position || "absolute"};
+  opacity: ${props => props.$opacity || "0"};
+  visibility: ${props => props.$visibility || "hidden"};
+  top: :${props => props.$top || "0"};
+  bottom: :${props => props.$bottom || "0"};
   width:${props => props.$width || "100%"}; 
   left: ${props => props.$left || "auto"}; 
   right: ${props => props.$right || "auto"}; 
-  white-space: nowrap;
-  margin-left:  ${props => props.$marginleft || "5%"};
-  margin-right:  ${props => props.$marginright || "5%"};
+  
   filter: ${props => props.$filter || "blur(16px)"};
   backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
+  margin-left:  5%;
+  margin-right: 5%;
+  white-space: nowrap;
+  z-index: 9999;
   transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;
 
   
