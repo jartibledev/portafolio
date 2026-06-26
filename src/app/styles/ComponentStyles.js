@@ -43,9 +43,11 @@ export const device = {
 
 export const ArticleComponent = styled.article`
     display: flex;
-    width: 100%;
+    width: 100vw;
+    height: auto;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     overflow: hidden;
 
 `;
@@ -322,7 +324,7 @@ export const BlankSpaceComponent = styled.div`
 `;
 export const RectangleComponent = styled.div`
     display: ${props => props.$display || 'grid'};
-    grid-template-columns: ${props => props.$gridtemplatecolumns || 'auto auto auto'} ;
+    position: relative;
     border: ${props => props.border || '1.2rem solid black'} ;
     border-radius: ${props => props.$borderradius || ' border-radius: 0px'};
     cursor: ${props => props.$cursor || ' pointer'};

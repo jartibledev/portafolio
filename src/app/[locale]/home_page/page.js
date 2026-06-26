@@ -6,14 +6,16 @@ import Link from "next/link";
 import { useParams } from 'next/navigation';
 import LanguageSelector from "@/app/styles/LanguageSelector";
 import { useIsTouchDevice } from "@/app/styles/useTablet";
+
 const linkDisplay = { 
     display:"flex", 
     justifyContent: "center",
     paddingBottom: "5%"
 }
   const stylesHomePage = {
-                height: "auto",
-                margin: "10vh"
+                height: "100vh",
+                margin: "5%",
+                justifyContent: 'center'
 
             }
 function HomePageForm (props){
@@ -64,7 +66,10 @@ function HomePageForm (props){
                     }
                 };
             }, []);
-          
+            const dimensions = {
+                width: '300px',
+                height: '150px'
+            }
 
     return(
         <ArticleComponent>
@@ -72,49 +77,39 @@ function HomePageForm (props){
                 <LanguageSelector></LanguageSelector>
 
                 <Link style = {linkDisplay} href={`/${currentLocale}/portafolio_dev`} prefetch={true}>
-                    <RectangleComponent {...rectProps} >
-                        <Portafolio>
+                    <RectangleComponent {...rectProps} style={dimensions} >
+                        <Portafolio style={{gridColumn: '1', gridRow: '1', justifySelf: 'start', alignSelf: 'bottom',  margin: '5%'}}>
                             Portafolio
                         </Portafolio>
-                        <BlankSpaceComponent></BlankSpaceComponent>
-                        <BlankSpaceComponent></BlankSpaceComponent>
-                        <BlankSpaceComponent></BlankSpaceComponent>
-                        <BlankSpaceComponent></BlankSpaceComponent>
-                        <Section>
+                        <Section style={{gridColumn: '2', gridRow: '2', justifySelf: 'end', alignSelf: 'bottom'}}>
                             dev
                         </Section>
                     </RectangleComponent>
                 </Link>
                
                 <Link style = {linkDisplay} href={`/${currentLocale}/portafolio_design`} prefetch={true}>
-                    <RectangleComponent {...rectProps}>
+                    <RectangleComponent {...rectProps} style={dimensions}>
                         
-                        <BlankSpaceComponent></BlankSpaceComponent>
-                        <BlankSpaceComponent></BlankSpaceComponent>
-                        <Portafolio>
+                        
+                        <Portafolio style={{gridColumn: '2', gridRow: '2', justifySelf: 'end', alignSelf: 'bottom', margin: '5%'}}>
                             Portafolio
                         </Portafolio>
-                        <Section>
+                        <Section style={{gridColumn: '1', gridRow: '1', justifySelf: 'start', alignSelf: 'bottom'}}>
                             design
                         </Section>
-                        <BlankSpaceComponent></BlankSpaceComponent>
-                        <BlankSpaceComponent></BlankSpaceComponent>
+            
                         
                     </RectangleComponent>
                 </Link>    
                
                 <Link style = {linkDisplay} href={`/${currentLocale}/portafolio_illustration`} prefetch={true}>
-                    <RectangleComponent {...rectProps}>
-                        <BlankSpaceComponent></BlankSpaceComponent>
-                        <BlankSpaceComponent></BlankSpaceComponent>
-                        <Portafolio>
+                    <RectangleComponent {...rectProps} style={dimensions}>
+                        <Portafolio style={{gridColumn: '1', gridRow: '1', justifySelf: 'start', alignSelf: 'bottom', margin: '5%'}} >
                             Portafolio
                         </Portafolio>
-                        <Section>
+                        <Section style={{gridColumn: '1', gridRow: '2', justifySelf: 'end', alignSelf: 'bottom', fontSize: '2rem'}}>
                             illustration
                         </Section>
-                        <BlankSpaceComponent></BlankSpaceComponent>
-                        <BlankSpaceComponent></BlankSpaceComponent>
                     </RectangleComponent>
                 </Link>
    
