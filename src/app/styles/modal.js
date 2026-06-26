@@ -23,7 +23,8 @@ export default function PostComponent ({ children, linkImage, linkWeb, project="
   const t = useTranslations();
   const isMobile = useIsMobile();
   const imageProps = isMobile ? 'relative' : 'absolute';
-  const dimensions = isMobile ? '100px': '100%'
+  const dimensions = isMobile ? '100px': '100%';
+  const displayCond = isMobile ? 'None' : 'flex';
   return (
     <>
    
@@ -49,7 +50,10 @@ export default function PostComponent ({ children, linkImage, linkWeb, project="
                                 <Projects>{t(project)}</Projects>
                                 <DateFooter>{date}</DateFooter>
         </FooterPictureComponent>
-        <ProjectComponent $width={width} project={t(project)} explanation={t(explanation)} $right={right} $left={left} $textalign= {textalign} ></ProjectComponent>
+        
+          <ProjectComponent $display={displayCond} $width={width} project={t(project)} explanation={t(explanation)} $right={right} $left={left} $textalign= {textalign} ></ProjectComponent>
+        
+        
     {isOpen && createPortal(
         <>
         <style>{`
