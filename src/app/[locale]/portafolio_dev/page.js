@@ -38,7 +38,6 @@ function PortafolioDevForm (props ){
         const isMobile = useIsMobile();
         const isTouch = useIsTouchDevice();
         const [isActive, setIsActive] = useState(false);
-        const [isMounted, setIsMounted] = useState(false);
 
          const postProps = isTouch ? {
             $filter: "none",
@@ -51,7 +50,7 @@ function PortafolioDevForm (props ){
             $filterhover: "none",
             $backdropfilter: "none"
         };       
-        const sectionProps = isMobile ? {
+        const sectionProps = isTouch ? {
             $flexdirection:"column",
             $height:"auto", 
             $paddingbottom: "5%"
@@ -60,6 +59,7 @@ function PortafolioDevForm (props ){
             $height:"auto", 
             $paddingbottom: "5%"
         };
+       
 
                 useEffect(() =>{
                     const observer = new IntersectionObserver(
@@ -123,7 +123,6 @@ function PortafolioDevForm (props ){
                )}  
 
            <SectionComponent $height="25vh" >
-            <LanguageSelector></LanguageSelector>
                <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">
                                     
                                     <Portafolio>
