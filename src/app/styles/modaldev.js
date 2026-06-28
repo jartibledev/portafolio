@@ -7,6 +7,7 @@ import { createPortal } from 'react-dom';
 import ProjectComponent from './ProjectSinopsisComponent';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { useIsTouchDevice } from './useTablet';
 
 
 export default function PostComponentDev({ 
@@ -27,10 +28,22 @@ export default function PostComponentDev({
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations();
+  
 
   // 💡 TRUCO: Pasamos autoplay=1 para que el video empiece a sonar al instante
+  const isTouch = useIsTouchDevice();
   const videoUrl = linkvideo;
   const githubUrl = github || "https://github.com/jartibledev"
+  const title = isTouch ? {
+    color: "white"        
+            } : {
+    color: "black"
+        }; 
+  const text = isTouch ? {
+    color: "#c7c7c7"        
+            } : {
+    color: "#686868"
+        }; 
 
   return (
     <>
@@ -176,6 +189,9 @@ export default function PostComponentDev({
               { 'GitHub'}
             </ButtomComponentLinks>
             </Link>
+            {isTouch && (
+                       <ProjectComponent  $width='80%'  $visibility='visible' $opacity='1' $position='relative' $filter='none' $backdropfilter= 'none' project={t(project)} explanation={t(explanation)} $textalign= {textalign} ></ProjectComponent>
+                    )}
           </div>
         </>,
         document.body
