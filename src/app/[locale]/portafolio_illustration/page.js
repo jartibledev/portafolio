@@ -41,9 +41,9 @@ function PortafolioIllustrationForm (props){
         const params = useParams();
         const currentLocale = params?.locale || 'es';
         const [isActive, setIsActive] = useState(false);
-            const isTouch = useIsTouchDevice();
-            const [isMounted, setIsMounted] = useState(false);
-            const rectProps = isTouch ? {
+        const isTouch = useIsTouchDevice();
+        const [isMounted, setIsMounted] = useState(false);
+        const rectProps = isTouch ? {
                     $filter: "none",
                     $backdropfilter: "none",
                     onTouchStart: () => setIsActive(true),
@@ -56,31 +56,31 @@ function PortafolioIllustrationForm (props){
         
                     // Las props de PC
                 };
-            const postProps = isTouch ? {
-                $filter: "none",
-                $backdropfilter: "none",
-                onTouchStart: () => setIsActive(true),
-                onTouchEnd: () => setTimeout(() => setIsActive(false), 1000)
-                } : {
-                $filter: "blur(9px)",
-                $backdropfilter: "blur(9px)",
-                $filterhover: "none",
-                $backdropfilter: "none"
-            };       
-            const sectionProps = isMobile ? {
-                $flexdirection:"column",
-                $height:"auto", 
-                $paddingbottom: "5%"
-                } : {
-                $flexdirection:"row",
-                $height:"auto", 
-                $paddingbottom: "5%"
-            };       
-            const textComponentsProps = isTouch ? { 
-                $marginbottom: "5%"
-                } : { 
-                $marginbottom: "25%"
-            };       
+        const postProps = isTouch ? {
+            $filter: "none",
+            $backdropfilter: "none",
+            onTouchStart: () => setIsActive(true),
+            onTouchEnd: () => setTimeout(() => setIsActive(false), 1000)
+            } : {
+            $filter: "blur(9px)",
+            $backdropfilter: "blur(9px)",
+            $filterhover: "none",
+            $backdropfilter: "none"
+        };       
+        const sectionProps = isMobile ? {
+            $flexdirection:"column",
+            $height:"auto", 
+            $paddingbottom: "5%"
+            } : {
+            $flexdirection:"row",
+            $height:"auto", 
+            $paddingbottom: "5%"
+        };       
+        const textComponentsProps = isTouch ? { 
+            $marginbottom: "5%"
+            } : { 
+            $marginbottom: "25%"
+        };       
             
             useEffect(() => {
                     setIsMounted(true);
