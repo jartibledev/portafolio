@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
 import {  Portafolio,  Section,  HeadPhilosophy, Dropline, SocialNetwork, ReachOut } from "../../styles/StylesParagraph.styles";
-import { ArticleComponent, SectionComponent, TextComponent, ContainerPictureComponent, RectangleComponent, FooterComponent, BlankSpaceComponent, FirstAnimation } from "../../styles/ComponentStyles";
+import { ArticleComponent, SectionComponent, TextComponent, ContainerPictureComponent, RectangleComponent, FooterComponent, BlankSpaceComponent, FirstAnimation, ArrowButtonContainer } from "../../styles/ComponentStyles";
 import ScrollReveal from "../../ScrollReveal";
 import Link from "next/link";
 import PostComponent from "../../styles/modal";
@@ -12,6 +12,7 @@ import LanguageSelector from "@/app/styles/LanguageSelector";
 import LanguageSelectorFixed from "@/app/styles/LanguageSelectorFixed";
 import { useIsMobile } from "@/app/styles/useMobile";
 import { useIsTouchDevice } from "@/app/styles/useTablet";
+import FrameArrowButton from "@/app/styles/ArrowButton";
 
 //import miImagen from '../concepart_1_2_export.avif'
 const styleImage ={
@@ -122,7 +123,9 @@ function PortafolioDevForm (props ){
                  <LanguageSelector opacity={lenguageOpacity} />
                )}  
 
-           <SectionComponent $height="25vh" >
+           <SectionComponent $height="25vh" $flexdirection="row" >
+
+               <FrameArrowButton></FrameArrowButton>
                <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">
                                     
                                     <Portafolio>

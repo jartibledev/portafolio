@@ -15,6 +15,7 @@ import LanguageSelector from "@/app/styles/LanguageSelector";
 import { useIsTouchDevice } from "@/app/styles/useTablet";
 import { useIsMobile } from "@/app/styles/useMobile";
 import LanguageSelectorFixed from "@/app/styles/LanguageSelectorFixed";
+import FrameArrowButton from "@/app/styles/ArrowButton";
 
 //import miImagen from '../concepart_1_2_export.avif'
 const styleImage ={
@@ -133,8 +134,9 @@ function PortafolioIllustrationForm (props){
     )}
             
             
-           <SectionComponent $height="25vh" >  
-        
+           <SectionComponent $height="25vh" $flexdirection="row" >  
+
+                <FrameArrowButton targetPath="/es/home_page"></FrameArrowButton>
             
                <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">   
                                     

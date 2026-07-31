@@ -8,6 +8,7 @@ import PostComponent from "../../styles/modal";
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import LanguageSelector from "@/app/styles/LanguageSelector";
+import FrameArrowButton from "@/app/styles/ArrowButton";
 
 //import miImagen from '../concepart_1_2_export.avif'
 const styleImage ={
@@ -64,20 +65,17 @@ function PortafolioDesignForm (props ){
     return(
         <ArticleComponent>
             
-           <SectionComponent $height="25vh" >
+           <SectionComponent $height="25vh" flexdirection="row" >
             <LanguageSelector></LanguageSelector>
+                <FrameArrowButton targetPath="es/home_page"></FrameArrowButton>
                <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">
-                    <BlankSpaceComponent/>
-                    <BlankSpaceComponent/>
-                                    
+                         
                                     <Portafolio>
                                     {t("PortafolioDesign.Portafolio")}
                                     </Portafolio>
                                     <Section>
                                         {t("PortafolioDesign.Section")}
                                     </Section>
-                    <BlankSpaceComponent/>
-                    <BlankSpaceComponent/>
                                     
                 </RectangleComponent>
             </SectionComponent>

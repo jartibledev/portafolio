@@ -99,6 +99,7 @@ export const SectionComponent = styled.section`
     display: ${props => props.$display || "flex"};
     flex-direction:${props => props.$flexdirection || "column"};
     align-items: ${props => props.$alignitems || "center"};
+    justify-content: ${props => props.$justifycontent || "center"};
     padding-left: ${props => props.$paddingleft || "25%"};
     padding-right: ${props => props.$paddingright || "25%"};
     padding-bottom: ${props => props.$paddingbottom || "5%"};
@@ -616,5 +617,36 @@ display: inline-flex;
     &:active{
         animation: ${animationBottom} 0.3s ease;
     }
-`; 
+`;
+
+export const ArrowButtonContainer = styled.button`
+  position: relative;
+  width: 200px;  
+  height: 200px; 
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+  }
+`;
+
+// 2. Imagen estilizada con interpolación de opacidad
+export const FrameImage = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  
+  transition: opacity 0.25s ease-in-out;
+  
+  opacity: ${({ $active }) => ($active ? 1 : 0)};
+`;
 
