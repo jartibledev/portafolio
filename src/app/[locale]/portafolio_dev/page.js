@@ -125,7 +125,7 @@ function PortafolioDevForm (props ){
 
            <SectionComponent $height="25vh" $flexdirection="row" >
 
-               <FrameArrowButton></FrameArrowButton>
+               <FrameArrowButton  targetPath="/es/home_page" ></FrameArrowButton>
                <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">
                                     
                                     <Portafolio>
