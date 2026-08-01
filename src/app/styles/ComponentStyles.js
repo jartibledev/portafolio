@@ -650,3 +650,17 @@ export const FrameImage = styled.img`
   opacity: ${({ $active }) => ($active ? 1 : 0)};
 `;
 
+export const containerIcon = styled.div`
+  display: ${props => props.$display || 'display'};
+  position: relative;
+  width: 2em;
+  height: 1em;
+  border: ${props => props.border || '0.5rem solid'} ;
+  border-radius: ${props => props.$borderradius || ' border-radius: 15px'};
+  background: linear-gradient(to black,white) border-box;
+
+  &:hover {
+      background:linear-gradient ( #EDEDED, #B0B0B0  ) 
+                linear-gradient(to white,black) border-box;   
+  }
+`
