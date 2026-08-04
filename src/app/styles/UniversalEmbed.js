@@ -12,13 +12,6 @@ const Container = styled.div`
   gap: 12px; /* Espacio elegante entre el título y el iframe */
 `;
 
-// 2. Estilos para el texto del título
-const EmbedLabel = styled.h3`
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin: 0;
-  color: #6e6e6e; /* Hereda el color de texto de tu web (blanco/negro según tu tema) */
-`;
 // 1. Contenedor flexible
 const EmbedWrapper = styled.div`
   width: 100%;
@@ -28,7 +21,7 @@ const EmbedWrapper = styled.div`
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  background-color: #1e1e1e;
+  
 `;
 
 // 2. Iframe universal
