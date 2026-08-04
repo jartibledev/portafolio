@@ -19,7 +19,7 @@ const EmbedWrapper = styled.div`
 const StyledIframe = styled.iframe`
   width: 100%;
   height: 100%;
-  border: ${({ $border }) => $border || '1px solid rgba(0, 0, 0, 0.1)'};
+  border: ${({ $border }) => $border || '0px'};
   display: block;
 `;
 
@@ -36,7 +36,7 @@ export default function UniversalEmbed({
   title = "Embedded Content",
   maxWidth = "800px",
   aspectRatio = "16 / 9",
-  border = "1px solid rgba(0, 0, 0, 0.1)",
+  border = "0px",
   allow = "allowfullscreen"
 }) {
   return (
