@@ -65,9 +65,9 @@ function PortafolioDesignForm (props ){
     return(
         <ArticleComponent>
             
-           <SectionComponent $height="25vh" flexdirection="row" >
+           <SectionComponent $height="25vh" $flexdirection="row" >
             <LanguageSelector></LanguageSelector>
-                <FrameArrowButton targetPath="es/home_page"></FrameArrowButton>
+                <FrameArrowButton targetPath="/es/home_page"></FrameArrowButton>
                <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">
                          
                                     <Portafolio>
@@ -82,19 +82,21 @@ function PortafolioDesignForm (props ){
             <FirstAnimation ref={sectionRef} $isVisible={isVisible}>
                 <SectionComponent $height="42vh" $flexdirection="row">
             <UniversalEmbed 
+                label="Diseño UI Completo de esta web"
                 src="https://embed.figma.com/site/5bsbOUgpsMSz4QTXjCBK61/portafolio_web?node-id=0-1&embed-host=share" 
                 title="Figma UI Design" 
-                aspectRatio="16 / 9"
+                aspectratio="16 / 9"
                 />
                 </SectionComponent>
             </FirstAnimation>
             <SectionComponent $flexdirection="row" $height="auto" $paddingbottom = "5%" >
                 <ScrollReveal $direction="left">
                 <UniversalEmbed 
+                label="Proyecto de branding e ilustración aplicada al producto"
                 src="https://www.behance.net/embed/project/208584223?ilo0=1" 
                 title="Behance Concept Art"
-                maxWidth="1000px" 
-                aspectRatio="4 / 3" /* O la proporción que mejor le siente a tu presentación de Behance */
+                maxwidth="1000px" 
+                aspectratio="4 / 3" /* O la proporción que mejor le siente a tu presentación de Behance */
                 />
                 </ScrollReveal>
             </SectionComponent>

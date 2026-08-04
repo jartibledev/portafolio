@@ -1,13 +1,29 @@
 'use client';
 import React from 'react';
 import styled from 'styled-components';
+import { Projects } from './StylesParagraph.styles';
 
+const Container = styled.div`
+  width: 100%;
+  max-width: ${({ $maxwidth }) => $maxwidth || '800px'};
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Espacio elegante entre el título y el iframe */
+`;
+
+// 2. Estilos para el texto del título
+const EmbedLabel = styled.h3`
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: #6e6e6e; /* Hereda el color de texto de tu web (blanco/negro según tu tema) */
+`;
 // 1. Contenedor flexible
 const EmbedWrapper = styled.div`
   width: 100%;
-  max-width: ${({ $maxWidth }) => $maxWidth || '800px'};
-  /* 🔥 Añadimos aspectRatio dinámico para adaptarse a Behance o Figma */
-  aspect-ratio: ${({ $aspectRatio }) => $aspectRatio || '16 / 9'};
+  /* 🔥 Añadimos aspectratio dinámico para adaptarse a Behance o Figma */
+  aspect-ratio: ${({ $aspectratio }) => $aspectratio || '16 / 9'};
   margin: 0 auto;
   border-radius: 8px;
   overflow: hidden;
@@ -27,20 +43,25 @@ const StyledIframe = styled.iframe`
  * Componente Universal para incrustar iframes (Figma, Behance, YouTube...)
  * @param {string} src - URL del embed
  * @param {string} title - Accesibilidad / Accesible name
- * @param {string} maxWidth - Ancho máximo del contenedor
- * @param {string} aspectRatio - Proporción (ej: '16/9', '4/3', '1/1')
+ * @param {string} label - Título visible encima del embed (NUEVO)
+ * @param {string} maxwidth - Ancho máximo del contenedor
+ * @param {string} aspectratio - Proporción (ej: '16/9', '4/3', '1/1')
  * @param {string} allow - Permisos especiales del iframe (opcional)
  */
 export default function UniversalEmbed({ 
   src,
   title = "Embedded Content",
-  maxWidth = "800px",
-  aspectRatio = "16 / 9",
+  label,
+  maxwidth = "800px",
+  aspectratio = "16 / 9",
   border = "0px",
   allow = "allowfullscreen"
 }) {
   return (
-    <EmbedWrapper $maxWidth={maxWidth} $aspectRatio={aspectRatio}>
+    <Container $maxwidth={maxwidth}>
+      {label && <Projects>{label}</Projects>}
+
+       <EmbedWrapper $maxwidth={maxwidth} $aspectratio={aspectratio}>
       <StyledIframe
         src={src}
         title={title}
@@ -49,5 +70,6 @@ export default function UniversalEmbed({
         allowFullScreen
       />
     </EmbedWrapper>
+   </Container>
   );
 }
