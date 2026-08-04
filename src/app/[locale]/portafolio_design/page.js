@@ -79,7 +79,7 @@ function PortafolioDesignForm (props ){
                                     
                 </RectangleComponent>
             </SectionComponent>
-            <FirstAnimation ref={sectionRef} $isVisible={isVisible}>
+            {/*<FirstAnimation ref={sectionRef} $isVisible={isVisible}>
             <SectionComponent $height="80vh" $flexdirection="row">
                 <ContainerPictureComponent>
                     <PostComponent $height="100%" linkImage="/illustrations/concepart_1_2_export.avif" project="PortafolioDesign.ConceptArt.Name" date="2026" explanation="PortafolioDesign.ConceptArt.Explanation" left="70%" textalign="start" width="300px" >
@@ -104,7 +104,7 @@ function PortafolioDesignForm (props ){
                     </PostComponent>
                     </ContainerPictureComponent>
                      </ScrollReveal> 
-            </SectionComponent> 
+            </SectionComponent>*/} 
            
             <ScrollReveal >
                 <SectionComponent $flexdirection="row" $height="auto" > 
