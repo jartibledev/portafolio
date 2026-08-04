@@ -82,9 +82,9 @@ function PortafolioDesignForm (props ){
             <FirstAnimation ref={sectionRef} $isVisible={isVisible}>
                 <SectionComponent $height="42vh" $flexdirection="row">
             <UniversalEmbed 
-                label="Diseño UI Completo de esta web"
+                label={t("PortafolioDesign.Post_1")}
                 src="https://embed.figma.com/site/5bsbOUgpsMSz4QTXjCBK61/portafolio_web?node-id=0-1&embed-host=share" 
-                title="Figma UI Design" 
+                title={t("PortafolioDesign.Post_1")} 
                 aspectratio="16 / 9"
                 />
                 </SectionComponent>
@@ -92,9 +92,9 @@ function PortafolioDesignForm (props ){
             <SectionComponent $flexdirection="row" $height="auto" $paddingbottom = "5%" >
                 <ScrollReveal $direction="left">
                 <UniversalEmbed 
-                label="Proyecto de branding e ilustración aplicada al producto"
+                label={t("PortafolioDesign.Post_2")}
                 src="https://www.behance.net/embed/project/208584223?ilo0=1" 
-                title="Behance Concept Art"
+                title={t("PortafolioDesign.Post_2")}
                 maxwidth="1000px" 
                 aspectratio="4 / 3" /* O la proporción que mejor le siente a tu presentación de Behance */
                 />

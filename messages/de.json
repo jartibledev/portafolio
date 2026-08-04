@@ -64,21 +64,8 @@
     "PortafolioDesign": {
         "Portafolio": "Portfolio",
         "Section": "Design",
-        "ConceptArt": {
-            "Name": "Waldfee",
-            "Explanation": "Concept-Art-Projekt, inspiriert von Caroline Polachek",
-            "Tools": "Für das Projekt verwendete Werkzeuge:"
-        },
-        "ChappelRoan": {
-            "Name": "Die Blume",
-            "Explanation": "Porträt der Sängerin Chappell Roan, erstellt als Fan-Art",
-            "Tools": "Für das Projekt verwendete Werkzeuge:"
-        },
-        "Carrie": {
-            "Name": "Carrie",
-            "Explanation": "Illustration für einen Videospiel-Ladebildschirm, inspiriert von der Hauptfigur aus Stephen Kings Roman Carrie",
-            "Tools": "Für das Projekt verwendete Werkzeuge:"
-        },
+        "Post_1": "Vollständiges UI-Design dieser Website",
+        "Post_2": "Branding- und produktangewandtes Illustrationsprojekt",
         "ReachOut": {
             "Title": "Kontakt",
             "Phylosophy": {

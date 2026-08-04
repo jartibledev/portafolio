@@ -64,21 +64,8 @@
     "PortafolioDesign": {
         "Portafolio": "Portfolio",
         "Section": "Design",
-        "ConceptArt": {
-            "Name": "Wood Fairy",
-            "Explanation": "Concept art project inspired by Caroline Polachek",
-            "Tools": "Tools used to develop the project:"
-        },
-        "ChappelRoan": {
-            "Name": "The Flower",
-            "Explanation": "Chappell Roan portrait, made as fan art",
-            "Tools": "Tools used to develop the project:"
-        },
-        "Carrie": {
-            "Name": "Carrie",
-            "Explanation": "Illustration for a video game loading screen inspired by the main character of Stephen King's novel, Carrie",
-            "Tools": "Tools used to develop the project:"
-        },
+        "Post_1": "Full UI Design of this website",
+        "Post_2": "Branding and product-applied illustration project",
         "ReachOut": {
             "Title": "Contact Me",
             "Phylosophy": {

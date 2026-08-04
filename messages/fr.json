@@ -64,21 +64,8 @@
     "PortafolioDesign": {
         "Portafolio": "Portfolio",
         "Section": "Design",
-        "ConceptArt": {
-            "Name": "Fée de Bois",
-            "Explanation": "Projet de concept art inspiré par Caroline Polachek",
-            "Tools": "Outils utilisés pour développer le projet :"
-        },
-        "ChappelRoan": {
-            "Name": "La Fleur",
-            "Explanation": "Portrait de la chanteuse Chappell Roan",
-            "Tools": "Outils utilisés pour développer le projet :"
-        },
-        "Carrie": {
-            "Name": "Carrie",
-            "Explanation": "Illustration pour l'écran de chargement de jeux vidéo inspirée du personnage principal du roman de Stephen King, Carrie",
-            "Tools": "Outils utilisés pour développer le projet :"
-        },
+        "Post_1": "Design UI complet de ce site web",
+        "Post_2": "Projet de branding et d'illustration appliquée au produit",
         "ReachOut": {
             "Title": "Contactez-moi",
             "Phylosophy": {
