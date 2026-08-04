@@ -652,7 +652,8 @@ export const FrameImage = styled.img`
 
 export const containerIcon = styled.div`
   display: ${props => props.$display || 'display'};
-  position: relative;
+  flex-direction: center;
+  
   width: 2em;
   height: 1em;
   border: ${props => props.border || '0.5rem solid'} ;
