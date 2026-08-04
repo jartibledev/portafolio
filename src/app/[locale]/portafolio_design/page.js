@@ -79,7 +79,7 @@ function PortafolioDesignForm (props ){
                                     
                 </RectangleComponent>
             </SectionComponent>
-            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/site/5bsbOUgpsMSz4QTXjCBK61/portafolio_web?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/site/5bsbOUgpsMSz4QTXjCBK61/portafolio_web?node-id=0-1&embed-host=share" allowFullScreen></iframe>
             {/*<FirstAnimation ref={sectionRef} $isVisible={isVisible}>
             <SectionComponent $height="80vh" $flexdirection="row">
                 <ContainerPictureComponent>
