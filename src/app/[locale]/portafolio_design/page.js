@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import LanguageSelector from "@/app/styles/LanguageSelector";
 import FrameArrowButton from "@/app/styles/ArrowButton";
-
+import UniversalEmbed from "@/app/styles/UniversalEmbed";
 //import miImagen from '../concepart_1_2_export.avif'
 const styleImage ={
     objectFit: 'cover',
@@ -79,7 +79,18 @@ function PortafolioDesignForm (props ){
                                     
                 </RectangleComponent>
             </SectionComponent>
-            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/site/5bsbOUgpsMSz4QTXjCBK61/portafolio_web?node-id=0-1&embed-host=share" allowFullScreen></iframe>
+            <UniversalEmbed 
+                src="https://embed.figma.com/site/5bsbOUgpsMSz4QTXjCBK61/portafolio_web?node-id=0-1&embed-host=share" 
+                title="Figma UI Design" 
+                aspectRatio="16 / 9"
+                />
+            <UniversalEmbed 
+                src="https://www.behance.net/embed/project/208584223?ilo0=1" 
+                title="Behance Concept Art"
+                maxWidth="1000px" 
+                aspectRatio="4 / 3" /* O la proporción que mejor le siente a tu presentación de Behance */
+                />
+            {/*<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/site/5bsbOUgpsMSz4QTXjCBK61/portafolio_web?node-id=0-1&embed-host=share" allowFullScreen></iframe>/*}
             {/*<FirstAnimation ref={sectionRef} $isVisible={isVisible}>
             <SectionComponent $height="80vh" $flexdirection="row">
                 <ContainerPictureComponent>
