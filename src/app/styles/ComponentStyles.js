@@ -485,8 +485,13 @@ export const FooterComponent = styled.footer`
     padding-left: ${props => props.$paddingleft || "25%"};
     padding-right: ${props => props.$paddingright || "25%"};
     padding-top:  ${props => props.$paddingtop || "2%"};
-    padding-bottom: ${props => props.$paddingbottom || "2%"}
-
+    padding-bottom: ${props => props.$paddingbottom || "2%"};
+    color: ${props => props.$color || "black"};
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover {
+        filter:  ${props => props.$filter || 'blur(9px)'};
+        backdrop-filter:  ${props => props.$backdropfilter || 'blur(9px)'};
+    }
   
   `;
 
