@@ -76,6 +76,7 @@
     },
     "AboutMe": {
         "Title": "Über mich",
+        "BackToHomePage": "Zurück zur Startseite",
         "Actuality": "Aktuell",
         "Bio": {
             "Title": "Hallo!",

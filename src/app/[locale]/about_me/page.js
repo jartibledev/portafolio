@@ -217,10 +217,10 @@ function AboutMe ( props ){
 
             <nav style ={{display: 'flex', position:'sticky', flexDirection: 'row', justifyContent: 'center'}}> </nav>
             
-            <SectionComponent $height= "30vh">
+            <SectionComponent $height= "30vh" $flexdirection="row">
                
             <Link href="../home_page" passHref >
-                <FooterComponent>Back to see my others portafolios</FooterComponent> 
+                <FooterComponent><Footer>{t("AboutMe.BackToHomePage")}</Footer></FooterComponent> 
             </Link>
                 <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">
                     <Head>
@@ -505,44 +505,7 @@ function AboutMe ( props ){
                 </SectionComponent>
            </ScrollReveal>
 
-            <ScrollReveal>
-                <SectionComponent $height= "auto">
-                    <TextComponent>
-                        <HeadPhilosophy>
-                            {t("AboutMe.Hobbies.Title")}
-                        </HeadPhilosophy>
-                        <FooterText>
-                            {t("AboutMe.Hobbies.Description")}
-                        </FooterText>
-                    </TextComponent>
-                    <GalleryComponent $flexdirection = "row" >   
-                    
-                        <PictureComponent $filter="none" $filterbackdrop="none" >
-                            <Image src="/images/LOGOUMA.avif"
-                            alt = "picture of me"
-                            fill
-                            style={styleImage}
-                            ></Image>
-                        </PictureComponent>
-                        <PictureComponent $filter="none" $filterbackdrop="none" >
-                            <Image src="/icons/universities/UPV-Emblem.avif"
-                            alt = "picture of me"
-                            fill
-                            style={styleImage}
-                            ></Image>
-                        </PictureComponent>
-                        <PictureComponent $filter="none" $filterbackdrop="none" >
-                            <Image src="/icons/universities/LOGO_STANDFORD.avif"
-                            alt = "picture of me"
-                            fill
-                            style={styleImage}
-                            ></Image>
-                        </PictureComponent>
-
-                    
-                </GalleryComponent>
-                </SectionComponent>
-           </ScrollReveal>
+            
            <SectionComponent>
 
            </SectionComponent>
