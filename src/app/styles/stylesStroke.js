@@ -5,6 +5,28 @@ import Image from "next/image";
 
 const borderBox = "1.2rem solid black ";
 const borderRadius = " border-radius: 0px";
+
+const size = {
+  mobileS: '320px',
+  mobileM: '375px',
+  mobileL: '425px',
+  tablet: '768px',
+  laptop: '1024px',
+  laptopL: '1440px',
+  desktop: '2560px'
+}
+
+export const device = {
+  mobileS: `(min-width: ${size.mobileS})`,
+  mobileM: `(min-width: ${size.mobileM})`,
+  mobileL: `(min-width: ${size.mobileL})`,
+  tablet: `(min-width: ${size.tablet})`,
+  laptop: `(min-width: ${size.laptop})`,
+  laptopL: `(min-width: ${size.laptopL})`,
+  desktop: `(min-width: ${size.desktop})`,
+  desktopL: `(min-width: ${size.desktop})`
+};
+
 const slideInLeft = keyframes`
      from {
     opacity: 0;
@@ -303,7 +325,8 @@ export const ContainerPicture = styled.div`
       &:hover ${FooterPicture} {
         filter:blur(9px);
         backdrop-filter: blur(9px);   
-    }   
+    }
+
 `;
 export const ContainerPictureAboutMe = styled.div`
     width: 100%;
@@ -347,12 +370,87 @@ export const ButtonStar = styled.button`
     &:hover {
             filter: none;
             backdrop-filter: none;
-        } 
-
-`;
-
-
-export const ButtonPortafolio = styled.button`
+        }
+            
+    @media  ${device.mobileL} {
+      transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+      background-color: transparent;
+      border: ${borderBox};
+      border-radius: ${borderRadius};
+      padding: 0.5em;
+      margin: 2rem;
+      cursor:pointer;
+      filter:none;
+      backdrop-filter: none; 
+      &:hover {
+          filter: blur(9px);
+          backdrop-filter: blur(9px);
+      }
+    }
+    @media  ${device.mobileM} {
+      transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+      background-color: transparent;
+      border: ${borderBox};
+      border-radius: ${borderRadius};
+      padding: 0.5em;
+      margin: 2rem;
+      cursor:pointer;
+      filter:none;
+      backdrop-filter: none; 
+      &:hover {
+          filter: blur(9px);
+          backdrop-filter: blur(9px);
+      }
+    }
+    @media  ${device.mobileL} {
+      transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+      background-color: transparent;
+      border: ${borderBox};
+      border-radius: ${borderRadius};
+      padding: 0.5em;
+      margin: 2rem;
+      cursor:pointer;
+      filter:none;
+      backdrop-filter: none; 
+      &:hover {
+          filter: blur(9px);
+          backdrop-filter: blur(9px);
+      }
+    }
+    @media  ${device.tablet} {
+      transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+      background-color: transparent;
+      border: ${borderBox};
+      border-radius: ${borderRadius};
+      padding: 0.5em;
+      margin: 2rem;
+      cursor:pointer;
+      filter:none;
+      backdrop-filter: none; 
+      &:hover {
+          filter: blur(9px);
+          backdrop-filter: blur(9px);
+      }
+    }
+    @media  ${device.laptop} {
+              width: 50vh;
+        height: 15vh;
+        display: grid;
+        grid-template-columns: auto auto auto ;
+        transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+        background-color: transparent;
+        border: ${borderBox};
+        border-radius: ${borderRadius};
+        padding: 0.5em;
+        margin: 2rem;
+        cursor:pointer;
+        filter:blur(9px);
+        backdrop-filter: blur(9px); 
+        &:hover {
+            filter: none;
+            backdrop-filter: none;
+        }
+    @media  ${device.laptopL} {
         width: 50vh;
         height: 15vh;
         display: grid;
@@ -369,7 +467,186 @@ export const ButtonPortafolio = styled.button`
         &:hover {
             filter: none;
             backdrop-filter: none;
-        } 
+        }
+    }
+    @media  ${device.desktop} {
+        width: 50vh;
+        height: 15vh;
+        display: grid;
+        grid-template-columns: auto auto auto ;
+        transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+        background-color: transparent;
+        border: ${borderBox};
+        border-radius: ${borderRadius};
+        padding: 0.5em;
+        margin: 2rem;
+        cursor:pointer;
+        filter:blur(9px);
+        backdrop-filter: blur(9px); 
+        &:hover {
+            filter: none;
+            backdrop-filter: none;
+        }
+    }
+    @media  ${device.desktopL} {
+        width: 50vh;
+        height: 15vh;
+        display: grid;
+        grid-template-columns: auto auto auto ;
+        transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+        background-color: transparent;
+        border: ${borderBox};
+        border-radius: ${borderRadius};
+        padding: 0.5em;
+        margin: 2rem;
+        cursor:pointer;
+        filter:blur(9px);
+        backdrop-filter: blur(9px); 
+        &:hover {
+            filter: none;
+            backdrop-filter: none;
+        };
+    }
+
+`;
+
+
+export const ButtonPortafolio = styled.button`
+    @media  ${device.mobileL} {
+      transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+      background-color: transparent;
+      border: ${borderBox};
+      border-radius: ${borderRadius};
+      padding: 0.5em;
+      margin: 2rem;
+      cursor:pointer;
+      filter:none;
+      backdrop-filter: none; 
+      &:hover {
+          filter: blur(9px);
+          backdrop-filter: blur(9px);
+      }
+    }
+    @media  ${device.mobileM} {
+      transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+      background-color: transparent;
+      border: ${borderBox};
+      border-radius: ${borderRadius};
+      padding: 0.5em;
+      margin: 2rem;
+      cursor:pointer;
+      filter:none;
+      backdrop-filter: none; 
+      &:hover {
+          filter: blur(9px);
+          backdrop-filter: blur(9px);
+      }
+    }
+    @media  ${device.mobileL} {
+      transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+      background-color: transparent;
+      border: ${borderBox};
+      border-radius: ${borderRadius};
+      padding: 0.5em;
+      margin: 2rem;
+      cursor:pointer;
+      filter:none;
+      backdrop-filter: none; 
+      &:hover {
+          filter: blur(9px);
+          backdrop-filter: blur(9px);
+      }
+    }
+    @media  ${device.tablet} {
+      transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+      background-color: transparent;
+      border: ${borderBox};
+      border-radius: ${borderRadius};
+      padding: 0.5em;
+      margin: 2rem;
+      cursor:pointer;
+      filter:none;
+      backdrop-filter: none; 
+      &:hover {
+          filter: blur(9px);
+          backdrop-filter: blur(9px);
+      }
+    }
+    @media  ${device.laptop} {
+              width: 50vh;
+        height: 15vh;
+        display: grid;
+        grid-template-columns: auto auto auto ;
+        transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+        background-color: transparent;
+        border: ${borderBox};
+        border-radius: ${borderRadius};
+        padding: 0.5em;
+        margin: 2rem;
+        cursor:pointer;
+        filter:blur(9px);
+        backdrop-filter: blur(9px); 
+        &:hover {
+            filter: none;
+            backdrop-filter: none;
+        }
+    @media  ${device.laptopL} {
+        width: 50vh;
+        height: 15vh;
+        display: grid;
+        grid-template-columns: auto auto auto ;
+        transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+        background-color: transparent;
+        border: ${borderBox};
+        border-radius: ${borderRadius};
+        padding: 0.5em;
+        margin: 2rem;
+        cursor:pointer;
+        filter:blur(9px);
+        backdrop-filter: blur(9px); 
+        &:hover {
+            filter: none;
+            backdrop-filter: none;
+        }
+    }
+    @media  ${device.desktop} {
+        width: 50vh;
+        height: 15vh;
+        display: grid;
+        grid-template-columns: auto auto auto ;
+        transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+        background-color: transparent;
+        border: ${borderBox};
+        border-radius: ${borderRadius};
+        padding: 0.5em;
+        margin: 2rem;
+        cursor:pointer;
+        filter:blur(9px);
+        backdrop-filter: blur(9px); 
+        &:hover {
+            filter: none;
+            backdrop-filter: none;
+        }
+    }
+    @media  ${device.desktopL} {
+        width: 50vh;
+        height: 15vh;
+        display: grid;
+        grid-template-columns: auto auto auto ;
+        transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
+        background-color: transparent;
+        border: ${borderBox};
+        border-radius: ${borderRadius};
+        padding: 0.5em;
+        margin: 2rem;
+        cursor:pointer;
+        filter:blur(9px);
+        backdrop-filter: blur(9px); 
+        &:hover {
+            filter: none;
+            backdrop-filter: none;
+        };
+    }
         
 `;
 

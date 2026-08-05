@@ -19,12 +19,37 @@ const animationEntryBlured = keyframes`
   }
 `;
 
+const size = {
+  mobileS: '320px',
+  mobileM: '375px',
+  mobileL: '425px',
+  tablet: '768px',
+  laptop: '1024px',
+  laptopL: '1440px',
+  desktop: '2560px'
+}
+
+export const device = {
+  // Rangos cerrados: (min-width: X) and (max-width: Y)
+  mobileS: `(min-width: ${size.mobileS}) and (max-width: 374px)`,
+  mobileM: `(min-width: ${size.mobileM}) and (max-width: 424px)`,
+  mobileL: `(min-width: ${size.mobileL}) and (max-width: 767px)`,
+  tablet:  `(min-width: ${size.tablet}) and (max-width: 1023px)`,
+  laptop:  `(min-width: ${size.laptop}) and (max-width: 1439px)`,
+  laptopL: `(min-width: ${size.laptopL}) and (max-width: 2559px)`,
+  desktop: `(min-width: ${size.desktop})` // El último rango suele quedar abierto
+};
+
+
 export const ArticleComponent = styled.article`
     display: flex;
-    width: 100%;
+    width: 100vw;
+    height: auto;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     overflow: hidden;
+   
 
 `;
 
@@ -43,6 +68,8 @@ const animationBottom = keyframes`
   }
 `;
 
+const borderBox = '1.2rem solid black';
+const borderRadius = '0px';
 export const scroll = keyframes`
   from {
     transform: translateX(0);
@@ -64,15 +91,49 @@ export const toLeft = keyframes`
   }
 `;
 
+
+
 export const SectionComponent = styled.section`
-    width: ${props => props.$width || "100%"} ;
+    width: ${props => props.$width || "100vw"} ;
     height: ${props => props.$height || " 80vh"} ;
     display: ${props => props.$display || "flex"};
     flex-direction:${props => props.$flexdirection || "column"};
     align-items: ${props => props.$alignitems || "center"};
+    justify-content: ${props => props.$justifycontent || "center"};
     padding-left: ${props => props.$paddingleft || "25%"};
     padding-right: ${props => props.$paddingright || "25%"};
     padding-bottom: ${props => props.$paddingbottom || "5%"};
+    @media ${device.mobileS}{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    }
+    @media ${device.mobileM}{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    }
+    @media ${device.mobileL}{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    }
+    @media ${device.laptop}{
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-bottom: 5%;
+    }
+    @media ${device.laptopL}{
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-bottom: 5%;
+    }
+    @media ${device.desktop}{
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-bottom: 5%;
+    }
+    
     
 `;
 
@@ -83,7 +144,106 @@ export const TextComponent = styled.div`
     margin-left: ${props => props.$margginleft || "5%"};
     margin-right: ${props => props.$margginright || "5%"};
     margin-bottom: ${props => props.$margginbottom || "5%"};
-    text-align: ${props => props.$textalign || "start"} 
+    text-align: ${props => props.$textalign || "start"};
+    @media ${device.mobileS}{
+    margin-bottom: 25%;
+    align-items:  ${props => props.$alignitems || "center"};
+    }
+    @media ${device.mobileM}{
+    margin-bottom: 25%;
+    margin-top: 25%;
+     align-items:  ${props => props.$alignitems || "center"};
+    }
+    @media ${device.mobileL}{
+    margin-top: 25%;
+    margin-bottom: 25%;
+     align-items:  ${props => props.$alignitems || "center"};
+    }
+    @media ${device.laptop}{
+    margin-left: 5%;
+    margin-right:  5%;
+    margin-bottom: 5%;
+    }
+    @media ${device.laptopL}{
+    margin-left: 5%;
+    margin-right:  5%;
+    margin-bottom: 5%;
+    }
+    @media ${device.desktop}{
+    margin-left: 5%;
+    margin-right:  5%;
+    margin-bottom: 5%;
+    }
+`;
+export const UniversitiesComponent = styled.div`
+    width:  ${props => props.$width || "100%"};
+    display: ${props => props.$display || "flex"};
+    flex-direction: ${props => props.$flexdirection || "column"};
+    margin-left: ${props => props.$margginleft || "5%"};
+    margin-right: ${props => props.$margginright || "5%"};
+    margin-bottom: ${props => props.$margginbottom || "5%"};
+    text-align: ${props => props.$textalign || "start"};
+    @media ${device.mobileS}{
+    margin-bottom: 25%;
+    }
+    @media ${device.mobileM}{
+    margin-bottom: 10%;
+    margin-top: 10%;
+    }
+    @media ${device.mobileL}{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    }
+    @media ${device.laptop}{
+    margin-left: 5%;
+    margin-right:  5%;
+    margin-bottom: 5%;
+    }
+    @media ${device.laptopL}{
+    margin-left: 5%;
+    margin-right:  5%;
+    margin-bottom: 5%;
+    }
+    @media ${device.desktop}{
+    margin-left: 5%;
+    margin-right:  5%;
+    margin-bottom: 5%;
+    }
+`;
+export const CoursesComponent = styled.div`
+    width:  ${props => props.$width || "100%"};
+    display: ${props => props.$display || "flex"};
+    flex-direction: ${props => props.$flexdirection || "column"};
+    margin-left: ${props => props.$margginleft || "5%"};
+    margin-right: ${props => props.$margginright || "5%"};
+    margin-bottom: ${props => props.$margginbottom || "5%"};
+    text-align: ${props => props.$textalign || "start"};
+    @media ${device.mobileS}{
+    margin-bottom: 25%;
+    }
+    @media ${device.mobileM}{
+    margin-bottom: 5%;
+    margin-top: 5%;
+    }
+    @media ${device.mobileL}{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    }
+    @media ${device.laptop}{
+    margin-left: 5%;
+    margin-right:  5%;
+    margin-bottom: 5%;
+    }
+    @media ${device.laptopL}{
+    margin-left: 5%;
+    margin-right:  5%;
+    margin-bottom: 5%;
+    }
+    @media ${device.desktop}{
+    margin-left: 5%;
+    margin-right:  5%;
+    margin-bottom: 5%;
+    }
 `;
 
 export const GalleryComponent = styled.div`
@@ -158,19 +318,20 @@ export const PictureComponent = styled.div`
 `;
 
 export const ProjectSinopsis = styled.div`
-  display: block;
-  position: absolute;
-  opacity:0;
-  visibility: hidden;
-  top: 0;
+  display: ${props => props.$display || "block"};
+  position:${props => props.$position || "absolute"};
+  opacity: ${props => props.$opacity || "0"};
+  visibility: ${props => props.$visibility || "hidden"};
+
   width:${props => props.$width || "100%"}; 
   left: ${props => props.$left || "auto"}; 
   right: ${props => props.$right || "auto"}; 
-  white-space: nowrap;
-  margin-left:  ${props => props.$marginleft || "5%"};
-  margin-right:  ${props => props.$marginright || "5%"};
   filter: ${props => props.$filter || "blur(16px)"};
   backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
+  margin-left:  5%;
+  margin-right: 5%;
+  white-space: nowrap;
+  z-index: 9999;
   transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;
 
   
@@ -186,6 +347,8 @@ export const ContainerPictureComponent = styled.div`
     flex-direction: ${props => props.$flexdirection || "column"};
     margin-left:  ${props => props.$marginleft || "5%"};
     margin-right:  ${props => props.$marginright || "5%"};
+    align-items:  ${props => props.$alignitems || "center"};
+    
 
     &:hover ${PictureComponent} {
                 filter: none;
@@ -262,7 +425,7 @@ export const FirstAnimation = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+    width: fit-content;
 
     opacity: 0;
     transform: translateY(-100px); 
@@ -296,18 +459,17 @@ export const BlankSpaceComponent = styled.div`
 `;
 export const RectangleComponent = styled.div`
     display: ${props => props.$display || 'grid'};
-    grid-template-columns: ${props => props.$gridtemplatecolumns || 'auto auto auto'} ;
-    
+    position: relative;
     border: ${props => props.border || '1.2rem solid black'} ;
     border-radius: ${props => props.$borderradius || ' border-radius: 0px'};
     cursor: ${props => props.$cursor || ' pointer'};
-    filter:  ${props => props.$filter || ' none'};
-    backdrop-filter:  ${props => props.$backdropfilter || ' none'};
+    filter:  ${props => props.$filter || 'blur(9px)'};
+    backdrop-filter:  ${props => props.$backdropfilter || 'blur(9px)'};
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateZ(0);  
     &:hover {
         transform: translateY(-2px);
-        filter:${props => props.$filterhover || ' blur(9px'};
+        filter:${props => props.$filterhover || ' blur(9px)'};
         backdrop-filter: ${props => props.$backdropfilterhover || 'blur(9px)'};
     }
     &:active{
@@ -387,7 +549,7 @@ export const ButtonComponent = styled.button`
   transform: translateZ(0);
 
    &:hover {
-        opacity:${props => props.$opacity || "1"}; 
+        opacity:${props => props.$opacityhover || "1"}; 
         transform: translateY(-2px);
     }
     &:active{
@@ -455,5 +617,51 @@ display: inline-flex;
     &:active{
         animation: ${animationBottom} 0.3s ease;
     }
-`; 
+`;
 
+export const ArrowButtonContainer = styled.button`
+  position: relative;
+  width: 200px;  
+  height: 200px; 
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+  }
+`;
+
+// 2. Imagen estilizada con interpolación de opacidad
+export const FrameImage = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  
+  transition: opacity 0.25s ease-in-out;
+  
+  opacity: ${({ $active }) => ($active ? 1 : 0)};
+`;
+
+export const containerIcon = styled.div`
+  display: ${props => props.$display || 'display'};
+  flex-direction: center;
+  
+  width: 2em;
+  height: 1em;
+  border: ${props => props.border || '0.5rem solid'} ;
+  border-radius: ${props => props.$borderradius || ' border-radius: 15px'};
+  background: linear-gradient(to black,white) border-box;
+
+  &:hover {
+      background:linear-gradient ( #EDEDED, #B0B0B0  ) 
+                linear-gradient(to white,black) border-box;   
+  }
+`

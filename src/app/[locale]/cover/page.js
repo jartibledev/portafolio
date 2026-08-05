@@ -6,11 +6,24 @@ import {  useParams } from 'next/navigation';
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import LanguageSelector from '@/app/styles/LanguageSelector';
+import { useIsMobile } from '@/app/styles/useMobile';
+import { useIsTouchDevice } from '@/app/styles/useTablet';
 
 function CoverForm (props ){
         const [isVisible, setIsVisible] = useState(false);
         const sectionRef = useRef(null);
         const locale = useLocale();
+        const [isActive, setIsActive] = useState(false);
+        const isTouch = useIsTouchDevice();
+        const [isMounted, setIsMounted] = useState(false);
+
+        useEffect(() => {
+        setIsMounted(true);
+    }, []);
+    
+        
+        
+        
 console.log("El idioma activo según next-intl es:", locale);
                 useEffect(() =>{
                     const observer = new IntersectionObserver(
@@ -37,15 +50,32 @@ console.log("El idioma activo según next-intl es:", locale);
                 }, []);
                 const params = useParams();
                 const currentLocale = params?.locale || 'es';
+                const rectProps = isTouch ? {
+                    $filter: "none",
+                    $backdropfilter: "none",
+                    onTouchStart: () => console.log("Acción móvil"),
+                    onTouchStart: () => setIsActive(true),
+                    onTouchEnd: () => setTimeout(() => setIsActive(false), 1000)
+                } : {
+                    $filter: "blur(9px)",
+                    $backdropfilter: "blur(9px)",
+                    $filterhover: "none",
+                    $backdropfilter: "none"
+
+                    // Las props de PC
+                };
+                const languageOpacity = isTouch ? "1" : "0.3";
     return(
         <ArticleComponent>
-            <LanguageSelector></LanguageSelector>
+            <LanguageSelector opacity={languageOpacity}></LanguageSelector>
             <FirstAnimation ref={sectionRef} $isVisible={isVisible} >
             <SectionComponent height="auto" style={{justifyContent: 'center'}}>
             
             
             <Link href={`/${currentLocale}/home_page`} prefetch={true}>
-                <RectangleComponent $filter="blur(9px)"  $backdropfilter= "blur(9px)"  $filterhover ="none" $backdropfilterhover="none" >
+                <RectangleComponent 
+                    {...rectProps}
+                >
                     <Head>
                         Start
                     </Head>

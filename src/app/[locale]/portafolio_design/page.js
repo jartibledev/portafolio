@@ -8,7 +8,8 @@ import PostComponent from "../../styles/modal";
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import LanguageSelector from "@/app/styles/LanguageSelector";
-
+import FrameArrowButton from "@/app/styles/ArrowButton";
+import UniversalEmbed from "@/app/styles/UniversalEmbed";
 //import miImagen from '../concepart_1_2_export.avif'
 const styleImage ={
     objectFit: 'cover',
@@ -64,24 +65,44 @@ function PortafolioDesignForm (props ){
     return(
         <ArticleComponent>
             
-           <SectionComponent $height="25vh" >
+           <SectionComponent $height="25vh" $flexdirection="row" >
             <LanguageSelector></LanguageSelector>
+                <FrameArrowButton targetPath="/es/home_page"></FrameArrowButton>
                <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">
-                    <BlankSpaceComponent/>
-                    <BlankSpaceComponent/>
-                                    
+                         
                                     <Portafolio>
                                     {t("PortafolioDesign.Portafolio")}
                                     </Portafolio>
                                     <Section>
                                         {t("PortafolioDesign.Section")}
                                     </Section>
-                    <BlankSpaceComponent/>
-                    <BlankSpaceComponent/>
                                     
                 </RectangleComponent>
             </SectionComponent>
             <FirstAnimation ref={sectionRef} $isVisible={isVisible}>
+                <SectionComponent $height="42vh" $flexdirection="row">
+            <UniversalEmbed 
+                label={t("PortafolioDesign.Post_1")}
+                src="https://embed.figma.com/site/5bsbOUgpsMSz4QTXjCBK61/portafolio_web?node-id=0-1&embed-host=share" 
+                title={t("PortafolioDesign.Post_1")} 
+                aspectratio="16 / 9"
+                />
+                </SectionComponent>
+            </FirstAnimation>
+            <SectionComponent $flexdirection="row" $height="auto" $paddingbottom = "5%" >
+                <ScrollReveal $direction="left">
+                <UniversalEmbed 
+                label={t("PortafolioDesign.Post_2")}
+                src="https://www.behance.net/embed/project/208584223?ilo0=1" 
+                title={t("PortafolioDesign.Post_2")}
+                maxwidth="1000px" 
+                aspectratio="4 / 3" /* O la proporción que mejor le siente a tu presentación de Behance */
+                />
+                </ScrollReveal>
+            </SectionComponent>
+            
+            {/*<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/site/5bsbOUgpsMSz4QTXjCBK61/portafolio_web?node-id=0-1&embed-host=share" allowFullScreen></iframe>/*}
+            {/*<FirstAnimation ref={sectionRef} $isVisible={isVisible}>
             <SectionComponent $height="80vh" $flexdirection="row">
                 <ContainerPictureComponent>
                     <PostComponent $height="100%" linkImage="/illustrations/concepart_1_2_export.avif" project="PortafolioDesign.ConceptArt.Name" date="2026" explanation="PortafolioDesign.ConceptArt.Explanation" left="70%" textalign="start" width="300px" >
@@ -106,7 +127,7 @@ function PortafolioDesignForm (props ){
                     </PostComponent>
                     </ContainerPictureComponent>
                      </ScrollReveal> 
-            </SectionComponent> 
+            </SectionComponent>*/} 
            
             <ScrollReveal >
                 <SectionComponent $flexdirection="row" $height="auto" > 

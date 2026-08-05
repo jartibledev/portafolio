@@ -64,21 +64,8 @@
     "PortafolioDesign": {
         "Portafolio" : "Portafolio",
         "Section" : "Design",
-        "ConceptArt" :{
-            "Name" : "Hada del bosque",
-            "Explanation" : "Proyecto de concept art inspirado en Caroline Polachek",
-            "Tools": "Herramientas usadas para desarrollar el proyecto:"
-        },
-        "ChappelRoan" : {
-            "Name" : "La flor",
-            "Explanation" : "Retrato de la cantante Chappell Roan",
-            "Tools": "Herramientas usadas para desarrollar el proyecto:"
-        },
-        "Carrie" : {
-            "Name" : "Carrie",
-            "Explanation" : "Ilustración para pantallas de carga de videojuegos inspirada en la novela de Stephen King, Carrie",
-            "Tools": "Herramientas usadas para desarrollar el proyecto:"
-        },
+        "Post_1": "Diseño UI Completo de esta web",
+        "Post_2": "Proyecto de branding e ilustración aplicada al producto",
         "ReachOut": {
         "Title": "Contáctame",
         "Phylosophy":{

@@ -1,18 +1,21 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
 import { Head, FooterText, Work, DateWork, Courses, Footer, Portafolio, Projects, Section, DateFooter, HeadPhilosophy, Dropline, SocialNetwork, ReachOut } from "../../styles/StylesParagraph.styles";
-import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, FooterPictureComponent, PictureComponent, ContainerPictureComponent, RectangleComponent, FooterComponent,  FirstAnimation,  ProgressBarContainerComponent, ProgressBarComponent, SliderContainer, SliderTrack, Slide, scroll, toLeft  } from "../../styles/ComponentStyles";
+import { ArticleComponent, SectionComponent, TextComponent, GalleryComponent, FooterPictureComponent, PictureComponent, ContainerPictureComponent, RectangleComponent, FooterComponent,  FirstAnimation,  ProgressBarContainerComponent, ProgressBarComponent, SliderContainer, SliderTrack, Slide, scroll, toLeft, CoursesComponent, UniversitiesComponent  } from "../../styles/ComponentStyles";
 import ScrollReveal from "../../ScrollReveal";
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import Link from "next/link";
 import Image from 'next/image';
+import { useIsTouchDevice } from "@/app/styles/useTablet";
+import { useIsMobile } from "@/app/styles/useMobile";
 import LanguageSelector from "@/app/styles/LanguageSelector";
+import LanguageSelectorFixed from "@/app/styles/LanguageSelectorFixed";
 
 
 
-const styleImage ={
-    objectFit: 'cover',
+const styleImage =  {
+    objectFit: 'contain',
     objectPosition: ' center',
       
 }
@@ -23,14 +26,7 @@ const styleLogos ={
    
       
 }
-const styleLogosLeanguages ={
-    objectFit: 'contain',
-    objectPosition: ' center',
-    width: '25%',
-    filter: "none",
-    backdropFilter:  "none"
-      
-}
+
 const styleLogosLeanguagesProgressBar ={
     display: 'flex',
     objectFit: 'contain',
@@ -93,7 +89,99 @@ function AboutMe ( props ){
             const t = useTranslations();
             const params = useParams();
             const currentLocale = params?.locale || 'es';
-    
+            const isTouch = useIsTouchDevice();
+            const isMobile = useIsMobile();
+            const [isMounted, setIsMounted] = useState(false);
+            const rectProps = isTouch ? {
+                        $filter: "none",
+                        $backdropfilter: "none",
+                        onTouchStart: () => setIsActive(true),
+                        onTouchEnd: () => setTimeout(() => setIsActive(false), 1000)
+                    } : {
+                        $filter: "blur(9px)",
+                        $backdropfilter: "blur(9px)",
+                        $filterhover: "none",
+                        $backdropfilter: "none"
+            
+                        // Las props de PC
+                    };
+            const postProps = isTouch ? {
+                        $filter: "none",
+                        $backdropfilter: "none",
+                        onTouchStart: () => setIsActive(true),
+                        onTouchEnd: () => setTimeout(() => setIsActive(false), 1000)
+                        } : {
+                        $filter: "blur(9px)",
+                        $backdropfilter: "blur(9px)",
+                        $filterhover: "none",
+                        $backdropfilter: "none"
+                    };       
+            const imageProps = isMobile ? {
+                    $overflow: "contain",
+                    $filter:"none",
+                    $filterbackdrop:"none",    
+                        } : {
+                    $overflow: "hidden",
+                    $filter:"none",
+                    $filterbackdrop:"none",          
+                    };       
+            const galleryProps = isMobile ? {
+                    $flexdirection:"column",
+                    $paddingbottom:"5%",
+                        } : {
+                    $flexdirection:"row",
+                    $paddingbottom:"10%",     
+                    };  
+
+            const sectionProps = isMobile ? {
+                $flexdirection:"column",
+                $height:"auto", 
+                $paddingbottom: "5%"
+                } : {
+                $flexdirection:"column",
+                $height:"auto", 
+                $paddingbottom: "25%"
+            };       
+            const textComponentsProps = isTouch ? { 
+                $marginbottom: "5%"
+                } : { 
+                $marginbottom: "25%"
+            };       
+            const textUniversitiesCoursesProps = isMobile ? { 
+                $marginbottom: "5%"
+                } : { 
+                $marginbottom: "25%"
+            };       
+            const titleProps  = isMobile ? { 
+                $flexdirection: "column"
+                } : { 
+                $flexdirection: "row"
+            };       
+            const flagsProps = isMobile ? { 
+                width: "10vw",
+                height: "10vw",
+                objectFit: 'contain',
+                objectPosition: ' center',
+                filter: "none",
+                backdropFilter:  "none"
+                } : { 
+                width: "10vw",
+                height: "10vh",
+                objectFit: 'contain',
+                objectPosition: ' center',
+                filter: "none",
+                backdropFilter:  "none"
+            };       
+                        
+            useEffect(() => {
+                    setIsMounted(true);
+                }, []);
+
+                // Si aún no se ha montado, renderizamos algo neutro (o lo de PC por defecto)
+                // Esto evita el error de "Hydration Mismatch"
+                
+            const lenguageOpacity = isTouch ? "1" : "0.3";
+
             useEffect(() =>{
                 const observer = new IntersectionObserver(
                     ([entry]) => {
@@ -119,7 +207,14 @@ function AboutMe ( props ){
             }, []);
     return(
         <ArticleComponent>
-            <LanguageSelector></LanguageSelector>
+            {isMobile ? (
+                  <SectionComponent $height="10vh">
+                    <LanguageSelectorFixed mobile={true} opacity={lenguageOpacity} />
+                  </SectionComponent>
+                ) : (
+                  <LanguageSelector opacity={lenguageOpacity} />
+                )}
+
             <nav style ={{display: 'flex', position:'sticky', flexDirection: 'row', justifyContent: 'center'}}> </nav>
             
             <SectionComponent $height= "30vh">
@@ -137,9 +232,9 @@ function AboutMe ( props ){
            </SectionComponent>
            
            <FirstAnimation ref={sectionRef} $isVisible={isVisible} style= {{flexDirection: 'row'}} $margin> 
-                <SectionComponent $flexdirection="row" $height="auto" >
+                <SectionComponent {...sectionProps} >
                     <ContainerPictureComponent >
-                        <PictureComponent $height="100%">
+                        <PictureComponent {...imageProps}>
                             <Image src="/profile/image_bio.avif"
                                     alt = "picture of me"
                                     fill
@@ -158,7 +253,7 @@ function AboutMe ( props ){
             </SectionComponent>
            </FirstAnimation>
             <ScrollReveal>
-           <SectionComponent $paddingbottom="10%" $height="auto" >
+           <SectionComponent {...sectionProps} >
                 
                 <TextComponent >
                     <HeadPhilosophy style={{textAlign: 'left'}}>
@@ -169,22 +264,22 @@ function AboutMe ( props ){
                     </FooterText>
                 </TextComponent>
 
-                <GalleryComponent $flexdirection="row" $paddingbottom="10%"  >   
-                        <PictureComponent $filter="none" $filterbackdrop="none">
+                <GalleryComponent {...galleryProps}  >   
+                        <PictureComponent {...imageProps}>
                             <Image src="/icons/universities/LOGOUMA.avif"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
                         </PictureComponent>
-                        <PictureComponent $filter="none" $filterbackdrop="none">
+                        <PictureComponent {...imageProps}>
                             <Image src="/icons/universities/UPV-Emblem.avif"
                             alt = "picture of me"
                             fill
                             style={styleImage}
                             ></Image>
                         </PictureComponent>
-                        <PictureComponent $filter="none" $filterbackdrop="none" >
+                        <PictureComponent {...imageProps} >
                             <Image src="/icons/universities/LOGO_STANDFORD.avif"
                             alt = "picture of me"
                             fill
@@ -194,9 +289,9 @@ function AboutMe ( props ){
 
                     
                 </GalleryComponent>
-                <TextComponent >
-                    <TextComponent>
-                    <FooterPictureComponent>
+                <TextComponent {...textComponentsProps}>
+                    <UniversitiesComponent  >
+                    <FooterPictureComponent {...titleProps}>
                         <Work>
                             {t("AboutMe.Formation.UMA.University")}
                         </Work>
@@ -204,25 +299,25 @@ function AboutMe ( props ){
                             2018-2023
                         </DateWork>
                     </FooterPictureComponent>
-                    <TextComponent>
+                    <CoursesComponent >
                         <Courses>
                             {t("AboutMe.Formation.UMA.Courses.Illustrator")}
                         </Courses>
-                    </TextComponent>
-                    <TextComponent>
+                    </CoursesComponent>
+                    <CoursesComponent >
                         <Courses>
                             {t("AboutMe.Formation.UMA.Courses.Indesign")}
                         </Courses>
-                    </TextComponent>
-                    <TextComponent>
+                    </CoursesComponent>
+                    <CoursesComponent >
                         <Courses>
                             {t("AboutMe.Formation.UMA.Courses.Textil")}
                         </Courses>
-                    </TextComponent>
-                    </TextComponent>
+                    </CoursesComponent>
+                    </UniversitiesComponent>
 
-                    <TextComponent>
-                    <FooterPictureComponent>
+                    <UniversitiesComponent >
+                    <FooterPictureComponent {...titleProps}>
                         <Work>
                             {t("AboutMe.Formation.UPV.University")}
                         </Work>
@@ -230,9 +325,9 @@ function AboutMe ( props ){
                             2023-{t("AboutMe.Actuality")}
                         </DateWork>
                     </FooterPictureComponent>
-                    </TextComponent>
-                    <TextComponent>
-                    <FooterPictureComponent>
+                    </UniversitiesComponent>
+                    <UniversitiesComponent >
+                    <FooterPictureComponent {...titleProps}>
                         <Work>
                             {t("AboutMe.Formation.Standford.University")}
                         </Work>
@@ -240,7 +335,7 @@ function AboutMe ( props ){
                             2026-{t("AboutMe.Actuality")}
                         </DateWork>
                     </FooterPictureComponent>
-                </TextComponent>    
+                </UniversitiesComponent>    
                 </TextComponent>
            </SectionComponent>
            </ScrollReveal>
@@ -331,7 +426,7 @@ function AboutMe ( props ){
 
                                                     <ScrollReveal threshold={0.8}>
                                                         <ContainerPictureComponent style={styleLogoImageLeanguagesGallery}>
-                                                            <PictureComponent $minwidth="50px" $minheight="auto" $filter="none" $filterbackdrop="none" style={styleLogosLeanguages}>
+                                                            <PictureComponent  $minwidth="50px" $minheight="auto" $filter="none" $filterbackdrop="none" style={flagsProps}>
                                                                 <Image src="/icons/leanguages/Spanish_flag.svg"
                                                                     alt = "Spanish flag"
                                                                     fill
@@ -350,7 +445,7 @@ function AboutMe ( props ){
 
                                                     <ScrollReveal  threshold={0.8}>
                                                     <ContainerPictureComponent  style={styleLogoImageLeanguagesGallery}>
-                                                        <PictureComponent $minwidth="50px" $minheight="auto" $filter="none" $filterbackdrop="none" style={styleLogosLeanguages}>
+                                                        <PictureComponent $minwidth="50px" $minheight="auto" $filter="none" $filterbackdrop="none" style={flagsProps}>
                                                             <Image src="/icons/leanguages/England_flag.svg"
                                                                 alt = "UK flag"
                                                                 fill
@@ -368,7 +463,7 @@ function AboutMe ( props ){
 
                                                     <ScrollReveal threshold={0.8} >
                                                     <ContainerPictureComponent  style={styleLogoImageLeanguagesGallery}>
-                                                        <PictureComponent  $minwidth="50px" $minheight="auto" style={styleLogosLeanguages}>
+                                                        <PictureComponent  $minwidth="50px" $minheight="auto" style={flagsProps}>
                                                             <Image src="/icons/leanguages/French_flag.svg"
                                                                 alt = "French flag"
                                                                 fill
@@ -388,7 +483,7 @@ function AboutMe ( props ){
                                                     <ScrollReveal threshold={0.8} >
 
                                                     <ContainerPictureComponent style={styleLogoImageLeanguagesGallery}>
-                                                        <PictureComponent  $minwidth="50px" $minheight="auto" style={styleLogosLeanguages}>
+                                                        <PictureComponent  $minwidth="50px" $minheight="auto" style={flagsProps}>
                                                             <Image src="/icons/leanguages/German_flag.svg"
                                                                 alt = "German flag"
                                                                 fill

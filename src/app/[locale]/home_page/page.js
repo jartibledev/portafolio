@@ -5,21 +5,43 @@ import { ArticleComponent, SectionComponent, RectangleComponent, BlankSpaceCompo
 import Link from "next/link";
 import { useParams } from 'next/navigation';
 import LanguageSelector from "@/app/styles/LanguageSelector";
+import { useIsTouchDevice } from "@/app/styles/useTablet";
+
 const linkDisplay = { 
     display:"flex", 
     justifyContent: "center",
     paddingBottom: "5%"
 }
   const stylesHomePage = {
-                height: "auto",
-                margin: "10vh"
+                height: "100vh",
+                margin: "5%",
+                justifyContent: 'center'
 
             }
 function HomePageForm (props){
     const [isVisible, setIsVisible] = useState(false);
-            const sectionRef = useRef(null);
-            const params = useParams();
-            const currentLocale = params?.locale || 'es';
+    const sectionRef = useRef(null);
+    const params = useParams();
+    const currentLocale = params?.locale || 'es';
+    const [isActive, setIsActive] = useState(false);
+    const isTouch = useIsTouchDevice();
+    const [isMounted, setIsMounted] = useState(false);
+    const rectProps = isTouch ? {
+            $filter: "none",
+            $backdropfilter: "none",
+            onTouchStart: () => setIsActive(true),
+            onTouchEnd: () => setTimeout(() => setIsActive(false), 1000)
+        } : {
+            $filter: "blur(9px)",
+            $backdropfilter: "blur(9px)",
+            $filterhover: "none",
+            $backdropfilter: "none"
+
+            // Las props de PC
+        };
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
             useEffect(() =>{
                 const observer = new IntersectionObserver(
@@ -44,57 +66,51 @@ function HomePageForm (props){
                     }
                 };
             }, []);
-          
+            const dimensions = {
+                width: '300px',
+                height: '150px'
+            }
+            const lenguageOpacity = isTouch ? "1" : "0.3";
 
     return(
         <ArticleComponent>
             <SectionComponent style={stylesHomePage} >
-                <LanguageSelector></LanguageSelector>
+                <LanguageSelector opacity={lenguageOpacity}></LanguageSelector>
 
                 <Link style = {linkDisplay} href={`/${currentLocale}/portafolio_dev`} prefetch={true}>
-                    <RectangleComponent $filter="blur(9px)" $filterbackdrop="blur(9px)" $filterhover="none" $backfilterhoover="none" >
-                        <Portafolio>
+                    <RectangleComponent {...rectProps} style={dimensions} >
+                        <Portafolio style={{gridColumn: '1', gridRow: '1', justifySelf: 'start', alignSelf: 'bottom',  margin: '5%'}}>
                             Portafolio
                         </Portafolio>
-                        <BlankSpaceComponent></BlankSpaceComponent>
-                        <BlankSpaceComponent></BlankSpaceComponent>
-                        <BlankSpaceComponent></BlankSpaceComponent>
-                        <BlankSpaceComponent></BlankSpaceComponent>
-                        <Section>
+                        <Section style={{gridColumn: '2', gridRow: '2', justifySelf: 'end', alignSelf: 'bottom'}}>
                             dev
                         </Section>
                     </RectangleComponent>
                 </Link>
                
                 <Link style = {linkDisplay} href={`/${currentLocale}/portafolio_design`} prefetch={true}>
-                    <RectangleComponent $filter="blur(9px)" $filterbackdrop="blur(9px)" $filterhover="none" $backfilterhoover="none">
+                    <RectangleComponent {...rectProps} style={dimensions}>
                         
-                        <BlankSpaceComponent></BlankSpaceComponent>
-                        <BlankSpaceComponent></BlankSpaceComponent>
-                        <Portafolio>
+                        
+                        <Portafolio style={{gridColumn: '2', gridRow: '2', justifySelf: 'end', alignSelf: 'bottom', margin: '5%'}}>
                             Portafolio
                         </Portafolio>
-                        <Section>
+                        <Section style={{gridColumn: '1', gridRow: '1', justifySelf: 'start', alignSelf: 'bottom'}}>
                             design
                         </Section>
-                        <BlankSpaceComponent></BlankSpaceComponent>
-                        <BlankSpaceComponent></BlankSpaceComponent>
+            
                         
                     </RectangleComponent>
                 </Link>    
                
                 <Link style = {linkDisplay} href={`/${currentLocale}/portafolio_illustration`} prefetch={true}>
-                    <RectangleComponent $filter="blur(9px)" $filterbackdrop="blur(9px)" $filterhover="none" $backfilterhoover="none">
-                        <BlankSpaceComponent></BlankSpaceComponent>
-                        <BlankSpaceComponent></BlankSpaceComponent>
-                        <Portafolio>
+                    <RectangleComponent {...rectProps} style={dimensions}>
+                        <Portafolio style={{gridColumn: '1', gridRow: '1', justifySelf: 'start', alignSelf: 'bottom', margin: '5%'}} >
                             Portafolio
                         </Portafolio>
-                        <Section>
+                        <Section style={{gridColumn: '1', gridRow: '2', justifySelf: 'end', alignSelf: 'bottom', fontSize: '2rem'}}>
                             illustration
                         </Section>
-                        <BlankSpaceComponent></BlankSpaceComponent>
-                        <BlankSpaceComponent></BlankSpaceComponent>
                     </RectangleComponent>
                 </Link>
    

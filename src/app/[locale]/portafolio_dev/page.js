@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState, useRef} from "react";
 import {  Portafolio,  Section,  HeadPhilosophy, Dropline, SocialNetwork, ReachOut } from "../../styles/StylesParagraph.styles";
-import { ArticleComponent, SectionComponent, TextComponent, ContainerPictureComponent, RectangleComponent, FooterComponent, BlankSpaceComponent, FirstAnimation } from "../../styles/ComponentStyles";
+import { ArticleComponent, SectionComponent, TextComponent, ContainerPictureComponent, RectangleComponent, FooterComponent, BlankSpaceComponent, FirstAnimation, ArrowButtonContainer } from "../../styles/ComponentStyles";
 import ScrollReveal from "../../ScrollReveal";
 import Link from "next/link";
 import PostComponent from "../../styles/modal";
@@ -9,6 +9,10 @@ import PostComponentDev from "../../styles/modaldev";
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import LanguageSelector from "@/app/styles/LanguageSelector";
+import LanguageSelectorFixed from "@/app/styles/LanguageSelectorFixed";
+import { useIsMobile } from "@/app/styles/useMobile";
+import { useIsTouchDevice } from "@/app/styles/useTablet";
+import FrameArrowButton from "@/app/styles/ArrowButton";
 
 //import miImagen from '../concepart_1_2_export.avif'
 const styleImage ={
@@ -27,15 +31,36 @@ const linkDisplay = {
 function PortafolioDevForm (props ){
         const t = useTranslations();
         const [isOpen, setIsOpen] = useState(false);
-        const [imagenActual, setImagenActual] = useState('');
-        
+        const [imagenActual, setImagenActual] = useState('');  
         const [isVisible, setIsVisible] = useState(false);
         const sectionRef = useRef(null);
-
         const params = useParams();
         const currentLocale = params?.locale || 'es';
-    
+        const isMobile = useIsMobile();
+        const isTouch = useIsTouchDevice();
+        const [isActive, setIsActive] = useState(false);
 
+         const postProps = isTouch ? {
+            $filter: "none",
+            $backdropfilter: "none",
+            onTouchStart: () => setIsActive(true),
+            onTouchEnd: () => setTimeout(() => setIsActive(false), 1000)
+            } : {
+            $filter: "blur(9px)",
+            $backdropfilter: "blur(9px)",
+            $filterhover: "none",
+            $backdropfilter: "none"
+        };       
+        const sectionProps = isTouch ? {
+            $flexdirection:"column",
+            $height:"auto", 
+            $paddingbottom: "5%"
+            } : {
+            $flexdirection:"row",
+            $height:"auto", 
+            $paddingbottom: "5%"
+        };
+       
 
                 useEffect(() =>{
                     const observer = new IntersectionObserver(
@@ -60,16 +85,48 @@ function PortafolioDevForm (props ){
                         }
                     };
                 }, []);
+
+                useEffect(() =>{
+                                    const observer = new IntersectionObserver(
+                                        ([entry]) => {
+                                            if(entry.isIntersecting){
+                                                setIsVisible(true);
+                                                observer.unobserve(entry.target)
+                                            }
+                                        },
+                                        {
+                                            threshold: 0.2,
+                                            rootMargin: "0px 0px -50px 0px"
+                                        }
+                                    );
+                    
+                                    if (sectionRef.current){
+                                        observer.observe(sectionRef.current);
+                                    }
+                                    return()=>{
+                                        if(sectionRef.current){
+                                            observer.unobserve(sectionRef.current);
+                                        }
+                                    };
+                                }, []);
+                
+                const lenguageOpacity = isTouch ? "1" : "0.3";
                 
                 
     return(
         <ArticleComponent>
-            
-           <SectionComponent $height="25vh" >
-            <LanguageSelector></LanguageSelector>
+            {isMobile ? (
+                 <SectionComponent $height="10vh">
+                   <LanguageSelectorFixed mobile={true} opacity={lenguageOpacity} />
+                 </SectionComponent>
+               ) : (
+                 <LanguageSelector opacity={lenguageOpacity} />
+               )}  
+
+           <SectionComponent $height="25vh" $flexdirection="row" >
+
+               <FrameArrowButton  targetPath="/es/home_page" ></FrameArrowButton>
                <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">
-                    <BlankSpaceComponent/>
-                    <BlankSpaceComponent/>
                                     
                                     <Portafolio>
                                     {t("PortafolioDev.Portafolio")}
@@ -77,25 +134,23 @@ function PortafolioDevForm (props ){
                                     <Section>
                                         {t("PortafolioDev.Section")}
                                     </Section>
-                    <BlankSpaceComponent/>
-                    <BlankSpaceComponent/>
                                     
                 </RectangleComponent>
             </SectionComponent>
             <FirstAnimation ref={sectionRef} $isVisible={isVisible}>
             <SectionComponent $height="80vh" $flexdirection="row">
                 <ContainerPictureComponent>
-                    <PostComponentDev $height="100%"  linkvideo="https://youtu.be/ZtZeZpPKdzY" github="https://github.com/jartibledev/visual-novel-tfm.git" linkImage="/illustrations/portada.avif" project="PortafolioDev.Post_1.Name" date="2026" explanation="PortafolioDev.Post_1.Explanation" left="70%" textalign="start" width="300px" >
+                    <PostComponentDev {...postProps} $height="100%"  linkvideo="https://www.youtube.com/embed/ZtZeZpPKdzY?si=2KFjiFLWr8ofhUnc" github="https://github.com/jartibledev/visual-novel-tfm.git" linkImage="/illustrations/portada.avif" project="PortafolioDev.Post_1.Name" date="2026" explanation="PortafolioDev.Post_1.Explanation" left="70%" textalign="start" width="300px" >
                     </PostComponentDev>
                 </ContainerPictureComponent>
             </SectionComponent>
            </FirstAnimation>
 
            
-            <SectionComponent $flexdirection="row" $height="auto" $paddingbottom = "5%"  >
+            <SectionComponent {...sectionProps}  >
                <ScrollReveal $direction="left">
                 <ContainerPictureComponent > 
-                    <PostComponentDev $height="auto" linkvideo="https://www.youtube.com/embed/XW3WmhowopM?si=iUNPMsYpzToqF8qC" github="https://github.com/jartibledev/export-to-web-gimp.git"  linkImage="/icons/projects_devs/export_to_web.svg" project="PortafolioDev.Post_2.Name" date="2026" explanation="PortafolioDev.Post_2.Explanation" right="105%" textalign="end" cover="contain" >
+                    <PostComponentDev {...postProps} $height="auto" linkvideo="https://www.youtube.com/embed/XW3WmhowopM?si=iUNPMsYpzToqF8qC" github="https://github.com/jartibledev/export-to-web-gimp.git"  linkImage="/icons/projects_devs/export_to_web.svg" project="PortafolioDev.Post_2.Name" date="2026" explanation="PortafolioDev.Post_2.Explanation" right="105%" textalign="end" cover="contain" >
                     </PostComponentDev>
                 </ContainerPictureComponent>
                </ScrollReveal>
@@ -103,15 +158,15 @@ function PortafolioDevForm (props ){
 
                <ScrollReveal $direction={"right"} >
                     <ContainerPictureComponent>
-                        <PostComponentDev $height="auto" linkvideo="https://www.youtube.com/embed/qxgFz8Qj3cM?si=XeYZfsiK14nf5K0W" github="https://github.com/jartibledev/export-to-webp-gimp.git" linkImage="/icons/projects_devs/export_to_webp.svg" project="PortafolioDev.Post_3.Name" date="2026" explanation="PortafolioDev.Post_3.Explanation" left="105%" textalign="start" cover="contain" >
+                        <PostComponentDev {...postProps} $height="auto" linkvideo="https://www.youtube.com/embed/qxgFz8Qj3cM?si=XeYZfsiK14nf5K0W" github="https://github.com/jartibledev/export-to-webp-gimp.git" linkImage="/icons/projects_devs/export_to_webp.svg" project="PortafolioDev.Post_3.Name" date="2026" explanation="PortafolioDev.Post_3.Explanation" left="105%" textalign="start" cover="contain" >
                     </PostComponentDev>
                     </ContainerPictureComponent>
                      </ScrollReveal> 
             </SectionComponent> 
-            <SectionComponent $flexdirection="row" $height="auto" $paddingbottom = "5%"  >
+            <SectionComponent {...sectionProps}  $height="auto" $paddingbottom = "5%"  >
                <ScrollReveal $direction="left">
                 <ContainerPictureComponent > 
-                    <PostComponentDev $height="auto" linkvideo="https://www.youtube.com/embed/KKl08aYvuH0?si=tcrKs3pW2HFZdSCj" github="https://github.com/jartibledev/rename-files" linkImage="/icons/projects_devs/icon_rename.avif" project="PortafolioDev.Post_4.Name" date="2026" explanation="PortafolioDev.Post_4.Explanation" right="105%" textalign="end" cover="contain" >
+                    <PostComponentDev {...postProps} $height="auto" linkvideo="https://www.youtube.com/embed/KKl08aYvuH0?si=tcrKs3pW2HFZdSCj" github="https://github.com/jartibledev/rename-files" linkImage="/icons/projects_devs/icon_rename.avif" project="PortafolioDev.Post_4.Name" date="2026" explanation="PortafolioDev.Post_4.Explanation" right="105%" textalign="end" cover="contain" >
                     </PostComponentDev>
                 </ContainerPictureComponent>
                </ScrollReveal>
@@ -119,14 +174,14 @@ function PortafolioDevForm (props ){
 
                <ScrollReveal $direction={"right"} >
                     <ContainerPictureComponent>
-                        <PostComponentDev $height="auto"  linkvideo="https://www.youtube.com/embed/LDCdm_tKpcw?si=MkRZOMelJgO3veNg" github="https://github.com/jartibledev/plugin-monochromatic-palette-generator.git" linkImage="/icons/projects_devs/palette_generator_logo.svg" project="PortafolioDev.Post_5.Name" date="2026" explanation="PortafolioDev.Post_5.Explanation" left="105%" textalign="start" cover="contain" >
+                        <PostComponentDev {...postProps} $height="auto"  linkvideo="https://www.youtube.com/embed/LDCdm_tKpcw?si=MkRZOMelJgO3veNg" github="https://github.com/jartibledev/plugin-monochromatic-palette-generator.git" linkImage="/icons/projects_devs/palette_generator_logo.svg" project="PortafolioDev.Post_5.Name" date="2026" explanation="PortafolioDev.Post_5.Explanation" left="105%" textalign="start" cover="contain" >
                     </PostComponentDev>
                     </ContainerPictureComponent>
                      </ScrollReveal> 
             </SectionComponent> 
            
             <ScrollReveal >
-                <SectionComponent $flexdirection="row" $height="auto" > 
+                <SectionComponent {...sectionProps} $height="auto" > 
                     <TextComponent>
                         <ReachOut>{t("PortafolioDev.ReachOut.Title")}</ReachOut>
                         <Link href="mailto:mayalopezdesign@gmail.com">
