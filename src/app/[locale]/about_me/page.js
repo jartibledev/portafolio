@@ -15,6 +15,12 @@ import LanguageSelectorFixed from "@/app/styles/LanguageSelectorFixed";
 
 
 const styleImage =  {
+    objectFit: 'cover',
+    objectPosition: ' center',
+      
+}
+
+const styleImageUniversities =  {
     objectFit: 'contain',
     objectPosition: ' center',
       
@@ -232,9 +238,9 @@ function AboutMe ( props ){
            </SectionComponent>
            
            <FirstAnimation ref={sectionRef} $isVisible={isVisible} style= {{flexDirection: 'row'}} $margin> 
-                <SectionComponent {...sectionProps} >
+                <SectionComponent {...sectionProps} $flexdirection="row" $alignitems="flex-start" >
                     <ContainerPictureComponent >
-                        <PictureComponent {...imageProps}>
+                        <PictureComponent {...imageProps} $minheight="600px">
                             <Image src="/profile/image_bio.avif"
                                     alt = "picture of me"
                                     fill
@@ -269,21 +275,21 @@ function AboutMe ( props ){
                             <Image src="/icons/universities/LOGOUMA.avif"
                             alt = "picture of me"
                             fill
-                            style={styleImage}
+                            style={styleImageUniversities}
                             ></Image>
                         </PictureComponent>
                         <PictureComponent {...imageProps}>
                             <Image src="/icons/universities/UPV-Emblem.avif"
                             alt = "picture of me"
                             fill
-                            style={styleImage}
+                            style={styleImageUniversities}
                             ></Image>
                         </PictureComponent>
                         <PictureComponent {...imageProps} >
                             <Image src="/icons/universities/LOGO_STANDFORD.avif"
                             alt = "picture of me"
                             fill
-                            style={styleImage}
+                            style={styleImageUniversities}
                             ></Image>
                         </PictureComponent>
 
@@ -291,7 +297,7 @@ function AboutMe ( props ){
                 </GalleryComponent>
                 <TextComponent {...textComponentsProps}>
                     <UniversitiesComponent  >
-                    <FooterPictureComponent {...titleProps}>
+                    <FooterPictureComponent {...titleProps} $paddingbottom="3rem">
                         <Work>
                             {t("AboutMe.Formation.UMA.University")}
                         </Work>
@@ -299,17 +305,17 @@ function AboutMe ( props ){
                             2018-2023
                         </DateWork>
                     </FooterPictureComponent>
-                    <CoursesComponent >
+                    <CoursesComponent $marginleft = "0%">
                         <Courses>
                             {t("AboutMe.Formation.UMA.Courses.Illustrator")}
                         </Courses>
                     </CoursesComponent>
-                    <CoursesComponent >
+                    <CoursesComponent $marginleft = "0%" >
                         <Courses>
                             {t("AboutMe.Formation.UMA.Courses.Indesign")}
                         </Courses>
                     </CoursesComponent>
-                    <CoursesComponent >
+                    <CoursesComponent $marginleft = "0%">
                         <Courses>
                             {t("AboutMe.Formation.UMA.Courses.Textil")}
                         </Courses>
