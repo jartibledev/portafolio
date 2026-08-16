@@ -225,7 +225,7 @@ function AboutMe ( props ){
             
             <SectionComponent $height= "30vh" $flexdirection="row">
                
-            <Link href="../home_page" passHref >
+            <Link href="../es/home_page" passHref >
                 <FooterComponent><Footer>{t("AboutMe.BackToHomePage")}</Footer></FooterComponent> 
             </Link>
                 <RectangleComponent $filter="none"  $backdropfilter= "none"  $filterhover ="blur(9px)" $backdropfilterhover="blur(9px)">
