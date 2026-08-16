@@ -214,9 +214,9 @@ export const CoursesComponent = styled.div`
     width:  ${props => props.$width || "100%"};
     display: ${props => props.$display || "flex"};
     flex-direction: ${props => props.$flexdirection || "column"};
-    margin-left: ${props => props.$margginleft || "5%"};
-    margin-right: ${props => props.$margginright || "5%"};
-    margin-bottom: ${props => props.$margginbottom || "5%"};
+    margin-left: ${props => props.$marginleft || "5%"};
+    margin-right: ${props => props.$marginright || "5%"};
+    margin-bottom: ${props => props.$marginbottom || "5%"};
     text-align: ${props => props.$textalign || "start"};
     @media ${device.mobileS}{
     margin-bottom: 25%;
@@ -230,17 +230,15 @@ export const CoursesComponent = styled.div`
     margin-bottom: 5%;
     }
     @media ${device.laptop}{
-    margin-left: 5%;
     margin-right:  5%;
     margin-bottom: 5%;
     }
     @media ${device.laptopL}{
-    margin-left: 5%;
+    
     margin-right:  5%;
     margin-bottom: 5%;
     }
     @media ${device.desktop}{
-    margin-left: 5%;
     margin-right:  5%;
     margin-bottom: 5%;
     }
@@ -267,7 +265,7 @@ export const FooterPictureComponent = styled.div`
     backdrop-filter:  ${props => props.$backdropfilter || "none"};
     padding-top:  ${props => props.$paddingtop || "1em"};
     padding-bottom: ${props => props.$paddingbottom || "1em"};  
-    justify-content: ${props => props.$paddingbottom || "space-between"};
+    justify-content: ${props => props.$justifycontent || "space-between"};
     
     
 `;
