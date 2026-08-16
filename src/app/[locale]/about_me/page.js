@@ -305,17 +305,17 @@ function AboutMe ( props ){
                             2018-2023
                         </DateWork>
                     </FooterPictureComponent>
-                    <CoursesComponent $marginleft = "0%">
+                    <CoursesComponent>
                         <Courses>
                             {t("AboutMe.Formation.UMA.Courses.Illustrator")}
                         </Courses>
                     </CoursesComponent>
-                    <CoursesComponent $marginleft = "0%" >
+                    <CoursesComponent >
                         <Courses>
                             {t("AboutMe.Formation.UMA.Courses.Indesign")}
                         </Courses>
                     </CoursesComponent>
-                    <CoursesComponent $marginleft = "0%">
+                    <CoursesComponent >
                         <Courses>
                             {t("AboutMe.Formation.UMA.Courses.Textil")}
                         </Courses>
