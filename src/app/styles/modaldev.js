@@ -23,7 +23,8 @@ export default function PostComponentDev({
   width, 
   cover,
   github,
-  linkvideo, 
+  linkvideo,
+  linkweb, 
   ...props 
 }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,6 +35,7 @@ export default function PostComponentDev({
   const isTouch = useIsTouchDevice();
   const videoUrl = linkvideo;
   const githubUrl = github || "https://github.com/jartibledev"
+  const weburl = linkWeb || ""
   const title = isTouch ? {
     color: "white"        
             } : {
@@ -188,7 +190,16 @@ export default function PostComponentDev({
               {/* Puedes dejar solo el texto o pintar un icono de SVG aquí dentro */}
               { 'GitHub'}
             </ButtomComponentLinks>
-            </Link>
+           
+            </Link> 
+            {weburl != "" && (
+              <Link href={weburl} target="_blank" rel="noopener noreferrer">
+                    <ButtomComponentLinks>
+                      {'Links'}
+                    </ButtomComponentLinks>
+              </Link>
+
+            )}
             {isTouch && (
                        <ProjectComponent  $width='80%'  $visibility='visible' $opacity='1' $position='relative' $filter='none' $backdropfilter= 'none' project={t(project)} explanation={t(explanation)} $textalign= {textalign} ></ProjectComponent>
                     )}
