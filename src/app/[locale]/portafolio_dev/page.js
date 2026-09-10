@@ -140,7 +140,7 @@ function PortafolioDevForm (props ){
             <FirstAnimation ref={sectionRef} $isVisible={isVisible}>
             <SectionComponent $height="80vh" $flexdirection="row">
                 <ContainerPictureComponent>
-                    <PostComponentDev {...postProps} $height="100%"  linkvideo="https://www.youtube.com/embed/ZtZeZpPKdzY?si=2KFjiFLWr8ofhUnc" github="https://github.com/jartibledev/visual-novel-tfm.git" linkImage="/illustrations/portada.avif" project="PortafolioDev.Post_1.Name" date="2026" explanation="PortafolioDev.Post_1.Explanation" left="70%" textalign="start" width="300px" >
+                    <PostComponentDev {...postProps} $height="100%"  linkvideo="https://www.youtube.com/embed/ZtZeZpPKdzY?si=2KFjiFLWr8ofhUnc" github="https://github.com/jartibledev/visual-novel-tfm.git" linkWeb="https://sleep-visual-novel.vercel.app/es" linkImage="/illustrations/portada.avif" project="PortafolioDev.Post_1.Name" date="2026" explanation="PortafolioDev.Post_1.Explanation" left="70%" textalign="start" width="300px" >
                     </PostComponentDev>
                 </ContainerPictureComponent>
             </SectionComponent>
